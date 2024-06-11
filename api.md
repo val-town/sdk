@@ -24,9 +24,13 @@ Methods:
 
 ### ValName
 
+Types:
+
+- <code><a href="./src/resources/alias/username/val-name.ts">ValNameRetrieveResponse</a></code>
+
 Methods:
 
-- <code title="get /v1/alias/{username}/{val_name}">client.alias.username.valName.<a href="./src/resources/alias/username/val-name.ts">retrieve</a>(username, valName) -> void</code>
+- <code title="get /v1/alias/{username}/{val_name}">client.alias.username.valName.<a href="./src/resources/alias/username/val-name.ts">retrieve</a>(username, valName) -> ValNameRetrieveResponse</code>
 
 # Me
 
@@ -42,21 +46,33 @@ Methods:
 
 ## Likes
 
+Types:
+
+- <code><a href="./src/resources/me/likes.ts">LikeListResponse</a></code>
+
 Methods:
 
-- <code title="get /v1/me/likes">client.me.likes.<a href="./src/resources/me/likes.ts">list</a>({ ...params }) -> void</code>
+- <code title="get /v1/me/likes">client.me.likes.<a href="./src/resources/me/likes.ts">list</a>({ ...params }) -> LikeListResponse</code>
 
 ## Comments
 
+Types:
+
+- <code><a href="./src/resources/me/comments.ts">CommentListResponse</a></code>
+
 Methods:
 
-- <code title="get /v1/me/comments">client.me.comments.<a href="./src/resources/me/comments.ts">list</a>({ ...params }) -> void</code>
+- <code title="get /v1/me/comments">client.me.comments.<a href="./src/resources/me/comments.ts">list</a>({ ...params }) -> CommentListResponse</code>
 
 ## References
 
+Types:
+
+- <code><a href="./src/resources/me/references.ts">ReferenceListResponse</a></code>
+
 Methods:
 
-- <code title="get /v1/me/references">client.me.references.<a href="./src/resources/me/references.ts">list</a>({ ...params }) -> void</code>
+- <code title="get /v1/me/references">client.me.references.<a href="./src/resources/me/references.ts">list</a>({ ...params }) -> ReferenceListResponse</code>
 
 # Blobs
 
@@ -100,10 +116,15 @@ Methods:
 
 # Vals
 
+Types:
+
+- <code><a href="./src/resources/vals/vals.ts">ValCreateResponse</a></code>
+- <code><a href="./src/resources/vals/vals.ts">ValRetrieveResponse</a></code>
+
 Methods:
 
-- <code title="post /v1/vals/">client.vals.<a href="./src/resources/vals/vals.ts">create</a>({ ...params }) -> void</code>
-- <code title="get /v1/vals/{val_id}">client.vals.<a href="./src/resources/vals/vals.ts">retrieve</a>(valId) -> void</code>
+- <code title="post /v1/vals/">client.vals.<a href="./src/resources/vals/vals.ts">create</a>({ ...params }) -> ValCreateResponse</code>
+- <code title="get /v1/vals/{val_id}">client.vals.<a href="./src/resources/vals/vals.ts">retrieve</a>(valId) -> ValRetrieveResponse</code>
 - <code title="put /v1/vals/{val_id}">client.vals.<a href="./src/resources/vals/vals.ts">update</a>(valId, { ...params }) -> void</code>
 - <code title="delete /v1/vals/{val_id}">client.vals.<a href="./src/resources/vals/vals.ts">delete</a>(valId) -> void</code>
 - <code title="put /v1/vals/">client.vals.<a href="./src/resources/vals/vals.ts">createOrUpdate</a>({ ...params }) -> void</code>
@@ -111,11 +132,17 @@ Methods:
 
 ## Versions
 
+Types:
+
+- <code><a href="./src/resources/vals/versions.ts">VersionCreateResponse</a></code>
+- <code><a href="./src/resources/vals/versions.ts">VersionRetrieveResponse</a></code>
+- <code><a href="./src/resources/vals/versions.ts">VersionListResponse</a></code>
+
 Methods:
 
-- <code title="post /v1/vals/{val_id}/versions">client.vals.versions.<a href="./src/resources/vals/versions.ts">create</a>(valId, { ...params }) -> void</code>
-- <code title="get /v1/vals/{val_id}/versions/{version}">client.vals.versions.<a href="./src/resources/vals/versions.ts">retrieve</a>(valId, version, { ...params }) -> void</code>
-- <code title="get /v1/vals/{val_id}/versions">client.vals.versions.<a href="./src/resources/vals/versions.ts">list</a>(valId, { ...params }) -> void</code>
+- <code title="post /v1/vals/{val_id}/versions">client.vals.versions.<a href="./src/resources/vals/versions.ts">create</a>(valId, { ...params }) -> VersionCreateResponse</code>
+- <code title="get /v1/vals/{val_id}/versions/{version}">client.vals.versions.<a href="./src/resources/vals/versions.ts">retrieve</a>(valId, version, { ...params }) -> VersionRetrieveResponse</code>
+- <code title="get /v1/vals/{val_id}/versions">client.vals.versions.<a href="./src/resources/vals/versions.ts">list</a>(valId, { ...params }) -> VersionListResponse</code>
 - <code title="delete /v1/vals/{val_id}/versions/{version}">client.vals.versions.<a href="./src/resources/vals/versions.ts">delete</a>(valId, version) -> void</code>
 
 # Emails

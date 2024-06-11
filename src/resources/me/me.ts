@@ -17,9 +17,12 @@ export namespace Me {
   export import Profile = ProfileAPI.Profile;
   export import ProfileRetrieveResponse = ProfileAPI.ProfileRetrieveResponse;
   export import Likes = LikesAPI.Likes;
+  export import LikeListResponse = LikesAPI.LikeListResponse;
   export import LikeListParams = LikesAPI.LikeListParams;
   export import Comments = CommentsAPI.Comments;
+  export import CommentListResponse = CommentsAPI.CommentListResponse;
   export import CommentListParams = CommentsAPI.CommentListParams;
   export import References = ReferencesAPI.References;
+  export import ReferenceListResponse = ReferencesAPI.ReferenceListResponse;
   export import ReferenceListParams = ReferencesAPI.ReferenceListParams;
 }

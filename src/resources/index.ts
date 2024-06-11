@@ -8,4 +8,12 @@ export { Me } from './me/me';
 export { Search } from './search/search';
 export { SqliteBatchParams, SqliteExecuteParams, Sqlite } from './sqlite';
 export { UserRetrieveResponse, Users } from './users/users';
-export { ValCreateParams, ValUpdateParams, ValCreateOrUpdateParams, ValRunParams, Vals } from './vals/vals';
+export {
+  ValCreateResponse,
+  ValRetrieveResponse,
+  ValCreateParams,
+  ValUpdateParams,
+  ValCreateOrUpdateParams,
+  ValRunParams,
+  Vals,
+} from './vals/vals';

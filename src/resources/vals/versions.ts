@@ -8,12 +8,12 @@ export class Versions extends APIResource {
   /**
    * Create a new version of a val
    */
-  create(valId: string, body: VersionCreateParams, options?: Core.RequestOptions): Core.APIPromise<void> {
-    return this._client.post(`/v1/vals/${valId}/versions`, {
-      body,
-      ...options,
-      headers: { Accept: '*/*', ...options?.headers },
-    });
+  create(
+    valId: string,
+    body: VersionCreateParams,
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<VersionCreateResponse> {
+    return this._client.post(`/v1/vals/${valId}/versions`, { body, ...options });
   }
 
   /**
@@ -24,23 +24,19 @@ export class Versions extends APIResource {
     version: number,
     query: VersionRetrieveParams,
     options?: Core.RequestOptions,
-  ): Core.APIPromise<void> {
-    return this._client.get(`/v1/vals/${valId}/versions/${version}`, {
-      query,
-      ...options,
-      headers: { Accept: '*/*', ...options?.headers },
-    });
+  ): Core.APIPromise<VersionRetrieveResponse> {
+    return this._client.get(`/v1/vals/${valId}/versions/${version}`, { query, ...options });
   }
 
   /**
    * List versions of a val
    */
-  list(valId: string, query: VersionListParams, options?: Core.RequestOptions): Core.APIPromise<void> {
-    return this._client.get(`/v1/vals/${valId}/versions`, {
-      query,
-      ...options,
-      headers: { Accept: '*/*', ...options?.headers },
-    });
+  list(
+    valId: string,
+    query: VersionListParams,
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<VersionListResponse> {
+    return this._client.get(`/v1/vals/${valId}/versions`, { query, ...options });
   }
 
   /**
@@ -51,6 +47,112 @@ export class Versions extends APIResource {
       ...options,
       headers: { Accept: '*/*', ...options?.headers },
     });
+  }
+}
+
+/**
+ * A Val
+ */
+export interface VersionCreateResponse {
+  id: string;
+
+  /**
+   * The user who created this val
+   */
+  author: VersionCreateResponse.Author | null;
+
+  code: string | null;
+
+  createdAt: string;
+
+  likeCount: number;
+
+  name: string;
+
+  privacy: 'public' | 'unlisted' | 'private';
+
+  public: boolean;
+
+  readme: string | null;
+
+  referenceCount: number;
+
+  version: number;
+}
+
+export namespace VersionCreateResponse {
+  /**
+   * The user who created this val
+   */
+  export interface Author {
+    id: string;
+
+    username: string | null;
+  }
+}
+
+/**
+ * A Val
+ */
+export interface VersionRetrieveResponse {
+  id: string;
+
+  /**
+   * The user who created this val
+   */
+  author: VersionRetrieveResponse.Author | null;
+
+  code: string | null;
+
+  createdAt: string;
+
+  likeCount: number;
+
+  name: string;
+
+  privacy: 'public' | 'unlisted' | 'private';
+
+  public: boolean;
+
+  readme: string | null;
+
+  referenceCount: number;
+
+  version: number;
+}
+
+export namespace VersionRetrieveResponse {
+  /**
+   * The user who created this val
+   */
+  export interface Author {
+    id: string;
+
+    username: string | null;
+  }
+}
+
+export interface VersionListResponse {
+  data: Array<VersionListResponse.Data>;
+
+  links: VersionListResponse.Links;
+}
+
+export namespace VersionListResponse {
+  export interface Data {
+    createdAt: string;
+
+    val_id: string;
+
+    version: number;
+  }
+
+  export interface Links {
+    self: string;
+
+    nextUrl?: string;
+
+    prevUrl?: string;
   }
 }
 
@@ -77,6 +179,9 @@ export interface VersionListParams {
 }
 
 export namespace Versions {
+  export import VersionCreateResponse = VersionsAPI.VersionCreateResponse;
+  export import VersionRetrieveResponse = VersionsAPI.VersionRetrieveResponse;
+  export import VersionListResponse = VersionsAPI.VersionListResponse;
   export import VersionCreateParams = VersionsAPI.VersionCreateParams;
   export import VersionRetrieveParams = VersionsAPI.VersionRetrieveParams;
   export import VersionListParams = VersionsAPI.VersionListParams;
