@@ -12,22 +12,15 @@ export class Vals extends APIResource {
   /**
    * Create a new val
    */
-  create(body: ValCreateParams, options?: Core.RequestOptions): Core.APIPromise<void> {
-    return this._client.post('/v1/vals/', {
-      body,
-      ...options,
-      headers: { Accept: '*/*', ...options?.headers },
-    });
+  create(body: ValCreateParams, options?: Core.RequestOptions): Core.APIPromise<ValCreateResponse> {
+    return this._client.post('/v1/vals/', { body, ...options });
   }
 
   /**
    * Get a val by id
    */
-  retrieve(valId: string, options?: Core.RequestOptions): Core.APIPromise<void> {
-    return this._client.get(`/v1/vals/${valId}`, {
-      ...options,
-      headers: { Accept: '*/*', ...options?.headers },
-    });
+  retrieve(valId: string, options?: Core.RequestOptions): Core.APIPromise<ValRetrieveResponse> {
+    return this._client.get(`/v1/vals/${valId}`, options);
   }
 
   /**
@@ -92,6 +85,88 @@ export class Vals extends APIResource {
   }
 }
 
+/**
+ * A Val
+ */
+export interface ValCreateResponse {
+  id: string;
+
+  /**
+   * The user who created this val
+   */
+  author: ValCreateResponse.Author | null;
+
+  code: string | null;
+
+  createdAt: string;
+
+  likeCount: number;
+
+  name: string;
+
+  privacy: 'public' | 'unlisted' | 'private';
+
+  public: boolean;
+
+  readme: string | null;
+
+  referenceCount: number;
+
+  version: number;
+}
+
+export namespace ValCreateResponse {
+  /**
+   * The user who created this val
+   */
+  export interface Author {
+    id: string;
+
+    username: string | null;
+  }
+}
+
+/**
+ * A Val
+ */
+export interface ValRetrieveResponse {
+  id: string;
+
+  /**
+   * The user who created this val
+   */
+  author: ValRetrieveResponse.Author | null;
+
+  code: string | null;
+
+  createdAt: string;
+
+  likeCount: number;
+
+  name: string;
+
+  privacy: 'public' | 'unlisted' | 'private';
+
+  public: boolean;
+
+  readme: string | null;
+
+  referenceCount: number;
+
+  version: number;
+}
+
+export namespace ValRetrieveResponse {
+  /**
+   * The user who created this val
+   */
+  export interface Author {
+    id: string;
+
+    username: string | null;
+  }
+}
+
 export interface ValCreateParams {
   code: string;
 
@@ -121,11 +196,16 @@ export interface ValRunParams {
 }
 
 export namespace Vals {
+  export import ValCreateResponse = ValsAPI.ValCreateResponse;
+  export import ValRetrieveResponse = ValsAPI.ValRetrieveResponse;
   export import ValCreateParams = ValsAPI.ValCreateParams;
   export import ValUpdateParams = ValsAPI.ValUpdateParams;
   export import ValCreateOrUpdateParams = ValsAPI.ValCreateOrUpdateParams;
   export import ValRunParams = ValsAPI.ValRunParams;
   export import Versions = VersionsAPI.Versions;
+  export import VersionCreateResponse = VersionsAPI.VersionCreateResponse;
+  export import VersionRetrieveResponse = VersionsAPI.VersionRetrieveResponse;
+  export import VersionListResponse = VersionsAPI.VersionListResponse;
   export import VersionCreateParams = VersionsAPI.VersionCreateParams;
   export import VersionRetrieveParams = VersionsAPI.VersionRetrieveParams;
   export import VersionListParams = VersionsAPI.VersionListParams;

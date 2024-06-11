@@ -8,12 +8,59 @@ export class Likes extends APIResource {
   /**
    * Get vals liked by the current user
    */
-  list(query: LikeListParams, options?: Core.RequestOptions): Core.APIPromise<void> {
-    return this._client.get('/v1/me/likes', {
-      query,
-      ...options,
-      headers: { Accept: '*/*', ...options?.headers },
-    });
+  list(query: LikeListParams, options?: Core.RequestOptions): Core.APIPromise<LikeListResponse> {
+    return this._client.get('/v1/me/likes', { query, ...options });
+  }
+}
+
+export interface LikeListResponse {
+  data: Array<LikeListResponse.Data>;
+
+  links: LikeListResponse.Links;
+}
+
+export namespace LikeListResponse {
+  /**
+   * A Val
+   */
+  export interface Data {
+    id: string;
+
+    /**
+     * The user who created this val
+     */
+    author: Data.Author | null;
+
+    code: string | null;
+
+    createdAt: string;
+
+    name: string;
+
+    privacy: 'public' | 'unlisted' | 'private';
+
+    public: boolean;
+
+    version: number;
+  }
+
+  export namespace Data {
+    /**
+     * The user who created this val
+     */
+    export interface Author {
+      id: string;
+
+      username: string | null;
+    }
+  }
+
+  export interface Links {
+    self: string;
+
+    nextUrl?: string;
+
+    prevUrl?: string;
   }
 }
 
@@ -24,5 +71,6 @@ export interface LikeListParams {
 }
 
 export namespace Likes {
+  export import LikeListResponse = LikesAPI.LikeListResponse;
   export import LikeListParams = LikesAPI.LikeListParams;
 }

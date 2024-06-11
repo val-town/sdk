@@ -41,4 +41,5 @@ export interface UsernameRetrieveResponse {
 export namespace Username {
   export import UsernameRetrieveResponse = UsernameAPI.UsernameRetrieveResponse;
   export import ValName = ValNameAPI.ValName;
+  export import ValNameRetrieveResponse = ValNameAPI.ValNameRetrieveResponse;
 }

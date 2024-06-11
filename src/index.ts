@@ -203,6 +203,8 @@ export namespace ValTown {
   export import EvalRunCodeParams = API.EvalRunCodeParams;
 
   export import Vals = API.Vals;
+  export import ValCreateResponse = API.ValCreateResponse;
+  export import ValRetrieveResponse = API.ValRetrieveResponse;
   export import ValCreateParams = API.ValCreateParams;
   export import ValUpdateParams = API.ValUpdateParams;
   export import ValCreateOrUpdateParams = API.ValCreateOrUpdateParams;

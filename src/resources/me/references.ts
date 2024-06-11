@@ -8,12 +8,54 @@ export class References extends APIResource {
   /**
    * Get vals that depend on any of the user's vals
    */
-  list(query: ReferenceListParams, options?: Core.RequestOptions): Core.APIPromise<void> {
-    return this._client.get('/v1/me/references', {
-      query,
-      ...options,
-      headers: { Accept: '*/*', ...options?.headers },
-    });
+  list(query: ReferenceListParams, options?: Core.RequestOptions): Core.APIPromise<ReferenceListResponse> {
+    return this._client.get('/v1/me/references', { query, ...options });
+  }
+}
+
+export interface ReferenceListResponse {
+  data: Array<ReferenceListResponse.Data>;
+
+  links: ReferenceListResponse.Links;
+}
+
+export namespace ReferenceListResponse {
+  export interface Data {
+    dependsOn: Data.DependsOn;
+
+    reference: Data.Reference;
+
+    referencedAt: string;
+  }
+
+  export namespace Data {
+    export interface DependsOn {
+      id: string;
+
+      author_id: string | null;
+
+      name: string;
+
+      username: string | null;
+    }
+
+    export interface Reference {
+      id: string;
+
+      author_id: string | null;
+
+      name: string;
+
+      username: string | null;
+    }
+  }
+
+  export interface Links {
+    self: string;
+
+    nextUrl?: string;
+
+    prevUrl?: string;
   }
 }
 
@@ -28,5 +70,6 @@ export interface ReferenceListParams {
 }
 
 export namespace References {
+  export import ReferenceListResponse = ReferencesAPI.ReferenceListResponse;
   export import ReferenceListParams = ReferencesAPI.ReferenceListParams;
 }

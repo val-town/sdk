@@ -20,29 +20,34 @@ export interface ValListResponse {
 }
 
 export namespace ValListResponse {
+  /**
+   * A Val
+   */
   export interface Data {
     id: string;
 
-    author: Data.Author;
+    /**
+     * The user who created this val
+     */
+    author: Data.Author | null;
 
-    code: string;
+    code: string | null;
 
     createdAt: string;
 
     name: string;
 
-    privacy: string;
+    privacy: 'public' | 'unlisted' | 'private';
 
     public: boolean;
-
-    runEndAt: string | null;
-
-    runStartAt: string | null;
 
     version: number;
   }
 
   export namespace Data {
+    /**
+     * The user who created this val
+     */
     export interface Author {
       id: string;
 
