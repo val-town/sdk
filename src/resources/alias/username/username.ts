@@ -17,15 +17,24 @@ export class Username extends APIResource {
 }
 
 /**
- * User object
+ * User information
  */
 export interface UsernameRetrieveResponse {
   id: string;
 
+  /**
+   * The user’s biography, if they have provided one
+   */
   bio: string | null;
 
+  /**
+   * URL that points to the user’s profile image, if one exists
+   */
   profileImageUrl: string | null;
 
+  /**
+   * The user’s handle that they chose for themselves. Does not include the @ symbol
+   */
   username: string | null;
 }
 

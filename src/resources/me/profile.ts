@@ -13,15 +13,27 @@ export class Profile extends APIResource {
   }
 }
 
+/**
+ * User information, with tier included
+ */
 export interface ProfileRetrieveResponse {
   id: string;
 
+  /**
+   * The user’s biography, if they have provided one
+   */
   bio: string | null;
 
+  /**
+   * URL that points to the user’s profile image, if one exists
+   */
   profileImageUrl: string | null;
 
   tier: 'free' | 'pro' | null;
 
+  /**
+   * The user’s handle that they chose for themselves. Does not include the @ symbol
+   */
   username: string | null;
 }
 

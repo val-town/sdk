@@ -29,21 +29,44 @@ export interface SqliteBatchParams {
 }
 
 export namespace SqliteBatchParams {
+  /**
+   * A parameterized SQL query. See
+   * https://docs.turso.tech/sdk/ts/reference#batch-transactions for reference
+   */
   export interface UnionMember1 {
+    /**
+     * List of arguments to be used in the given statement
+     */
     args: Array<string | number | boolean | null> | Record<string, string | number | boolean | null>;
 
+    /**
+     * SQL statement, with ? placeholders for arguments
+     */
     sql: string;
   }
 }
 
 export interface SqliteExecuteParams {
+  /**
+   * Simple SQL statement to run in SQLite
+   */
   statement: string | SqliteExecuteParams.UnionMember1;
 }
 
 export namespace SqliteExecuteParams {
+  /**
+   * A parameterized SQL query. See
+   * https://docs.turso.tech/sdk/ts/reference#batch-transactions for reference
+   */
   export interface UnionMember1 {
+    /**
+     * List of arguments to be used in the given statement
+     */
     args: Array<string | number | boolean | null> | Record<string, string | number | boolean | null>;
 
+    /**
+     * SQL statement, with ? placeholders for arguments
+     */
     sql: string;
   }
 }
