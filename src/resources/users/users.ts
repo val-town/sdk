@@ -2,7 +2,7 @@
 
 import * as Core from '@valtown/sdk/core';
 import { APIResource } from '@valtown/sdk/resource';
-import * as UsersAPI from '@valtown/sdk/resources/users/users';
+import * as Shared from '@valtown/sdk/resources/shared';
 import * as ValsAPI from '@valtown/sdk/resources/users/vals';
 
 export class Users extends APIResource {
@@ -11,35 +11,13 @@ export class Users extends APIResource {
   /**
    * Get basic information about a user
    */
-  retrieve(userid: string, options?: Core.RequestOptions): Core.APIPromise<UserRetrieveResponse> {
+  retrieve(userid: string, options?: Core.RequestOptions): Core.APIPromise<Shared.User> {
     return this._client.get(`/v1/users/${userid}`, options);
   }
 }
 
-/**
- * User information
- */
-export interface UserRetrieveResponse {
-  id: string;
-
-  /**
-   * The user’s biography, if they have provided one
-   */
-  bio: string | null;
-
-  /**
-   * URL that points to the user’s profile image, if one exists
-   */
-  profileImageUrl: string | null;
-
-  /**
-   * The user’s handle that they chose for themselves. Does not include the @ symbol
-   */
-  username: string | null;
-}
-
 export namespace Users {
-  export import UserRetrieveResponse = UsersAPI.UserRetrieveResponse;
   export import Vals = ValsAPI.Vals;
+  export import ValListResponse = ValsAPI.ValListResponse;
   export import ValListParams = ValsAPI.ValListParams;
 }

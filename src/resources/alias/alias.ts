@@ -9,5 +9,4 @@ export class Alias extends APIResource {
 
 export namespace Alias {
   export import Username = UsernameAPI.Username;
-  export import UsernameRetrieveResponse = UsernameAPI.UsernameRetrieveResponse;
 }
