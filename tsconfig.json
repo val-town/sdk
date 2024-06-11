@@ -9,9 +9,9 @@
     "esModuleInterop": true,
     "baseUrl": "./",
     "paths": {
-      "val-town/_shims/auto/*": ["src/_shims/auto/*-node"],
-      "val-town/*": ["src/*"],
-      "val-town": ["src/index.ts"],
+      "@valtown/sdk/_shims/auto/*": ["src/_shims/auto/*-node"],
+      "@valtown/sdk/*": ["src/*"],
+      "@valtown/sdk": ["src/index.ts"],
     },
     "noEmit": true,
 

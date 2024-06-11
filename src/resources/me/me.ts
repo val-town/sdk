@@ -1,10 +1,10 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { APIResource } from '../../resource';
-import * as CommentsAPI from './comments';
-import * as LikesAPI from './likes';
-import * as ProfileAPI from './profile';
-import * as ReferencesAPI from './references';
+import { APIResource } from '@valtown/sdk/resource';
+import * as CommentsAPI from '@valtown/sdk/resources/me/comments';
+import * as LikesAPI from '@valtown/sdk/resources/me/likes';
+import * as ProfileAPI from '@valtown/sdk/resources/me/profile';
+import * as ReferencesAPI from '@valtown/sdk/resources/me/references';
 
 export class Me extends APIResource {
   profile: ProfileAPI.Profile = new ProfileAPI.Profile(this._client);

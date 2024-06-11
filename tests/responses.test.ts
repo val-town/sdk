@@ -1,5 +1,5 @@
-import { createResponseHeaders } from 'val-town/core';
-import { Headers } from 'val-town/_shims/index';
+import { createResponseHeaders } from '@valtown/sdk/core';
+import { Headers } from '@valtown/sdk/_shims/index';
 
 describe('response parsing', () => {
   // TODO: test unicode characters

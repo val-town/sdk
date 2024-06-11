@@ -1,6 +1,6 @@
 import fs from 'fs';
-import { toFile, type ResponseLike } from 'val-town/uploads';
-import { File } from 'val-town/_shims/index';
+import { toFile, type ResponseLike } from '@valtown/sdk/uploads';
+import { File } from '@valtown/sdk/_shims/index';
 
 class MyClass {
   name: string = 'foo';

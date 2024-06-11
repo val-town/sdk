@@ -1,8 +1,8 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import * as Core from '../../core';
-import { APIResource } from '../../resource';
-import * as CommentsAPI from './comments';
+import * as Core from '@valtown/sdk/core';
+import { APIResource } from '@valtown/sdk/resource';
+import * as CommentsAPI from '@valtown/sdk/resources/me/comments';
 
 export class Comments extends APIResource {
   /**

@@ -1,6 +1,6 @@
-import { multipartFormRequestOptions, createForm } from 'val-town/core';
-import { Blob } from 'val-town/_shims/index';
-import { toFile } from 'val-town';
+import { multipartFormRequestOptions, createForm } from '@valtown/sdk/core';
+import { Blob } from '@valtown/sdk/_shims/index';
+import { toFile } from '@valtown/sdk';
 
 describe('form data validation', () => {
   test('valid values do not error', async () => {

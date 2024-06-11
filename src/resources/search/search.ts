@@ -1,7 +1,7 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { APIResource } from '../../resource';
-import * as ValsAPI from './vals';
+import { APIResource } from '@valtown/sdk/resource';
+import * as ValsAPI from '@valtown/sdk/resources/search/vals';
 
 export class Search extends APIResource {
   vals: ValsAPI.Vals = new ValsAPI.Vals(this._client);

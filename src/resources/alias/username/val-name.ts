@@ -1,8 +1,8 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import * as Core from '../../../core';
-import { APIResource } from '../../../resource';
-import * as ValNameAPI from './val-name';
+import * as Core from '@valtown/sdk/core';
+import { APIResource } from '@valtown/sdk/resource';
+import * as ValNameAPI from '@valtown/sdk/resources/alias/username/val-name';
 
 export class ValName extends APIResource {
   /**

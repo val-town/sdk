@@ -1,4 +1,4 @@
-import { APIClient } from 'val-town/core';
+import { APIClient } from '@valtown/sdk/core';
 
 const { stringifyQuery } = APIClient.prototype as any;
 

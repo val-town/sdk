@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import ValTown from 'val-town';
+import ValTown from '@valtown/sdk';
 import { Response } from 'node-fetch';
 
 const valTown = new ValTown({

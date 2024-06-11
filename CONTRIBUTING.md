@@ -55,12 +55,12 @@ cd val-town-node
 # With yarn
 yarn link
 cd ../my-package
-yarn link val-town
+yarn link @valtown/sdk
 
 # With pnpm
 pnpm link --global
 cd ../my-package
-pnpm link -—global val-town
+pnpm link -—global @valtown/sdk
 ```
 
 ## Running tests

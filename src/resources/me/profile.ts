@@ -1,8 +1,8 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import * as Core from '../../core';
-import { APIResource } from '../../resource';
-import * as ProfileAPI from './profile';
+import * as Core from '@valtown/sdk/core';
+import { APIResource } from '@valtown/sdk/resource';
+import * as ProfileAPI from '@valtown/sdk/resources/me/profile';
 
 export class Profile extends APIResource {
   /**
