@@ -1,3 +1,9 @@
+# Shared
+
+Types:
+
+- <code><a href="./src/resources/shared.ts">User</a></code>
+
 # Search
 
 ## Vals
@@ -14,13 +20,9 @@ Methods:
 
 ## Username
 
-Types:
-
-- <code><a href="./src/resources/alias/username/username.ts">UsernameRetrieveResponse</a></code>
-
 Methods:
 
-- <code title="get /v1/alias/{username}">client.alias.username.<a href="./src/resources/alias/username/username.ts">retrieve</a>(username) -> UsernameRetrieveResponse</code>
+- <code title="get /v1/alias/{username}">client.alias.username.<a href="./src/resources/alias/username/username.ts">retrieve</a>(username) -> User</code>
 
 ### ValName
 
@@ -83,19 +85,19 @@ Methods:
 
 # Users
 
-Types:
-
-- <code><a href="./src/resources/users/users.ts">UserRetrieveResponse</a></code>
-
 Methods:
 
-- <code title="get /v1/users/{userid}">client.users.<a href="./src/resources/users/users.ts">retrieve</a>(userid) -> UserRetrieveResponse</code>
+- <code title="get /v1/users/{userid}">client.users.<a href="./src/resources/users/users.ts">retrieve</a>(userid) -> User</code>
 
 ## Vals
 
+Types:
+
+- <code><a href="./src/resources/users/vals.ts">ValListResponse</a></code>
+
 Methods:
 
-- <code title="get /v1/users/{userid}/vals">client.users.vals.<a href="./src/resources/users/vals.ts">list</a>(userid, { ...params }) -> void</code>
+- <code title="get /v1/users/{userid}/vals">client.users.vals.<a href="./src/resources/users/vals.ts">list</a>(userid, { ...params }) -> ValListResponse</code>
 
 # Sqlite
 

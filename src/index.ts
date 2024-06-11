@@ -192,7 +192,6 @@ export namespace ValTown {
   export import Blobs = API.Blobs;
 
   export import Users = API.Users;
-  export import UserRetrieveResponse = API.UserRetrieveResponse;
 
   export import Sqlite = API.Sqlite;
   export import SqliteBatchParams = API.SqliteBatchParams;
@@ -216,6 +215,8 @@ export namespace ValTown {
   export import Emails = API.Emails;
   export import EmailSendResponse = API.EmailSendResponse;
   export import EmailSendParams = API.EmailSendParams;
+
+  export import User = API.User;
 }
 
 export default ValTown;
