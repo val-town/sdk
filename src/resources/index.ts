@@ -11,9 +11,12 @@ export { UserRetrieveResponse, Users } from './users/users';
 export {
   ValCreateResponse,
   ValRetrieveResponse,
+  ValRunAnonymousResponse,
   ValCreateParams,
   ValUpdateParams,
   ValCreateOrUpdateParams,
   ValRunParams,
+  ValRunAnonymousParams,
+  ValRunGetParams,
   Vals,
 } from './vals/vals';

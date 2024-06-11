@@ -128,4 +128,44 @@ describe('resource vals', () => {
       valTown.vals.run('string', { args: [{}, {}, {}] }, { path: '/_stainless_unknown_path' }),
     ).rejects.toThrow(ValTown.NotFoundError);
   });
+
+  test('runAnonymous: only required params', async () => {
+    const responsePromise = valTown.vals.runAnonymous({ code: 'string' });
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
+  test('runAnonymous: required and optional params', async () => {
+    const response = await valTown.vals.runAnonymous({ code: 'string', args: [{}, {}, {}] });
+  });
+
+  test('runGet', async () => {
+    const responsePromise = valTown.vals.runGet('string');
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
+  test('runGet: request options instead of params are passed correctly', async () => {
+    // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
+    await expect(valTown.vals.runGet('string', { path: '/_stainless_unknown_path' })).rejects.toThrow(
+      ValTown.NotFoundError,
+    );
+  });
+
+  test('runGet: request options and params are passed correctly', async () => {
+    // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
+    await expect(
+      valTown.vals.runGet('string', { args: 'string' }, { path: '/_stainless_unknown_path' }),
+    ).rejects.toThrow(ValTown.NotFoundError);
+  });
 });

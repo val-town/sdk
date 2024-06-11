@@ -83,6 +83,36 @@ export class Vals extends APIResource {
       headers: { Accept: '*/*', ...options?.headers },
     });
   }
+
+  /**
+   * Run JavaScript or TypeScript without saving it permanently as a val
+   */
+  runAnonymous(
+    body: ValRunAnonymousParams,
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<ValRunAnonymousResponse | null> {
+    return this._client.post('/v1/eval/', { body, ...options });
+  }
+
+  /**
+   * Run a val, specify any parameters in a querystring
+   */
+  runGet(valname: string, query?: ValRunGetParams, options?: Core.RequestOptions): Core.APIPromise<void>;
+  runGet(valname: string, options?: Core.RequestOptions): Core.APIPromise<void>;
+  runGet(
+    valname: string,
+    query: ValRunGetParams | Core.RequestOptions = {},
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<void> {
+    if (isRequestOptions(query)) {
+      return this.runGet(valname, {}, query);
+    }
+    return this._client.get(`/v1/run/${valname}`, {
+      query,
+      ...options,
+      headers: { Accept: '*/*', ...options?.headers },
+    });
+  }
 }
 
 /**
@@ -167,6 +197,8 @@ export namespace ValRetrieveResponse {
   }
 }
 
+export type ValRunAnonymousResponse = string | number | unknown | Array<unknown> | boolean;
+
 export interface ValCreateParams {
   code: string;
 
@@ -195,13 +227,29 @@ export interface ValRunParams {
   args?: Array<unknown>;
 }
 
+export interface ValRunAnonymousParams {
+  /**
+   * TypeScript source code
+   */
+  code: string;
+
+  args?: Array<unknown>;
+}
+
+export interface ValRunGetParams {
+  args?: string;
+}
+
 export namespace Vals {
   export import ValCreateResponse = ValsAPI.ValCreateResponse;
   export import ValRetrieveResponse = ValsAPI.ValRetrieveResponse;
+  export import ValRunAnonymousResponse = ValsAPI.ValRunAnonymousResponse;
   export import ValCreateParams = ValsAPI.ValCreateParams;
   export import ValUpdateParams = ValsAPI.ValUpdateParams;
   export import ValCreateOrUpdateParams = ValsAPI.ValCreateOrUpdateParams;
   export import ValRunParams = ValsAPI.ValRunParams;
+  export import ValRunAnonymousParams = ValsAPI.ValRunAnonymousParams;
+  export import ValRunGetParams = ValsAPI.ValRunGetParams;
   export import Versions = VersionsAPI.Versions;
   export import VersionCreateResponse = VersionsAPI.VersionCreateResponse;
   export import VersionRetrieveResponse = VersionsAPI.VersionRetrieveResponse;

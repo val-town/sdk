@@ -205,10 +205,13 @@ export namespace ValTown {
   export import Vals = API.Vals;
   export import ValCreateResponse = API.ValCreateResponse;
   export import ValRetrieveResponse = API.ValRetrieveResponse;
+  export import ValRunAnonymousResponse = API.ValRunAnonymousResponse;
   export import ValCreateParams = API.ValCreateParams;
   export import ValUpdateParams = API.ValUpdateParams;
   export import ValCreateOrUpdateParams = API.ValCreateOrUpdateParams;
   export import ValRunParams = API.ValRunParams;
+  export import ValRunAnonymousParams = API.ValRunAnonymousParams;
+  export import ValRunGetParams = API.ValRunGetParams;
 
   export import Emails = API.Emails;
   export import EmailSendResponse = API.EmailSendResponse;

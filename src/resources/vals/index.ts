@@ -3,10 +3,13 @@
 export {
   ValCreateResponse,
   ValRetrieveResponse,
+  ValRunAnonymousResponse,
   ValCreateParams,
   ValUpdateParams,
   ValCreateOrUpdateParams,
   ValRunParams,
+  ValRunAnonymousParams,
+  ValRunGetParams,
   Vals,
 } from './vals';
 export {
