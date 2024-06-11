@@ -1,8 +1,8 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import * as Core from '../core';
-import { APIResource } from '../resource';
-import * as SqliteAPI from './sqlite';
+import * as Core from '@valtown/sdk/core';
+import { APIResource } from '@valtown/sdk/resource';
+import * as SqliteAPI from '@valtown/sdk/resources/sqlite';
 
 export class Sqlite extends APIResource {
   batch(body: SqliteBatchParams, options?: Core.RequestOptions): Core.APIPromise<void> {

@@ -1,8 +1,8 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import * as Core from '../../core';
-import { APIResource } from '../../resource';
-import * as VersionsAPI from './versions';
+import * as Core from '@valtown/sdk/core';
+import { APIResource } from '@valtown/sdk/resource';
+import * as VersionsAPI from '@valtown/sdk/resources/vals/versions';
 
 export class Versions extends APIResource {
   /**

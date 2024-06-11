@@ -1,8 +1,8 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import ValTown from 'val-town';
-import { APIUserAbortError } from 'val-town';
-import { Headers } from 'val-town/core';
+import ValTown from '@valtown/sdk';
+import { APIUserAbortError } from '@valtown/sdk';
+import { Headers } from '@valtown/sdk/core';
 import defaultFetch, { Response, type RequestInit, type RequestInfo } from 'node-fetch';
 
 describe('instantiate client', () => {

@@ -1,10 +1,10 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import * as Core from '../../core';
-import { APIResource } from '../../resource';
-import { isRequestOptions } from '../../core';
-import * as ValsAPI from './vals';
-import * as VersionsAPI from './versions';
+import * as Core from '@valtown/sdk/core';
+import { APIResource } from '@valtown/sdk/resource';
+import { isRequestOptions } from '@valtown/sdk/core';
+import * as ValsAPI from '@valtown/sdk/resources/vals/vals';
+import * as VersionsAPI from '@valtown/sdk/resources/vals/versions';
 
 export class Vals extends APIResource {
   versions: VersionsAPI.Versions = new VersionsAPI.Versions(this._client);

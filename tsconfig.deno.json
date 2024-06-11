@@ -6,9 +6,9 @@
     "rootDir": "./deno",
     "lib": ["es2020", "DOM"],
     "paths": {
-      "val-town/_shims/auto/*": ["deno/_shims/auto/*-deno"],
-      "val-town/*": ["deno/*"],
-      "val-town": ["deno/index.ts"],
+      "@valtown/sdk/_shims/auto/*": ["deno/_shims/auto/*-deno"],
+      "@valtown/sdk/*": ["deno/*"],
+      "@valtown/sdk": ["deno/index.ts"],
     },
     "noEmit": true,
     "declaration": true,

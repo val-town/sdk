@@ -1,9 +1,9 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import * as Core from '../../../core';
-import { APIResource } from '../../../resource';
-import * as UsernameAPI from './username';
-import * as ValNameAPI from './val-name';
+import * as Core from '@valtown/sdk/core';
+import { APIResource } from '@valtown/sdk/resource';
+import * as UsernameAPI from '@valtown/sdk/resources/alias/username/username';
+import * as ValNameAPI from '@valtown/sdk/resources/alias/username/val-name';
 
 export class Username extends APIResource {
   valName: ValNameAPI.ValName = new ValNameAPI.ValName(this._client);

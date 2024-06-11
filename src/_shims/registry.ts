@@ -42,12 +42,12 @@ export let isFsReadStream: Shims['isFsReadStream'] | undefined = undefined;
 export function setShims(shims: Shims, options: { auto: boolean } = { auto: false }) {
   if (auto) {
     throw new Error(
-      `you must \`import 'val-town/shims/${shims.kind}'\` before importing anything else from val-town`,
+      `you must \`import '@valtown/sdk/shims/${shims.kind}'\` before importing anything else from @valtown/sdk`,
     );
   }
   if (kind) {
     throw new Error(
-      `can't \`import 'val-town/shims/${shims.kind}'\` after \`import 'val-town/shims/${kind}'\``,
+      `can't \`import '@valtown/sdk/shims/${shims.kind}'\` after \`import '@valtown/sdk/shims/${kind}'\``,
     );
   }
   auto = options.auto;
