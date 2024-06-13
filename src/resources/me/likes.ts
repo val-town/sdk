@@ -41,6 +41,8 @@ export namespace LikeListResponse {
 
     public: boolean;
 
+    type: 'interval' | 'http' | 'express' | 'email' | 'script' | 'rpc';
+
     version: number;
   }
 

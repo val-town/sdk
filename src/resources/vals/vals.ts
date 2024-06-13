@@ -142,6 +142,8 @@ export interface ValCreateResponse {
 
   referenceCount: number;
 
+  type: 'interval' | 'http' | 'express' | 'email' | 'script' | 'rpc';
+
   version: number;
 }
 
@@ -183,6 +185,8 @@ export interface ValRetrieveResponse {
 
   referenceCount: number;
 
+  type: 'interval' | 'http' | 'express' | 'email' | 'script' | 'rpc';
+
   version: number;
 }
 
@@ -207,6 +211,8 @@ export interface ValCreateParams {
   privacy?: 'public' | 'unlisted' | 'private';
 
   readme?: string;
+
+  type?: 'http' | 'script' | 'email';
 }
 
 export interface ValUpdateParams {

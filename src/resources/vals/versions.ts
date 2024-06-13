@@ -77,6 +77,8 @@ export interface VersionCreateResponse {
 
   referenceCount: number;
 
+  type: 'interval' | 'http' | 'express' | 'email' | 'script' | 'rpc';
+
   version: number;
 }
 
@@ -117,6 +119,8 @@ export interface VersionRetrieveResponse {
   readme: string | null;
 
   referenceCount: number;
+
+  type: 'interval' | 'http' | 'express' | 'email' | 'script' | 'rpc';
 
   version: number;
 }
@@ -164,6 +168,8 @@ export interface VersionCreateParams {
   privacy?: 'public' | 'unlisted' | 'private';
 
   readme?: string;
+
+  type?: 'http' | 'script' | 'email';
 }
 
 export interface VersionRetrieveParams {
