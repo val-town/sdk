@@ -44,6 +44,8 @@ export interface ValNameRetrieveResponse {
 
   referenceCount: number;
 
+  type: 'interval' | 'http' | 'express' | 'email' | 'script' | 'rpc';
+
   version: number;
 }
 

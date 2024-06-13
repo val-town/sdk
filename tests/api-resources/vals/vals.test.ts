@@ -21,7 +21,13 @@ describe('resource vals', () => {
   });
 
   test('create: required and optional params', async () => {
-    const response = await valTown.vals.create({ code: 'x', name: 'x', privacy: 'public', readme: 'string' });
+    const response = await valTown.vals.create({
+      code: 'x',
+      name: 'x',
+      privacy: 'public',
+      readme: 'string',
+      type: 'http',
+    });
   });
 
   test('retrieve', async () => {

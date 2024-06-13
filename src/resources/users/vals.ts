@@ -45,6 +45,8 @@ export namespace ValListResponse {
 
     public: boolean;
 
+    type: 'interval' | 'http' | 'express' | 'email' | 'script' | 'rpc';
+
     version: number;
   }
 

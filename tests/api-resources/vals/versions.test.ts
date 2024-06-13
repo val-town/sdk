@@ -28,6 +28,7 @@ describe('resource versions', () => {
       name: 'x',
       privacy: 'public',
       readme: 'string',
+      type: 'http',
     });
   });
 
