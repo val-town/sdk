@@ -72,6 +72,8 @@ export interface ValListParams {
   offset: number;
 
   query: string;
+
+  searchType?: 'exact' | 'semantic';
 }
 
 export namespace Vals {
