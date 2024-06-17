@@ -32,21 +32,21 @@ export interface EmailSendResponse {
 export interface EmailSendParams {
   attachments?: Array<EmailSendParams.Attachment>;
 
-  bcc?: string | EmailSendParams.UnionMember1 | Array<string | EmailSendParams.UnionMember1>;
+  bcc?: string | EmailSendParams.EmailNameAndAddress | Array<string | EmailSendParams.EmailNameAndAddress>;
 
-  cc?: string | EmailSendParams.UnionMember1 | Array<string | EmailSendParams.UnionMember1>;
+  cc?: string | EmailSendParams.EmailNameAndAddress | Array<string | EmailSendParams.EmailNameAndAddress>;
 
-  from?: string | EmailSendParams.UnionMember1;
+  from?: string | EmailSendParams.EmailNameAndAddress;
 
   html?: string;
 
-  replyToList?: EmailSendParams.UnionMember0 | Array<EmailSendParams.UnionMember1>;
+  replyToList?: EmailSendParams.EmailNameAndAddress | Array<EmailSendParams.EmailList>;
 
   subject?: string;
 
   text?: string;
 
-  to?: string | EmailSendParams.UnionMember1 | Array<string | EmailSendParams.UnionMember1>;
+  to?: string | EmailSendParams.EmailNameAndAddress | Array<string | EmailSendParams.EmailNameAndAddress>;
 }
 
 export namespace EmailSendParams {
@@ -62,55 +62,55 @@ export namespace EmailSendParams {
     type?: string;
   }
 
-  export interface UnionMember1 {
+  export interface EmailNameAndAddress {
     email: string;
 
     name?: string;
   }
 
-  export interface UnionMember1 {
+  export interface EmailNameAndAddress {
     email: string;
 
     name?: string;
   }
 
-  export interface UnionMember1 {
+  export interface EmailNameAndAddress {
     email: string;
 
     name?: string;
   }
 
-  export interface UnionMember1 {
+  export interface EmailNameAndAddress {
     email: string;
 
     name?: string;
   }
 
-  export interface UnionMember1 {
+  export interface EmailNameAndAddress {
     email: string;
 
     name?: string;
   }
 
-  export interface UnionMember0 {
+  export interface EmailNameAndAddress {
     email: string;
 
     name?: string;
   }
 
-  export interface UnionMember1 {
+  export interface EmailList {
     email: string;
 
     name?: string;
   }
 
-  export interface UnionMember1 {
+  export interface EmailNameAndAddress {
     email: string;
 
     name?: string;
   }
 
-  export interface UnionMember1 {
+  export interface EmailNameAndAddress {
     email: string;
 
     name?: string;

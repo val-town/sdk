@@ -23,7 +23,7 @@ export class Sqlite extends APIResource {
 }
 
 export interface SqliteBatchParams {
-  statements: Array<string | SqliteBatchParams.UnionMember1>;
+  statements: Array<string | SqliteBatchParams.ParameterizedQuery>;
 
   mode?: 'write' | 'read' | 'deferred';
 }
@@ -33,7 +33,7 @@ export namespace SqliteBatchParams {
    * A parameterized SQL query. See
    * https://docs.turso.tech/sdk/ts/reference#batch-transactions for reference
    */
-  export interface UnionMember1 {
+  export interface ParameterizedQuery {
     /**
      * List of arguments to be used in the given statement
      */
@@ -50,7 +50,7 @@ export interface SqliteExecuteParams {
   /**
    * Simple SQL statement to run in SQLite
    */
-  statement: string | SqliteExecuteParams.UnionMember1;
+  statement: string | SqliteExecuteParams.ParameterizedQuery;
 }
 
 export namespace SqliteExecuteParams {
@@ -58,7 +58,7 @@ export namespace SqliteExecuteParams {
    * A parameterized SQL query. See
    * https://docs.turso.tech/sdk/ts/reference#batch-transactions for reference
    */
-  export interface UnionMember1 {
+  export interface ParameterizedQuery {
     /**
      * List of arguments to be used in the given statement
      */
