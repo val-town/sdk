@@ -69,9 +69,9 @@ export namespace CommentListResponse {
   export interface Links {
     self: string;
 
-    nextUrl?: string;
+    next?: string;
 
-    prevUrl?: string;
+    prev?: string;
   }
 }
 
