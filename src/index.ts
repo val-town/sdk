@@ -4,7 +4,6 @@ import * as Core from './core';
 import * as Errors from './error';
 import { type Agent } from './_shims/index';
 import * as Uploads from './uploads';
-import * as Pagination from '@valtown/sdk/pagination';
 import * as API from '@valtown/sdk/resources/index';
 
 export interface ClientOptions {
@@ -183,10 +182,6 @@ export import fileFromPath = Uploads.fileFromPath;
 
 export namespace ValTown {
   export import RequestOptions = Core.RequestOptions;
-
-  export import PageCursorURL = Pagination.PageCursorURL;
-  export import PageCursorURLParams = Pagination.PageCursorURLParams;
-  export import PageCursorURLResponse = Pagination.PageCursorURLResponse;
 
   export import Search = API.Search;
 
