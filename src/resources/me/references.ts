@@ -53,9 +53,9 @@ export namespace ReferenceListResponse {
   export interface Links {
     self: string;
 
-    nextUrl?: string;
+    next?: string;
 
-    prevUrl?: string;
+    prev?: string;
   }
 }
 
