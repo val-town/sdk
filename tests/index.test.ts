@@ -157,13 +157,13 @@ describe('instantiate client', () => {
     test('empty env variable', () => {
       process.env['VAL_TOWN_BASE_URL'] = ''; // empty
       const client = new ValTown({ bearerToken: 'My Bearer Token' });
-      expect(client.baseURL).toEqual('https://localhost:8080/test-api');
+      expect(client.baseURL).toEqual('https://api.val.town');
     });
 
     test('blank env variable', () => {
       process.env['VAL_TOWN_BASE_URL'] = '  '; // blank
       const client = new ValTown({ bearerToken: 'My Bearer Token' });
-      expect(client.baseURL).toEqual('https://localhost:8080/test-api');
+      expect(client.baseURL).toEqual('https://api.val.town');
     });
   });
 
