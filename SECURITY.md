@@ -20,7 +20,7 @@ or products provided by Val Town please follow the respective company's security
 
 ### Val Town Terms and Policies
 
-Please contact dev-feedback@val-town.com for any questions or concerns regarding security of our services.
+Please contact dev-feedback@val.town for any questions or concerns regarding security of our services.
 
 ---
 
