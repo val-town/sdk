@@ -19,7 +19,7 @@ export namespace PageCursorURLResponse {
 export interface PageCursorURLParams {
   limit?: number;
 
-  cursor?: string;
+  offset?: number;
 }
 
 export class PageCursorURL<Item> extends AbstractPage<Item> implements PageCursorURLResponse<Item> {

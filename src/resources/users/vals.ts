@@ -3,6 +3,7 @@
 import * as Core from '@valtown/sdk/core';
 import { APIResource } from '@valtown/sdk/resource';
 import * as ValsAPI from '@valtown/sdk/resources/users/vals';
+import { PageCursorURL, type PageCursorURLParams } from '@valtown/sdk/pagination';
 
 export class Vals extends APIResource {
   /**
@@ -12,71 +13,57 @@ export class Vals extends APIResource {
     userId: string,
     query: ValListParams,
     options?: Core.RequestOptions,
-  ): Core.APIPromise<ValListResponse> {
-    return this._client.get(`/v1/users/${userId}/vals`, { query, ...options });
+  ): Core.PagePromise<ValListResponsesPageCursorURL, ValListResponse> {
+    return this._client.getAPIList(`/v1/users/${userId}/vals`, ValListResponsesPageCursorURL, {
+      query,
+      ...options,
+    });
   }
 }
 
-export interface ValListResponse {
-  data: Array<ValListResponse.Data>;
+export class ValListResponsesPageCursorURL extends PageCursorURL<ValListResponse> {}
 
-  links: ValListResponse.Links;
+/**
+ * A Val
+ */
+export interface ValListResponse {
+  id: string;
+
+  /**
+   * The user who created this val
+   */
+  author: ValListResponse.Author | null;
+
+  code: string | null;
+
+  createdAt: string;
+
+  name: string;
+
+  privacy: 'public' | 'unlisted' | 'private';
+
+  public: boolean;
+
+  type: 'interval' | 'http' | 'express' | 'email' | 'script' | 'rpc';
+
+  version: number;
 }
 
 export namespace ValListResponse {
   /**
-   * A Val
+   * The user who created this val
    */
-  export interface Data {
+  export interface Author {
     id: string;
 
-    /**
-     * The user who created this val
-     */
-    author: Data.Author | null;
-
-    code: string | null;
-
-    createdAt: string;
-
-    name: string;
-
-    privacy: 'public' | 'unlisted' | 'private';
-
-    public: boolean;
-
-    type: 'interval' | 'http' | 'express' | 'email' | 'script' | 'rpc';
-
-    version: number;
-  }
-
-  export namespace Data {
-    /**
-     * The user who created this val
-     */
-    export interface Author {
-      id: string;
-
-      username: string | null;
-    }
-  }
-
-  export interface Links {
-    self: string;
-
-    next?: string;
-
-    prev?: string;
+    username: string | null;
   }
 }
 
-export interface ValListParams {
-  limit: number;
-
-  offset: number;
-}
+export interface ValListParams extends PageCursorURLParams {}
 
 export namespace Vals {
   export import ValListResponse = ValsAPI.ValListResponse;
+  export import ValListResponsesPageCursorURL = ValsAPI.ValListResponsesPageCursorURL;
   export import ValListParams = ValsAPI.ValListParams;
 }

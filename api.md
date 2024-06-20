@@ -14,7 +14,7 @@ Types:
 
 Methods:
 
-- <code title="get /v1/search/vals">client.search.vals.<a href="./src/resources/search/vals.ts">list</a>({ ...params }) -> ValListResponse</code>
+- <code title="get /v1/search/vals">client.search.vals.<a href="./src/resources/search/vals.ts">list</a>({ ...params }) -> ValListResponsesPageCursorURL</code>
 
 # Alias
 
@@ -54,7 +54,7 @@ Types:
 
 Methods:
 
-- <code title="get /v1/me/likes">client.me.likes.<a href="./src/resources/me/likes.ts">list</a>({ ...params }) -> LikeListResponse</code>
+- <code title="get /v1/me/likes">client.me.likes.<a href="./src/resources/me/likes.ts">list</a>({ ...params }) -> LikeListResponsesPageCursorURL</code>
 
 ## Comments
 
@@ -64,7 +64,7 @@ Types:
 
 Methods:
 
-- <code title="get /v1/me/comments">client.me.comments.<a href="./src/resources/me/comments.ts">list</a>({ ...params }) -> CommentListResponse</code>
+- <code title="get /v1/me/comments">client.me.comments.<a href="./src/resources/me/comments.ts">list</a>({ ...params }) -> CommentListResponsesPageCursorURL</code>
 
 ## References
 
@@ -74,7 +74,7 @@ Types:
 
 Methods:
 
-- <code title="get /v1/me/references">client.me.references.<a href="./src/resources/me/references.ts">list</a>({ ...params }) -> ReferenceListResponse</code>
+- <code title="get /v1/me/references">client.me.references.<a href="./src/resources/me/references.ts">list</a>({ ...params }) -> ReferenceListResponsesPageCursorURL</code>
 
 # Blobs
 
@@ -97,7 +97,7 @@ Types:
 
 Methods:
 
-- <code title="get /v1/users/{user_id}/vals">client.users.vals.<a href="./src/resources/users/vals.ts">list</a>(userId, { ...params }) -> ValListResponse</code>
+- <code title="get /v1/users/{user_id}/vals">client.users.vals.<a href="./src/resources/users/vals.ts">list</a>(userId, { ...params }) -> ValListResponsesPageCursorURL</code>
 
 # Sqlite
 
@@ -147,7 +147,7 @@ Methods:
 
 - <code title="post /v1/vals/{val_id}/versions">client.vals.versions.<a href="./src/resources/vals/versions.ts">create</a>(valId, { ...params }) -> VersionCreateResponse</code>
 - <code title="get /v1/vals/{val_id}/versions/{version}">client.vals.versions.<a href="./src/resources/vals/versions.ts">retrieve</a>(valId, version, { ...params }) -> VersionRetrieveResponse</code>
-- <code title="get /v1/vals/{val_id}/versions">client.vals.versions.<a href="./src/resources/vals/versions.ts">list</a>(valId, { ...params }) -> VersionListResponse</code>
+- <code title="get /v1/vals/{val_id}/versions">client.vals.versions.<a href="./src/resources/vals/versions.ts">list</a>(valId, { ...params }) -> VersionListResponsesPageCursorURL</code>
 - <code title="delete /v1/vals/{val_id}/versions/{version}">client.vals.versions.<a href="./src/resources/vals/versions.ts">delete</a>(valId, version) -> void</code>
 
 # Emails

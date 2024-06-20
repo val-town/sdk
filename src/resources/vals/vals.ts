@@ -260,6 +260,7 @@ export namespace Vals {
   export import VersionCreateResponse = VersionsAPI.VersionCreateResponse;
   export import VersionRetrieveResponse = VersionsAPI.VersionRetrieveResponse;
   export import VersionListResponse = VersionsAPI.VersionListResponse;
+  export import VersionListResponsesPageCursorURL = VersionsAPI.VersionListResponsesPageCursorURL;
   export import VersionCreateParams = VersionsAPI.VersionCreateParams;
   export import VersionRetrieveParams = VersionsAPI.VersionRetrieveParams;
   export import VersionListParams = VersionsAPI.VersionListParams;
