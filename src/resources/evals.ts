@@ -27,7 +27,7 @@ export class Evals extends APIResource {
   }
 }
 
-export type EvalRunCodeResponse = string | number | Record<string, unknown> | Array<unknown> | boolean;
+export type EvalRunCodeResponse = string | number | unknown | Array<unknown> | boolean;
 
 export interface EvalRunCodeParams {
   args?: string;
