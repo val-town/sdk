@@ -19,5 +19,6 @@ export {
   VersionCreateParams,
   VersionRetrieveParams,
   VersionListParams,
+  VersionListResponsesPageCursorURL,
   Versions,
 } from './versions';

@@ -3,83 +3,72 @@
 import * as Core from '@valtown/sdk/core';
 import { APIResource } from '@valtown/sdk/resource';
 import * as CommentsAPI from '@valtown/sdk/resources/me/comments';
+import { PageCursorURL, type PageCursorURLParams } from '@valtown/sdk/pagination';
 
 export class Comments extends APIResource {
   /**
    * Get comments related to current user, either given or received
    */
-  list(query: CommentListParams, options?: Core.RequestOptions): Core.APIPromise<CommentListResponse> {
-    return this._client.get('/v1/me/comments', { query, ...options });
+  list(
+    query: CommentListParams,
+    options?: Core.RequestOptions,
+  ): Core.PagePromise<CommentListResponsesPageCursorURL, CommentListResponse> {
+    return this._client.getAPIList('/v1/me/comments', CommentListResponsesPageCursorURL, {
+      query,
+      ...options,
+    });
   }
 }
 
-export interface CommentListResponse {
-  data: Array<CommentListResponse.Data>;
+export class CommentListResponsesPageCursorURL extends PageCursorURL<CommentListResponse> {}
 
-  links: CommentListResponse.Links;
+export interface CommentListResponse {
+  id: string;
+
+  author: CommentListResponse.Author;
+
+  comment: string;
+
+  createdAt: string;
+
+  val: CommentListResponse.Val;
 }
 
 export namespace CommentListResponse {
-  export interface Data {
+  export interface Author {
     id: string;
 
-    author: Data.Author;
-
-    comment: string;
-
-    createdAt: string;
-
-    val: Data.Val;
+    username: string | null;
   }
 
-  export namespace Data {
+  export interface Val {
+    id: string;
+
+    /**
+     * The user who created this val
+     */
+    author: Val.Author | null;
+
+    name: string;
+
+    privacy: 'public' | 'unlisted' | 'private';
+
+    version: number;
+  }
+
+  export namespace Val {
+    /**
+     * The user who created this val
+     */
     export interface Author {
       id: string;
 
       username: string | null;
     }
-
-    export interface Val {
-      id: string;
-
-      /**
-       * The user who created this val
-       */
-      author: Val.Author | null;
-
-      name: string;
-
-      privacy: 'public' | 'unlisted' | 'private';
-
-      version: number;
-    }
-
-    export namespace Val {
-      /**
-       * The user who created this val
-       */
-      export interface Author {
-        id: string;
-
-        username: string | null;
-      }
-    }
-  }
-
-  export interface Links {
-    self: string;
-
-    next?: string;
-
-    prev?: string;
   }
 }
 
-export interface CommentListParams {
-  limit: number;
-
-  offset: number;
-
+export interface CommentListParams extends PageCursorURLParams {
   relationship: 'any' | 'received' | 'given';
 
   since?: string;
@@ -89,5 +78,6 @@ export interface CommentListParams {
 
 export namespace Comments {
   export import CommentListResponse = CommentsAPI.CommentListResponse;
+  export import CommentListResponsesPageCursorURL = CommentsAPI.CommentListResponsesPageCursorURL;
   export import CommentListParams = CommentsAPI.CommentListParams;
 }

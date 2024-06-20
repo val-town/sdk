@@ -3,6 +3,7 @@
 import * as Core from '@valtown/sdk/core';
 import { APIResource } from '@valtown/sdk/resource';
 import * as VersionsAPI from '@valtown/sdk/resources/vals/versions';
+import { PageCursorURL, type PageCursorURLParams } from '@valtown/sdk/pagination';
 
 export class Versions extends APIResource {
   /**
@@ -35,8 +36,11 @@ export class Versions extends APIResource {
     valId: string,
     query: VersionListParams,
     options?: Core.RequestOptions,
-  ): Core.APIPromise<VersionListResponse> {
-    return this._client.get(`/v1/vals/${valId}/versions`, { query, ...options });
+  ): Core.PagePromise<VersionListResponsesPageCursorURL, VersionListResponse> {
+    return this._client.getAPIList(`/v1/vals/${valId}/versions`, VersionListResponsesPageCursorURL, {
+      query,
+      ...options,
+    });
   }
 
   /**
@@ -49,6 +53,8 @@ export class Versions extends APIResource {
     });
   }
 }
+
+export class VersionListResponsesPageCursorURL extends PageCursorURL<VersionListResponse> {}
 
 /**
  * A Val
@@ -137,27 +143,11 @@ export namespace VersionRetrieveResponse {
 }
 
 export interface VersionListResponse {
-  data: Array<VersionListResponse.Data>;
+  createdAt: string;
 
-  links: VersionListResponse.Links;
-}
+  val_id: string;
 
-export namespace VersionListResponse {
-  export interface Data {
-    createdAt: string;
-
-    val_id: string;
-
-    version: number;
-  }
-
-  export interface Links {
-    self: string;
-
-    next?: string;
-
-    prev?: string;
-  }
+  version: number;
 }
 
 export interface VersionCreateParams {
@@ -178,16 +168,13 @@ export interface VersionRetrieveParams {
   offset: number;
 }
 
-export interface VersionListParams {
-  limit: number;
-
-  offset: number;
-}
+export interface VersionListParams extends PageCursorURLParams {}
 
 export namespace Versions {
   export import VersionCreateResponse = VersionsAPI.VersionCreateResponse;
   export import VersionRetrieveResponse = VersionsAPI.VersionRetrieveResponse;
   export import VersionListResponse = VersionsAPI.VersionListResponse;
+  export import VersionListResponsesPageCursorURL = VersionsAPI.VersionListResponsesPageCursorURL;
   export import VersionCreateParams = VersionsAPI.VersionCreateParams;
   export import VersionRetrieveParams = VersionsAPI.VersionRetrieveParams;
   export import VersionListParams = VersionsAPI.VersionListParams;

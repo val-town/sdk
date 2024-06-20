@@ -19,5 +19,6 @@ export class Users extends APIResource {
 export namespace Users {
   export import Vals = ValsAPI.Vals;
   export import ValListResponse = ValsAPI.ValListResponse;
+  export import ValListResponsesPageCursorURL = ValsAPI.ValListResponsesPageCursorURL;
   export import ValListParams = ValsAPI.ValListParams;
 }

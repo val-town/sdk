@@ -3,67 +3,56 @@
 import * as Core from '@valtown/sdk/core';
 import { APIResource } from '@valtown/sdk/resource';
 import * as ReferencesAPI from '@valtown/sdk/resources/me/references';
+import { PageCursorURL, type PageCursorURLParams } from '@valtown/sdk/pagination';
 
 export class References extends APIResource {
   /**
    * Get vals that depend on any of the user's vals
    */
-  list(query: ReferenceListParams, options?: Core.RequestOptions): Core.APIPromise<ReferenceListResponse> {
-    return this._client.get('/v1/me/references', { query, ...options });
+  list(
+    query: ReferenceListParams,
+    options?: Core.RequestOptions,
+  ): Core.PagePromise<ReferenceListResponsesPageCursorURL, ReferenceListResponse> {
+    return this._client.getAPIList('/v1/me/references', ReferenceListResponsesPageCursorURL, {
+      query,
+      ...options,
+    });
   }
 }
 
-export interface ReferenceListResponse {
-  data: Array<ReferenceListResponse.Data>;
+export class ReferenceListResponsesPageCursorURL extends PageCursorURL<ReferenceListResponse> {}
 
-  links: ReferenceListResponse.Links;
+export interface ReferenceListResponse {
+  dependsOn: ReferenceListResponse.DependsOn;
+
+  reference: ReferenceListResponse.Reference;
+
+  referencedAt: string;
 }
 
 export namespace ReferenceListResponse {
-  export interface Data {
-    dependsOn: Data.DependsOn;
+  export interface DependsOn {
+    id: string;
 
-    reference: Data.Reference;
+    author_id: string | null;
 
-    referencedAt: string;
+    name: string;
+
+    username: string | null;
   }
 
-  export namespace Data {
-    export interface DependsOn {
-      id: string;
+  export interface Reference {
+    id: string;
 
-      author_id: string | null;
+    author_id: string | null;
 
-      name: string;
+    name: string;
 
-      username: string | null;
-    }
-
-    export interface Reference {
-      id: string;
-
-      author_id: string | null;
-
-      name: string;
-
-      username: string | null;
-    }
-  }
-
-  export interface Links {
-    self: string;
-
-    next?: string;
-
-    prev?: string;
+    username: string | null;
   }
 }
 
-export interface ReferenceListParams {
-  limit: number;
-
-  offset: number;
-
+export interface ReferenceListParams extends PageCursorURLParams {
   since?: string;
 
   until?: string;
@@ -71,5 +60,6 @@ export interface ReferenceListParams {
 
 export namespace References {
   export import ReferenceListResponse = ReferencesAPI.ReferenceListResponse;
+  export import ReferenceListResponsesPageCursorURL = ReferencesAPI.ReferenceListResponsesPageCursorURL;
   export import ReferenceListParams = ReferencesAPI.ReferenceListParams;
 }
