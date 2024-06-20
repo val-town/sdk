@@ -4,7 +4,7 @@
 
 This library provides convenient access to the Val Town REST API from server-side TypeScript or JavaScript.
 
-The REST API documentation can be found [on docs.val-town.com](https://docs.val-town.com). The full API of this library can be found in [api.md](api.md).
+The REST API documentation can be found [on docs.val.town](https://docs.val.town). The full API of this library can be found in [api.md](api.md).
 
 It is generated with [Stainless](https://www.stainlessapi.com/).
 
@@ -211,7 +211,7 @@ import ValTown from '@valtown/sdk';
 ```
 
 To do the inverse, add `import "@valtown/sdk/shims/node"` (which does import polyfills).
-This can also be useful if you are getting the wrong TypeScript types for `Response` ([more details](https://github.com/undefined/sdk/tree/main/src/_shims#readme)).
+This can also be useful if you are getting the wrong TypeScript types for `Response` ([more details](https://github.com/val-town/sdk/tree/main/src/_shims#readme)).
 
 ### Logging and middleware
 
@@ -267,7 +267,7 @@ This package generally follows [SemVer](https://semver.org/spec/v2.0.0.html) con
 
 We take backwards-compatibility seriously and work hard to ensure you can rely on a smooth upgrade experience.
 
-We are keen for your feedback; please open an [issue](https://www.github.com/undefined/sdk/issues) with questions, bugs, or suggestions.
+We are keen for your feedback; please open an [issue](https://www.github.com/val-town/sdk/issues) with questions, bugs, or suggestions.
 
 ## Requirements
 
