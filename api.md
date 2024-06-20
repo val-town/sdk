@@ -85,7 +85,19 @@ Methods:
 
 # Users
 
+Methods:
+
+- <code title="get /v1/users/{user_id}">client.users.<a href="./src/resources/users/users.ts">retrieve</a>(userId) -> User</code>
+
 ## Vals
+
+Types:
+
+- <code><a href="./src/resources/users/vals.ts">ValListResponse</a></code>
+
+Methods:
+
+- <code title="get /v1/users/{user_id}/vals">client.users.vals.<a href="./src/resources/users/vals.ts">list</a>(userId, { ...params }) -> ValListResponse</code>
 
 # Sqlite
 
