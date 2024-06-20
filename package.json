@@ -7,7 +7,7 @@
   "main": "dist/index.js",
   "type": "commonjs",
   "repository": "github:val-town/sdk",
-  "license": "Apache-2.0",
+  "license": "MIT",
   "packageManager": "yarn@1.22.22",
   "files": [
     "*"
