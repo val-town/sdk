@@ -201,7 +201,7 @@ export namespace ValRetrieveResponse {
   }
 }
 
-export type ValRunAnonymousResponse = string | number | Record<string, unknown> | Array<unknown> | boolean;
+export type ValRunAnonymousResponse = string | number | unknown | Array<unknown> | boolean;
 
 export interface ValCreateParams {
   code: string;
