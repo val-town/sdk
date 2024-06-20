@@ -3,10 +3,6 @@
 warnings=()
 errors=()
 
-if [ -z "${STAINLESS_API_KEY}" ]; then
-  errors+=("The STAINLESS_API_KEY secret has not been set. Please contact Stainless for an API key & set it in your organization secrets on GitHub.")
-fi
-
 if [ -z "${NPM_TOKEN}" ]; then
   warnings+=("The VAL_TOWN_NPM_TOKEN secret has not been set. Please set it in either this repository's secrets or your organization secrets")
 fi
