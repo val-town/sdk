@@ -2,7 +2,7 @@
 
 export * from './shared';
 export { Alias } from './alias/alias';
-export { Blobs } from './blobs';
+export { BlobListResponse, BlobListParams, Blobs } from './blobs';
 export { EmailSendResponse, EmailSendParams, Emails } from './emails';
 export { EvalRunCodeResponse, EvalRunCodeParams, Evals } from './evals';
 export { Me } from './me/me';
