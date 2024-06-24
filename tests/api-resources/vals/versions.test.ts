@@ -11,7 +11,7 @@ const valTown = new ValTown({
 describe('resource versions', () => {
   test('create: only required params', async () => {
     const responsePromise = valTown.vals.versions.create('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
-      code: 'x',
+      code: 'console.log(1);',
     });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
@@ -24,11 +24,11 @@ describe('resource versions', () => {
 
   test('create: required and optional params', async () => {
     const response = await valTown.vals.versions.create('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
-      code: 'x',
-      name: 'x',
+      code: 'console.log(1);',
+      name: 'myVal',
       privacy: 'public',
-      readme: 'string',
-      type: 'http',
+      readme: '# My Val',
+      type: 'script',
     });
   });
 
