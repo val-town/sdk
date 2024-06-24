@@ -183,6 +183,9 @@ export interface ValRunAnonymousParams {
    */
   code: string;
 
+  /**
+   * Array of arguments passed to the given function
+   */
   args?: Array<unknown>;
 }
 

@@ -10,7 +10,7 @@ const valTown = new ValTown({
 
 describe('resource vals', () => {
   test('create: only required params', async () => {
-    const responsePromise = valTown.vals.create({ code: 'x' });
+    const responsePromise = valTown.vals.create({ code: 'console.log(1);' });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -22,11 +22,11 @@ describe('resource vals', () => {
 
   test('create: required and optional params', async () => {
     const response = await valTown.vals.create({
-      code: 'x',
-      name: 'x',
+      code: 'console.log(1);',
+      name: 'myVal',
       privacy: 'public',
-      readme: 'string',
-      type: 'http',
+      readme: '# My Val',
+      type: 'script',
     });
   });
 
@@ -71,7 +71,7 @@ describe('resource vals', () => {
     await expect(
       valTown.vals.update(
         '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
-        { name: 'x', privacy: 'public', readme: 'string' },
+        { name: 'myVal', privacy: 'public', readme: 'string' },
         { path: '/_stainless_unknown_path' },
       ),
     ).rejects.toThrow(ValTown.NotFoundError);
@@ -96,7 +96,7 @@ describe('resource vals', () => {
   });
 
   test('createOrUpdate: only required params', async () => {
-    const responsePromise = valTown.vals.createOrUpdate({ code: 'x', name: 'x' });
+    const responsePromise = valTown.vals.createOrUpdate({ code: 'console.log(1);', name: 'myVal' });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -107,7 +107,7 @@ describe('resource vals', () => {
   });
 
   test('createOrUpdate: required and optional params', async () => {
-    const response = await valTown.vals.createOrUpdate({ code: 'x', name: 'x' });
+    const response = await valTown.vals.createOrUpdate({ code: 'console.log(1);', name: 'myVal' });
   });
 
   test('run', async () => {
@@ -136,7 +136,7 @@ describe('resource vals', () => {
   });
 
   test('runAnonymous: only required params', async () => {
-    const responsePromise = valTown.vals.runAnonymous({ code: 'string' });
+    const responsePromise = valTown.vals.runAnonymous({ code: 'console.log(1);' });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -147,7 +147,7 @@ describe('resource vals', () => {
   });
 
   test('runAnonymous: required and optional params', async () => {
-    const response = await valTown.vals.runAnonymous({ code: 'string', args: [{}, {}, {}] });
+    const response = await valTown.vals.runAnonymous({ code: 'console.log(1);', args: [{}, {}, {}] });
   });
 
   test('runGet', async () => {

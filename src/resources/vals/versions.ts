@@ -60,8 +60,14 @@ export class VersionListResponsesPageCursorURL extends PageCursorURL<VersionList
 export interface VersionListResponse {
   createdAt: string;
 
+  /**
+   * Id of a val
+   */
   val_id: string;
 
+  /**
+   * Version of the val
+   */
   version: number;
 }
 
