@@ -9,7 +9,5 @@ export class Search extends APIResource {
 
 export namespace Search {
   export import Vals = ValsAPI.Vals;
-  export import ValListResponse = ValsAPI.ValListResponse;
-  export import ValListResponsesPageCursorURL = ValsAPI.ValListResponsesPageCursorURL;
   export import ValListParams = ValsAPI.ValListParams;
 }
