@@ -4,6 +4,7 @@ import * as Core from '@valtown/sdk/core';
 import { APIResource } from '@valtown/sdk/resource';
 import { isRequestOptions } from '@valtown/sdk/core';
 import * as BlobsAPI from '@valtown/sdk/resources/blobs';
+import { type Response } from '@valtown/sdk/_shims/index';
 
 export class Blobs extends APIResource {
   /**
@@ -29,6 +30,13 @@ export class Blobs extends APIResource {
       ...options,
       headers: { Accept: '*/*', ...options?.headers },
     });
+  }
+
+  /**
+   * Get a blob’s contents.
+   */
+  get(key: string, options?: Core.RequestOptions): Core.APIPromise<Response> {
+    return this._client.get(`/v1/blob/${key}`, { ...options, __binaryResponse: true });
   }
 
   /**

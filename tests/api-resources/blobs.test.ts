@@ -52,6 +52,13 @@ describe('resource blobs', () => {
     );
   });
 
+  test('get: request options instead of params are passed correctly', async () => {
+    // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
+    await expect(valTown.blobs.get('x', { path: '/_stainless_unknown_path' })).rejects.toThrow(
+      ValTown.NotFoundError,
+    );
+  });
+
   test('store', async () => {
     const responsePromise = valTown.blobs.store('x');
     const rawResponse = await responsePromise.asResponse();
