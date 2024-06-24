@@ -73,10 +73,19 @@ export namespace CommentListResponse {
 }
 
 export interface CommentListParams extends PageCursorURLParams {
+  /**
+   * Whether to get comments you have received, given, or both
+   */
   relationship: 'any' | 'received' | 'given';
 
+  /**
+   * Include items created after this date
+   */
   since?: string;
 
+  /**
+   * Include items created before this date
+   */
   until?: string;
 }
 
