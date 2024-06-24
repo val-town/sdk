@@ -1,8 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
 export {
-  ValCreateResponse,
-  ValRetrieveResponse,
   ValRunAnonymousResponse,
   ValCreateParams,
   ValUpdateParams,
@@ -13,8 +11,6 @@ export {
   Vals,
 } from './vals';
 export {
-  VersionCreateResponse,
-  VersionRetrieveResponse,
   VersionListResponse,
   VersionCreateParams,
   VersionRetrieveParams,

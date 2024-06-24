@@ -203,7 +203,6 @@ export namespace ValTown {
 
   export import Sqlite = API.Sqlite;
   export import SqliteBatchResponse = API.SqliteBatchResponse;
-  export import SqliteExecuteResponse = API.SqliteExecuteResponse;
   export import SqliteBatchParams = API.SqliteBatchParams;
   export import SqliteExecuteParams = API.SqliteExecuteParams;
 
@@ -212,8 +211,6 @@ export namespace ValTown {
   export import EvalRunCodeParams = API.EvalRunCodeParams;
 
   export import Vals = API.Vals;
-  export import ValCreateResponse = API.ValCreateResponse;
-  export import ValRetrieveResponse = API.ValRetrieveResponse;
   export import ValRunAnonymousResponse = API.ValRunAnonymousResponse;
   export import ValCreateParams = API.ValCreateParams;
   export import ValUpdateParams = API.ValUpdateParams;
@@ -226,6 +223,10 @@ export namespace ValTown {
   export import EmailSendResponse = API.EmailSendResponse;
   export import EmailSendParams = API.EmailSendParams;
 
+  export import BasicVal = API.BasicVal;
+  export import ExtendedVal = API.ExtendedVal;
+  export import PaginationLinks = API.PaginationLinks;
+  export import ResultSet = API.ResultSet;
   export import User = API.User;
 }
 
