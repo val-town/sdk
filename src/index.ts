@@ -201,6 +201,8 @@ export namespace ValTown {
   export import Users = API.Users;
 
   export import Sqlite = API.Sqlite;
+  export import SqliteBatchResponse = API.SqliteBatchResponse;
+  export import SqliteExecuteResponse = API.SqliteExecuteResponse;
   export import SqliteBatchParams = API.SqliteBatchParams;
   export import SqliteExecuteParams = API.SqliteExecuteParams;
 
