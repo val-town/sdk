@@ -197,6 +197,7 @@ export namespace ValTown {
   export import Blobs = API.Blobs;
   export import BlobListResponse = API.BlobListResponse;
   export import BlobListParams = API.BlobListParams;
+  export import BlobStoreParams = API.BlobStoreParams;
 
   export import Users = API.Users;
 

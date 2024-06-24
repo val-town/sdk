@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import ValTown from '@valtown/sdk';
+import ValTown, { toFile } from '@valtown/sdk';
 import { Response } from 'node-fetch';
 
 const valTown = new ValTown({
@@ -59,8 +59,11 @@ describe('resource blobs', () => {
     );
   });
 
-  test('store', async () => {
-    const responsePromise = valTown.blobs.store('x');
+  test('store: only required params', async () => {
+    const responsePromise = valTown.blobs.store(
+      'x',
+      await toFile(Buffer.from('# my file contents'), 'README.md'),
+    );
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -70,10 +73,10 @@ describe('resource blobs', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  test('store: request options instead of params are passed correctly', async () => {
-    // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(valTown.blobs.store('x', { path: '/_stainless_unknown_path' })).rejects.toThrow(
-      ValTown.NotFoundError,
+  test('store: required and optional params', async () => {
+    const response = await valTown.blobs.store(
+      'x',
+      await toFile(Buffer.from('# my file contents'), 'README.md'),
     );
   });
 });
