@@ -86,6 +86,7 @@ Methods:
 
 - <code title="get /v1/blob/">client.blobs.<a href="./src/resources/blobs.ts">list</a>({ ...params }) -> BlobListResponse</code>
 - <code title="delete /v1/blob/{key}">client.blobs.<a href="./src/resources/blobs.ts">delete</a>(key) -> void</code>
+- <code title="get /v1/blob/{key}">client.blobs.<a href="./src/resources/blobs.ts">get</a>(key) -> Response</code>
 - <code title="post /v1/blob/{key}">client.blobs.<a href="./src/resources/blobs.ts">store</a>(key) -> void</code>
 
 # Users
@@ -106,10 +107,15 @@ Methods:
 
 # Sqlite
 
+Types:
+
+- <code><a href="./src/resources/sqlite.ts">SqliteBatchResponse</a></code>
+- <code><a href="./src/resources/sqlite.ts">SqliteExecuteResponse</a></code>
+
 Methods:
 
-- <code title="post /v1/sqlite/batch">client.sqlite.<a href="./src/resources/sqlite.ts">batch</a>({ ...params }) -> void</code>
-- <code title="post /v1/sqlite/execute">client.sqlite.<a href="./src/resources/sqlite.ts">execute</a>({ ...params }) -> void</code>
+- <code title="post /v1/sqlite/batch">client.sqlite.<a href="./src/resources/sqlite.ts">batch</a>({ ...params }) -> SqliteBatchResponse</code>
+- <code title="post /v1/sqlite/execute">client.sqlite.<a href="./src/resources/sqlite.ts">execute</a>({ ...params }) -> SqliteExecuteResponse</code>
 
 # Evals
 
