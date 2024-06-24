@@ -195,6 +195,8 @@ export namespace ValTown {
   export import Me = API.Me;
 
   export import Blobs = API.Blobs;
+  export import BlobListResponse = API.BlobListResponse;
+  export import BlobListParams = API.BlobListParams;
   export import BlobStoreParams = API.BlobStoreParams;
 
   export import Users = API.Users;
@@ -209,8 +211,12 @@ export namespace ValTown {
   export import EvalRunCodeParams = API.EvalRunCodeParams;
 
   export import Vals = API.Vals;
+  export import ValRunAnonymousResponse = API.ValRunAnonymousResponse;
+  export import ValCreateParams = API.ValCreateParams;
   export import ValUpdateParams = API.ValUpdateParams;
+  export import ValCreateOrUpdateParams = API.ValCreateOrUpdateParams;
   export import ValRunParams = API.ValRunParams;
+  export import ValRunAnonymousParams = API.ValRunAnonymousParams;
   export import ValRunGetParams = API.ValRunGetParams;
 
   export import Emails = API.Emails;
