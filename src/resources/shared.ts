@@ -128,7 +128,7 @@ export interface ResultSet {
   /**
    * Rows produced by the statement.
    */
-  rows: Array<unknown>;
+  rows: Array<Array<unknown>>;
 
   /**
    * Number of rows that were affected by an UPDATE, INSERT or DELETE operation.
