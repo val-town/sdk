@@ -11,6 +11,13 @@ export class Vals extends APIResource {
   versions: VersionsAPI.Versions = new VersionsAPI.Versions(this._client);
 
   /**
+   * Create a new val
+   */
+  create(body: ValCreateParams, options?: Core.RequestOptions): Core.APIPromise<Shared.ExtendedVal> {
+    return this._client.post('/v1/vals', { body, ...options });
+  }
+
+  /**
    * Get a val by id
    */
   retrieve(valId: string, options?: Core.RequestOptions): Core.APIPromise<Shared.ExtendedVal> {
@@ -48,6 +55,17 @@ export class Vals extends APIResource {
   }
 
   /**
+   * Run an existing val or create a new one
+   */
+  createOrUpdate(body: ValCreateOrUpdateParams, options?: Core.RequestOptions): Core.APIPromise<void> {
+    return this._client.put('/v1/vals', {
+      body,
+      ...options,
+      headers: { Accept: '*/*', ...options?.headers },
+    });
+  }
+
+  /**
    * Run a val, with arguments in the request body
    */
   run(valname: string, body?: ValRunParams, options?: Core.RequestOptions): Core.APIPromise<void>;
@@ -65,6 +83,16 @@ export class Vals extends APIResource {
       ...options,
       headers: { Accept: '*/*', ...options?.headers },
     });
+  }
+
+  /**
+   * Run JavaScript or TypeScript without saving it permanently as a val
+   */
+  runAnonymous(
+    body: ValRunAnonymousParams,
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<ValRunAnonymousResponse | null> {
+    return this._client.post('/v1/eval', { body, ...options });
   }
 
   /**
@@ -88,6 +116,33 @@ export class Vals extends APIResource {
   }
 }
 
+export type ValRunAnonymousResponse = string | number | Record<string, unknown> | Array<unknown> | boolean;
+
+export interface ValCreateParams {
+  /**
+   * Val source code as TypeScript
+   */
+  code: string;
+
+  /**
+   * This val’s name
+   */
+  name?: string;
+
+  /**
+   * This val’s privacy setting. Unlisted vals do not appear on profile pages or
+   * elsewhere, but you can link to them.
+   */
+  privacy?: 'public' | 'unlisted' | 'private';
+
+  /**
+   * Readme contents, as Markdown
+   */
+  readme?: string;
+
+  type?: 'http' | 'script' | 'email';
+}
+
 export interface ValUpdateParams {
   /**
    * This val’s name
@@ -106,7 +161,28 @@ export interface ValUpdateParams {
   readme?: string;
 }
 
+export interface ValCreateOrUpdateParams {
+  /**
+   * Val source code as TypeScript
+   */
+  code: string;
+
+  /**
+   * This val’s name
+   */
+  name: string;
+}
+
 export interface ValRunParams {
+  args?: Array<unknown>;
+}
+
+export interface ValRunAnonymousParams {
+  /**
+   * TypeScript source code
+   */
+  code: string;
+
   args?: Array<unknown>;
 }
 
@@ -115,8 +191,12 @@ export interface ValRunGetParams {
 }
 
 export namespace Vals {
+  export import ValRunAnonymousResponse = ValsAPI.ValRunAnonymousResponse;
+  export import ValCreateParams = ValsAPI.ValCreateParams;
   export import ValUpdateParams = ValsAPI.ValUpdateParams;
+  export import ValCreateOrUpdateParams = ValsAPI.ValCreateOrUpdateParams;
   export import ValRunParams = ValsAPI.ValRunParams;
+  export import ValRunAnonymousParams = ValsAPI.ValRunAnonymousParams;
   export import ValRunGetParams = ValsAPI.ValRunGetParams;
   export import Versions = VersionsAPI.Versions;
   export import VersionListResponse = VersionsAPI.VersionListResponse;

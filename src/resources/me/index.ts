@@ -8,7 +8,7 @@ export {
 } from './comments';
 export { LikeListParams, Likes } from './likes';
 export { Me } from './me';
-export { Profile } from './profile';
+export { ProfileRetrieveResponse, Profile } from './profile';
 export {
   ReferenceListResponse,
   ReferenceListParams,

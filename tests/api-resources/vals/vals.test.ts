@@ -9,6 +9,27 @@ const valTown = new ValTown({
 });
 
 describe('resource vals', () => {
+  test('create: only required params', async () => {
+    const responsePromise = valTown.vals.create({ code: 'x' });
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
+  test('create: required and optional params', async () => {
+    const response = await valTown.vals.create({
+      code: 'x',
+      name: 'x',
+      privacy: 'public',
+      readme: 'string',
+      type: 'http',
+    });
+  });
+
   test('retrieve', async () => {
     const responsePromise = valTown.vals.retrieve('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');
     const rawResponse = await responsePromise.asResponse();
@@ -74,6 +95,21 @@ describe('resource vals', () => {
     ).rejects.toThrow(ValTown.NotFoundError);
   });
 
+  test('createOrUpdate: only required params', async () => {
+    const responsePromise = valTown.vals.createOrUpdate({ code: 'x', name: 'x' });
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
+  test('createOrUpdate: required and optional params', async () => {
+    const response = await valTown.vals.createOrUpdate({ code: 'x', name: 'x' });
+  });
+
   test('run', async () => {
     const responsePromise = valTown.vals.run('string');
     const rawResponse = await responsePromise.asResponse();
@@ -97,6 +133,21 @@ describe('resource vals', () => {
     await expect(
       valTown.vals.run('string', { args: [{}, {}, {}] }, { path: '/_stainless_unknown_path' }),
     ).rejects.toThrow(ValTown.NotFoundError);
+  });
+
+  test('runAnonymous: only required params', async () => {
+    const responsePromise = valTown.vals.runAnonymous({ code: 'string' });
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
+  test('runAnonymous: required and optional params', async () => {
+    const response = await valTown.vals.runAnonymous({ code: 'string', args: [{}, {}, {}] });
   });
 
   test('runGet', async () => {
