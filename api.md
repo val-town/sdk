@@ -106,10 +106,15 @@ Methods:
 
 # Sqlite
 
+Types:
+
+- <code><a href="./src/resources/sqlite.ts">SqliteBatchResponse</a></code>
+- <code><a href="./src/resources/sqlite.ts">SqliteExecuteResponse</a></code>
+
 Methods:
 
-- <code title="post /v1/sqlite/batch">client.sqlite.<a href="./src/resources/sqlite.ts">batch</a>({ ...params }) -> void</code>
-- <code title="post /v1/sqlite/execute">client.sqlite.<a href="./src/resources/sqlite.ts">execute</a>({ ...params }) -> void</code>
+- <code title="post /v1/sqlite/batch">client.sqlite.<a href="./src/resources/sqlite.ts">batch</a>({ ...params }) -> SqliteBatchResponse</code>
+- <code title="post /v1/sqlite/execute">client.sqlite.<a href="./src/resources/sqlite.ts">execute</a>({ ...params }) -> SqliteExecuteResponse</code>
 
 # Evals
 

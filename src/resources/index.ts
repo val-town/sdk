@@ -7,7 +7,13 @@ export { EmailSendResponse, EmailSendParams, Emails } from './emails';
 export { EvalRunCodeResponse, EvalRunCodeParams, Evals } from './evals';
 export { Me } from './me/me';
 export { Search } from './search/search';
-export { SqliteBatchParams, SqliteExecuteParams, Sqlite } from './sqlite';
+export {
+  SqliteBatchResponse,
+  SqliteExecuteResponse,
+  SqliteBatchParams,
+  SqliteExecuteParams,
+  Sqlite,
+} from './sqlite';
 export { Users } from './users/users';
 export {
   ValCreateResponse,
