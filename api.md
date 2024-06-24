@@ -86,6 +86,7 @@ Methods:
 
 - <code title="get /v1/blob/">client.blobs.<a href="./src/resources/blobs.ts">list</a>({ ...params }) -> BlobListResponse</code>
 - <code title="delete /v1/blob/{key}">client.blobs.<a href="./src/resources/blobs.ts">delete</a>(key) -> void</code>
+- <code title="get /v1/blob/{key}">client.blobs.<a href="./src/resources/blobs.ts">get</a>(key) -> Response</code>
 - <code title="post /v1/blob/{key}">client.blobs.<a href="./src/resources/blobs.ts">store</a>(key) -> void</code>
 
 # Users
