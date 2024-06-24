@@ -5,10 +5,16 @@ import { APIResource } from '@valtown/sdk/resource';
 import * as SqliteAPI from '@valtown/sdk/resources/sqlite';
 
 export class Sqlite extends APIResource {
+  /**
+   * Execute a batch of SQLite statements and return results for all of them
+   */
   batch(body: SqliteBatchParams, options?: Core.RequestOptions): Core.APIPromise<SqliteBatchResponse> {
     return this._client.post('/v1/sqlite/batch', { body, ...options });
   }
 
+  /**
+   * Execute a single SQLite statement and return results
+   */
   execute(body: SqliteExecuteParams, options?: Core.RequestOptions): Core.APIPromise<SqliteExecuteResponse> {
     return this._client.post('/v1/sqlite/execute', { body, ...options });
   }
