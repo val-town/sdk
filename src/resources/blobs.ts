@@ -20,7 +20,7 @@ export class Blobs extends APIResource {
     if (isRequestOptions(query)) {
       return this.list({}, query);
     }
-    return this._client.get('/v1/blob/', { query, ...options });
+    return this._client.get('/v1/blob', { query, ...options });
   }
 
   /**

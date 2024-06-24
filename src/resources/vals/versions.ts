@@ -66,20 +66,39 @@ export interface VersionListResponse {
 }
 
 export interface VersionCreateParams {
+  /**
+   * Val source code as TypeScript
+   */
   code: string;
 
+  /**
+   * This val’s name
+   */
   name?: string;
 
+  /**
+   * This val’s privacy setting. Unlisted vals do not appear on profile pages or
+   * elsewhere, but you can link to them.
+   */
   privacy?: 'public' | 'unlisted' | 'private';
 
+  /**
+   * Readme contents, as Markdown
+   */
   readme?: string;
 
   type?: 'http' | 'script' | 'email';
 }
 
 export interface VersionRetrieveParams {
+  /**
+   * Maximum items to return in each paginated response
+   */
   limit: number;
 
+  /**
+   * Number of items to skip in order to deliver paginated results
+   */
   offset: number;
 }
 

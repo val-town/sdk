@@ -14,7 +14,7 @@ export class Vals extends APIResource {
    * Create a new val
    */
   create(body: ValCreateParams, options?: Core.RequestOptions): Core.APIPromise<Shared.ExtendedVal> {
-    return this._client.post('/v1/vals/', { body, ...options });
+    return this._client.post('/v1/vals', { body, ...options });
   }
 
   /**
@@ -58,7 +58,7 @@ export class Vals extends APIResource {
    * Run an existing val or create a new one
    */
   createOrUpdate(body: ValCreateOrUpdateParams, options?: Core.RequestOptions): Core.APIPromise<void> {
-    return this._client.put('/v1/vals/', {
+    return this._client.put('/v1/vals', {
       body,
       ...options,
       headers: { Accept: '*/*', ...options?.headers },
@@ -92,7 +92,7 @@ export class Vals extends APIResource {
     body: ValRunAnonymousParams,
     options?: Core.RequestOptions,
   ): Core.APIPromise<ValRunAnonymousResponse | null> {
-    return this._client.post('/v1/eval/', { body, ...options });
+    return this._client.post('/v1/eval', { body, ...options });
   }
 
   /**
@@ -119,28 +119,57 @@ export class Vals extends APIResource {
 export type ValRunAnonymousResponse = string | number | Record<string, unknown> | Array<unknown> | boolean;
 
 export interface ValCreateParams {
+  /**
+   * Val source code as TypeScript
+   */
   code: string;
 
+  /**
+   * This val’s name
+   */
   name?: string;
 
+  /**
+   * This val’s privacy setting. Unlisted vals do not appear on profile pages or
+   * elsewhere, but you can link to them.
+   */
   privacy?: 'public' | 'unlisted' | 'private';
 
+  /**
+   * Readme contents, as Markdown
+   */
   readme?: string;
 
   type?: 'http' | 'script' | 'email';
 }
 
 export interface ValUpdateParams {
+  /**
+   * This val’s name
+   */
   name?: string;
 
+  /**
+   * This val’s privacy setting. Unlisted vals do not appear on profile pages or
+   * elsewhere, but you can link to them.
+   */
   privacy?: 'public' | 'unlisted' | 'private';
 
+  /**
+   * Readme contents, as Markdown
+   */
   readme?: string;
 }
 
 export interface ValCreateOrUpdateParams {
+  /**
+   * Val source code as TypeScript
+   */
   code: string;
 
+  /**
+   * This val’s name
+   */
   name: string;
 }
 

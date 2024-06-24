@@ -21,9 +21,6 @@ export class Sqlite extends APIResource {
   }
 }
 
-/**
- * Array of result sets from each of the queries in order
- */
 export type SqliteBatchResponse = Array<Shared.ResultSet>;
 
 export interface SqliteBatchParams {

@@ -6,6 +6,9 @@ import { PageCursorURL } from '@valtown/sdk/pagination';
  * A Val
  */
 export interface BasicVal {
+  /**
+   * This val’s id
+   */
   id: string;
 
   /**
@@ -13,18 +16,34 @@ export interface BasicVal {
    */
   author: BasicVal.Author | null;
 
+  /**
+   * TypeScript code associated with this val
+   */
   code: string | null;
 
   createdAt: string;
 
+  /**
+   * The name of this val
+   */
   name: string;
 
+  /**
+   * This val’s privacy setting. Unlisted vals do not appear on profile pages or
+   * elsewhere, but you can link to them.
+   */
   privacy: 'public' | 'unlisted' | 'private';
 
+  /**
+   * Whether this val is available publicly on Val Town
+   */
   public: boolean;
 
   type: 'interval' | 'http' | 'express' | 'email' | 'script' | 'rpc';
 
+  /**
+   * The version of this val, starting at zero
+   */
   version: number;
 }
 
@@ -43,6 +62,9 @@ export namespace BasicVal {
  * A Val
  */
 export interface ExtendedVal {
+  /**
+   * This val’s id
+   */
   id: string;
 
   /**
@@ -50,16 +72,29 @@ export interface ExtendedVal {
    */
   author: ExtendedVal.Author | null;
 
+  /**
+   * TypeScript code associated with this val
+   */
   code: string | null;
 
   createdAt: string;
 
   likeCount: number;
 
+  /**
+   * The name of this val
+   */
   name: string;
 
+  /**
+   * This val’s privacy setting. Unlisted vals do not appear on profile pages or
+   * elsewhere, but you can link to them.
+   */
   privacy: 'public' | 'unlisted' | 'private';
 
+  /**
+   * Whether this val is available publicly on Val Town
+   */
   public: boolean;
 
   readme: string | null;
@@ -68,6 +103,9 @@ export interface ExtendedVal {
 
   type: 'interval' | 'http' | 'express' | 'email' | 'script' | 'rpc';
 
+  /**
+   * The version of this val, starting at zero
+   */
   version: number;
 }
 

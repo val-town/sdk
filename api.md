@@ -44,7 +44,7 @@ Types:
 
 Methods:
 
-- <code title="get /v1/me/">client.me.profile.<a href="./src/resources/me/profile.ts">retrieve</a>() -> ProfileRetrieveResponse</code>
+- <code title="get /v1/me">client.me.profile.<a href="./src/resources/me/profile.ts">retrieve</a>() -> ProfileRetrieveResponse</code>
 
 ## Likes
 
@@ -80,7 +80,7 @@ Types:
 
 Methods:
 
-- <code title="get /v1/blob/">client.blobs.<a href="./src/resources/blobs.ts">list</a>({ ...params }) -> BlobListResponse</code>
+- <code title="get /v1/blob">client.blobs.<a href="./src/resources/blobs.ts">list</a>({ ...params }) -> BlobListResponse</code>
 - <code title="delete /v1/blob/{key}">client.blobs.<a href="./src/resources/blobs.ts">delete</a>(key) -> void</code>
 - <code title="get /v1/blob/{key}">client.blobs.<a href="./src/resources/blobs.ts">get</a>(key) -> Response</code>
 - <code title="post /v1/blob/{key}">client.blobs.<a href="./src/resources/blobs.ts">store</a>(key, { ...params }) -> void</code>
@@ -126,13 +126,13 @@ Types:
 
 Methods:
 
-- <code title="post /v1/vals/">client.vals.<a href="./src/resources/vals/vals.ts">create</a>({ ...params }) -> ExtendedVal</code>
+- <code title="post /v1/vals">client.vals.<a href="./src/resources/vals/vals.ts">create</a>({ ...params }) -> ExtendedVal</code>
 - <code title="get /v1/vals/{val_id}">client.vals.<a href="./src/resources/vals/vals.ts">retrieve</a>(valId) -> ExtendedVal</code>
 - <code title="put /v1/vals/{val_id}">client.vals.<a href="./src/resources/vals/vals.ts">update</a>(valId, { ...params }) -> void</code>
 - <code title="delete /v1/vals/{val_id}">client.vals.<a href="./src/resources/vals/vals.ts">delete</a>(valId) -> void</code>
-- <code title="put /v1/vals/">client.vals.<a href="./src/resources/vals/vals.ts">createOrUpdate</a>({ ...params }) -> void</code>
+- <code title="put /v1/vals">client.vals.<a href="./src/resources/vals/vals.ts">createOrUpdate</a>({ ...params }) -> void</code>
 - <code title="post /v1/run/{valname}">client.vals.<a href="./src/resources/vals/vals.ts">run</a>(valname, { ...params }) -> void</code>
-- <code title="post /v1/eval/">client.vals.<a href="./src/resources/vals/vals.ts">runAnonymous</a>({ ...params }) -> ValRunAnonymousResponse | null</code>
+- <code title="post /v1/eval">client.vals.<a href="./src/resources/vals/vals.ts">runAnonymous</a>({ ...params }) -> ValRunAnonymousResponse | null</code>
 - <code title="get /v1/run/{valname}">client.vals.<a href="./src/resources/vals/vals.ts">runGet</a>(valname, { ...params }) -> void</code>
 
 ## Versions

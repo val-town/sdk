@@ -9,7 +9,7 @@ export class Profile extends APIResource {
    * Get profile information for the current user
    */
   retrieve(options?: Core.RequestOptions): Core.APIPromise<ProfileRetrieveResponse> {
-    return this._client.get('/v1/me/', options);
+    return this._client.get('/v1/me', options);
   }
 }
 
