@@ -59,7 +59,8 @@ describe('resource blobs', () => {
     );
   });
 
-  test('store: only required params', async () => {
+  // Prism doesn't support this response type https://docs.stoplight.io/docs/prism/1593d1470e4df-concepts#content-negotiation
+  test.skip('store: only required params', async () => {
     const responsePromise = valTown.blobs.store(
       'x',
       await toFile(Buffer.from('# my file contents'), 'README.md'),
@@ -73,7 +74,8 @@ describe('resource blobs', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  test('store: required and optional params', async () => {
+  // Prism doesn't support this response type https://docs.stoplight.io/docs/prism/1593d1470e4df-concepts#content-negotiation
+  test.skip('store: required and optional params', async () => {
     const response = await valTown.blobs.store(
       'x',
       await toFile(Buffer.from('# my file contents'), 'README.md'),
