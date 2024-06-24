@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0-alpha.7 (2024-06-24)
+
+Full Changelog: [v0.1.0-alpha.6...v0.1.0-alpha.7](https://github.com/val-town/sdk/compare/v0.1.0-alpha.6...v0.1.0-alpha.7)
+
+### Features
+
+* **api:** OpenAPI spec update via Stainless API ([#28](https://github.com/val-town/sdk/issues/28)) ([3de1f8b](https://github.com/val-town/sdk/commit/3de1f8bdb519ec76dfc770a25376476456270403))
+
 ## 0.1.0-alpha.6 (2024-06-24)
 
 Full Changelog: [v0.1.0-alpha.5...v0.1.0-alpha.6](https://github.com/val-town/sdk/compare/v0.1.0-alpha.5...v0.1.0-alpha.6)

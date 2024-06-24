@@ -53,8 +53,14 @@ export namespace ReferenceListResponse {
 }
 
 export interface ReferenceListParams extends PageCursorURLParams {
+  /**
+   * Include items created after this date
+   */
   since?: string;
 
+  /**
+   * Include items created before this date
+   */
   until?: string;
 }
 

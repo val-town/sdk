@@ -10,7 +10,7 @@ const valTown = new ValTown({
 
 describe('resource sqlite', () => {
   test('batch: only required params', async () => {
-    const responsePromise = valTown.sqlite.batch({ statements: ['string', 'string', 'string'] });
+    const responsePromise = valTown.sqlite.batch({ statements: ['SELECT 1;'] });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -21,14 +21,11 @@ describe('resource sqlite', () => {
   });
 
   test('batch: required and optional params', async () => {
-    const response = await valTown.sqlite.batch({
-      statements: ['string', 'string', 'string'],
-      mode: 'write',
-    });
+    const response = await valTown.sqlite.batch({ statements: ['SELECT 1;'], mode: 'read' });
   });
 
   test('execute: only required params', async () => {
-    const responsePromise = valTown.sqlite.execute({ statement: 'string' });
+    const responsePromise = valTown.sqlite.execute({ statement: 'SELECT 1;' });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -39,6 +36,6 @@ describe('resource sqlite', () => {
   });
 
   test('execute: required and optional params', async () => {
-    const response = await valTown.sqlite.execute({ statement: 'string' });
+    const response = await valTown.sqlite.execute({ statement: 'SELECT 1;' });
   });
 });
