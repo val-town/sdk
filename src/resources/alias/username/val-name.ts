@@ -21,6 +21,9 @@ export class ValName extends APIResource {
  * A Val
  */
 export interface ValNameRetrieveResponse {
+  /**
+   * This val’s id
+   */
   id: string;
 
   /**
@@ -28,16 +31,29 @@ export interface ValNameRetrieveResponse {
    */
   author: ValNameRetrieveResponse.Author | null;
 
+  /**
+   * TypeScript code associated with this val
+   */
   code: string | null;
 
   createdAt: string;
 
   likeCount: number;
 
+  /**
+   * The name of this val
+   */
   name: string;
 
+  /**
+   * This val’s privacy setting. Unlisted vals do not appear on profile pages or
+   * elsewhere, but you can link to them.
+   */
   privacy: 'public' | 'unlisted' | 'private';
 
+  /**
+   * Whether this val is available publicly on Val Town
+   */
   public: boolean;
 
   readme: string | null;
@@ -46,6 +62,9 @@ export interface ValNameRetrieveResponse {
 
   type: 'interval' | 'http' | 'express' | 'email' | 'script' | 'rpc';
 
+  /**
+   * The version of this val, starting at zero
+   */
   version: number;
 }
 
