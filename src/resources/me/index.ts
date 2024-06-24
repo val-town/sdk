@@ -6,7 +6,7 @@ export {
   CommentListResponsesPageCursorURL,
   Comments,
 } from './comments';
-export { LikeListResponse, LikeListParams, LikeListResponsesPageCursorURL, Likes } from './likes';
+export { LikeListParams, Likes } from './likes';
 export { Me } from './me';
 export { ProfileRetrieveResponse, Profile } from './profile';
 export {

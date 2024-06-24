@@ -4,6 +4,7 @@ import * as Core from '@valtown/sdk/core';
 import { APIResource } from '@valtown/sdk/resource';
 import { isRequestOptions } from '@valtown/sdk/core';
 import * as ValsAPI from '@valtown/sdk/resources/vals/vals';
+import * as Shared from '@valtown/sdk/resources/shared';
 import * as VersionsAPI from '@valtown/sdk/resources/vals/versions';
 
 export class Vals extends APIResource {
@@ -12,14 +13,14 @@ export class Vals extends APIResource {
   /**
    * Create a new val
    */
-  create(body: ValCreateParams, options?: Core.RequestOptions): Core.APIPromise<ValCreateResponse> {
+  create(body: ValCreateParams, options?: Core.RequestOptions): Core.APIPromise<Shared.ExtendedVal> {
     return this._client.post('/v1/vals/', { body, ...options });
   }
 
   /**
    * Get a val by id
    */
-  retrieve(valId: string, options?: Core.RequestOptions): Core.APIPromise<ValRetrieveResponse> {
+  retrieve(valId: string, options?: Core.RequestOptions): Core.APIPromise<Shared.ExtendedVal> {
     return this._client.get(`/v1/vals/${valId}`, options);
   }
 
@@ -115,92 +116,6 @@ export class Vals extends APIResource {
   }
 }
 
-/**
- * A Val
- */
-export interface ValCreateResponse {
-  id: string;
-
-  /**
-   * The user who created this val
-   */
-  author: ValCreateResponse.Author | null;
-
-  code: string | null;
-
-  createdAt: string;
-
-  likeCount: number;
-
-  name: string;
-
-  privacy: 'public' | 'unlisted' | 'private';
-
-  public: boolean;
-
-  readme: string | null;
-
-  referenceCount: number;
-
-  type: 'interval' | 'http' | 'express' | 'email' | 'script' | 'rpc';
-
-  version: number;
-}
-
-export namespace ValCreateResponse {
-  /**
-   * The user who created this val
-   */
-  export interface Author {
-    id: string;
-
-    username: string | null;
-  }
-}
-
-/**
- * A Val
- */
-export interface ValRetrieveResponse {
-  id: string;
-
-  /**
-   * The user who created this val
-   */
-  author: ValRetrieveResponse.Author | null;
-
-  code: string | null;
-
-  createdAt: string;
-
-  likeCount: number;
-
-  name: string;
-
-  privacy: 'public' | 'unlisted' | 'private';
-
-  public: boolean;
-
-  readme: string | null;
-
-  referenceCount: number;
-
-  type: 'interval' | 'http' | 'express' | 'email' | 'script' | 'rpc';
-
-  version: number;
-}
-
-export namespace ValRetrieveResponse {
-  /**
-   * The user who created this val
-   */
-  export interface Author {
-    id: string;
-
-    username: string | null;
-  }
-}
-
 export type ValRunAnonymousResponse = string | number | Record<string, unknown> | Array<unknown> | boolean;
 
 export interface ValCreateParams {
@@ -247,8 +162,6 @@ export interface ValRunGetParams {
 }
 
 export namespace Vals {
-  export import ValCreateResponse = ValsAPI.ValCreateResponse;
-  export import ValRetrieveResponse = ValsAPI.ValRetrieveResponse;
   export import ValRunAnonymousResponse = ValsAPI.ValRunAnonymousResponse;
   export import ValCreateParams = ValsAPI.ValCreateParams;
   export import ValUpdateParams = ValsAPI.ValUpdateParams;
@@ -257,8 +170,6 @@ export namespace Vals {
   export import ValRunAnonymousParams = ValsAPI.ValRunAnonymousParams;
   export import ValRunGetParams = ValsAPI.ValRunGetParams;
   export import Versions = VersionsAPI.Versions;
-  export import VersionCreateResponse = VersionsAPI.VersionCreateResponse;
-  export import VersionRetrieveResponse = VersionsAPI.VersionRetrieveResponse;
   export import VersionListResponse = VersionsAPI.VersionListResponse;
   export import VersionListResponsesPageCursorURL = VersionsAPI.VersionListResponsesPageCursorURL;
   export import VersionCreateParams = VersionsAPI.VersionCreateParams;
