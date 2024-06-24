@@ -1,8 +1,8 @@
 {
   "name": "@valtown/sdk",
-  "version": "0.1.0-alpha.3",
+  "version": "0.1.0-alpha.4",
   "description": "The official TypeScript library for the Val Town API",
-  "author": "Val Town <dev-feedback@val.town>",
+  "author": "Val Town <support@val.town>",
   "types": "dist/index.d.ts",
   "main": "dist/index.js",
   "type": "commonjs",

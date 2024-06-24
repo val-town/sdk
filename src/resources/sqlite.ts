@@ -3,13 +3,20 @@
 import * as Core from '@valtown/sdk/core';
 import { APIResource } from '@valtown/sdk/resource';
 import * as SqliteAPI from '@valtown/sdk/resources/sqlite';
+import * as Shared from '@valtown/sdk/resources/shared';
 
 export class Sqlite extends APIResource {
+  /**
+   * Execute a batch of SQLite statements and return results for all of them
+   */
   batch(body: SqliteBatchParams, options?: Core.RequestOptions): Core.APIPromise<SqliteBatchResponse> {
     return this._client.post('/v1/sqlite/batch', { body, ...options });
   }
 
-  execute(body: SqliteExecuteParams, options?: Core.RequestOptions): Core.APIPromise<SqliteExecuteResponse> {
+  /**
+   * Execute a single SQLite statement and return results
+   */
+  execute(body: SqliteExecuteParams, options?: Core.RequestOptions): Core.APIPromise<Shared.ResultSet> {
     return this._client.post('/v1/sqlite/execute', { body, ...options });
   }
 }
@@ -17,97 +24,7 @@ export class Sqlite extends APIResource {
 /**
  * Array of result sets from each of the queries in order
  */
-export type SqliteBatchResponse = Array<SqliteBatchResponse.SqliteBatchResponseItem>;
-
-export namespace SqliteBatchResponse {
-  /**
-   * Result of executing an SQL statement.
-   */
-  export interface SqliteBatchResponseItem {
-    /**
-     * Names of columns.
-     *
-     * Names of columns can be defined using the `AS` keyword in SQL:
-     *
-     * ```sql
-     * SELECT author AS author, COUNT(*) AS count FROM books GROUP BY author
-     * ```
-     */
-    columns: Array<string>;
-
-    /**
-     * Types of columns.
-     *
-     * The types are currently shown for types declared in a SQL table. For column
-     * types of function calls, for example, an empty string is returned.
-     */
-    columnTypes: Array<string>;
-
-    /**
-     * Rows produced by the statement.
-     */
-    rows: Array<unknown>;
-
-    /**
-     * Number of rows that were affected by an UPDATE, INSERT or DELETE operation.
-     *
-     * This value is not specified for other SQL statements.
-     */
-    rowsAffected: number;
-
-    /**
-     * ROWID of the last inserted row.
-     *
-     * This value is not specified if the SQL statement was not an INSERT or if the
-     * table was not a ROWID table.
-     */
-    lastInsertRowid?: string | number | null;
-  }
-}
-
-/**
- * Result set from the given request
- */
-export interface SqliteExecuteResponse {
-  /**
-   * Names of columns.
-   *
-   * Names of columns can be defined using the `AS` keyword in SQL:
-   *
-   * ```sql
-   * SELECT author AS author, COUNT(*) AS count FROM books GROUP BY author
-   * ```
-   */
-  columns: Array<string>;
-
-  /**
-   * Types of columns.
-   *
-   * The types are currently shown for types declared in a SQL table. For column
-   * types of function calls, for example, an empty string is returned.
-   */
-  columnTypes: Array<string>;
-
-  /**
-   * Rows produced by the statement.
-   */
-  rows: Array<unknown>;
-
-  /**
-   * Number of rows that were affected by an UPDATE, INSERT or DELETE operation.
-   *
-   * This value is not specified for other SQL statements.
-   */
-  rowsAffected: number;
-
-  /**
-   * ROWID of the last inserted row.
-   *
-   * This value is not specified if the SQL statement was not an INSERT or if the
-   * table was not a ROWID table.
-   */
-  lastInsertRowid?: string | number | null;
-}
+export type SqliteBatchResponse = Array<Shared.ResultSet>;
 
 export interface SqliteBatchParams {
   statements: Array<string | SqliteBatchParams.ParameterizedQuery>;
@@ -160,7 +77,6 @@ export namespace SqliteExecuteParams {
 
 export namespace Sqlite {
   export import SqliteBatchResponse = SqliteAPI.SqliteBatchResponse;
-  export import SqliteExecuteResponse = SqliteAPI.SqliteExecuteResponse;
   export import SqliteBatchParams = SqliteAPI.SqliteBatchParams;
   export import SqliteExecuteParams = SqliteAPI.SqliteExecuteParams;
 }

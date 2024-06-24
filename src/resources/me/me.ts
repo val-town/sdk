@@ -17,8 +17,6 @@ export namespace Me {
   export import Profile = ProfileAPI.Profile;
   export import ProfileRetrieveResponse = ProfileAPI.ProfileRetrieveResponse;
   export import Likes = LikesAPI.Likes;
-  export import LikeListResponse = LikesAPI.LikeListResponse;
-  export import LikeListResponsesPageCursorURL = LikesAPI.LikeListResponsesPageCursorURL;
   export import LikeListParams = LikesAPI.LikeListParams;
   export import Comments = CommentsAPI.Comments;
   export import CommentListResponse = CommentsAPI.CommentListResponse;

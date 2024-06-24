@@ -4,6 +4,7 @@ import * as Core from '@valtown/sdk/core';
 import { APIResource } from '@valtown/sdk/resource';
 import { isRequestOptions } from '@valtown/sdk/core';
 import * as BlobsAPI from '@valtown/sdk/resources/blobs';
+import { type Uploadable } from '@valtown/sdk/core';
 import { type Response } from '@valtown/sdk/_shims/index';
 
 export class Blobs extends APIResource {
@@ -42,10 +43,12 @@ export class Blobs extends APIResource {
   /**
    * Store data in blob storage
    */
-  store(key: string, options?: Core.RequestOptions): Core.APIPromise<void> {
+  store(key: string, body: BlobStoreParams, options?: Core.RequestOptions): Core.APIPromise<void> {
     return this._client.post(`/v1/blob/${key}`, {
+      body,
       ...options,
       headers: { Accept: '*/*', ...options?.headers },
+      __binaryRequest: true,
     });
   }
 }
@@ -78,7 +81,10 @@ export interface BlobListParams {
   prefix?: string;
 }
 
+export type BlobStoreParams = Uploadable;
+
 export namespace Blobs {
   export import BlobListResponse = BlobsAPI.BlobListResponse;
   export import BlobListParams = BlobsAPI.BlobListParams;
+  export import BlobStoreParams = BlobsAPI.BlobStoreParams;
 }

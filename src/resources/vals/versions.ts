@@ -3,6 +3,7 @@
 import * as Core from '@valtown/sdk/core';
 import { APIResource } from '@valtown/sdk/resource';
 import * as VersionsAPI from '@valtown/sdk/resources/vals/versions';
+import * as Shared from '@valtown/sdk/resources/shared';
 import { PageCursorURL, type PageCursorURLParams } from '@valtown/sdk/pagination';
 
 export class Versions extends APIResource {
@@ -13,7 +14,7 @@ export class Versions extends APIResource {
     valId: string,
     body: VersionCreateParams,
     options?: Core.RequestOptions,
-  ): Core.APIPromise<VersionCreateResponse> {
+  ): Core.APIPromise<Shared.ExtendedVal> {
     return this._client.post(`/v1/vals/${valId}/versions`, { body, ...options });
   }
 
@@ -25,7 +26,7 @@ export class Versions extends APIResource {
     version: number,
     query: VersionRetrieveParams,
     options?: Core.RequestOptions,
-  ): Core.APIPromise<VersionRetrieveResponse> {
+  ): Core.APIPromise<Shared.ExtendedVal> {
     return this._client.get(`/v1/vals/${valId}/versions/${version}`, { query, ...options });
   }
 
@@ -56,92 +57,6 @@ export class Versions extends APIResource {
 
 export class VersionListResponsesPageCursorURL extends PageCursorURL<VersionListResponse> {}
 
-/**
- * A Val
- */
-export interface VersionCreateResponse {
-  id: string;
-
-  /**
-   * The user who created this val
-   */
-  author: VersionCreateResponse.Author | null;
-
-  code: string | null;
-
-  createdAt: string;
-
-  likeCount: number;
-
-  name: string;
-
-  privacy: 'public' | 'unlisted' | 'private';
-
-  public: boolean;
-
-  readme: string | null;
-
-  referenceCount: number;
-
-  type: 'interval' | 'http' | 'express' | 'email' | 'script' | 'rpc';
-
-  version: number;
-}
-
-export namespace VersionCreateResponse {
-  /**
-   * The user who created this val
-   */
-  export interface Author {
-    id: string;
-
-    username: string | null;
-  }
-}
-
-/**
- * A Val
- */
-export interface VersionRetrieveResponse {
-  id: string;
-
-  /**
-   * The user who created this val
-   */
-  author: VersionRetrieveResponse.Author | null;
-
-  code: string | null;
-
-  createdAt: string;
-
-  likeCount: number;
-
-  name: string;
-
-  privacy: 'public' | 'unlisted' | 'private';
-
-  public: boolean;
-
-  readme: string | null;
-
-  referenceCount: number;
-
-  type: 'interval' | 'http' | 'express' | 'email' | 'script' | 'rpc';
-
-  version: number;
-}
-
-export namespace VersionRetrieveResponse {
-  /**
-   * The user who created this val
-   */
-  export interface Author {
-    id: string;
-
-    username: string | null;
-  }
-}
-
 export interface VersionListResponse {
   createdAt: string;
 
@@ -171,8 +86,6 @@ export interface VersionRetrieveParams {
 export interface VersionListParams extends PageCursorURLParams {}
 
 export namespace Versions {
-  export import VersionCreateResponse = VersionsAPI.VersionCreateResponse;
-  export import VersionRetrieveResponse = VersionsAPI.VersionRetrieveResponse;
   export import VersionListResponse = VersionsAPI.VersionListResponse;
   export import VersionListResponsesPageCursorURL = VersionsAPI.VersionListResponsesPageCursorURL;
   export import VersionCreateParams = VersionsAPI.VersionCreateParams;
