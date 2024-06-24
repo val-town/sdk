@@ -15,7 +15,6 @@ export class Me extends APIResource {
 
 export namespace Me {
   export import Profile = ProfileAPI.Profile;
-  export import ProfileRetrieveResponse = ProfileAPI.ProfileRetrieveResponse;
   export import Likes = LikesAPI.Likes;
   export import LikeListParams = LikesAPI.LikeListParams;
   export import Comments = CommentsAPI.Comments;
