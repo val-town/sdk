@@ -1,7 +1,7 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import * as Core from '@valtown/sdk/core';
 import { APIResource } from '@valtown/sdk/resource';
+import * as Core from '@valtown/sdk/core';
 import * as CommentsAPI from '@valtown/sdk/resources/me/comments';
 import { PageCursorURL, type PageCursorURLParams } from '@valtown/sdk/pagination';
 
@@ -23,10 +23,16 @@ export class Comments extends APIResource {
 export class CommentListResponsesPageCursorURL extends PageCursorURL<CommentListResponse> {}
 
 export interface CommentListResponse {
+  /**
+   * The comment’s id
+   */
   id: string;
 
   author: CommentListResponse.Author;
 
+  /**
+   * Text of the given comment, in Markdown
+   */
   comment: string;
 
   createdAt: string;
@@ -49,6 +55,9 @@ export namespace CommentListResponse {
      */
     author: Val.Author | null;
 
+    /**
+     * Name of the val that is being commented on
+     */
     name: string;
 
     /**

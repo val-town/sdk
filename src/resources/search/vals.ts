@@ -1,7 +1,7 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import * as Core from '@valtown/sdk/core';
 import { APIResource } from '@valtown/sdk/resource';
+import * as Core from '@valtown/sdk/core';
 import * as ValsAPI from '@valtown/sdk/resources/search/vals';
 import * as Shared from '@valtown/sdk/resources/shared';
 import { BasicValsPageCursorURL } from '@valtown/sdk/resources/shared';
@@ -25,6 +25,10 @@ export interface ValListParams extends PageCursorURLParams {
    */
   query: string;
 
+  /**
+   * Choose between exact search, which is substring-based, and semantic search,
+   * which uses AI embeddings
+   */
   searchType?: 'exact' | 'semantic';
 }
 
