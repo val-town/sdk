@@ -41,7 +41,7 @@ export namespace SqliteBatchParams {
     /**
      * List of arguments to be used in the given statement
      */
-    args: Array<string | number | boolean> | Record<string, string | number | boolean>;
+    args: Array<string | number | boolean | null> | Record<string, string | number | boolean | null>;
 
     /**
      * SQL statement, with ? placeholders for arguments
@@ -66,7 +66,7 @@ export namespace SqliteExecuteParams {
     /**
      * List of arguments to be used in the given statement
      */
-    args: Array<string | number | boolean> | Record<string, string | number | boolean>;
+    args: Array<string | number | boolean | null> | Record<string, string | number | boolean | null>;
 
     /**
      * SQL statement, with ? placeholders for arguments
