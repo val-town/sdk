@@ -1,8 +1,8 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import * as Core from '@valtown/sdk/core';
 import { APIResource } from '@valtown/sdk/resource';
 import { isRequestOptions } from '@valtown/sdk/core';
+import * as Core from '@valtown/sdk/core';
 import * as ValsAPI from '@valtown/sdk/resources/vals/vals';
 import * as Shared from '@valtown/sdk/resources/shared';
 import * as VersionsAPI from '@valtown/sdk/resources/vals/versions';
@@ -190,6 +190,9 @@ export interface ValRunAnonymousParams {
 }
 
 export interface ValRunGetParams {
+  /**
+   * An argument that will be passed to the function as a JavaScript value
+   */
   args?: string;
 }
 
