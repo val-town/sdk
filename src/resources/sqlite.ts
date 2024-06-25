@@ -1,7 +1,7 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import * as Core from '@valtown/sdk/core';
 import { APIResource } from '@valtown/sdk/resource';
+import * as Core from '@valtown/sdk/core';
 import * as SqliteAPI from '@valtown/sdk/resources/sqlite';
 import * as Shared from '@valtown/sdk/resources/shared';
 
@@ -41,7 +41,7 @@ export namespace SqliteBatchParams {
     /**
      * List of arguments to be used in the given statement
      */
-    args: Array<string | number | boolean | null> | Record<string, string | number | boolean | null>;
+    args: Array<string | number | boolean> | Record<string, string | number | boolean>;
 
     /**
      * SQL statement, with ? placeholders for arguments
@@ -66,7 +66,7 @@ export namespace SqliteExecuteParams {
     /**
      * List of arguments to be used in the given statement
      */
-    args: Array<string | number | boolean | null> | Record<string, string | number | boolean | null>;
+    args: Array<string | number | boolean> | Record<string, string | number | boolean>;
 
     /**
      * SQL statement, with ? placeholders for arguments

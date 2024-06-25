@@ -1,10 +1,9 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import * as Core from '@valtown/sdk/core';
 import { APIResource } from '@valtown/sdk/resource';
 import { isRequestOptions } from '@valtown/sdk/core';
+import * as Core from '@valtown/sdk/core';
 import * as BlobsAPI from '@valtown/sdk/resources/blobs';
-import { type Uploadable } from '@valtown/sdk/core';
 import { type Response } from '@valtown/sdk/_shims/index';
 
 export class Blobs extends APIResource {
@@ -81,7 +80,7 @@ export interface BlobListParams {
   prefix?: string;
 }
 
-export type BlobStoreParams = Uploadable;
+export type BlobStoreParams = Core.Uploadable;
 
 export namespace Blobs {
   export import BlobListResponse = BlobsAPI.BlobListResponse;

@@ -131,7 +131,7 @@ describe('resource vals', () => {
   test('run: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
-      valTown.vals.run('string', { args: [{}, {}, {}] }, { path: '/_stainless_unknown_path' }),
+      valTown.vals.run('string', { args: [1] }, { path: '/_stainless_unknown_path' }),
     ).rejects.toThrow(ValTown.NotFoundError);
   });
 
