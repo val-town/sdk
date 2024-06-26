@@ -9,7 +9,7 @@ import * as API from '@valtown/sdk/resources/index';
 
 export interface ClientOptions {
   /**
-   * Defaults to process.env['VAL_TOWN_BEARER_TOKEN'].
+   * Defaults to process.env['VAL_TOWN_API_KEY'].
    */
   bearerToken?: string | undefined;
 
@@ -81,7 +81,7 @@ export class ValTown extends Core.APIClient {
   /**
    * API Client for interfacing with the Val Town API.
    *
-   * @param {string | undefined} [opts.bearerToken=process.env['VAL_TOWN_BEARER_TOKEN'] ?? undefined]
+   * @param {string | undefined} [opts.bearerToken=process.env['VAL_TOWN_API_KEY'] ?? undefined]
    * @param {string} [opts.baseURL=process.env['VAL_TOWN_BASE_URL'] ?? https://api.val.town] - Override the default base URL for the API.
    * @param {number} [opts.timeout=1 minute] - The maximum amount of time (in milliseconds) the client will wait for a response before timing out.
    * @param {number} [opts.httpAgent] - An HTTP agent used to manage HTTP(s) connections.
@@ -92,12 +92,12 @@ export class ValTown extends Core.APIClient {
    */
   constructor({
     baseURL = Core.readEnv('VAL_TOWN_BASE_URL'),
-    bearerToken = Core.readEnv('VAL_TOWN_BEARER_TOKEN'),
+    bearerToken = Core.readEnv('VAL_TOWN_API_KEY'),
     ...opts
   }: ClientOptions = {}) {
     if (bearerToken === undefined) {
       throw new Errors.ValTownError(
-        "The VAL_TOWN_BEARER_TOKEN environment variable is missing or empty; either provide it, or instantiate the ValTown client with an bearerToken option, like new ValTown({ bearerToken: 'My Bearer Token' }).",
+        "The VAL_TOWN_API_KEY environment variable is missing or empty; either provide it, or instantiate the ValTown client with an bearerToken option, like new ValTown({ bearerToken: 'My Bearer Token' }).",
       );
     }
 
