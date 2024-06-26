@@ -29,6 +29,9 @@ export interface ProfileRetrieveResponse {
    */
   profileImageUrl: string | null;
 
+  /**
+   * Your account tier
+   */
   tier: 'free' | 'pro' | null;
 
   /**
