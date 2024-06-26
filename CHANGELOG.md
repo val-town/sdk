@@ -1,5 +1,21 @@
 # Changelog
 
+## 0.1.0-alpha.9 (2024-06-26)
+
+Full Changelog: [v0.1.0-alpha.8...v0.1.0-alpha.9](https://github.com/val-town/sdk/compare/v0.1.0-alpha.8...v0.1.0-alpha.9)
+
+### Features
+
+* **api:** OpenAPI spec update via Stainless API ([#36](https://github.com/val-town/sdk/issues/36)) ([9fdc4d0](https://github.com/val-town/sdk/commit/9fdc4d0eb14a1d987078fd2e17261c159427ee5e))
+* **api:** OpenAPI spec update via Stainless API ([#38](https://github.com/val-town/sdk/issues/38)) ([0a8ae03](https://github.com/val-town/sdk/commit/0a8ae032e66ab8c2b20123f0249d5e58deb7da96))
+* **api:** OpenAPI spec update via Stainless API ([#39](https://github.com/val-town/sdk/issues/39)) ([055ff6f](https://github.com/val-town/sdk/commit/055ff6f8340b5eeba5c761885c04d8bcf7b58640))
+* **api:** OpenAPI spec update via Stainless API ([#40](https://github.com/val-town/sdk/issues/40)) ([a555bf1](https://github.com/val-town/sdk/commit/a555bf18ba4536257c3dfe87e599b0d73c596339))
+* **api:** OpenAPI spec update via Stainless API ([#41](https://github.com/val-town/sdk/issues/41)) ([580db1e](https://github.com/val-town/sdk/commit/580db1eedbb36c5140e13f1e5d8838ed6eb861a9))
+* **api:** OpenAPI spec update via Stainless API ([#42](https://github.com/val-town/sdk/issues/42)) ([adeea51](https://github.com/val-town/sdk/commit/adeea51cf2417416086fca33c7ab056973460627))
+* **api:** OpenAPI spec update via Stainless API ([#43](https://github.com/val-town/sdk/issues/43)) ([9f81c89](https://github.com/val-town/sdk/commit/9f81c8937940a35b2602075d13c93e262e3d7d7d))
+* **api:** OpenAPI spec update via Stainless API ([#44](https://github.com/val-town/sdk/issues/44)) ([8320b98](https://github.com/val-town/sdk/commit/8320b9883a03ceadb8173ecdb0640fc12522cc16))
+* **api:** OpenAPI spec update via Stainless API ([#45](https://github.com/val-town/sdk/issues/45)) ([27ab76f](https://github.com/val-town/sdk/commit/27ab76f5f84a58751a7a5bc71d44158d2b74dabc))
+
 ## 0.1.0-alpha.8 (2024-06-25)
 
 Full Changelog: [v0.1.0-alpha.7...v0.1.0-alpha.8](https://github.com/val-town/sdk/compare/v0.1.0-alpha.7...v0.1.0-alpha.8)
