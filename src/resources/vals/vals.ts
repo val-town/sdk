@@ -55,6 +55,17 @@ export class Vals extends APIResource {
   }
 
   /**
+   * Cancel a running val
+   */
+  cancelEvaluation(
+    valId: string,
+    evaluationId: string,
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<ValCancelEvaluationResponse> {
+    return this._client.post(`/v1/vals/${valId}/evaluations/${evaluationId}/cancel`, options);
+  }
+
+  /**
    * Run an existing val or create a new one
    */
   createOrUpdate(body: ValCreateOrUpdateParams, options?: Core.RequestOptions): Core.APIPromise<void> {
@@ -114,6 +125,17 @@ export class Vals extends APIResource {
       headers: { Accept: '*/*', ...options?.headers },
     });
   }
+}
+
+/**
+ * The evaluation_id was successfully searched for and the evaluation was either
+ * already done or now has been cancelled
+ */
+export interface ValCancelEvaluationResponse {
+  /**
+   * True if the evaluation was found and cancelled
+   */
+  found: boolean;
 }
 
 export type ValRunAnonymousResponse = string | number | Record<string, unknown> | Array<unknown> | boolean;
@@ -197,6 +219,7 @@ export interface ValRunGetParams {
 }
 
 export namespace Vals {
+  export import ValCancelEvaluationResponse = ValsAPI.ValCancelEvaluationResponse;
   export import ValRunAnonymousResponse = ValsAPI.ValRunAnonymousResponse;
   export import ValCreateParams = ValsAPI.ValCreateParams;
   export import ValUpdateParams = ValsAPI.ValUpdateParams;
