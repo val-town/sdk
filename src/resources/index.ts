@@ -10,6 +10,7 @@ export { Search } from './search/search';
 export { SqliteBatchResponse, SqliteBatchParams, SqliteExecuteParams, Sqlite } from './sqlite';
 export { Users } from './users/users';
 export {
+  ValCancelEvaluationResponse,
   ValRunAnonymousResponse,
   ValCreateParams,
   ValUpdateParams,
