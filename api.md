@@ -122,6 +122,7 @@ Methods:
 
 Types:
 
+- <code><a href="./src/resources/vals/vals.ts">ValCancelEvaluationResponse</a></code>
 - <code><a href="./src/resources/vals/vals.ts">ValRunAnonymousResponse</a></code>
 
 Methods:
@@ -130,6 +131,7 @@ Methods:
 - <code title="get /v1/vals/{val_id}">client.vals.<a href="./src/resources/vals/vals.ts">retrieve</a>(valId) -> ExtendedVal</code>
 - <code title="put /v1/vals/{val_id}">client.vals.<a href="./src/resources/vals/vals.ts">update</a>(valId, { ...params }) -> void</code>
 - <code title="delete /v1/vals/{val_id}">client.vals.<a href="./src/resources/vals/vals.ts">delete</a>(valId) -> void</code>
+- <code title="post /v1/vals/{val_id}/evaluations/{evaluation_id}/cancel">client.vals.<a href="./src/resources/vals/vals.ts">cancelEvaluation</a>(valId, evaluationId) -> ValCancelEvaluationResponse</code>
 - <code title="put /v1/vals">client.vals.<a href="./src/resources/vals/vals.ts">createOrUpdate</a>({ ...params }) -> void</code>
 - <code title="post /v1/run/{valname}">client.vals.<a href="./src/resources/vals/vals.ts">run</a>(valname, { ...params }) -> void</code>
 - <code title="post /v1/eval">client.vals.<a href="./src/resources/vals/vals.ts">runAnonymous</a>({ ...params }) -> ValRunAnonymousResponse | null</code>

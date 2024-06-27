@@ -214,6 +214,7 @@ export namespace ValTown {
   export import EvalRunCodeParams = API.EvalRunCodeParams;
 
   export import Vals = API.Vals;
+  export import ValCancelEvaluationResponse = API.ValCancelEvaluationResponse;
   export import ValRunAnonymousResponse = API.ValRunAnonymousResponse;
   export import ValCreateParams = API.ValCreateParams;
   export import ValUpdateParams = API.ValUpdateParams;
