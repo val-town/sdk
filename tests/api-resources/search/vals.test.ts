@@ -21,6 +21,6 @@ describe('resource vals', () => {
   });
 
   test('list: required and optional params', async () => {
-    const response = await valTown.search.vals.list({ limit: 1, offset: 0, query: 'x', searchType: 'exact' });
+    const response = await valTown.search.vals.list({ limit: 1, offset: 0, query: 'x' });
   });
 });

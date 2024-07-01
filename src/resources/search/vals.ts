@@ -24,12 +24,6 @@ export interface ValListParams extends PageCursorURLParams {
    * Search query
    */
   query: string;
-
-  /**
-   * Choose between exact search, which is substring-based, and semantic search,
-   * which uses AI embeddings
-   */
-  searchType?: 'exact' | 'semantic';
 }
 
 export namespace Vals {
