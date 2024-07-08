@@ -14,7 +14,7 @@ export class Profile extends APIResource {
 }
 
 /**
- * User information, with tier included
+ * Your user information, with tier and email included
  */
 export interface ProfileRetrieveResponse {
   id: string;
@@ -23,6 +23,11 @@ export interface ProfileRetrieveResponse {
    * The user’s biography, if they have provided one
    */
   bio: string | null;
+
+  /**
+   * Your email address
+   */
+  email: string;
 
   /**
    * URL that points to the user’s profile image, if one exists
