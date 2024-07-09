@@ -93,6 +93,10 @@ export interface VersionCreateParams {
    */
   readme?: string;
 
+  /**
+   * The type of the val you want to create. Note that this does not include interval
+   * vals, because they cannot be created through the API yet.
+   */
   type?: 'http' | 'script' | 'email';
 }
 
