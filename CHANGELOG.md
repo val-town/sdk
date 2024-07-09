@@ -6,16 +6,7 @@ Full Changelog: [v0.5.0...v0.6.0](https://github.com/val-town/sdk/compare/v0.5.0
 
 ### Features
 
-* **api:** OpenAPI spec update via Stainless API ([#122](https://github.com/val-town/sdk/issues/122)) ([f6ee1da](https://github.com/val-town/sdk/commit/f6ee1da9aff2d46bcb3c0066cb52dc17039f14f7))
-* **api:** OpenAPI spec update via Stainless API ([#123](https://github.com/val-town/sdk/issues/123)) ([029c25f](https://github.com/val-town/sdk/commit/029c25f6f9b3e8768ed0ea26fa8b2246c9936b19))
-* **api:** OpenAPI spec update via Stainless API ([#124](https://github.com/val-town/sdk/issues/124)) ([81efe45](https://github.com/val-town/sdk/commit/81efe454b1b5cb3050fecda3c668695bb15d993e))
-* **api:** OpenAPI spec update via Stainless API ([#125](https://github.com/val-town/sdk/issues/125)) ([34e5683](https://github.com/val-town/sdk/commit/34e56832cf36dd60b58c6945c93c5404eebd3ade))
-* **api:** OpenAPI spec update via Stainless API ([#126](https://github.com/val-town/sdk/issues/126)) ([ddd3e6f](https://github.com/val-town/sdk/commit/ddd3e6f03f07516fba61d584774de70dab6a5a1c))
-* **api:** OpenAPI spec update via Stainless API ([#127](https://github.com/val-town/sdk/issues/127)) ([c26a06d](https://github.com/val-town/sdk/commit/c26a06d5c9810dce8b2c78e3aaf3cc8beb4a30e8))
-* **api:** OpenAPI spec update via Stainless API ([#128](https://github.com/val-town/sdk/issues/128)) ([4e0edb7](https://github.com/val-town/sdk/commit/4e0edb7e7dd2088b84710e96108884fea4584f0e))
-* **api:** OpenAPI spec update via Stainless API ([#129](https://github.com/val-town/sdk/issues/129)) ([38cb4d0](https://github.com/val-town/sdk/commit/38cb4d0b80d8edd36eced0472dab177c9fbc5480))
-* **api:** OpenAPI spec update via Stainless API ([#130](https://github.com/val-town/sdk/issues/130)) ([9308e0b](https://github.com/val-town/sdk/commit/9308e0ba02b00452a02178827f06af4bab510c83))
-* **api:** OpenAPI spec update via Stainless API ([#131](https://github.com/val-town/sdk/issues/131)) ([9e2547a](https://github.com/val-town/sdk/commit/9e2547a93b2b4567abab03b5193ef275cc3475aa))
+* Support updating the type of vals through the API
 
 ## 0.5.0 (2024-07-08)
 
