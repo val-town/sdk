@@ -39,6 +39,10 @@ export interface BasicVal {
    */
   public: boolean;
 
+  /**
+   * The type of a val. HTTP can receive web requests, Email can receive emails, Cron
+   * runs periodically, and Script can be used for libraries or one-off calculations
+   */
   type: 'interval' | 'http' | 'express' | 'email' | 'script' | 'rpc';
 
   /**
@@ -101,6 +105,10 @@ export interface ExtendedVal {
 
   referenceCount: number;
 
+  /**
+   * The type of a val. HTTP can receive web requests, Email can receive emails, Cron
+   * runs periodically, and Script can be used for libraries or one-off calculations
+   */
   type: 'interval' | 'http' | 'express' | 'email' | 'script' | 'rpc';
 
   /**
