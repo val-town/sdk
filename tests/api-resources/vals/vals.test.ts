@@ -71,7 +71,7 @@ describe('resource vals', () => {
     await expect(
       valTown.vals.update(
         '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
-        { name: 'myVal', privacy: 'public', readme: 'string' },
+        { name: 'myVal', privacy: 'public', readme: '# Updated readme', type: 'http' },
         { path: '/_stainless_unknown_path' },
       ),
     ).rejects.toThrow(ValTown.NotFoundError);
