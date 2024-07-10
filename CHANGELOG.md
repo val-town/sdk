@@ -6,10 +6,7 @@ Full Changelog: [v0.6.0...v0.7.0](https://github.com/val-town/sdk/compare/v0.6.0
 
 ### Features
 
-* **api:** OpenAPI spec update via Stainless API ([#136](https://github.com/val-town/sdk/issues/136)) ([8cafe95](https://github.com/val-town/sdk/commit/8cafe95f4646e690b587e3c9e9d130d80c84829f))
-* **api:** OpenAPI spec update via Stainless API ([#137](https://github.com/val-town/sdk/issues/137)) ([008133b](https://github.com/val-town/sdk/commit/008133b9ec01c087848c09429937c50c1894f4b0))
-* **api:** OpenAPI spec update via Stainless API ([#138](https://github.com/val-town/sdk/issues/138)) ([81a651b](https://github.com/val-town/sdk/commit/81a651be593d0b70daf716ad4b08e59ed5a69fa6))
-* **api:** OpenAPI spec update via Stainless API ([#139](https://github.com/val-town/sdk/issues/139)) ([b11f5e6](https://github.com/val-town/sdk/commit/b11f5e66825f6cd46d6128b665be62568f889f00))
+* Adds the new `url` property to val objects
 
 ## 0.6.0 (2024-07-09)
 
