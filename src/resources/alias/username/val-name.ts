@@ -67,6 +67,11 @@ export interface ValNameRetrieveResponse {
   type: 'interval' | 'http' | 'express' | 'email' | 'script' | 'rpc';
 
   /**
+   * The URL of this val on the Val Town website
+   */
+  url: string;
+
+  /**
    * The version of this val, starting at zero
    */
   version: number;
