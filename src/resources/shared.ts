@@ -46,6 +46,11 @@ export interface BasicVal {
   type: 'interval' | 'http' | 'express' | 'email' | 'script' | 'rpc';
 
   /**
+   * The URL of this val on the Val Town website
+   */
+  url: string;
+
+  /**
    * The version of this val, starting at zero
    */
   version: number;
@@ -110,6 +115,11 @@ export interface ExtendedVal {
    * runs periodically, and Script can be used for libraries or one-off calculations
    */
   type: 'interval' | 'http' | 'express' | 'email' | 'script' | 'rpc';
+
+  /**
+   * The URL of this val on the Val Town website
+   */
+  url: string;
 
   /**
    * The version of this val, starting at zero
