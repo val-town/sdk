@@ -6,6 +6,9 @@ import * as Core from '@valtown/sdk/core';
 import * as BlobsAPI from '@valtown/sdk/resources/blobs';
 import { type Response } from '@valtown/sdk/_shims/index';
 
+/**
+ * Blob storage lets you store larger objects, including binary data
+ */
 export class Blobs extends APIResource {
   /**
    * List blobs in your account

@@ -3,6 +3,9 @@
 import { APIResource } from '@valtown/sdk/resource';
 import * as UsernameAPI from '@valtown/sdk/resources/alias/username/username';
 
+/**
+ * Methods to translate between human-readable names and IDs
+ */
 export class Alias extends APIResource {
   username: UsernameAPI.Username = new UsernameAPI.Username(this._client);
 }

@@ -8,9 +8,9 @@ const valTown = new ValTown({
   baseURL: process.env['TEST_API_BASE_URL'] ?? 'http://127.0.0.1:4010',
 });
 
-describe('resource username', () => {
-  test('retrieve', async () => {
-    const responsePromise = valTown.alias.username.retrieve('username');
+describe('resource eval', () => {
+  test('run: only required params', async () => {
+    const responsePromise = valTown.eval.run({ code: 'console.log(1);' });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -20,10 +20,7 @@ describe('resource username', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  test('retrieve: request options instead of params are passed correctly', async () => {
-    // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(
-      valTown.alias.username.retrieve('username', { path: '/_stainless_unknown_path' }),
-    ).rejects.toThrow(ValTown.NotFoundError);
+  test('run: required and optional params', async () => {
+    const response = await valTown.eval.run({ code: 'console.log(1);', args: [{}, {}, {}] });
   });
 });

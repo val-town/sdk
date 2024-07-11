@@ -6,6 +6,9 @@ import * as LikesAPI from '@valtown/sdk/resources/me/likes';
 import * as ProfileAPI from '@valtown/sdk/resources/me/profile';
 import * as ReferencesAPI from '@valtown/sdk/resources/me/references';
 
+/**
+ * Methods to get information about your own profile and resources
+ */
 export class Me extends APIResource {
   profile: ProfileAPI.Profile = new ProfileAPI.Profile(this._client);
   likes: LikesAPI.Likes = new LikesAPI.Likes(this._client);

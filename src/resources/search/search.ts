@@ -3,6 +3,9 @@
 import { APIResource } from '@valtown/sdk/resource';
 import * as ValsAPI from '@valtown/sdk/resources/search/vals';
 
+/**
+ * Search endpoint for vals
+ */
 export class Search extends APIResource {
   vals: ValsAPI.Vals = new ValsAPI.Vals(this._client);
 }
