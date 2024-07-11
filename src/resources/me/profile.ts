@@ -17,6 +17,9 @@ export class Profile extends APIResource {
  * Your user information, with tier and email included
  */
 export interface ProfileRetrieveResponse {
+  /**
+   * The ID of this user
+   */
   id: string;
 
   /**

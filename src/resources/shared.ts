@@ -88,6 +88,9 @@ export interface ExtendedVal {
 
   createdAt: string;
 
+  /**
+   * How many likes this val has received
+   */
   likeCount: number;
 
   /**
@@ -106,6 +109,9 @@ export interface ExtendedVal {
    */
   public: boolean;
 
+  /**
+   * This val’s readme, as Markdown
+   */
   readme: string | null;
 
   referenceCount: number;
@@ -206,6 +212,9 @@ export interface ResultSet {
  * User object
  */
 export interface User {
+  /**
+   * The ID of this user
+   */
   id: string;
 
   /**
