@@ -30,7 +30,7 @@ describe('resource blobs', () => {
   test('list: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
-      valTown.blobs.list({ prefix: 'string' }, { path: '/_stainless_unknown_path' }),
+      valTown.blobs.list({ prefix: 'prefix' }, { path: '/_stainless_unknown_path' }),
     ).rejects.toThrow(ValTown.NotFoundError);
   });
 

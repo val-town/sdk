@@ -10,7 +10,7 @@ const valTown = new ValTown({
 
 describe('resource evals', () => {
   test('runCode', async () => {
-    const responsePromise = valTown.evals.runCode('string');
+    const responsePromise = valTown.evals.runCode('code');
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -22,7 +22,7 @@ describe('resource evals', () => {
 
   test('runCode: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(valTown.evals.runCode('string', { path: '/_stainless_unknown_path' })).rejects.toThrow(
+    await expect(valTown.evals.runCode('code', { path: '/_stainless_unknown_path' })).rejects.toThrow(
       ValTown.NotFoundError,
     );
   });
@@ -30,7 +30,7 @@ describe('resource evals', () => {
   test('runCode: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
-      valTown.evals.runCode('string', { args: 'string' }, { path: '/_stainless_unknown_path' }),
+      valTown.evals.runCode('code', { args: 'args' }, { path: '/_stainless_unknown_path' }),
     ).rejects.toThrow(ValTown.NotFoundError);
   });
 });
