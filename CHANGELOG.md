@@ -1,5 +1,26 @@
 # Changelog
 
+## 0.8.0 (2024-07-11)
+
+Full Changelog: [v0.7.0...v0.8.0](https://github.com/val-town/sdk/compare/v0.7.0...v0.8.0)
+
+### Features
+
+* **api:** OpenAPI spec update via Stainless API ([#142](https://github.com/val-town/sdk/issues/142)) ([9100946](https://github.com/val-town/sdk/commit/91009467bbfe65b7a24567f12fd3ff497e3fde31))
+* **api:** OpenAPI spec update via Stainless API ([#143](https://github.com/val-town/sdk/issues/143)) ([061ad12](https://github.com/val-town/sdk/commit/061ad127ce72abeb35aed3dd72a71a27105ba45e))
+* **api:** OpenAPI spec update via Stainless API ([#144](https://github.com/val-town/sdk/issues/144)) ([e0eaccc](https://github.com/val-town/sdk/commit/e0eaccc81f90817b98b7e84ae1f4f593520ef875))
+* **api:** OpenAPI spec update via Stainless API ([#145](https://github.com/val-town/sdk/issues/145)) ([089ec8b](https://github.com/val-town/sdk/commit/089ec8b99f5ec91a84dafa1f7689a0eacf626fc7))
+* **api:** OpenAPI spec update via Stainless API ([#146](https://github.com/val-town/sdk/issues/146)) ([3532dfc](https://github.com/val-town/sdk/commit/3532dfc0de8d0d187d2f811702b06661f475e9a7))
+* **api:** OpenAPI spec update via Stainless API ([#147](https://github.com/val-town/sdk/issues/147)) ([84c28ad](https://github.com/val-town/sdk/commit/84c28ada5c58fa454b09644cbadf56b7b5087c4f))
+* **api:** OpenAPI spec update via Stainless API ([#148](https://github.com/val-town/sdk/issues/148)) ([1536f57](https://github.com/val-town/sdk/commit/1536f571f39c4aa10b924703887f8375e41562d0))
+* **api:** OpenAPI spec update via Stainless API ([#149](https://github.com/val-town/sdk/issues/149)) ([587573a](https://github.com/val-town/sdk/commit/587573ae0c73551c0551cdbc3b1c003f4d060f5e))
+* **api:** OpenAPI spec update via Stainless API ([#150](https://github.com/val-town/sdk/issues/150)) ([6698101](https://github.com/val-town/sdk/commit/6698101d1c528e924d92f7c6e79ac2120e0eecaa))
+* **api:** OpenAPI spec update via Stainless API ([#151](https://github.com/val-town/sdk/issues/151)) ([847f202](https://github.com/val-town/sdk/commit/847f202578d2d7290c7332c14183022cdf73f580))
+* **api:** OpenAPI spec update via Stainless API ([#152](https://github.com/val-town/sdk/issues/152)) ([52b28ec](https://github.com/val-town/sdk/commit/52b28ec1bcb0f23b831899e017d80638ac34cc77))
+* **api:** OpenAPI spec update via Stainless API ([#153](https://github.com/val-town/sdk/issues/153)) ([1dd5bc0](https://github.com/val-town/sdk/commit/1dd5bc08ad49dfca1cb72767e641295924ca2f78))
+* **api:** OpenAPI spec update via Stainless API ([#154](https://github.com/val-town/sdk/issues/154)) ([051201c](https://github.com/val-town/sdk/commit/051201c64e7fa385d536826a966d4faf51c3a33f))
+* **api:** OpenAPI spec update via Stainless API ([#155](https://github.com/val-town/sdk/issues/155)) ([dfaa791](https://github.com/val-town/sdk/commit/dfaa7916cba02b1feb80612ef1156f8b4ce76632))
+
 ## 0.7.0 (2024-07-10)
 
 Full Changelog: [v0.6.0...v0.7.0](https://github.com/val-town/sdk/compare/v0.6.0...v0.7.0)
