@@ -22,32 +22,72 @@ export class References extends APIResource {
 
 export class ReferenceListResponsesPageCursorURL extends PageCursorURL<ReferenceListResponse> {}
 
+/**
+ * A description of a dependency from one val (reference) to another (dependsOn)
+ * that was introduced at a particular time.
+ */
 export interface ReferenceListResponse {
+  /**
+   * A val in a dependency relationship
+   */
   dependsOn: ReferenceListResponse.DependsOn;
 
+  /**
+   * A val in a dependency relationship
+   */
   reference: ReferenceListResponse.Reference;
 
   referencedAt: string;
 }
 
 export namespace ReferenceListResponse {
+  /**
+   * A val in a dependency relationship
+   */
   export interface DependsOn {
+    /**
+     * The id of this val
+     */
     id: string;
 
+    /**
+     * The ID of the person who authored this val
+     */
     author_id: string | null;
 
+    /**
+     * The name of this val
+     */
     name: string;
 
+    /**
+     * The username of the person who authored this val
+     */
     username: string | null;
   }
 
+  /**
+   * A val in a dependency relationship
+   */
   export interface Reference {
+    /**
+     * The id of this val
+     */
     id: string;
 
+    /**
+     * The ID of the person who authored this val
+     */
     author_id: string | null;
 
+    /**
+     * The name of this val
+     */
     name: string;
 
+    /**
+     * The username of the person who authored this val
+     */
     username: string | null;
   }
 }
