@@ -16,9 +16,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
-      - run: npm ci
+      - run: yarn install
       # Generate your TypeDoc documentation
-      - run: npx typedoc
+      - run: yarn typedoc src/index.ts
       # https://github.com/actions/upload-pages-artifact
       - uses: actions/upload-pages-artifact@v2
         with:
