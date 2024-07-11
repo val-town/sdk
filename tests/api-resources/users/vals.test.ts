@@ -10,7 +10,7 @@ const valTown = new ValTown({
 
 describe('resource vals', () => {
   test('list: only required params', async () => {
-    const responsePromise = valTown.users.vals.list('string', { limit: 1, offset: 0 });
+    const responsePromise = valTown.users.vals.list('user_id', { limit: 1, offset: 0 });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -21,6 +21,6 @@ describe('resource vals', () => {
   });
 
   test('list: required and optional params', async () => {
-    const response = await valTown.users.vals.list('string', { limit: 1, offset: 0 });
+    const response = await valTown.users.vals.list('user_id', { limit: 1, offset: 0 });
   });
 });

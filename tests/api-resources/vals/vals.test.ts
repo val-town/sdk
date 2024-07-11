@@ -136,7 +136,7 @@ describe('resource vals', () => {
   });
 
   test('run', async () => {
-    const responsePromise = valTown.vals.run('string');
+    const responsePromise = valTown.vals.run('valname');
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -148,7 +148,7 @@ describe('resource vals', () => {
 
   test('run: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(valTown.vals.run('string', { path: '/_stainless_unknown_path' })).rejects.toThrow(
+    await expect(valTown.vals.run('valname', { path: '/_stainless_unknown_path' })).rejects.toThrow(
       ValTown.NotFoundError,
     );
   });
@@ -156,7 +156,7 @@ describe('resource vals', () => {
   test('run: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
-      valTown.vals.run('string', { args: [1] }, { path: '/_stainless_unknown_path' }),
+      valTown.vals.run('valname', { args: [1] }, { path: '/_stainless_unknown_path' }),
     ).rejects.toThrow(ValTown.NotFoundError);
   });
 
@@ -176,7 +176,7 @@ describe('resource vals', () => {
   });
 
   test('runGet', async () => {
-    const responsePromise = valTown.vals.runGet('string');
+    const responsePromise = valTown.vals.runGet('valname');
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -188,7 +188,7 @@ describe('resource vals', () => {
 
   test('runGet: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(valTown.vals.runGet('string', { path: '/_stainless_unknown_path' })).rejects.toThrow(
+    await expect(valTown.vals.runGet('valname', { path: '/_stainless_unknown_path' })).rejects.toThrow(
       ValTown.NotFoundError,
     );
   });
@@ -196,7 +196,7 @@ describe('resource vals', () => {
   test('runGet: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
-      valTown.vals.runGet('string', { args: 'string' }, { path: '/_stainless_unknown_path' }),
+      valTown.vals.runGet('valname', { args: 'args' }, { path: '/_stainless_unknown_path' }),
     ).rejects.toThrow(ValTown.NotFoundError);
   });
 });
