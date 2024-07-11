@@ -13,6 +13,9 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -23,13 +26,6 @@ jobs:
       - uses: actions/upload-pages-artifact@v2
         with:
           path: ./docs # This should be your TypeDoc "out" path.
-  deploy:
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    needs: build
-    steps:
       - name: Deploy to GitHub Pages
         id: deployment
         # https://github.com/actions/deploy-pages
