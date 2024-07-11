@@ -5,6 +5,9 @@ import * as Core from '@valtown/sdk/core';
 import * as Shared from '@valtown/sdk/resources/shared';
 import * as ValsAPI from '@valtown/sdk/resources/users/vals';
 
+/**
+ * Access public user information and list other people’s vals
+ */
 export class Users extends APIResource {
   vals: ValsAPI.Vals = new ValsAPI.Vals(this._client);
 

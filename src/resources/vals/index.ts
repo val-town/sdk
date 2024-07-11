@@ -2,13 +2,9 @@
 
 export {
   ValCancelEvaluationResponse,
-  ValRunAnonymousResponse,
   ValCreateParams,
   ValUpdateParams,
   ValCreateOrUpdateParams,
-  ValRunParams,
-  ValRunAnonymousParams,
-  ValRunGetParams,
   Vals,
 } from './vals';
 export {
