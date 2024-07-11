@@ -5,6 +5,9 @@ import * as Core from '@valtown/sdk/core';
 import * as SqliteAPI from '@valtown/sdk/resources/sqlite';
 import * as Shared from '@valtown/sdk/resources/shared';
 
+/**
+ * Vals access a shared SQLite database
+ */
 export class Sqlite extends APIResource {
   /**
    * Execute a batch of SQLite statements and return results for all of them

@@ -7,6 +7,9 @@ import * as ValsAPI from '@valtown/sdk/resources/vals/vals';
 import * as Shared from '@valtown/sdk/resources/shared';
 import * as VersionsAPI from '@valtown/sdk/resources/vals/versions';
 
+/**
+ * Vals are runnable JavaScript, TypeScript, and JSX modules
+ */
 export class Vals extends APIResource {
   versions: VersionsAPI.Versions = new VersionsAPI.Versions(this._client);
 
@@ -75,56 +78,6 @@ export class Vals extends APIResource {
       headers: { Accept: '*/*', ...options?.headers },
     });
   }
-
-  /**
-   * Run a val, with arguments in the request body
-   */
-  run(valname: string, body?: ValRunParams, options?: Core.RequestOptions): Core.APIPromise<void>;
-  run(valname: string, options?: Core.RequestOptions): Core.APIPromise<void>;
-  run(
-    valname: string,
-    body: ValRunParams | Core.RequestOptions = {},
-    options?: Core.RequestOptions,
-  ): Core.APIPromise<void> {
-    if (isRequestOptions(body)) {
-      return this.run(valname, {}, body);
-    }
-    return this._client.post(`/v1/run/${valname}`, {
-      body,
-      ...options,
-      headers: { Accept: '*/*', ...options?.headers },
-    });
-  }
-
-  /**
-   * Run JavaScript or TypeScript without saving it permanently as a val
-   */
-  runAnonymous(
-    body: ValRunAnonymousParams,
-    options?: Core.RequestOptions,
-  ): Core.APIPromise<ValRunAnonymousResponse | null> {
-    return this._client.post('/v1/eval', { body, ...options });
-  }
-
-  /**
-   * Run a val, specify any parameters in a querystring
-   */
-  runGet(valname: string, query?: ValRunGetParams, options?: Core.RequestOptions): Core.APIPromise<void>;
-  runGet(valname: string, options?: Core.RequestOptions): Core.APIPromise<void>;
-  runGet(
-    valname: string,
-    query: ValRunGetParams | Core.RequestOptions = {},
-    options?: Core.RequestOptions,
-  ): Core.APIPromise<void> {
-    if (isRequestOptions(query)) {
-      return this.runGet(valname, {}, query);
-    }
-    return this._client.get(`/v1/run/${valname}`, {
-      query,
-      ...options,
-      headers: { Accept: '*/*', ...options?.headers },
-    });
-  }
 }
 
 /**
@@ -137,8 +90,6 @@ export interface ValCancelEvaluationResponse {
    */
   found: boolean;
 }
-
-export type ValRunAnonymousResponse = string | number | Record<string, unknown> | Array<unknown> | boolean;
 
 export interface ValCreateParams {
   /**
@@ -205,38 +156,11 @@ export interface ValCreateOrUpdateParams {
   name: string;
 }
 
-export interface ValRunParams {
-  args?: Array<unknown>;
-}
-
-export interface ValRunAnonymousParams {
-  /**
-   * TypeScript source code
-   */
-  code: string;
-
-  /**
-   * Array of arguments passed to the given function
-   */
-  args?: Array<unknown>;
-}
-
-export interface ValRunGetParams {
-  /**
-   * An argument that will be passed to the function as a JavaScript value
-   */
-  args?: string;
-}
-
 export namespace Vals {
   export import ValCancelEvaluationResponse = ValsAPI.ValCancelEvaluationResponse;
-  export import ValRunAnonymousResponse = ValsAPI.ValRunAnonymousResponse;
   export import ValCreateParams = ValsAPI.ValCreateParams;
   export import ValUpdateParams = ValsAPI.ValUpdateParams;
   export import ValCreateOrUpdateParams = ValsAPI.ValCreateOrUpdateParams;
-  export import ValRunParams = ValsAPI.ValRunParams;
-  export import ValRunAnonymousParams = ValsAPI.ValRunAnonymousParams;
-  export import ValRunGetParams = ValsAPI.ValRunGetParams;
   export import Versions = VersionsAPI.Versions;
   export import VersionListResponse = VersionsAPI.VersionListResponse;
   export import VersionListResponsesPageCursorURL = VersionsAPI.VersionListResponsesPageCursorURL;

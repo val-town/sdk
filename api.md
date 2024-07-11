@@ -108,22 +108,21 @@ Methods:
 - <code title="post /v1/sqlite/batch">client.sqlite.<a href="./src/resources/sqlite.ts">batch</a>({ ...params }) -> SqliteBatchResponse</code>
 - <code title="post /v1/sqlite/execute">client.sqlite.<a href="./src/resources/sqlite.ts">execute</a>({ ...params }) -> ResultSet</code>
 
-# Evals
+# Eval
 
 Types:
 
-- <code><a href="./src/resources/evals.ts">EvalRunCodeResponse</a></code>
+- <code><a href="./src/resources/eval.ts">EvalRunResponse</a></code>
 
 Methods:
 
-- <code title="get /v1/eval/{code}">client.evals.<a href="./src/resources/evals.ts">runCode</a>(code, { ...params }) -> EvalRunCodeResponse | null</code>
+- <code title="post /v1/eval">client.eval.<a href="./src/resources/eval.ts">run</a>({ ...params }) -> EvalRunResponse | null</code>
 
 # Vals
 
 Types:
 
 - <code><a href="./src/resources/vals/vals.ts">ValCancelEvaluationResponse</a></code>
-- <code><a href="./src/resources/vals/vals.ts">ValRunAnonymousResponse</a></code>
 
 Methods:
 
@@ -133,9 +132,6 @@ Methods:
 - <code title="delete /v1/vals/{val_id}">client.vals.<a href="./src/resources/vals/vals.ts">delete</a>(valId) -> void</code>
 - <code title="post /v1/vals/{val_id}/evaluations/{evaluation_id}/cancel">client.vals.<a href="./src/resources/vals/vals.ts">cancelEvaluation</a>(valId, evaluationId) -> ValCancelEvaluationResponse</code>
 - <code title="put /v1/vals">client.vals.<a href="./src/resources/vals/vals.ts">createOrUpdate</a>({ ...params }) -> void</code>
-- <code title="post /v1/run/{valname}">client.vals.<a href="./src/resources/vals/vals.ts">run</a>(valname, { ...params }) -> void</code>
-- <code title="post /v1/eval">client.vals.<a href="./src/resources/vals/vals.ts">runAnonymous</a>({ ...params }) -> ValRunAnonymousResponse | null</code>
-- <code title="get /v1/run/{valname}">client.vals.<a href="./src/resources/vals/vals.ts">runGet</a>(valname, { ...params }) -> void</code>
 
 ## Versions
 

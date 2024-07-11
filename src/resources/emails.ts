@@ -5,6 +5,9 @@ import { isRequestOptions } from '@valtown/sdk/core';
 import * as Core from '@valtown/sdk/core';
 import * as EmailsAPI from '@valtown/sdk/resources/emails';
 
+/**
+ * Val Town supports sending emails from vals
+ */
 export class Emails extends APIResource {
   /**
    * Send emails
