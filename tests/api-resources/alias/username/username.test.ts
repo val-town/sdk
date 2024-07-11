@@ -10,7 +10,7 @@ const valTown = new ValTown({
 
 describe('resource username', () => {
   test('retrieve', async () => {
-    const responsePromise = valTown.alias.username.retrieve('string');
+    const responsePromise = valTown.alias.username.retrieve('username');
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -23,7 +23,7 @@ describe('resource username', () => {
   test('retrieve: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
-      valTown.alias.username.retrieve('string', { path: '/_stainless_unknown_path' }),
+      valTown.alias.username.retrieve('username', { path: '/_stainless_unknown_path' }),
     ).rejects.toThrow(ValTown.NotFoundError);
   });
 });
