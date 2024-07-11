@@ -120,14 +120,38 @@ export class ValTown extends Core.APIClient {
     this.bearerToken = bearerToken;
   }
 
+  /**
+   * Search endpoint for vals
+   */
   search: API.Search = new API.Search(this);
+  /**
+   * Methods to translate between human-readable names and IDs
+   */
   alias: API.Alias = new API.Alias(this);
+  /**
+   * Methods to get information about your own profile and resources
+   */
   me: API.Me = new API.Me(this);
+  /**
+   * Blob storage lets you store larger objects, including binary data
+   */
   blobs: API.Blobs = new API.Blobs(this);
+  /**
+   * Access public user information and list other people’s vals
+   */
   users: API.Users = new API.Users(this);
+  /**
+   * Vals access a shared SQLite database
+   */
   sqlite: API.Sqlite = new API.Sqlite(this);
-  evals: API.Evals = new API.Evals(this);
+  eval: API.Eval = new API.Eval(this);
+  /**
+   * Vals are runnable JavaScript, TypeScript, and JSX modules
+   */
   vals: API.Vals = new API.Vals(this);
+  /**
+   * Val Town supports sending emails from vals
+   */
   emails: API.Emails = new API.Emails(this);
 
   protected override defaultQuery(): Core.DefaultQuery | undefined {
@@ -209,19 +233,15 @@ export namespace ValTown {
   export import SqliteBatchParams = API.SqliteBatchParams;
   export import SqliteExecuteParams = API.SqliteExecuteParams;
 
-  export import Evals = API.Evals;
-  export import EvalRunCodeResponse = API.EvalRunCodeResponse;
-  export import EvalRunCodeParams = API.EvalRunCodeParams;
+  export import Eval = API.Eval;
+  export import EvalRunResponse = API.EvalRunResponse;
+  export import EvalRunParams = API.EvalRunParams;
 
   export import Vals = API.Vals;
   export import ValCancelEvaluationResponse = API.ValCancelEvaluationResponse;
-  export import ValRunAnonymousResponse = API.ValRunAnonymousResponse;
   export import ValCreateParams = API.ValCreateParams;
   export import ValUpdateParams = API.ValUpdateParams;
   export import ValCreateOrUpdateParams = API.ValCreateOrUpdateParams;
-  export import ValRunParams = API.ValRunParams;
-  export import ValRunAnonymousParams = API.ValRunAnonymousParams;
-  export import ValRunGetParams = API.ValRunGetParams;
 
   export import Emails = API.Emails;
   export import EmailSendResponse = API.EmailSendResponse;
