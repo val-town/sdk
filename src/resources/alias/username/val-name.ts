@@ -38,6 +38,9 @@ export interface ValNameRetrieveResponse {
 
   createdAt: string;
 
+  /**
+   * How many likes this val has received
+   */
   likeCount: number;
 
   /**
@@ -56,6 +59,9 @@ export interface ValNameRetrieveResponse {
    */
   public: boolean;
 
+  /**
+   * This val’s readme, as Markdown
+   */
   readme: string | null;
 
   referenceCount: number;
