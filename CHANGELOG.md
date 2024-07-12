@@ -1,5 +1,22 @@
 # Changelog
 
+## 0.9.0 (2024-07-12)
+
+Full Changelog: [v0.8.0...v0.9.0](https://github.com/val-town/sdk/compare/v0.8.0...v0.9.0)
+
+### Features
+
+* **api:** OpenAPI spec update via Stainless API ([#159](https://github.com/val-town/sdk/issues/159)) ([d8b8e18](https://github.com/val-town/sdk/commit/d8b8e18fb03b937fc27c419df5f25b831b4ce49c))
+* **api:** OpenAPI spec update via Stainless API ([#160](https://github.com/val-town/sdk/issues/160)) ([e60e5cc](https://github.com/val-town/sdk/commit/e60e5cc5d458f51eddf5a7ec89468f021fb36c49))
+* **api:** OpenAPI spec update via Stainless API ([#161](https://github.com/val-town/sdk/issues/161)) ([1c37228](https://github.com/val-town/sdk/commit/1c37228d7e9b8c5cca5ec28c6501c45e2ac829dc))
+* **api:** OpenAPI spec update via Stainless API ([#162](https://github.com/val-town/sdk/issues/162)) ([64676d3](https://github.com/val-town/sdk/commit/64676d31a9d6f7500418159485309b32f7847e49))
+* **api:** OpenAPI spec update via Stainless API ([#163](https://github.com/val-town/sdk/issues/163)) ([9e323d2](https://github.com/val-town/sdk/commit/9e323d277f7d36c2a1101cf0a7482fe192d7d5e5))
+* **api:** OpenAPI spec update via Stainless API ([#164](https://github.com/val-town/sdk/issues/164)) ([e534b64](https://github.com/val-town/sdk/commit/e534b64bf7f693b7d273f07f598b9258099b88a6))
+* **api:** OpenAPI spec update via Stainless API ([#165](https://github.com/val-town/sdk/issues/165)) ([9d40c07](https://github.com/val-town/sdk/commit/9d40c07e85f40269692241818275401c6cbc3b78))
+* **api:** OpenAPI spec update via Stainless API ([#166](https://github.com/val-town/sdk/issues/166)) ([bcf5564](https://github.com/val-town/sdk/commit/bcf5564c51d839edd0770e3ea38cd44a4b65fb67))
+* **api:** OpenAPI spec update via Stainless API ([#167](https://github.com/val-town/sdk/issues/167)) ([e72d630](https://github.com/val-town/sdk/commit/e72d6308f0c35bd6537251024f6651a1f50a1445))
+* **api:** OpenAPI spec update via Stainless API ([#168](https://github.com/val-town/sdk/issues/168)) ([aab462a](https://github.com/val-town/sdk/commit/aab462a2174b5c502bb45c057971b640780da76e))
+
 ## 0.8.0 (2024-07-11)
 
 Full Changelog: [v0.7.0...v0.8.0](https://github.com/val-town/sdk/compare/v0.7.0...v0.8.0)
