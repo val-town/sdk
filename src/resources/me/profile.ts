@@ -32,6 +32,8 @@ export interface ProfileRetrieveResponse {
    */
   email: string;
 
+  links: ProfileRetrieveResponse.Links;
+
   /**
    * URL that points to the user’s profile image, if one exists
    */
@@ -43,9 +45,23 @@ export interface ProfileRetrieveResponse {
   tier: 'free' | 'pro' | null;
 
   /**
+   * URL of this user’s profile on Val Town’s website
+   */
+  url: string;
+
+  /**
    * The user’s handle that they chose for themselves. Does not include the @ symbol
    */
   username: string | null;
+}
+
+export namespace ProfileRetrieveResponse {
+  export interface Links {
+    /**
+     * URL of this user on this API
+     */
+    self: string;
+  }
 }
 
 export namespace Profile {
