@@ -22,7 +22,10 @@ export interface EvalRunParams {
   code: string;
 
   /**
-   * Array of arguments passed to the given function
+   * Array of arguments passed to the given function. If this is present, the default
+   * export should be a function and will be called with these arguments, and the
+   * function result will be returned. If `args` is not present, no function calls
+   * are made, but you can still return a value using `export default myVariable`.
    */
   args?: Array<unknown>;
 }
