@@ -23,6 +23,8 @@ export interface BasicVal {
 
   createdAt: string;
 
+  links: BasicVal.Links;
+
   /**
    * The name of this val
    */
@@ -65,6 +67,18 @@ export namespace BasicVal {
 
     username: string | null;
   }
+
+  export interface Links {
+    /**
+     * The URL of this val on this API
+     */
+    self: string;
+
+    /**
+     * The endpoint to retrieve this val’s versions
+     */
+    versions: string;
+  }
 }
 
 /**
@@ -92,6 +106,8 @@ export interface ExtendedVal {
    * How many likes this val has received
    */
   likeCount: number;
+
+  links: ExtendedVal.Links;
 
   /**
    * The name of this val
@@ -141,6 +157,18 @@ export namespace ExtendedVal {
     id: string;
 
     username: string | null;
+  }
+
+  export interface Links {
+    /**
+     * The URL of this val on this API
+     */
+    self: string;
+
+    /**
+     * The endpoint to retrieve this val’s versions
+     */
+    versions: string;
   }
 }
 
@@ -222,15 +250,31 @@ export interface User {
    */
   bio: string | null;
 
+  links: User.Links;
+
   /**
    * URL that points to the user’s profile image, if one exists
    */
   profileImageUrl: string | null;
 
   /**
+   * URL of this user’s profile on Val Town’s website
+   */
+  url: string;
+
+  /**
    * The user’s handle that they chose for themselves. Does not include the @ symbol
    */
   username: string | null;
+}
+
+export namespace User {
+  export interface Links {
+    /**
+     * URL of this user on this API
+     */
+    self: string;
+  }
 }
 
 export class BasicValsPageCursorURL extends PageCursorURL<BasicVal> {}
