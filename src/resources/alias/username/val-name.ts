@@ -43,6 +43,8 @@ export interface ValNameRetrieveResponse {
    */
   likeCount: number;
 
+  links: ValNameRetrieveResponse.Links;
+
   /**
    * The name of this val
    */
@@ -91,6 +93,18 @@ export namespace ValNameRetrieveResponse {
     id: string;
 
     username: string | null;
+  }
+
+  export interface Links {
+    /**
+     * The URL of this val on this API
+     */
+    self: string;
+
+    /**
+     * The endpoint to retrieve this val’s versions
+     */
+    versions: string;
   }
 }
 

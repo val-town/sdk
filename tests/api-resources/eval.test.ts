@@ -10,7 +10,7 @@ const valTown = new ValTown({
 
 describe('resource eval', () => {
   test('run: only required params', async () => {
-    const responsePromise = valTown.eval.run({ code: 'console.log(1);' });
+    const responsePromise = valTown.eval.run({ code: 'export default 1' });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -21,6 +21,6 @@ describe('resource eval', () => {
   });
 
   test('run: required and optional params', async () => {
-    const response = await valTown.eval.run({ code: 'console.log(1);', args: [{}, {}, {}] });
+    const response = await valTown.eval.run({ code: 'export default 1', args: [{}, {}, {}] });
   });
 });
