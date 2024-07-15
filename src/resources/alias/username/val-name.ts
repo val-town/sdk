@@ -97,6 +97,11 @@ export namespace ValNameRetrieveResponse {
 
   export interface Links {
     /**
+     * The URL of this Val’s source code as a module
+     */
+    module: string;
+
+    /**
      * The URL of this val on this API
      */
     self: string;
