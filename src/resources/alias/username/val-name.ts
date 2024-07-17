@@ -72,7 +72,7 @@ export interface ValNameRetrieveResponse {
    * The type of a val. HTTP can receive web requests, Email can receive emails, Cron
    * runs periodically, and Script can be used for libraries or one-off calculations
    */
-  type: 'interval' | 'http' | 'express' | 'email' | 'script' | 'rpc' | 'httpnext';
+  type: 'interval' | 'http' | 'express' | 'email' | 'script' | 'rpc';
 
   /**
    * The URL of this val on the Val Town website
