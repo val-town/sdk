@@ -45,7 +45,7 @@ export interface BasicVal {
    * The type of a val. HTTP can receive web requests, Email can receive emails, Cron
    * runs periodically, and Script can be used for libraries or one-off calculations
    */
-  type: 'interval' | 'http' | 'express' | 'email' | 'script' | 'rpc';
+  type: 'interval' | 'http' | 'express' | 'email' | 'script' | 'rpc' | 'httpnext';
 
   /**
    * The URL of this val on the Val Town website
@@ -141,7 +141,7 @@ export interface ExtendedVal {
    * The type of a val. HTTP can receive web requests, Email can receive emails, Cron
    * runs periodically, and Script can be used for libraries or one-off calculations
    */
-  type: 'interval' | 'http' | 'express' | 'email' | 'script' | 'rpc';
+  type: 'interval' | 'http' | 'express' | 'email' | 'script' | 'rpc' | 'httpnext';
 
   /**
    * The URL of this val on the Val Town website
