@@ -22,7 +22,7 @@ The full API of this library can be found in [api.md](api.md).
 ```js
 import ValTown from '@valtown/sdk';
 
-const valTown = new ValTown();
+const client = new ValTown();
 
 async function main() {
   const emailSendResponse = await valTown.emails.send();
@@ -41,7 +41,7 @@ This library includes TypeScript definitions for all request params and response
 ```ts
 import ValTown from '@valtown/sdk';
 
-const valTown = new ValTown();
+const client = new ValTown();
 
 async function main() {
   const emailSendResponse: ValTown.EmailSendResponse = await valTown.emails.send();
@@ -99,7 +99,7 @@ You can use the `maxRetries` option to configure or disable this:
 <!-- prettier-ignore -->
 ```js
 // Configure the default for all requests:
-const valTown = new ValTown({
+const client = new ValTown({
   maxRetries: 0, // default is 2
 });
 
@@ -116,7 +116,7 @@ Requests time out after 1 minute by default. You can configure this with a `time
 <!-- prettier-ignore -->
 ```ts
 // Configure the default for all requests:
-const valTown = new ValTown({
+const client = new ValTown({
   timeout: 20 * 1000, // 20 seconds (default is 1 minute)
 });
 
@@ -140,7 +140,7 @@ You can also use the `.withResponse()` method to get the raw `Response` along wi
 
 <!-- prettier-ignore -->
 ```ts
-const valTown = new ValTown();
+const client = new ValTown();
 
 const response = await valTown.emails.send().asResponse();
 console.log(response.headers.get('X-My-Header'));
@@ -247,7 +247,7 @@ import http from 'http';
 import { HttpsProxyAgent } from 'https-proxy-agent';
 
 // Configure the default for all requests:
-const valTown = new ValTown({
+const client = new ValTown({
   httpAgent: new HttpsProxyAgent(process.env.PROXY_URL),
 });
 
