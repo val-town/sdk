@@ -1,8 +1,8 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { APIResource } from '@valtown/sdk/resource';
-import * as Core from '@valtown/sdk/core';
-import * as EvalAPI from '@valtown/sdk/resources/eval';
+import { APIResource } from '../resource';
+import * as Core from '../core';
+import * as EvalAPI from './eval';
 
 export class Eval extends APIResource {
   /**
