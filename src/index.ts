@@ -3,9 +3,9 @@
 import * as Errors from './error';
 import * as Uploads from './uploads';
 import { type Agent } from './_shims/index';
-import * as Core from '@valtown/sdk/core';
-import * as Pagination from '@valtown/sdk/pagination';
-import * as API from '@valtown/sdk/resources/index';
+import * as Core from './core';
+import * as Pagination from './pagination';
+import * as API from './resources/index';
 
 export interface ClientOptions {
   /**

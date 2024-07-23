@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { PageCursorURL } from '@valtown/sdk/pagination';
+import { PageCursorURL } from '../pagination';
 
 /**
  * A Val
@@ -45,7 +45,7 @@ export interface BasicVal {
    * The type of a val. HTTP can receive web requests, Email can receive emails, Cron
    * runs periodically, and Script can be used for libraries or one-off calculations
    */
-  type: 'interval' | 'http' | 'express' | 'email' | 'script' | 'rpc';
+  type: 'interval' | 'http' | 'express' | 'email' | 'script' | 'rpc' | 'httpnext';
 
   /**
    * The URL of this val on the Val Town website
@@ -83,6 +83,11 @@ export namespace BasicVal {
      * The endpoint to retrieve this val’s versions
      */
     versions: string;
+
+    /**
+     * This val’s web endpoint, where it serves a website or API
+     */
+    endpoint?: string;
   }
 }
 
@@ -141,7 +146,7 @@ export interface ExtendedVal {
    * The type of a val. HTTP can receive web requests, Email can receive emails, Cron
    * runs periodically, and Script can be used for libraries or one-off calculations
    */
-  type: 'interval' | 'http' | 'express' | 'email' | 'script' | 'rpc';
+  type: 'interval' | 'http' | 'express' | 'email' | 'script' | 'rpc' | 'httpnext';
 
   /**
    * The URL of this val on the Val Town website
@@ -179,6 +184,11 @@ export namespace ExtendedVal {
      * The endpoint to retrieve this val’s versions
      */
     versions: string;
+
+    /**
+     * This val’s web endpoint, where it serves a website or API
+     */
+    endpoint?: string;
   }
 }
 

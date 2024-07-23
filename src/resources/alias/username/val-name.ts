@@ -1,8 +1,8 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { APIResource } from '@valtown/sdk/resource';
-import * as Core from '@valtown/sdk/core';
-import * as ValNameAPI from '@valtown/sdk/resources/alias/username/val-name';
+import { APIResource } from '../../../resource';
+import * as Core from '../../../core';
+import * as ValNameAPI from './val-name';
 
 export class ValName extends APIResource {
   /**
@@ -72,7 +72,7 @@ export interface ValNameRetrieveResponse {
    * The type of a val. HTTP can receive web requests, Email can receive emails, Cron
    * runs periodically, and Script can be used for libraries or one-off calculations
    */
-  type: 'interval' | 'http' | 'express' | 'email' | 'script' | 'rpc';
+  type: 'interval' | 'http' | 'express' | 'email' | 'script' | 'rpc' | 'httpnext';
 
   /**
    * The URL of this val on the Val Town website
@@ -110,6 +110,11 @@ export namespace ValNameRetrieveResponse {
      * The endpoint to retrieve this val’s versions
      */
     versions: string;
+
+    /**
+     * This val’s web endpoint, where it serves a website or API
+     */
+    endpoint?: string;
   }
 }
 

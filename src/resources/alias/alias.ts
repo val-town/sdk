@@ -1,7 +1,7 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { APIResource } from '@valtown/sdk/resource';
-import * as UsernameAPI from '@valtown/sdk/resources/alias/username/username';
+import { APIResource } from '../../resource';
+import * as UsernameAPI from './username/username';
 
 /**
  * Methods to translate between human-readable names and IDs
