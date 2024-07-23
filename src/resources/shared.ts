@@ -83,6 +83,11 @@ export namespace BasicVal {
      * The endpoint to retrieve this val’s versions
      */
     versions: string;
+
+    /**
+     * This val’s web endpoint, where it serves a website or API
+     */
+    endpoint?: string;
   }
 }
 
@@ -179,6 +184,11 @@ export namespace ExtendedVal {
      * The endpoint to retrieve this val’s versions
      */
     versions: string;
+
+    /**
+     * This val’s web endpoint, where it serves a website or API
+     */
+    endpoint?: string;
   }
 }
 
