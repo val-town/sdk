@@ -1,11 +1,11 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { APIResource } from '@valtown/sdk/resource';
-import { isRequestOptions } from '@valtown/sdk/core';
-import * as Core from '@valtown/sdk/core';
-import * as ValsAPI from '@valtown/sdk/resources/vals/vals';
-import * as Shared from '@valtown/sdk/resources/shared';
-import * as VersionsAPI from '@valtown/sdk/resources/vals/versions';
+import { APIResource } from '../../resource';
+import { isRequestOptions } from '../../core';
+import * as Core from '../../core';
+import * as ValsAPI from './vals';
+import * as Shared from '../shared';
+import * as VersionsAPI from './versions';
 
 /**
  * Vals are runnable JavaScript, TypeScript, and JSX modules

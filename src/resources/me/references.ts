@@ -1,9 +1,9 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { APIResource } from '@valtown/sdk/resource';
-import * as Core from '@valtown/sdk/core';
-import * as ReferencesAPI from '@valtown/sdk/resources/me/references';
-import { PageCursorURL, type PageCursorURLParams } from '@valtown/sdk/pagination';
+import { APIResource } from '../../resource';
+import * as Core from '../../core';
+import * as ReferencesAPI from './references';
+import { PageCursorURL, type PageCursorURLParams } from '../../pagination';
 
 export class References extends APIResource {
   /**

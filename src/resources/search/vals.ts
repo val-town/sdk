@@ -1,11 +1,11 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { APIResource } from '@valtown/sdk/resource';
-import * as Core from '@valtown/sdk/core';
-import * as ValsAPI from '@valtown/sdk/resources/search/vals';
-import * as Shared from '@valtown/sdk/resources/shared';
-import { BasicValsPageCursorURL } from '@valtown/sdk/resources/shared';
-import { type PageCursorURLParams } from '@valtown/sdk/pagination';
+import { APIResource } from '../../resource';
+import * as Core from '../../core';
+import * as ValsAPI from './vals';
+import * as Shared from '../shared';
+import { BasicValsPageCursorURL } from '../shared';
+import { type PageCursorURLParams } from '../../pagination';
 
 export class Vals extends APIResource {
   /**
