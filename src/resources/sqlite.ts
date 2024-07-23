@@ -1,9 +1,9 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { APIResource } from '@valtown/sdk/resource';
-import * as Core from '@valtown/sdk/core';
-import * as SqliteAPI from '@valtown/sdk/resources/sqlite';
-import * as Shared from '@valtown/sdk/resources/shared';
+import { APIResource } from '../resource';
+import * as Core from '../core';
+import * as SqliteAPI from './sqlite';
+import * as Shared from './shared';
 
 /**
  * Vals access a shared SQLite database

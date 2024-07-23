@@ -1,10 +1,10 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { APIResource } from '@valtown/sdk/resource';
-import { isRequestOptions } from '@valtown/sdk/core';
-import * as Core from '@valtown/sdk/core';
-import * as BlobsAPI from '@valtown/sdk/resources/blobs';
-import { type Response } from '@valtown/sdk/_shims/index';
+import { APIResource } from '../resource';
+import { isRequestOptions } from '../core';
+import * as Core from '../core';
+import * as BlobsAPI from './blobs';
+import { type Response } from '../_shims/index';
 
 /**
  * Blob storage lets you store larger objects, including binary data
