@@ -1,5 +1,42 @@
 # Changelog
 
+## 0.11.0 (2024-07-23)
+
+Full Changelog: [v0.10.0...v0.11.0](https://github.com/val-town/sdk/compare/v0.10.0...v0.11.0)
+
+### Features
+
+* **api:** OpenAPI spec update via Stainless API ([#184](https://github.com/val-town/sdk/issues/184)) ([b1a0e0f](https://github.com/val-town/sdk/commit/b1a0e0fd8c736184ce6def29a9169789fe843718))
+* **api:** OpenAPI spec update via Stainless API ([#186](https://github.com/val-town/sdk/issues/186)) ([0283799](https://github.com/val-town/sdk/commit/02837997e352c90e32d612d59364f50130c7a575))
+* **api:** OpenAPI spec update via Stainless API ([#187](https://github.com/val-town/sdk/issues/187)) ([48a4c99](https://github.com/val-town/sdk/commit/48a4c992acd2eae0171a887bda9996d1969495c9))
+* **api:** OpenAPI spec update via Stainless API ([#188](https://github.com/val-town/sdk/issues/188)) ([9c3d888](https://github.com/val-town/sdk/commit/9c3d88811bec01e2e2c34339e09dd5199b43e074))
+* **api:** OpenAPI spec update via Stainless API ([#189](https://github.com/val-town/sdk/issues/189)) ([8b232e4](https://github.com/val-town/sdk/commit/8b232e4597096c25f33b026c1a663c7d10eda93e))
+* **api:** OpenAPI spec update via Stainless API ([#190](https://github.com/val-town/sdk/issues/190)) ([806480a](https://github.com/val-town/sdk/commit/806480a32f77b1af29421f041c0c9b502fd5b5aa))
+* **api:** OpenAPI spec update via Stainless API ([#191](https://github.com/val-town/sdk/issues/191)) ([01adecd](https://github.com/val-town/sdk/commit/01adecd4a2b9a54d26fd57381973051086e047a7))
+* **api:** OpenAPI spec update via Stainless API ([#192](https://github.com/val-town/sdk/issues/192)) ([07689f5](https://github.com/val-town/sdk/commit/07689f5f698e5a407b47a5d89ba171388e755058))
+* **api:** OpenAPI spec update via Stainless API ([#193](https://github.com/val-town/sdk/issues/193)) ([b412ad3](https://github.com/val-town/sdk/commit/b412ad35daa21775a7632df0217f7102bd23f090))
+* **api:** OpenAPI spec update via Stainless API ([#194](https://github.com/val-town/sdk/issues/194)) ([e98b979](https://github.com/val-town/sdk/commit/e98b979bde0e714ed21e4efe215f8fd3069d967a))
+* **api:** OpenAPI spec update via Stainless API ([#195](https://github.com/val-town/sdk/issues/195)) ([a54f962](https://github.com/val-town/sdk/commit/a54f9624b7c8314bc851e9891b3ac44638e53462))
+* **api:** OpenAPI spec update via Stainless API ([#196](https://github.com/val-town/sdk/issues/196)) ([f3501ba](https://github.com/val-town/sdk/commit/f3501ba424788cfaa7f1a41edfd6f2dfd1138b4a))
+* **api:** OpenAPI spec update via Stainless API ([#201](https://github.com/val-town/sdk/issues/201)) ([4626fb1](https://github.com/val-town/sdk/commit/4626fb17f7e83aa4e68ce994d7692b92e516af26))
+* **api:** OpenAPI spec update via Stainless API ([#202](https://github.com/val-town/sdk/issues/202)) ([2987b54](https://github.com/val-town/sdk/commit/2987b541504264c9fd5d2a48b9acd92ea91ef481))
+* **api:** OpenAPI spec update via Stainless API ([#203](https://github.com/val-town/sdk/issues/203)) ([ed1dc8e](https://github.com/val-town/sdk/commit/ed1dc8e35091c6e8e36049b8959f6654eb0508cf))
+* **api:** OpenAPI spec update via Stainless API ([#204](https://github.com/val-town/sdk/issues/204)) ([ca41878](https://github.com/val-town/sdk/commit/ca418788c0fdc42279ddff71ec3b5a2eb81966d6))
+* **api:** OpenAPI spec update via Stainless API ([#205](https://github.com/val-town/sdk/issues/205)) ([f46ab31](https://github.com/val-town/sdk/commit/f46ab310b2b90697b970f7472c2aac13468b1f81))
+* **api:** OpenAPI spec update via Stainless API ([#206](https://github.com/val-town/sdk/issues/206)) ([4fc0ac6](https://github.com/val-town/sdk/commit/4fc0ac6b3add5af9ea67055aaca779c9108558bd))
+
+
+### Bug Fixes
+
+* use relative paths ([#200](https://github.com/val-town/sdk/issues/200)) ([65738be](https://github.com/val-town/sdk/commit/65738be5cb92bb658f8ed2b282cfbcf34aa5e899))
+
+
+### Chores
+
+* **ci:** limit release doctor target branches ([#198](https://github.com/val-town/sdk/issues/198)) ([27f67a2](https://github.com/val-town/sdk/commit/27f67a2cc1435b200b0215d8a607710c3236ecec))
+* **docs:** use client instead of package name in Node examples ([#197](https://github.com/val-town/sdk/issues/197)) ([b69821e](https://github.com/val-town/sdk/commit/b69821e5cf77c7f679241d9a4fe21f9cf3a3bc77))
+* **tests:** update prism version ([#199](https://github.com/val-town/sdk/issues/199)) ([ef5556e](https://github.com/val-town/sdk/commit/ef5556e97fa6d87ffdc18b35121ab804d1cd1258))
+
 ## 0.10.0 (2024-07-16)
 
 Full Changelog: [v0.9.0...v0.10.0](https://github.com/val-town/sdk/compare/v0.9.0...v0.10.0)
