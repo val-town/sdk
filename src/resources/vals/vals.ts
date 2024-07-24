@@ -117,7 +117,7 @@ export interface ValCreateParams {
    * The type of the val you want to create. Note that this does not include interval
    * vals, because they cannot be created through the API yet.
    */
-  type?: 'http' | 'script' | 'email';
+  type?: 'http' | 'httpnext' | 'script' | 'email';
 }
 
 export interface ValUpdateParams {
@@ -141,7 +141,7 @@ export interface ValUpdateParams {
    * The type of the val you want to update. Note that this does not include interval
    * vals, because they cannot be created through the API yet.
    */
-  type?: 'http' | 'script' | 'email';
+  type?: 'http' | 'httpnext' | 'script' | 'email';
 }
 
 export interface ValCreateOrUpdateParams {
