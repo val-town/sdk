@@ -58,7 +58,6 @@ describe('resource emails', () => {
           bcc: 'string',
           cc: 'string',
           from: 'string',
-          headers: { foo: 'string' },
           html: 'Hello <strong>world</strong>',
           replyToList: { name: 'name', email: 'email' },
           subject: 'An important message',
