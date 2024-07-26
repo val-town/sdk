@@ -3,14 +3,14 @@
 import ValTown from '@valtown/sdk';
 import { Response } from 'node-fetch';
 
-const valTown = new ValTown({
+const client = new ValTown({
   bearerToken: 'My Bearer Token',
   baseURL: process.env['TEST_API_BASE_URL'] ?? 'http://127.0.0.1:4010',
 });
 
 describe('resource vals', () => {
   test('list: only required params', async () => {
-    const responsePromise = valTown.users.vals.list('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
+    const responsePromise = client.users.vals.list('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       limit: 1,
       offset: 0,
     });
@@ -24,7 +24,7 @@ describe('resource vals', () => {
   });
 
   test('list: required and optional params', async () => {
-    const response = await valTown.users.vals.list('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
+    const response = await client.users.vals.list('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       limit: 1,
       offset: 0,
     });
