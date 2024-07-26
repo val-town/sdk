@@ -25,7 +25,7 @@ import ValTown from '@valtown/sdk';
 const client = new ValTown();
 
 async function main() {
-  const emailSendResponse = await valTown.emails.send();
+  const emailSendResponse = await client.emails.send();
 
   console.log(emailSendResponse.message);
 }
@@ -44,7 +44,7 @@ import ValTown from '@valtown/sdk';
 const client = new ValTown();
 
 async function main() {
-  const emailSendResponse: ValTown.EmailSendResponse = await valTown.emails.send();
+  const emailSendResponse: ValTown.EmailSendResponse = await client.emails.send();
 }
 
 main();
@@ -61,7 +61,7 @@ a subclass of `APIError` will be thrown:
 <!-- prettier-ignore -->
 ```ts
 async function main() {
-  const emailSendResponse = await valTown.emails.send().catch(async (err) => {
+  const emailSendResponse = await client.emails.send().catch(async (err) => {
     if (err instanceof ValTown.APIError) {
       console.log(err.status); // 400
       console.log(err.name); // BadRequestError
@@ -104,7 +104,7 @@ const client = new ValTown({
 });
 
 // Or, configure per-request:
-await valTown.emails.send({
+await client.emails.send({
   maxRetries: 5,
 });
 ```
@@ -121,7 +121,7 @@ const client = new ValTown({
 });
 
 // Override per-request:
-await valTown.emails.send({
+await client.emails.send({
   timeout: 5 * 1000,
 });
 ```
@@ -142,11 +142,11 @@ You can also use the `.withResponse()` method to get the raw `Response` along wi
 ```ts
 const client = new ValTown();
 
-const response = await valTown.emails.send().asResponse();
+const response = await client.emails.send().asResponse();
 console.log(response.headers.get('X-My-Header'));
 console.log(response.statusText); // access the underlying Response object
 
-const { data: emailSendResponse, response: raw } = await valTown.emails.send().withResponse();
+const { data: emailSendResponse, response: raw } = await client.emails.send().withResponse();
 console.log(raw.headers.get('X-My-Header'));
 console.log(emailSendResponse.message);
 ```
@@ -252,7 +252,7 @@ const client = new ValTown({
 });
 
 // Override per-request:
-await valTown.emails.send({
+await client.emails.send({
   httpAgent: new http.Agent({ keepAlive: false }),
 });
 ```
