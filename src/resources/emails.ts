@@ -54,6 +54,11 @@ export interface EmailSendParams {
   from?: string | EmailSendParams.EmailNameAndAddress;
 
   /**
+   * A set of headers to include the email that you send
+   */
+  headers?: Record<string, string>;
+
+  /**
    * HTML content of the email. Can be specified alongside text
    */
   html?: string;
