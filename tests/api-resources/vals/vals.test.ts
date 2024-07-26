@@ -3,14 +3,14 @@
 import ValTown from '@valtown/sdk';
 import { Response } from 'node-fetch';
 
-const valTown = new ValTown({
+const client = new ValTown({
   bearerToken: 'My Bearer Token',
   baseURL: process.env['TEST_API_BASE_URL'] ?? 'http://127.0.0.1:4010',
 });
 
 describe('resource vals', () => {
   test('create: only required params', async () => {
-    const responsePromise = valTown.vals.create({ code: 'console.log(1);' });
+    const responsePromise = client.vals.create({ code: 'console.log(1);' });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -21,7 +21,7 @@ describe('resource vals', () => {
   });
 
   test('create: required and optional params', async () => {
-    const response = await valTown.vals.create({
+    const response = await client.vals.create({
       code: 'console.log(1);',
       name: 'myVal',
       privacy: 'public',
@@ -31,7 +31,7 @@ describe('resource vals', () => {
   });
 
   test('retrieve', async () => {
-    const responsePromise = valTown.vals.retrieve('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');
+    const responsePromise = client.vals.retrieve('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -44,12 +44,12 @@ describe('resource vals', () => {
   test('retrieve: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
-      valTown.vals.retrieve('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', { path: '/_stainless_unknown_path' }),
+      client.vals.retrieve('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', { path: '/_stainless_unknown_path' }),
     ).rejects.toThrow(ValTown.NotFoundError);
   });
 
   test('update', async () => {
-    const responsePromise = valTown.vals.update('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');
+    const responsePromise = client.vals.update('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -62,14 +62,14 @@ describe('resource vals', () => {
   test('update: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
-      valTown.vals.update('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', { path: '/_stainless_unknown_path' }),
+      client.vals.update('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', { path: '/_stainless_unknown_path' }),
     ).rejects.toThrow(ValTown.NotFoundError);
   });
 
   test('update: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
-      valTown.vals.update(
+      client.vals.update(
         '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
         { name: 'myVal', privacy: 'public', readme: '# Updated readme', type: 'http' },
         { path: '/_stainless_unknown_path' },
@@ -78,7 +78,7 @@ describe('resource vals', () => {
   });
 
   test('delete', async () => {
-    const responsePromise = valTown.vals.delete('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');
+    const responsePromise = client.vals.delete('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -91,12 +91,12 @@ describe('resource vals', () => {
   test('delete: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
-      valTown.vals.delete('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', { path: '/_stainless_unknown_path' }),
+      client.vals.delete('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', { path: '/_stainless_unknown_path' }),
     ).rejects.toThrow(ValTown.NotFoundError);
   });
 
   test('cancelEvaluation', async () => {
-    const responsePromise = valTown.vals.cancelEvaluation(
+    const responsePromise = client.vals.cancelEvaluation(
       '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
       '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
     );
@@ -112,7 +112,7 @@ describe('resource vals', () => {
   test('cancelEvaluation: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
-      valTown.vals.cancelEvaluation(
+      client.vals.cancelEvaluation(
         '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
         '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
         { path: '/_stainless_unknown_path' },
@@ -121,7 +121,7 @@ describe('resource vals', () => {
   });
 
   test('createOrUpdate: only required params', async () => {
-    const responsePromise = valTown.vals.createOrUpdate({ code: 'console.log(1);', name: 'myVal' });
+    const responsePromise = client.vals.createOrUpdate({ code: 'console.log(1);', name: 'myVal' });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -132,6 +132,6 @@ describe('resource vals', () => {
   });
 
   test('createOrUpdate: required and optional params', async () => {
-    const response = await valTown.vals.createOrUpdate({ code: 'console.log(1);', name: 'myVal' });
+    const response = await client.vals.createOrUpdate({ code: 'console.log(1);', name: 'myVal' });
   });
 });
