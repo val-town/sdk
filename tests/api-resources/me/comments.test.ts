@@ -3,14 +3,14 @@
 import ValTown from '@valtown/sdk';
 import { Response } from 'node-fetch';
 
-const valTown = new ValTown({
+const client = new ValTown({
   bearerToken: 'My Bearer Token',
   baseURL: process.env['TEST_API_BASE_URL'] ?? 'http://127.0.0.1:4010',
 });
 
 describe('resource comments', () => {
   test('list: only required params', async () => {
-    const responsePromise = valTown.me.comments.list({ limit: 1, offset: 0, relationship: 'any' });
+    const responsePromise = client.me.comments.list({ limit: 1, offset: 0, relationship: 'any' });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -21,7 +21,7 @@ describe('resource comments', () => {
   });
 
   test('list: required and optional params', async () => {
-    const response = await valTown.me.comments.list({
+    const response = await client.me.comments.list({
       limit: 1,
       offset: 0,
       relationship: 'any',

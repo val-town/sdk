@@ -3,14 +3,14 @@
 import ValTown from '@valtown/sdk';
 import { Response } from 'node-fetch';
 
-const valTown = new ValTown({
+const client = new ValTown({
   bearerToken: 'My Bearer Token',
   baseURL: process.env['TEST_API_BASE_URL'] ?? 'http://127.0.0.1:4010',
 });
 
 describe('resource profile', () => {
   test('retrieve', async () => {
-    const responsePromise = valTown.me.profile.retrieve();
+    const responsePromise = client.me.profile.retrieve();
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -22,7 +22,7 @@ describe('resource profile', () => {
 
   test('retrieve: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(valTown.me.profile.retrieve({ path: '/_stainless_unknown_path' })).rejects.toThrow(
+    await expect(client.me.profile.retrieve({ path: '/_stainless_unknown_path' })).rejects.toThrow(
       ValTown.NotFoundError,
     );
   });
