@@ -170,6 +170,7 @@ export class ValTown extends Core.APIClient {
   }
 
   static ValTown = this;
+  static DEFAULT_TIMEOUT = 60000; // 1 minute
 
   static ValTownError = Errors.ValTownError;
   static APIError = Errors.APIError;
