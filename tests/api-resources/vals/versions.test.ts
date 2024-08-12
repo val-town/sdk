@@ -28,7 +28,7 @@ describe('resource versions', () => {
       name: 'myVal',
       privacy: 'public',
       readme: '# My Val',
-      type: 'script',
+      type: 'http',
     });
   });
 
