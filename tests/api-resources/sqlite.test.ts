@@ -21,7 +21,7 @@ describe('resource sqlite', () => {
   });
 
   test('batch: required and optional params', async () => {
-    const response = await client.sqlite.batch({ statements: ['SELECT 1;'], mode: 'read' });
+    const response = await client.sqlite.batch({ statements: ['SELECT 1;'], mode: 'write' });
   });
 
   test('execute: only required params', async () => {

@@ -1,5 +1,21 @@
 # Changelog
 
+## 0.18.0 (2024-08-13)
+
+Full Changelog: [v0.17.0...v0.18.0](https://github.com/val-town/sdk/compare/v0.17.0...v0.18.0)
+
+### Features
+
+* **api:** OpenAPI spec update via Stainless API ([#333](https://github.com/val-town/sdk/issues/333)) ([352109c](https://github.com/val-town/sdk/commit/352109c8958944b057b948c530fb71170841cb58))
+* **api:** OpenAPI spec update via Stainless API ([#335](https://github.com/val-town/sdk/issues/335)) ([0c1c960](https://github.com/val-town/sdk/commit/0c1c9603c84135035c57e64511c3aa11976ea3c6))
+* **api:** OpenAPI spec update via Stainless API ([#337](https://github.com/val-town/sdk/issues/337)) ([1bfc560](https://github.com/val-town/sdk/commit/1bfc560c30c661275c70ddf42be255c3a1c90f04))
+* **api:** OpenAPI spec update via Stainless API ([#338](https://github.com/val-town/sdk/issues/338)) ([2627921](https://github.com/val-town/sdk/commit/2627921c06d9bc18bb628dd54b04219053406fa7))
+
+
+### Chores
+
+* **examples:** minor formatting changes ([#336](https://github.com/val-town/sdk/issues/336)) ([d0ab2e3](https://github.com/val-town/sdk/commit/d0ab2e3e4f21d05656ce9ac1dd17ecb0dd4b50fa))
+
 ## 0.17.0 (2024-08-12)
 
 Full Changelog: [v0.16.0...v0.17.0](https://github.com/val-town/sdk/compare/v0.16.0...v0.17.0)
