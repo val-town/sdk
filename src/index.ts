@@ -144,7 +144,6 @@ export class ValTown extends Core.APIClient {
    * Vals access a shared SQLite database
    */
   sqlite: API.Sqlite = new API.Sqlite(this);
-  eval: API.Eval = new API.Eval(this);
   /**
    * Vals are runnable JavaScript, TypeScript, and JSX modules
    */
@@ -233,10 +232,6 @@ export namespace ValTown {
   export import SqliteBatchResponse = API.SqliteBatchResponse;
   export import SqliteBatchParams = API.SqliteBatchParams;
   export import SqliteExecuteParams = API.SqliteExecuteParams;
-
-  export import Eval = API.Eval;
-  export import EvalRunResponse = API.EvalRunResponse;
-  export import EvalRunParams = API.EvalRunParams;
 
   export import Vals = API.Vals;
   export import ValCancelEvaluationResponse = API.ValCancelEvaluationResponse;
