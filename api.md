@@ -108,16 +108,6 @@ Methods:
 - <code title="post /v1/sqlite/batch">client.sqlite.<a href="./src/resources/sqlite.ts">batch</a>({ ...params }) -> SqliteBatchResponse</code>
 - <code title="post /v1/sqlite/execute">client.sqlite.<a href="./src/resources/sqlite.ts">execute</a>({ ...params }) -> ResultSet</code>
 
-# Eval
-
-Types:
-
-- <code><a href="./src/resources/eval.ts">EvalRunResponse</a></code>
-
-Methods:
-
-- <code title="post /v1/eval">client.eval.<a href="./src/resources/eval.ts">run</a>({ ...params }) -> EvalRunResponse | null</code>
-
 # Vals
 
 Types:
