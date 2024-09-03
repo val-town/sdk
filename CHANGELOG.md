@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.21.1 (2024-09-03)
+
+Full Changelog: [v0.21.0...v0.21.1](https://github.com/val-town/sdk/compare/v0.21.0...v0.21.1)
+
+### Bug Fixes
+
+* **client:** correct File construction from node-fetch Responses ([#422](https://github.com/val-town/sdk/issues/422)) ([cd8f52c](https://github.com/val-town/sdk/commit/cd8f52c3801f1b6720c3c8b76aa1436fafc83aa0))
+
 ## 0.21.0 (2024-08-29)
 
 Full Changelog: [v0.20.0...v0.21.0](https://github.com/val-town/sdk/compare/v0.20.0...v0.21.0)
