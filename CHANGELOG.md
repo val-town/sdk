@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.21.2 (2024-09-05)
+
+Full Changelog: [v0.21.1...v0.21.2](https://github.com/val-town/sdk/compare/v0.21.1...v0.21.2)
+
+### Bug Fixes
+
+* **uploads:** avoid making redundant memory copies ([#427](https://github.com/val-town/sdk/issues/427)) ([b218578](https://github.com/val-town/sdk/commit/b218578fbd1485b61497a8a65f7c444b3bd9c470))
+
+
+### Chores
+
+* **internal:** dependency updates ([#425](https://github.com/val-town/sdk/issues/425)) ([03db316](https://github.com/val-town/sdk/commit/03db31633fa0eba43ec969df86ce21fe76058f0d))
+
 ## 0.21.1 (2024-09-03)
 
 Full Changelog: [v0.21.0...v0.21.1](https://github.com/val-town/sdk/compare/v0.21.0...v0.21.1)
