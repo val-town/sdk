@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.21.3 (2024-09-09)
+
+Full Changelog: [v0.21.2...v0.21.3](https://github.com/val-town/sdk/compare/v0.21.2...v0.21.3)
+
+### Bug Fixes
+
+* **errors:** pass message through to APIConnectionError ([#432](https://github.com/val-town/sdk/issues/432)) ([d83c199](https://github.com/val-town/sdk/commit/d83c199b98d1d4e5007d58f5104e9a68a9afaf85))
+
+
+### Chores
+
+* **internal:** codegen related update ([#429](https://github.com/val-town/sdk/issues/429)) ([9fb84c4](https://github.com/val-town/sdk/commit/9fb84c4537587ba85cd73ef4a3525454250fcbd6))
+* **internal:** codegen related update ([#431](https://github.com/val-town/sdk/issues/431)) ([f744a9a](https://github.com/val-town/sdk/commit/f744a9a215a11bbf26a9d3db4eb42536384aefe9))
+
 ## 0.21.2 (2024-09-05)
 
 Full Changelog: [v0.21.1...v0.21.2](https://github.com/val-town/sdk/compare/v0.21.1...v0.21.2)
