@@ -25,9 +25,9 @@ import ValTown from '@valtown/sdk';
 const client = new ValTown();
 
 async function main() {
-  const emailSendResponse = await client.emails.send();
+  const response = await client.emails.send();
 
-  console.log(emailSendResponse.message);
+  console.log(response.message);
 }
 
 main();
@@ -44,7 +44,7 @@ import ValTown from '@valtown/sdk';
 const client = new ValTown();
 
 async function main() {
-  const emailSendResponse: ValTown.EmailSendResponse = await client.emails.send();
+  const response: ValTown.EmailSendResponse = await client.emails.send();
 }
 
 main();
@@ -61,7 +61,7 @@ a subclass of `APIError` will be thrown:
 <!-- prettier-ignore -->
 ```ts
 async function main() {
-  const emailSendResponse = await client.emails.send().catch(async (err) => {
+  const response = await client.emails.send().catch(async (err) => {
     if (err instanceof ValTown.APIError) {
       console.log(err.status); // 400
       console.log(err.name); // BadRequestError
@@ -146,9 +146,9 @@ const response = await client.emails.send().asResponse();
 console.log(response.headers.get('X-My-Header'));
 console.log(response.statusText); // access the underlying Response object
 
-const { data: emailSendResponse, response: raw } = await client.emails.send().withResponse();
+const { data: response, response: raw } = await client.emails.send().withResponse();
 console.log(raw.headers.get('X-My-Header'));
-console.log(emailSendResponse.message);
+console.log(response.message);
 ```
 
 ### Making custom/undocumented requests
