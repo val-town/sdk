@@ -1,5 +1,20 @@
 # Changelog
 
+## 0.22.0 (2024-09-11)
+
+Full Changelog: [v0.21.3...v0.22.0](https://github.com/val-town/sdk/compare/v0.21.3...v0.22.0)
+
+### Features
+
+* **api:** OpenAPI spec update via Stainless API ([#434](https://github.com/val-town/sdk/issues/434)) ([c7394f6](https://github.com/val-town/sdk/commit/c7394f636c1e2742499b3560d6e5ee288532d387))
+
+
+### Chores
+
+* better object fallback behaviour for casting errors ([#435](https://github.com/val-town/sdk/issues/435)) ([587000e](https://github.com/val-town/sdk/commit/587000edef7d3864aa19c73ec547dd06b821dc47))
+* **internal:** codegen related update ([#429](https://github.com/val-town/sdk/issues/429)) ([283abcd](https://github.com/val-town/sdk/commit/283abcd21d6892bbdec6b934b0e5085406d94ae5))
+* **internal:** codegen related update ([#431](https://github.com/val-town/sdk/issues/431)) ([af64e62](https://github.com/val-town/sdk/commit/af64e62edcd2547ef67687512c1ab1cbd0e9caa0))
+
 ## 0.21.3 (2024-09-09)
 
 Full Changelog: [v0.21.2...v0.21.3](https://github.com/val-town/sdk/compare/v0.21.2...v0.21.3)
