@@ -1,5 +1,26 @@
 # Changelog
 
+## 0.23.0 (2024-09-16)
+
+Full Changelog: [v0.22.0...v0.23.0](https://github.com/val-town/sdk/compare/v0.22.0...v0.23.0)
+
+### Features
+
+* **api:** OpenAPI spec update via Stainless API ([#434](https://github.com/val-town/sdk/issues/434)) ([d1e134e](https://github.com/val-town/sdk/commit/d1e134e6517f5a404fac9e606b3ec83b9bb2c143))
+* **api:** OpenAPI spec update via Stainless API ([#437](https://github.com/val-town/sdk/issues/437)) ([5238a22](https://github.com/val-town/sdk/commit/5238a2243767bd09a46682e43189dc78bd8a4e2f))
+
+
+### Chores
+
+* **internal:** codegen related update ([#429](https://github.com/val-town/sdk/issues/429)) ([1a3a455](https://github.com/val-town/sdk/commit/1a3a45521eebf23d3daa6304f8269bbb15bff441))
+* **internal:** codegen related update ([#431](https://github.com/val-town/sdk/issues/431)) ([5201d12](https://github.com/val-town/sdk/commit/5201d12f874281e5e1ee5043b9115a94f600823d))
+* **internal:** codegen related update ([#438](https://github.com/val-town/sdk/issues/438)) ([45aea24](https://github.com/val-town/sdk/commit/45aea24213b022c2395f147f38dc6cc4903926bd))
+
+
+### Documentation
+
+* update CONTRIBUTING.md ([#439](https://github.com/val-town/sdk/issues/439)) ([cf82ebc](https://github.com/val-town/sdk/commit/cf82ebc114be37cbbbf0806b32ca92e676c685ee))
+
 ## 0.22.0 (2024-09-11)
 
 Full Changelog: [v0.21.3...v0.22.0](https://github.com/val-town/sdk/compare/v0.21.3...v0.22.0)
