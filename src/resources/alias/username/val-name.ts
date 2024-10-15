@@ -83,6 +83,8 @@ export interface ValNameRetrieveResponse {
    * The version of this val, starting at zero
    */
   version: number;
+
+  versionCreatedAt?: string;
 }
 
 export namespace ValNameRetrieveResponse {
