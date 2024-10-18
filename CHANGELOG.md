@@ -1,5 +1,32 @@
 # Changelog
 
+## 0.24.0 (2024-10-18)
+
+Full Changelog: [v0.23.0...v0.24.0](https://github.com/val-town/sdk/compare/v0.23.0...v0.24.0)
+
+### Features
+
+* **api:** api update ([#446](https://github.com/val-town/sdk/issues/446)) ([1625820](https://github.com/val-town/sdk/commit/1625820a3596a65f673c42a99883885bbc34f594))
+* **api:** api update ([#447](https://github.com/val-town/sdk/issues/447)) ([2514141](https://github.com/val-town/sdk/commit/251414115ece2b975d147084159cf7e275723bb9))
+* **api:** api update ([#448](https://github.com/val-town/sdk/issues/448)) ([e7b26f4](https://github.com/val-town/sdk/commit/e7b26f4f55dc0c1e1e202a6accfd4e790f6edb76))
+* **api:** OpenAPI spec update via Stainless API ([#434](https://github.com/val-town/sdk/issues/434)) ([84c5ad6](https://github.com/val-town/sdk/commit/84c5ad60d1d10b029ae1412690cc2ac1182d73a0))
+* **api:** OpenAPI spec update via Stainless API ([#437](https://github.com/val-town/sdk/issues/437)) ([fe80922](https://github.com/val-town/sdk/commit/fe809223bec05a7978f575f99eb8a3010e43b067))
+* **api:** OpenAPI spec update via Stainless API ([#441](https://github.com/val-town/sdk/issues/441)) ([47656e1](https://github.com/val-town/sdk/commit/47656e17d1f971c4939e08f47492d8a37a46aaa5))
+* **client:** send retry count header ([#444](https://github.com/val-town/sdk/issues/444)) ([28666a0](https://github.com/val-town/sdk/commit/28666a03fac71d487e69b6787c873055c617a4a2))
+
+
+### Bug Fixes
+
+* **types:** remove leftover polyfill usage ([#443](https://github.com/val-town/sdk/issues/443)) ([834ad47](https://github.com/val-town/sdk/commit/834ad476bc1a5d2026f9ed1c20cdd68a9183ffe7))
+
+
+### Chores
+
+* **internal:** add dev dependency ([#442](https://github.com/val-town/sdk/issues/442)) ([af29059](https://github.com/val-town/sdk/commit/af29059289b60599499748a0d9ea1ac7695c2e13))
+* **internal:** codegen related update ([#429](https://github.com/val-town/sdk/issues/429)) ([5b4967e](https://github.com/val-town/sdk/commit/5b4967ebe31bef666efed21d96060fd0704bfe23))
+* **internal:** codegen related update ([#431](https://github.com/val-town/sdk/issues/431)) ([7d524c6](https://github.com/val-town/sdk/commit/7d524c6d7c11f45b28941d53bf5ec84c01c1318c))
+* **internal:** codegen related update ([#445](https://github.com/val-town/sdk/issues/445)) ([ed2e8f0](https://github.com/val-town/sdk/commit/ed2e8f02f549511e487d9a3de543d2796ecd7669))
+
 ## 0.23.0 (2024-09-16)
 
 Full Changelog: [v0.22.0...v0.23.0](https://github.com/val-town/sdk/compare/v0.22.0...v0.23.0)
