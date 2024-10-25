@@ -157,14 +157,14 @@ export interface ValCreateOrUpdateParams {
 }
 
 export namespace Vals {
-  export import ValCancelEvaluationResponse = ValsAPI.ValCancelEvaluationResponse;
-  export import ValCreateParams = ValsAPI.ValCreateParams;
-  export import ValUpdateParams = ValsAPI.ValUpdateParams;
-  export import ValCreateOrUpdateParams = ValsAPI.ValCreateOrUpdateParams;
+  export type ValCancelEvaluationResponse = ValsAPI.ValCancelEvaluationResponse;
+  export type ValCreateParams = ValsAPI.ValCreateParams;
+  export type ValUpdateParams = ValsAPI.ValUpdateParams;
+  export type ValCreateOrUpdateParams = ValsAPI.ValCreateOrUpdateParams;
   export import Versions = VersionsAPI.Versions;
-  export import VersionListResponse = VersionsAPI.VersionListResponse;
+  export type VersionListResponse = VersionsAPI.VersionListResponse;
   export import VersionListResponsesPageCursorURL = VersionsAPI.VersionListResponsesPageCursorURL;
-  export import VersionCreateParams = VersionsAPI.VersionCreateParams;
-  export import VersionRetrieveParams = VersionsAPI.VersionRetrieveParams;
-  export import VersionListParams = VersionsAPI.VersionListParams;
+  export type VersionCreateParams = VersionsAPI.VersionCreateParams;
+  export type VersionRetrieveParams = VersionsAPI.VersionRetrieveParams;
+  export type VersionListParams = VersionsAPI.VersionListParams;
 }

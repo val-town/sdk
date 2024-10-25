@@ -65,5 +65,5 @@ export namespace ProfileRetrieveResponse {
 }
 
 export namespace Profile {
-  export import ProfileRetrieveResponse = ProfileAPI.ProfileRetrieveResponse;
+  export type ProfileRetrieveResponse = ProfileAPI.ProfileRetrieveResponse;
 }

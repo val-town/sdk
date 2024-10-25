@@ -27,7 +27,7 @@ export interface ValListParams extends PageCursorURLParams {
 }
 
 export namespace Vals {
-  export import ValListParams = ValsAPI.ValListParams;
+  export type ValListParams = ValsAPI.ValListParams;
 }
 
 export { BasicValsPageCursorURL };
