@@ -105,7 +105,7 @@ export interface ReferenceListParams extends PageCursorURLParams {
 }
 
 export namespace References {
-  export type ReferenceListResponse = ReferencesAPI.ReferenceListResponse;
+  export import ReferenceListResponse = ReferencesAPI.ReferenceListResponse;
   export import ReferenceListResponsesPageCursorURL = ReferencesAPI.ReferenceListResponsesPageCursorURL;
-  export type ReferenceListParams = ReferencesAPI.ReferenceListParams;
+  export import ReferenceListParams = ReferencesAPI.ReferenceListParams;
 }

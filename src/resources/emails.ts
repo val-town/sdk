@@ -180,6 +180,6 @@ export namespace EmailSendParams {
 }
 
 export namespace Emails {
-  export type EmailSendResponse = EmailsAPI.EmailSendResponse;
-  export type EmailSendParams = EmailsAPI.EmailSendParams;
+  export import EmailSendResponse = EmailsAPI.EmailSendResponse;
+  export import EmailSendParams = EmailsAPI.EmailSendParams;
 }
