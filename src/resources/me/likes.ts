@@ -22,7 +22,7 @@ export class Likes extends APIResource {
 export interface LikeListParams extends PageCursorURLParams {}
 
 export namespace Likes {
-  export type LikeListParams = LikesAPI.LikeListParams;
+  export import LikeListParams = LikesAPI.LikeListParams;
 }
 
 export { BasicValsPageCursorURL };

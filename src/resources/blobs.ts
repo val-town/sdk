@@ -86,7 +86,7 @@ export interface BlobListParams {
 export type BlobStoreParams = Core.Uploadable;
 
 export namespace Blobs {
-  export type BlobListResponse = BlobsAPI.BlobListResponse;
-  export type BlobListParams = BlobsAPI.BlobListParams;
-  export type BlobStoreParams = BlobsAPI.BlobStoreParams;
+  export import BlobListResponse = BlobsAPI.BlobListResponse;
+  export import BlobListParams = BlobsAPI.BlobListParams;
+  export import BlobStoreParams = BlobsAPI.BlobStoreParams;
 }

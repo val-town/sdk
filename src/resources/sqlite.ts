@@ -79,7 +79,7 @@ export namespace SqliteExecuteParams {
 }
 
 export namespace Sqlite {
-  export type SqliteBatchResponse = SqliteAPI.SqliteBatchResponse;
-  export type SqliteBatchParams = SqliteAPI.SqliteBatchParams;
-  export type SqliteExecuteParams = SqliteAPI.SqliteExecuteParams;
+  export import SqliteBatchResponse = SqliteAPI.SqliteBatchResponse;
+  export import SqliteBatchParams = SqliteAPI.SqliteBatchParams;
+  export import SqliteExecuteParams = SqliteAPI.SqliteExecuteParams;
 }

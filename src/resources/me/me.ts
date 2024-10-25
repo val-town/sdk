@@ -18,15 +18,15 @@ export class Me extends APIResource {
 
 export namespace Me {
   export import Profile = ProfileAPI.Profile;
-  export type ProfileRetrieveResponse = ProfileAPI.ProfileRetrieveResponse;
+  export import ProfileRetrieveResponse = ProfileAPI.ProfileRetrieveResponse;
   export import Likes = LikesAPI.Likes;
-  export type LikeListParams = LikesAPI.LikeListParams;
+  export import LikeListParams = LikesAPI.LikeListParams;
   export import Comments = CommentsAPI.Comments;
-  export type CommentListResponse = CommentsAPI.CommentListResponse;
+  export import CommentListResponse = CommentsAPI.CommentListResponse;
   export import CommentListResponsesPageCursorURL = CommentsAPI.CommentListResponsesPageCursorURL;
-  export type CommentListParams = CommentsAPI.CommentListParams;
+  export import CommentListParams = CommentsAPI.CommentListParams;
   export import References = ReferencesAPI.References;
-  export type ReferenceListResponse = ReferencesAPI.ReferenceListResponse;
+  export import ReferenceListResponse = ReferencesAPI.ReferenceListResponse;
   export import ReferenceListResponsesPageCursorURL = ReferencesAPI.ReferenceListResponsesPageCursorURL;
-  export type ReferenceListParams = ReferencesAPI.ReferenceListParams;
+  export import ReferenceListParams = ReferencesAPI.ReferenceListParams;
 }
