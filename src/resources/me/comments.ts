@@ -99,7 +99,7 @@ export interface CommentListParams extends PageCursorURLParams {
 }
 
 export namespace Comments {
-  export import CommentListResponse = CommentsAPI.CommentListResponse;
+  export type CommentListResponse = CommentsAPI.CommentListResponse;
   export import CommentListResponsesPageCursorURL = CommentsAPI.CommentListResponsesPageCursorURL;
-  export import CommentListParams = CommentsAPI.CommentListParams;
+  export type CommentListParams = CommentsAPI.CommentListParams;
 }

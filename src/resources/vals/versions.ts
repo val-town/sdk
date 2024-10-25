@@ -115,9 +115,9 @@ export interface VersionRetrieveParams {
 export interface VersionListParams extends PageCursorURLParams {}
 
 export namespace Versions {
-  export import VersionListResponse = VersionsAPI.VersionListResponse;
+  export type VersionListResponse = VersionsAPI.VersionListResponse;
   export import VersionListResponsesPageCursorURL = VersionsAPI.VersionListResponsesPageCursorURL;
-  export import VersionCreateParams = VersionsAPI.VersionCreateParams;
-  export import VersionRetrieveParams = VersionsAPI.VersionRetrieveParams;
-  export import VersionListParams = VersionsAPI.VersionListParams;
+  export type VersionCreateParams = VersionsAPI.VersionCreateParams;
+  export type VersionRetrieveParams = VersionsAPI.VersionRetrieveParams;
+  export type VersionListParams = VersionsAPI.VersionListParams;
 }
