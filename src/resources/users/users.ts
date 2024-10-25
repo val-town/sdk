@@ -21,5 +21,5 @@ export class Users extends APIResource {
 
 export namespace Users {
   export import Vals = ValsAPI.Vals;
-  export type ValListParams = ValsAPI.ValListParams;
+  export import ValListParams = ValsAPI.ValListParams;
 }

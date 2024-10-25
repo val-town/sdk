@@ -121,5 +121,5 @@ export namespace ValNameRetrieveResponse {
 }
 
 export namespace ValName {
-  export type ValNameRetrieveResponse = ValNameAPI.ValNameRetrieveResponse;
+  export import ValNameRetrieveResponse = ValNameAPI.ValNameRetrieveResponse;
 }
