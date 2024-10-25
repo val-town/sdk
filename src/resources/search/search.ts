@@ -12,5 +12,5 @@ export class Search extends APIResource {
 
 export namespace Search {
   export import Vals = ValsAPI.Vals;
-  export import ValListParams = ValsAPI.ValListParams;
+  export type ValListParams = ValsAPI.ValListParams;
 }

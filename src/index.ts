@@ -209,11 +209,11 @@ export import toFile = Uploads.toFile;
 export import fileFromPath = Uploads.fileFromPath;
 
 export namespace ValTown {
-  export import RequestOptions = Core.RequestOptions;
+  export type RequestOptions = Core.RequestOptions;
 
   export import PageCursorURL = Pagination.PageCursorURL;
-  export import PageCursorURLParams = Pagination.PageCursorURLParams;
-  export import PageCursorURLResponse = Pagination.PageCursorURLResponse;
+  export type PageCursorURLParams = Pagination.PageCursorURLParams;
+  export type PageCursorURLResponse<T> = Pagination.PageCursorURLResponse<T>;
 
   export import Search = API.Search;
 
@@ -222,32 +222,32 @@ export namespace ValTown {
   export import Me = API.Me;
 
   export import Blobs = API.Blobs;
-  export import BlobListResponse = API.BlobListResponse;
-  export import BlobListParams = API.BlobListParams;
-  export import BlobStoreParams = API.BlobStoreParams;
+  export type BlobListResponse = API.BlobListResponse;
+  export type BlobListParams = API.BlobListParams;
+  export type BlobStoreParams = API.BlobStoreParams;
 
   export import Users = API.Users;
 
   export import Sqlite = API.Sqlite;
-  export import SqliteBatchResponse = API.SqliteBatchResponse;
-  export import SqliteBatchParams = API.SqliteBatchParams;
-  export import SqliteExecuteParams = API.SqliteExecuteParams;
+  export type SqliteBatchResponse = API.SqliteBatchResponse;
+  export type SqliteBatchParams = API.SqliteBatchParams;
+  export type SqliteExecuteParams = API.SqliteExecuteParams;
 
   export import Vals = API.Vals;
-  export import ValCancelEvaluationResponse = API.ValCancelEvaluationResponse;
-  export import ValCreateParams = API.ValCreateParams;
-  export import ValUpdateParams = API.ValUpdateParams;
-  export import ValCreateOrUpdateParams = API.ValCreateOrUpdateParams;
+  export type ValCancelEvaluationResponse = API.ValCancelEvaluationResponse;
+  export type ValCreateParams = API.ValCreateParams;
+  export type ValUpdateParams = API.ValUpdateParams;
+  export type ValCreateOrUpdateParams = API.ValCreateOrUpdateParams;
 
   export import Emails = API.Emails;
-  export import EmailSendResponse = API.EmailSendResponse;
-  export import EmailSendParams = API.EmailSendParams;
+  export type EmailSendResponse = API.EmailSendResponse;
+  export type EmailSendParams = API.EmailSendParams;
 
-  export import BasicVal = API.BasicVal;
-  export import ExtendedVal = API.ExtendedVal;
-  export import PaginationLinks = API.PaginationLinks;
-  export import ResultSet = API.ResultSet;
-  export import User = API.User;
+  export type BasicVal = API.BasicVal;
+  export type ExtendedVal = API.ExtendedVal;
+  export type PaginationLinks = API.PaginationLinks;
+  export type ResultSet = API.ResultSet;
+  export type User = API.User;
 }
 
 export default ValTown;

@@ -18,5 +18,5 @@ export class Username extends APIResource {
 
 export namespace Username {
   export import ValName = ValNameAPI.ValName;
-  export import ValNameRetrieveResponse = ValNameAPI.ValNameRetrieveResponse;
+  export type ValNameRetrieveResponse = ValNameAPI.ValNameRetrieveResponse;
 }
