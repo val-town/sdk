@@ -2,6 +2,7 @@
 
 import { APIResource } from '../../resource';
 import * as UsernameAPI from './username/username';
+import { Username } from './username/username';
 
 /**
  * Methods to translate between human-readable names and IDs
@@ -10,6 +11,8 @@ export class Alias extends APIResource {
   username: UsernameAPI.Username = new UsernameAPI.Username(this._client);
 }
 
-export namespace Alias {
-  export import Username = UsernameAPI.Username;
+Alias.Username = Username;
+
+export declare namespace Alias {
+  export { Username as Username };
 }

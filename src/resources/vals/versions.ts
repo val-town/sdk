@@ -2,7 +2,6 @@
 
 import { APIResource } from '../../resource';
 import * as Core from '../../core';
-import * as VersionsAPI from './versions';
 import * as Shared from '../shared';
 import { PageCursorURL, type PageCursorURLParams } from '../../pagination';
 
@@ -114,10 +113,14 @@ export interface VersionRetrieveParams {
 
 export interface VersionListParams extends PageCursorURLParams {}
 
-export namespace Versions {
-  export import VersionListResponse = VersionsAPI.VersionListResponse;
-  export import VersionListResponsesPageCursorURL = VersionsAPI.VersionListResponsesPageCursorURL;
-  export import VersionCreateParams = VersionsAPI.VersionCreateParams;
-  export import VersionRetrieveParams = VersionsAPI.VersionRetrieveParams;
-  export import VersionListParams = VersionsAPI.VersionListParams;
+Versions.VersionListResponsesPageCursorURL = VersionListResponsesPageCursorURL;
+
+export declare namespace Versions {
+  export {
+    type VersionListResponse as VersionListResponse,
+    VersionListResponsesPageCursorURL as VersionListResponsesPageCursorURL,
+    type VersionCreateParams as VersionCreateParams,
+    type VersionRetrieveParams as VersionRetrieveParams,
+    type VersionListParams as VersionListParams,
+  };
 }

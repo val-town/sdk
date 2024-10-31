@@ -11,7 +11,7 @@
     "paths": {
       "@valtown/sdk/_shims/auto/*": ["src/_shims/auto/*-node"],
       "@valtown/sdk/*": ["src/*"],
-      "@valtown/sdk": ["src/index.ts"],
+      "@valtown/sdk": ["src/index.ts"]
     },
     "noEmit": true,
 

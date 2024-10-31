@@ -2,7 +2,6 @@
 
 import { APIResource } from '../resource';
 import * as Core from '../core';
-import * as SqliteAPI from './sqlite';
 import * as Shared from './shared';
 
 /**
@@ -78,8 +77,10 @@ export namespace SqliteExecuteParams {
   }
 }
 
-export namespace Sqlite {
-  export import SqliteBatchResponse = SqliteAPI.SqliteBatchResponse;
-  export import SqliteBatchParams = SqliteAPI.SqliteBatchParams;
-  export import SqliteExecuteParams = SqliteAPI.SqliteExecuteParams;
+export declare namespace Sqlite {
+  export {
+    type SqliteBatchResponse as SqliteBatchResponse,
+    type SqliteBatchParams as SqliteBatchParams,
+    type SqliteExecuteParams as SqliteExecuteParams,
+  };
 }
