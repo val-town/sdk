@@ -3,7 +3,6 @@
 import { APIResource } from '../resource';
 import { isRequestOptions } from '../core';
 import * as Core from '../core';
-import * as EmailsAPI from './emails';
 
 /**
  * Val Town supports sending emails from vals
@@ -179,7 +178,6 @@ export namespace EmailSendParams {
   }
 }
 
-export namespace Emails {
-  export import EmailSendResponse = EmailsAPI.EmailSendResponse;
-  export import EmailSendParams = EmailsAPI.EmailSendParams;
+export declare namespace Emails {
+  export { type EmailSendResponse as EmailSendResponse, type EmailSendParams as EmailSendParams };
 }

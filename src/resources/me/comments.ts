@@ -2,7 +2,6 @@
 
 import { APIResource } from '../../resource';
 import * as Core from '../../core';
-import * as CommentsAPI from './comments';
 import { PageCursorURL, type PageCursorURLParams } from '../../pagination';
 
 export class Comments extends APIResource {
@@ -98,8 +97,12 @@ export interface CommentListParams extends PageCursorURLParams {
   until?: string;
 }
 
-export namespace Comments {
-  export import CommentListResponse = CommentsAPI.CommentListResponse;
-  export import CommentListResponsesPageCursorURL = CommentsAPI.CommentListResponsesPageCursorURL;
-  export import CommentListParams = CommentsAPI.CommentListParams;
+Comments.CommentListResponsesPageCursorURL = CommentListResponsesPageCursorURL;
+
+export declare namespace Comments {
+  export {
+    type CommentListResponse as CommentListResponse,
+    CommentListResponsesPageCursorURL as CommentListResponsesPageCursorURL,
+    type CommentListParams as CommentListParams,
+  };
 }

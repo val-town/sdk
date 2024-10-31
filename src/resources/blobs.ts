@@ -3,7 +3,6 @@
 import { APIResource } from '../resource';
 import { isRequestOptions } from '../core';
 import * as Core from '../core';
-import * as BlobsAPI from './blobs';
 import { type Response } from '../_shims/index';
 
 /**
@@ -85,8 +84,10 @@ export interface BlobListParams {
 
 export type BlobStoreParams = Core.Uploadable;
 
-export namespace Blobs {
-  export import BlobListResponse = BlobsAPI.BlobListResponse;
-  export import BlobListParams = BlobsAPI.BlobListParams;
-  export import BlobStoreParams = BlobsAPI.BlobStoreParams;
+export declare namespace Blobs {
+  export {
+    type BlobListResponse as BlobListResponse,
+    type BlobListParams as BlobListParams,
+    type BlobStoreParams as BlobStoreParams,
+  };
 }

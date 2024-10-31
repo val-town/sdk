@@ -2,7 +2,6 @@
 
 import { APIResource } from '../../resource';
 import * as Core from '../../core';
-import * as ReferencesAPI from './references';
 import { PageCursorURL, type PageCursorURLParams } from '../../pagination';
 
 export class References extends APIResource {
@@ -104,8 +103,12 @@ export interface ReferenceListParams extends PageCursorURLParams {
   until?: string;
 }
 
-export namespace References {
-  export import ReferenceListResponse = ReferencesAPI.ReferenceListResponse;
-  export import ReferenceListResponsesPageCursorURL = ReferencesAPI.ReferenceListResponsesPageCursorURL;
-  export import ReferenceListParams = ReferencesAPI.ReferenceListParams;
+References.ReferenceListResponsesPageCursorURL = ReferenceListResponsesPageCursorURL;
+
+export declare namespace References {
+  export {
+    type ReferenceListResponse as ReferenceListResponse,
+    ReferenceListResponsesPageCursorURL as ReferenceListResponsesPageCursorURL,
+    type ReferenceListParams as ReferenceListParams,
+  };
 }

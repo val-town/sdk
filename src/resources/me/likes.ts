@@ -2,7 +2,6 @@
 
 import { APIResource } from '../../resource';
 import * as Core from '../../core';
-import * as LikesAPI from './likes';
 import * as Shared from '../shared';
 import { BasicValsPageCursorURL } from '../shared';
 import { type PageCursorURLParams } from '../../pagination';
@@ -21,8 +20,8 @@ export class Likes extends APIResource {
 
 export interface LikeListParams extends PageCursorURLParams {}
 
-export namespace Likes {
-  export import LikeListParams = LikesAPI.LikeListParams;
+export declare namespace Likes {
+  export { type LikeListParams as LikeListParams };
 }
 
 export { BasicValsPageCursorURL };
