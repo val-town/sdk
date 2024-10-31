@@ -2,6 +2,7 @@
 
 import { APIResource } from '../../resource';
 import * as ValsAPI from './vals';
+import { ValListParams, Vals } from './vals';
 
 /**
  * Search endpoint for vals
@@ -10,7 +11,8 @@ export class Search extends APIResource {
   vals: ValsAPI.Vals = new ValsAPI.Vals(this._client);
 }
 
-export namespace Search {
-  export import Vals = ValsAPI.Vals;
-  export import ValListParams = ValsAPI.ValListParams;
+Search.Vals = Vals;
+
+export declare namespace Search {
+  export { Vals as Vals, type ValListParams as ValListParams };
 }

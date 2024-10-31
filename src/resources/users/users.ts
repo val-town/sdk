@@ -4,6 +4,7 @@ import { APIResource } from '../../resource';
 import * as Core from '../../core';
 import * as Shared from '../shared';
 import * as ValsAPI from './vals';
+import { ValListParams, Vals } from './vals';
 
 /**
  * Access public user information and list other people’s vals
@@ -19,7 +20,8 @@ export class Users extends APIResource {
   }
 }
 
-export namespace Users {
-  export import Vals = ValsAPI.Vals;
-  export import ValListParams = ValsAPI.ValListParams;
+Users.Vals = Vals;
+
+export declare namespace Users {
+  export { Vals as Vals, type ValListParams as ValListParams };
 }
