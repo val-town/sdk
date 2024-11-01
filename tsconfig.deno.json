@@ -1,19 +1,14 @@
 {
   "extends": "./tsconfig.json",
-  "include": ["deno"],
+  "include": ["dist-deno"],
   "exclude": [],
   "compilerOptions": {
-    "rootDir": "./deno",
+    "rootDir": "./dist-deno",
     "lib": ["es2020", "DOM"],
-    "paths": {
-      "@valtown/sdk/_shims/auto/*": ["deno/_shims/auto/*-deno"],
-      "@valtown/sdk/*": ["deno/*"],
-      "@valtown/sdk": ["deno/index.ts"],
-    },
     "noEmit": true,
     "declaration": true,
     "declarationMap": true,
-    "outDir": "deno",
+    "outDir": "dist-deno",
     "pretty": true,
     "sourceMap": true
   }
