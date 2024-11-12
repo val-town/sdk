@@ -204,25 +204,6 @@ export class ValTown extends Core.APIClient {
   static fileFromPath = Uploads.fileFromPath;
 }
 
-export {
-  ValTownError,
-  APIError,
-  APIConnectionError,
-  APIConnectionTimeoutError,
-  APIUserAbortError,
-  NotFoundError,
-  ConflictError,
-  RateLimitError,
-  BadRequestError,
-  AuthenticationError,
-  InternalServerError,
-  PermissionDeniedError,
-  UnprocessableEntityError,
-} from './error';
-
-export import toFile = Uploads.toFile;
-export import fileFromPath = Uploads.fileFromPath;
-
 ValTown.Search = Search;
 ValTown.Alias = Alias;
 ValTown.Me = Me;
@@ -231,7 +212,6 @@ ValTown.Users = Users;
 ValTown.Sqlite = Sqlite;
 ValTown.Vals = Vals;
 ValTown.Emails = Emails;
-
 export declare namespace ValTown {
   export type RequestOptions = Core.RequestOptions;
 
@@ -283,5 +263,22 @@ export declare namespace ValTown {
   export type ResultSet = API.ResultSet;
   export type User = API.User;
 }
+
+export { toFile, fileFromPath } from '@valtown/sdk/uploads';
+export {
+  ValTownError,
+  APIError,
+  APIConnectionError,
+  APIConnectionTimeoutError,
+  APIUserAbortError,
+  NotFoundError,
+  ConflictError,
+  RateLimitError,
+  BadRequestError,
+  AuthenticationError,
+  InternalServerError,
+  PermissionDeniedError,
+  UnprocessableEntityError,
+} from '@valtown/sdk/error';
 
 export default ValTown;
