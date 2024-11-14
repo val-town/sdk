@@ -264,7 +264,7 @@ export declare namespace ValTown {
   export type User = API.User;
 }
 
-export { toFile, fileFromPath } from '@valtown/sdk/uploads';
+export { toFile, fileFromPath } from './uploads';
 export {
   ValTownError,
   APIError,
@@ -279,6 +279,6 @@ export {
   InternalServerError,
   PermissionDeniedError,
   UnprocessableEntityError,
-} from '@valtown/sdk/error';
+} from './error';
 
 export default ValTown;
