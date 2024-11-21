@@ -2,7 +2,6 @@
 
 import { APIResource } from '../../resource';
 import * as Core from '../../core';
-import * as ProfileAPI from './profile';
 
 export class Profile extends APIResource {
   /**
@@ -64,6 +63,6 @@ export namespace ProfileRetrieveResponse {
   }
 }
 
-export namespace Profile {
-  export import ProfileRetrieveResponse = ProfileAPI.ProfileRetrieveResponse;
+export declare namespace Profile {
+  export { type ProfileRetrieveResponse as ProfileRetrieveResponse };
 }

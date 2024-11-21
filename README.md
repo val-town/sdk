@@ -1,6 +1,6 @@
 # Val Town Node API Library
 
-[![NPM version](https://img.shields.io/npm/v/@valtown/sdk.svg)](https://npmjs.org/package/@valtown/sdk) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/@valtown/sdk)
+[![NPM version](https://img.shields.io/npm/v/@valtown/sdk.svg)](https://npmjs.org/package/@valtown/sdk) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/@valtown/sdk) [![JSR Version](https://jsr.io/badges/@valtown/sdk)](https://jsr.io/@valtown/sdk)
 
 This library provides convenient access to the Val Town REST API from server-side TypeScript or JavaScript.
 
@@ -12,6 +12,21 @@ It is generated with [Stainless](https://www.stainlessapi.com/).
 
 ```sh
 npm install @valtown/sdk
+```
+
+### Installation from JSR
+
+```sh
+deno add jsr:@valtown/sdk
+npx jsr add @valtown/sdk
+```
+
+These commands will make the module importable from the `@valtown/sdk` scope:
+
+You can also [import directly from JSR](https://jsr.io/docs/using-packages#importing-with-jsr-specifiers) without an install step if you're using the Deno JavaScript runtime:
+
+```ts
+import ValTown from 'jsr:@valtown/sdk';
 ```
 
 ## Usage
@@ -275,6 +290,19 @@ TypeScript >= 4.5 is supported.
 
 The following runtimes are supported:
 
+- Web browsers (Up-to-date Chrome, Firefox, Safari, Edge, and more)
+- Node.js 18 LTS or later ([non-EOL](https://endoflife.date/nodejs)) versions.
+- Deno v1.28.0 or higher.
+- Bun 1.0 or later.
+- Cloudflare Workers.
+- Vercel Edge Runtime.
+- Jest 28 or greater with the `"node"` environment (`"jsdom"` is not supported at this time).
+- Nitro v2.6 or greater.
+
 Note that React Native is not supported at this time.
 
 If you are interested in other runtime environments, please open or upvote an issue on GitHub.
+
+## Contributing
+
+See [the contributing documentation](./CONTRIBUTING.md).

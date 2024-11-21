@@ -2,7 +2,6 @@
 
 import { APIResource } from '../../resource';
 import * as Core from '../../core';
-import * as ValsAPI from './vals';
 import * as Shared from '../shared';
 import { BasicValsPageCursorURL } from '../shared';
 import { type PageCursorURLParams } from '../../pagination';
@@ -22,8 +21,8 @@ export class Vals extends APIResource {
 
 export interface ValListParams extends PageCursorURLParams {}
 
-export namespace Vals {
-  export import ValListParams = ValsAPI.ValListParams;
+export declare namespace Vals {
+  export { type ValListParams as ValListParams };
 }
 
 export { BasicValsPageCursorURL };

@@ -2,7 +2,6 @@
 
 import { APIResource } from '../../../resource';
 import * as Core from '../../../core';
-import * as ValNameAPI from './val-name';
 
 export class ValName extends APIResource {
   /**
@@ -83,6 +82,8 @@ export interface ValNameRetrieveResponse {
    * The version of this val, starting at zero
    */
   version: number;
+
+  versionCreatedAt?: string;
 }
 
 export namespace ValNameRetrieveResponse {
@@ -118,6 +119,6 @@ export namespace ValNameRetrieveResponse {
   }
 }
 
-export namespace ValName {
-  export import ValNameRetrieveResponse = ValNameAPI.ValNameRetrieveResponse;
+export declare namespace ValName {
+  export { type ValNameRetrieveResponse as ValNameRetrieveResponse };
 }

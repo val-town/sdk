@@ -1,0 +1,10 @@
+{
+  "name": "@valtown/sdk",
+  "version": "0.24.0",
+  "exports": "./index.ts",
+  "publish": {
+    "exclude": [
+      "!."
+    ]
+  }
+}

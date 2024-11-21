@@ -1,11 +1,26 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import * as Errors from './error';
-import * as Uploads from './uploads';
 import { type Agent } from './_shims/index';
 import * as Core from './core';
+import * as Errors from './error';
 import * as Pagination from './pagination';
+import { type PageCursorURLParams, PageCursorURLResponse } from './pagination';
+import * as Uploads from './uploads';
 import * as API from './resources/index';
+import { BlobListParams, BlobListResponse, BlobStoreParams, Blobs } from './resources/blobs';
+import { EmailSendParams, EmailSendResponse, Emails } from './resources/emails';
+import { Sqlite, SqliteBatchParams, SqliteBatchResponse, SqliteExecuteParams } from './resources/sqlite';
+import { Alias } from './resources/alias/alias';
+import { Me } from './resources/me/me';
+import { Search } from './resources/search/search';
+import { Users } from './resources/users/users';
+import {
+  ValCancelEvaluationResponse,
+  ValCreateOrUpdateParams,
+  ValCreateParams,
+  ValUpdateParams,
+  Vals,
+} from './resources/vals/vals';
 
 export interface ClientOptions {
   /**
@@ -189,7 +204,68 @@ export class ValTown extends Core.APIClient {
   static fileFromPath = Uploads.fileFromPath;
 }
 
-export const {
+ValTown.Search = Search;
+ValTown.Alias = Alias;
+ValTown.Me = Me;
+ValTown.Blobs = Blobs;
+ValTown.Users = Users;
+ValTown.Sqlite = Sqlite;
+ValTown.Vals = Vals;
+ValTown.Emails = Emails;
+export declare namespace ValTown {
+  export type RequestOptions = Core.RequestOptions;
+
+  export import PageCursorURL = Pagination.PageCursorURL;
+  export {
+    type PageCursorURLParams as PageCursorURLParams,
+    type PageCursorURLResponse as PageCursorURLResponse,
+  };
+
+  export { Search as Search };
+
+  export { Alias as Alias };
+
+  export { Me as Me };
+
+  export {
+    Blobs as Blobs,
+    type BlobListResponse as BlobListResponse,
+    type BlobListParams as BlobListParams,
+    type BlobStoreParams as BlobStoreParams,
+  };
+
+  export { Users as Users };
+
+  export {
+    Sqlite as Sqlite,
+    type SqliteBatchResponse as SqliteBatchResponse,
+    type SqliteBatchParams as SqliteBatchParams,
+    type SqliteExecuteParams as SqliteExecuteParams,
+  };
+
+  export {
+    Vals as Vals,
+    type ValCancelEvaluationResponse as ValCancelEvaluationResponse,
+    type ValCreateParams as ValCreateParams,
+    type ValUpdateParams as ValUpdateParams,
+    type ValCreateOrUpdateParams as ValCreateOrUpdateParams,
+  };
+
+  export {
+    Emails as Emails,
+    type EmailSendResponse as EmailSendResponse,
+    type EmailSendParams as EmailSendParams,
+  };
+
+  export type BasicVal = API.BasicVal;
+  export type ExtendedVal = API.ExtendedVal;
+  export type PaginationLinks = API.PaginationLinks;
+  export type ResultSet = API.ResultSet;
+  export type User = API.User;
+}
+
+export { toFile, fileFromPath } from './uploads';
+export {
   ValTownError,
   APIError,
   APIConnectionError,
@@ -203,51 +279,6 @@ export const {
   InternalServerError,
   PermissionDeniedError,
   UnprocessableEntityError,
-} = Errors;
-
-export import toFile = Uploads.toFile;
-export import fileFromPath = Uploads.fileFromPath;
-
-export namespace ValTown {
-  export import RequestOptions = Core.RequestOptions;
-
-  export import PageCursorURL = Pagination.PageCursorURL;
-  export import PageCursorURLParams = Pagination.PageCursorURLParams;
-  export import PageCursorURLResponse = Pagination.PageCursorURLResponse;
-
-  export import Search = API.Search;
-
-  export import Alias = API.Alias;
-
-  export import Me = API.Me;
-
-  export import Blobs = API.Blobs;
-  export import BlobListResponse = API.BlobListResponse;
-  export import BlobListParams = API.BlobListParams;
-  export import BlobStoreParams = API.BlobStoreParams;
-
-  export import Users = API.Users;
-
-  export import Sqlite = API.Sqlite;
-  export import SqliteBatchResponse = API.SqliteBatchResponse;
-  export import SqliteBatchParams = API.SqliteBatchParams;
-  export import SqliteExecuteParams = API.SqliteExecuteParams;
-
-  export import Vals = API.Vals;
-  export import ValCancelEvaluationResponse = API.ValCancelEvaluationResponse;
-  export import ValCreateParams = API.ValCreateParams;
-  export import ValUpdateParams = API.ValUpdateParams;
-  export import ValCreateOrUpdateParams = API.ValCreateOrUpdateParams;
-
-  export import Emails = API.Emails;
-  export import EmailSendResponse = API.EmailSendResponse;
-  export import EmailSendParams = API.EmailSendParams;
-
-  export import BasicVal = API.BasicVal;
-  export import ExtendedVal = API.ExtendedVal;
-  export import PaginationLinks = API.PaginationLinks;
-  export import ResultSet = API.ResultSet;
-  export import User = API.User;
-}
+} from './error';
 
 export default ValTown;

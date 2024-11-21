@@ -3,9 +3,16 @@
 import { APIResource } from '../../resource';
 import { isRequestOptions } from '../../core';
 import * as Core from '../../core';
-import * as ValsAPI from './vals';
 import * as Shared from '../shared';
 import * as VersionsAPI from './versions';
+import {
+  VersionCreateParams,
+  VersionListParams,
+  VersionListResponse,
+  VersionListResponsesPageCursorURL,
+  VersionRetrieveParams,
+  Versions,
+} from './versions';
 
 /**
  * Vals are runnable JavaScript, TypeScript, and JSX modules
@@ -117,7 +124,7 @@ export interface ValCreateParams {
    * The type of the val you want to create. Note that this does not include interval
    * vals, because they cannot be created through the API yet.
    */
-  type?: 'http' | 'httpnext' | 'script' | 'email';
+  type?: 'httpnext' | 'http' | 'script' | 'email';
 }
 
 export interface ValUpdateParams {
@@ -141,7 +148,7 @@ export interface ValUpdateParams {
    * The type of the val you want to update. Note that this does not include interval
    * vals, because they cannot be created through the API yet.
    */
-  type?: 'http' | 'httpnext' | 'script' | 'email';
+  type?: 'httpnext' | 'http' | 'script' | 'email';
 }
 
 export interface ValCreateOrUpdateParams {
@@ -156,15 +163,23 @@ export interface ValCreateOrUpdateParams {
   name: string;
 }
 
-export namespace Vals {
-  export import ValCancelEvaluationResponse = ValsAPI.ValCancelEvaluationResponse;
-  export import ValCreateParams = ValsAPI.ValCreateParams;
-  export import ValUpdateParams = ValsAPI.ValUpdateParams;
-  export import ValCreateOrUpdateParams = ValsAPI.ValCreateOrUpdateParams;
-  export import Versions = VersionsAPI.Versions;
-  export import VersionListResponse = VersionsAPI.VersionListResponse;
-  export import VersionListResponsesPageCursorURL = VersionsAPI.VersionListResponsesPageCursorURL;
-  export import VersionCreateParams = VersionsAPI.VersionCreateParams;
-  export import VersionRetrieveParams = VersionsAPI.VersionRetrieveParams;
-  export import VersionListParams = VersionsAPI.VersionListParams;
+Vals.Versions = Versions;
+Vals.VersionListResponsesPageCursorURL = VersionListResponsesPageCursorURL;
+
+export declare namespace Vals {
+  export {
+    type ValCancelEvaluationResponse as ValCancelEvaluationResponse,
+    type ValCreateParams as ValCreateParams,
+    type ValUpdateParams as ValUpdateParams,
+    type ValCreateOrUpdateParams as ValCreateOrUpdateParams,
+  };
+
+  export {
+    Versions as Versions,
+    type VersionListResponse as VersionListResponse,
+    VersionListResponsesPageCursorURL as VersionListResponsesPageCursorURL,
+    type VersionCreateParams as VersionCreateParams,
+    type VersionRetrieveParams as VersionRetrieveParams,
+    type VersionListParams as VersionListParams,
+  };
 }

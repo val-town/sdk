@@ -1,5 +1,38 @@
 # Changelog
 
+## 0.24.0 (2024-11-21)
+
+Full Changelog: [v0.23.0...v0.24.0](https://github.com/val-town/sdk/compare/v0.23.0...v0.24.0)
+
+### Features
+
+* **api:** api update ([#446](https://github.com/val-town/sdk/issues/446)) ([1625820](https://github.com/val-town/sdk/commit/1625820a3596a65f673c42a99883885bbc34f594))
+* **api:** api update ([#447](https://github.com/val-town/sdk/issues/447)) ([2514141](https://github.com/val-town/sdk/commit/251414115ece2b975d147084159cf7e275723bb9))
+* **api:** api update ([#448](https://github.com/val-town/sdk/issues/448)) ([e7b26f4](https://github.com/val-town/sdk/commit/e7b26f4f55dc0c1e1e202a6accfd4e790f6edb76))
+* **api:** api update ([#449](https://github.com/val-town/sdk/issues/449)) ([ed0ef16](https://github.com/val-town/sdk/commit/ed0ef16921548c741b83cb19f78cfe7e74e1c796))
+* **api:** api update ([#450](https://github.com/val-town/sdk/issues/450)) ([ecbef3b](https://github.com/val-town/sdk/commit/ecbef3ba1d9895440f3c0ba42ce098c7d33ee8be))
+* **api:** api update ([#451](https://github.com/val-town/sdk/issues/451)) ([f65b028](https://github.com/val-town/sdk/commit/f65b028499cfec450ae7aa285bfae30639a5d1be))
+* **api:** api update ([#453](https://github.com/val-town/sdk/issues/453)) ([225c943](https://github.com/val-town/sdk/commit/225c94397f49dfbc95bc8d75f66e11336e1ae4d0))
+* **api:** api update ([#454](https://github.com/val-town/sdk/issues/454)) ([7a16e67](https://github.com/val-town/sdk/commit/7a16e6703a99bc956bfd68d1814c4b355b0f52b8))
+* **api:** api update ([#458](https://github.com/val-town/sdk/issues/458)) ([ebd88f3](https://github.com/val-town/sdk/commit/ebd88f3e15903f5cf24ea176560a3869138bfbda))
+* **api:** api update ([#459](https://github.com/val-town/sdk/issues/459)) ([e5172d3](https://github.com/val-town/sdk/commit/e5172d3681593fbbd28bca0a3edd99c14c487870))
+* **api:** api update ([#464](https://github.com/val-town/sdk/issues/464)) ([df9279b](https://github.com/val-town/sdk/commit/df9279be5cd98f3e76ae71766c5ad28a310be614))
+
+
+### Chores
+
+* rebuild project due to codegen change ([#452](https://github.com/val-town/sdk/issues/452)) ([a1f8f0b](https://github.com/val-town/sdk/commit/a1f8f0bfdb31b447b6a90c4a2f66346c75b98b53))
+* rebuild project due to codegen change ([#455](https://github.com/val-town/sdk/issues/455)) ([c02656e](https://github.com/val-town/sdk/commit/c02656e98f53654905a00f3383b4b432d96fd294))
+* rebuild project due to codegen change ([#456](https://github.com/val-town/sdk/issues/456)) ([a743193](https://github.com/val-town/sdk/commit/a743193a021aaf7020ac3bdfc680ba8ee3898d80))
+* rebuild project due to codegen change ([#457](https://github.com/val-town/sdk/issues/457)) ([636d468](https://github.com/val-town/sdk/commit/636d4680bfeec90fb7d1a788e97bbff39344f42b))
+* rebuild project due to codegen change ([#461](https://github.com/val-town/sdk/issues/461)) ([67a58bb](https://github.com/val-town/sdk/commit/67a58bbb9c2ea54deec2bdb1fdbe32331cbbe013))
+* remove redundant word in comment ([#463](https://github.com/val-town/sdk/issues/463)) ([cc848fb](https://github.com/val-town/sdk/commit/cc848fbe88c9fe3d5bc43d613842d82f05a8fcbb))
+
+
+### Documentation
+
+* remove suggestion to use `npm` call out ([#462](https://github.com/val-town/sdk/issues/462)) ([2cb0b87](https://github.com/val-town/sdk/commit/2cb0b87486ffa6c53c629da75e6e5546758e034a))
+
 ## 0.23.0 (2024-09-16)
 
 Full Changelog: [v0.22.0...v0.23.0](https://github.com/val-town/sdk/compare/v0.22.0...v0.23.0)
