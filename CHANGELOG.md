@@ -1,5 +1,21 @@
 # Changelog
 
+## 0.25.0 (2024-12-12)
+
+Full Changelog: [v0.24.0...v0.25.0](https://github.com/val-town/sdk/compare/v0.24.0...v0.25.0)
+
+### Features
+
+* **internal:** make git install file structure match npm ([#466](https://github.com/val-town/sdk/issues/466)) ([2921499](https://github.com/val-town/sdk/commit/2921499332800264d819b16704980802a746d27a))
+
+
+### Chores
+
+* **internal:** codegen related update ([#468](https://github.com/val-town/sdk/issues/468)) ([89670f1](https://github.com/val-town/sdk/commit/89670f1110f52d75764d5bd0ef6f93904dcd0b7d))
+* **internal:** codegen related update ([#469](https://github.com/val-town/sdk/issues/469)) ([87f8db8](https://github.com/val-town/sdk/commit/87f8db8117438438374f760f0cf95ab9cbbdfdd0))
+* **internal:** codegen related update ([#470](https://github.com/val-town/sdk/issues/470)) ([032bec5](https://github.com/val-town/sdk/commit/032bec5c8a9c118c68ee432e6a91d4fa5107e3a1))
+* **internal:** update isAbsoluteURL ([#471](https://github.com/val-town/sdk/issues/471)) ([0cb8e25](https://github.com/val-town/sdk/commit/0cb8e252c0e874660526d28caabf12c5fb648d70))
+
 ## 0.24.0 (2024-11-21)
 
 Full Changelog: [v0.23.0...v0.24.0](https://github.com/val-town/sdk/compare/v0.23.0...v0.24.0)
