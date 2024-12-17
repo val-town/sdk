@@ -183,7 +183,7 @@ describe('instantiate client', () => {
     expect(client.bearerToken).toBe('My Bearer Token');
   });
 
-  test('with overridden environment variable arguments', () => {
+  test('with overriden environment variable arguments', () => {
     // set options via env var
     process.env['VAL_TOWN_API_KEY'] = 'another My Bearer Token';
     const client = new ValTown({ bearerToken: 'My Bearer Token' });
