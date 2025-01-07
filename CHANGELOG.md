@@ -1,5 +1,35 @@
 # Changelog
 
+## 0.25.0 (2025-01-07)
+
+Full Changelog: [v0.24.0...v0.25.0](https://github.com/val-town/sdk/compare/v0.24.0...v0.25.0)
+
+### Features
+
+* **api:** api update ([#477](https://github.com/val-town/sdk/issues/477)) ([7126ec7](https://github.com/val-town/sdk/commit/7126ec7aef2b7f5b6a9c99a6dfe44b18a3f1b92e))
+* **internal:** make git install file structure match npm ([#466](https://github.com/val-town/sdk/issues/466)) ([2921499](https://github.com/val-town/sdk/commit/2921499332800264d819b16704980802a746d27a))
+
+
+### Bug Fixes
+
+* **client:** normalize method ([#475](https://github.com/val-town/sdk/issues/475)) ([00cd997](https://github.com/val-town/sdk/commit/00cd997fc0763ba2fe2e8c83ae9ce28c2ce7ec4b))
+
+
+### Chores
+
+* **internal:** codegen related update ([#468](https://github.com/val-town/sdk/issues/468)) ([89670f1](https://github.com/val-town/sdk/commit/89670f1110f52d75764d5bd0ef6f93904dcd0b7d))
+* **internal:** codegen related update ([#469](https://github.com/val-town/sdk/issues/469)) ([87f8db8](https://github.com/val-town/sdk/commit/87f8db8117438438374f760f0cf95ab9cbbdfdd0))
+* **internal:** codegen related update ([#470](https://github.com/val-town/sdk/issues/470)) ([032bec5](https://github.com/val-town/sdk/commit/032bec5c8a9c118c68ee432e6a91d4fa5107e3a1))
+* **internal:** codegen related update ([#473](https://github.com/val-town/sdk/issues/473)) ([84a52e1](https://github.com/val-town/sdk/commit/84a52e177691cc284856541d940b7bb2d1c840e6))
+* **internal:** codegen related update ([#474](https://github.com/val-town/sdk/issues/474)) ([1db3338](https://github.com/val-town/sdk/commit/1db333806833f23172d2e1045eab28493e07152f))
+* **internal:** fix some typos ([#472](https://github.com/val-town/sdk/issues/472)) ([8214c09](https://github.com/val-town/sdk/commit/8214c096e44e4c5295fb2008047d16f3cc80ccf5))
+* **internal:** update isAbsoluteURL ([#471](https://github.com/val-town/sdk/issues/471)) ([0cb8e25](https://github.com/val-town/sdk/commit/0cb8e252c0e874660526d28caabf12c5fb648d70))
+
+
+### Documentation
+
+* minor formatting changes ([#476](https://github.com/val-town/sdk/issues/476)) ([43ce72f](https://github.com/val-town/sdk/commit/43ce72f81519b4d51e230b200e0e78929ad760f3))
+
 ## 0.24.0 (2024-11-21)
 
 Full Changelog: [v0.23.0...v0.24.0](https://github.com/val-town/sdk/compare/v0.23.0...v0.24.0)
