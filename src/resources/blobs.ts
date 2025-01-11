@@ -38,7 +38,11 @@ export class Blobs extends APIResource {
    * Get a blob’s contents.
    */
   get(key: string, options?: Core.RequestOptions): Core.APIPromise<Response> {
-    return this._client.get(`/v1/blob/${key}`, { ...options, __binaryResponse: true });
+    return this._client.get(`/v1/blob/${key}`, {
+      ...options,
+      headers: { Accept: 'application/octet-stream', ...options?.headers },
+      __binaryResponse: true,
+    });
   }
 
   /**
