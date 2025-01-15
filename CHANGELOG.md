@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.25.1 (2025-01-15)
+
+Full Changelog: [v0.25.0...v0.25.1](https://github.com/val-town/sdk/compare/v0.25.0...v0.25.1)
+
+### Bug Fixes
+
+* send correct Accept header for certain endpoints ([#481](https://github.com/val-town/sdk/issues/481)) ([71d04c5](https://github.com/val-town/sdk/commit/71d04c52205bab83ca1e373f52d02b1d0f70d369))
+
+
+### Chores
+
+* **internal:** codegen related update ([#479](https://github.com/val-town/sdk/issues/479)) ([cce6862](https://github.com/val-town/sdk/commit/cce6862d4c90cc34f1dc5e7dbc32d298f503687d))
+
 ## 0.25.0 (2025-01-07)
 
 Full Changelog: [v0.24.0...v0.25.0](https://github.com/val-town/sdk/compare/v0.24.0...v0.25.0)
