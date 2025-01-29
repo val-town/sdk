@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.26.0 (2025-01-29)
+
+Full Changelog: [v0.25.1...v0.26.0](https://github.com/val-town/sdk/compare/v0.25.1...v0.26.0)
+
+### Features
+
+* **api:** api update ([#485](https://github.com/val-town/sdk/issues/485)) ([af92356](https://github.com/val-town/sdk/commit/af923567bfe247428c48d04f9f7c8b307a68f5eb))
+
+
+### Chores
+
+* **internal:** codegen related update ([#483](https://github.com/val-town/sdk/issues/483)) ([7855de2](https://github.com/val-town/sdk/commit/7855de213cded386c6453fe4ac78b1d303e94c62))
+
 ## 0.25.1 (2025-01-15)
 
 Full Changelog: [v0.25.0...v0.25.1](https://github.com/val-town/sdk/compare/v0.25.0...v0.25.1)
