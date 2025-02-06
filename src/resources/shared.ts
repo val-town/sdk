@@ -31,8 +31,8 @@ export interface BasicVal {
   name: string;
 
   /**
-   * This val’s privacy setting. Unlisted vals do not appear on profile pages or
-   * elsewhere, but you can link to them.
+   * This resource's privacy setting. Unlisted resources do not appear on profile
+   * pages or elsewhere, but you can link to them.
    */
   privacy: 'public' | 'unlisted' | 'private';
 
@@ -48,7 +48,7 @@ export interface BasicVal {
   type: 'interval' | 'http' | 'express' | 'email' | 'script' | 'rpc' | 'httpnext';
 
   /**
-   * The URL of this val on the Val Town website
+   * The URL of this resource on the Val Town website
    */
   url: string;
 
@@ -125,8 +125,8 @@ export interface ExtendedVal {
   name: string;
 
   /**
-   * This val’s privacy setting. Unlisted vals do not appear on profile pages or
-   * elsewhere, but you can link to them.
+   * This resource's privacy setting. Unlisted resources do not appear on profile
+   * pages or elsewhere, but you can link to them.
    */
   privacy: 'public' | 'unlisted' | 'private';
 
@@ -149,7 +149,7 @@ export interface ExtendedVal {
   type: 'interval' | 'http' | 'express' | 'email' | 'script' | 'rpc' | 'httpnext';
 
   /**
-   * The URL of this val on the Val Town website
+   * The URL of this resource on the Val Town website
    */
   url: string;
 
