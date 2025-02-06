@@ -82,8 +82,8 @@ export interface VersionCreateParams {
   name?: string;
 
   /**
-   * This val’s privacy setting. Unlisted vals do not appear on profile pages or
-   * elsewhere, but you can link to them.
+   * This resource's privacy setting. Unlisted resources do not appear on profile
+   * pages or elsewhere, but you can link to them.
    */
   privacy?: 'public' | 'unlisted' | 'private';
 
