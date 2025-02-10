@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.27.0 (2025-02-10)
+
+Full Changelog: [v0.26.0...v0.27.0](https://github.com/val-town/sdk/compare/v0.26.0...v0.27.0)
+
+### Features
+
+* **api:** api update ([#485](https://github.com/val-town/sdk/issues/485)) ([6987f45](https://github.com/val-town/sdk/commit/6987f45e19d79f9aca6bd97e14117002751f355a))
+* **api:** api update ([#489](https://github.com/val-town/sdk/issues/489)) ([61c0144](https://github.com/val-town/sdk/commit/61c0144110ff4d39b68c6d7341a4d488689f0044))
+* **client:** send `X-Stainless-Timeout` header ([#488](https://github.com/val-town/sdk/issues/488)) ([a0c99a7](https://github.com/val-town/sdk/commit/a0c99a7660a1f762fa61cbbc5f1835a7606b6608))
+
 ## 0.26.0 (2025-01-29)
 
 Full Changelog: [v0.25.1...v0.26.0](https://github.com/val-town/sdk/compare/v0.25.1...v0.26.0)
