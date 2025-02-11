@@ -12,6 +12,7 @@ import { EmailSendParams, EmailSendResponse, Emails } from './resources/emails';
 import { Sqlite, SqliteBatchParams, SqliteBatchResponse, SqliteExecuteParams } from './resources/sqlite';
 import { Alias } from './resources/alias/alias';
 import { Me } from './resources/me/me';
+import { ProjectRetrieveResponse, Projects } from './resources/projects/projects';
 import { Search } from './resources/search/search';
 import { Users } from './resources/users/users';
 import {
@@ -167,6 +168,10 @@ export class ValTown extends Core.APIClient {
    * Val Town supports sending emails from vals
    */
   emails: API.Emails = new API.Emails(this);
+  /**
+   * Projects let you organize multiple files and collaborate with pull requests
+   */
+  projects: API.Projects = new API.Projects(this);
 
   protected override defaultQuery(): Core.DefaultQuery | undefined {
     return this._options.defaultQuery;
@@ -212,6 +217,7 @@ ValTown.Users = Users;
 ValTown.Sqlite = Sqlite;
 ValTown.Vals = Vals;
 ValTown.Emails = Emails;
+ValTown.Projects = Projects;
 export declare namespace ValTown {
   export type RequestOptions = Core.RequestOptions;
 
@@ -256,6 +262,8 @@ export declare namespace ValTown {
     type EmailSendResponse as EmailSendResponse,
     type EmailSendParams as EmailSendParams,
   };
+
+  export { Projects as Projects, type ProjectRetrieveResponse as ProjectRetrieveResponse };
 
   export type BasicVal = API.BasicVal;
   export type ExtendedVal = API.ExtendedVal;
