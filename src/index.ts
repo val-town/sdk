@@ -12,7 +12,13 @@ import { EmailSendParams, EmailSendResponse, Emails } from './resources/emails';
 import { Sqlite, SqliteBatchParams, SqliteBatchResponse, SqliteExecuteParams } from './resources/sqlite';
 import { Alias } from './resources/alias/alias';
 import { Me } from './resources/me/me';
-import { ProjectRetrieveResponse, Projects } from './resources/projects/projects';
+import {
+  ProjectListParams,
+  ProjectListResponse,
+  ProjectListResponsesPageCursorURL,
+  ProjectRetrieveResponse,
+  Projects,
+} from './resources/projects/projects';
 import { Search } from './resources/search/search';
 import { Users } from './resources/users/users';
 import {
@@ -218,6 +224,7 @@ ValTown.Sqlite = Sqlite;
 ValTown.Vals = Vals;
 ValTown.Emails = Emails;
 ValTown.Projects = Projects;
+ValTown.ProjectListResponsesPageCursorURL = ProjectListResponsesPageCursorURL;
 export declare namespace ValTown {
   export type RequestOptions = Core.RequestOptions;
 
@@ -263,7 +270,13 @@ export declare namespace ValTown {
     type EmailSendParams as EmailSendParams,
   };
 
-  export { Projects as Projects, type ProjectRetrieveResponse as ProjectRetrieveResponse };
+  export {
+    Projects as Projects,
+    type ProjectRetrieveResponse as ProjectRetrieveResponse,
+    type ProjectListResponse as ProjectListResponse,
+    ProjectListResponsesPageCursorURL as ProjectListResponsesPageCursorURL,
+    type ProjectListParams as ProjectListParams,
+  };
 
   export type BasicVal = API.BasicVal;
   export type ExtendedVal = API.ExtendedVal;

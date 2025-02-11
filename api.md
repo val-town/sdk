@@ -151,10 +151,12 @@ Methods:
 Types:
 
 - <code><a href="./src/resources/projects/projects.ts">ProjectRetrieveResponse</a></code>
+- <code><a href="./src/resources/projects/projects.ts">ProjectListResponse</a></code>
 
 Methods:
 
 - <code title="get /v1/projects/{project_id}">client.projects.<a href="./src/resources/projects/projects.ts">retrieve</a>(projectId) -> ProjectRetrieveResponse</code>
+- <code title="get /v1/projects">client.projects.<a href="./src/resources/projects/projects.ts">list</a>({ ...params }) -> ProjectListResponsesPageCursorURL</code>
 
 ## Branches
 
