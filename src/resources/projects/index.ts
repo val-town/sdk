@@ -7,4 +7,10 @@ export {
   type BranchListResponse,
   type BranchListParams,
 } from './branches';
-export { Projects, type ProjectRetrieveResponse } from './projects';
+export {
+  ProjectListResponsesPageCursorURL,
+  Projects,
+  type ProjectRetrieveResponse,
+  type ProjectListResponse,
+  type ProjectListParams,
+} from './projects';
