@@ -72,6 +72,16 @@ Methods:
 
 - <code title="get /v1/me/references">client.me.references.<a href="./src/resources/me/references.ts">list</a>({ ...params }) -> ReferenceListResponsesPageCursorURL</code>
 
+## Projects
+
+Types:
+
+- <code><a href="./src/resources/me/projects.ts">ProjectListResponse</a></code>
+
+Methods:
+
+- <code title="get /v1/me/projects">client.me.projects.<a href="./src/resources/me/projects.ts">list</a>({ ...params }) -> ProjectListResponsesPageCursorURL</code>
+
 # Blobs
 
 Types:
