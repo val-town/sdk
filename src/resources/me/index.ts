@@ -10,6 +10,12 @@ export { Likes, type LikeListParams } from './likes';
 export { Me } from './me';
 export { Profile, type ProfileRetrieveResponse } from './profile';
 export {
+  ProjectListResponsesPageCursorURL,
+  Projects,
+  type ProjectListResponse,
+  type ProjectListParams,
+} from './projects';
+export {
   ReferenceListResponsesPageCursorURL,
   References,
   type ReferenceListResponse,

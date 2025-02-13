@@ -12,6 +12,13 @@ import * as LikesAPI from './likes';
 import { LikeListParams, Likes } from './likes';
 import * as ProfileAPI from './profile';
 import { Profile, ProfileRetrieveResponse } from './profile';
+import * as ProjectsAPI from './projects';
+import {
+  ProjectListParams,
+  ProjectListResponse,
+  ProjectListResponsesPageCursorURL,
+  Projects,
+} from './projects';
 import * as ReferencesAPI from './references';
 import {
   ReferenceListParams,
@@ -28,6 +35,7 @@ export class Me extends APIResource {
   likes: LikesAPI.Likes = new LikesAPI.Likes(this._client);
   comments: CommentsAPI.Comments = new CommentsAPI.Comments(this._client);
   references: ReferencesAPI.References = new ReferencesAPI.References(this._client);
+  projects: ProjectsAPI.Projects = new ProjectsAPI.Projects(this._client);
 }
 
 Me.Profile = Profile;
@@ -36,6 +44,8 @@ Me.Comments = Comments;
 Me.CommentListResponsesPageCursorURL = CommentListResponsesPageCursorURL;
 Me.References = References;
 Me.ReferenceListResponsesPageCursorURL = ReferenceListResponsesPageCursorURL;
+Me.Projects = Projects;
+Me.ProjectListResponsesPageCursorURL = ProjectListResponsesPageCursorURL;
 
 export declare namespace Me {
   export { Profile as Profile, type ProfileRetrieveResponse as ProfileRetrieveResponse };
@@ -54,5 +64,12 @@ export declare namespace Me {
     type ReferenceListResponse as ReferenceListResponse,
     ReferenceListResponsesPageCursorURL as ReferenceListResponsesPageCursorURL,
     type ReferenceListParams as ReferenceListParams,
+  };
+
+  export {
+    Projects as Projects,
+    type ProjectListResponse as ProjectListResponse,
+    ProjectListResponsesPageCursorURL as ProjectListResponsesPageCursorURL,
+    type ProjectListParams as ProjectListParams,
   };
 }

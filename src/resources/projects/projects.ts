@@ -26,7 +26,7 @@ export class Projects extends APIResource {
   }
 
   /**
-   * [BETA] List all of a user's projects for authenticated users
+   * [BETA] Lists all public projects
    */
   list(
     query: ProjectListParams,
