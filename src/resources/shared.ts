@@ -7,7 +7,7 @@ import { PageCursorURL } from '../pagination';
  */
 export interface BasicVal {
   /**
-   * This val’s id
+   * This val's id
    */
   id: string;
 
@@ -70,7 +70,7 @@ export namespace BasicVal {
 
   export interface Links {
     /**
-     * The URL of this Val’s source code as a module
+     * The URL of this Val's source code as a module
      */
     module: string;
 
@@ -80,12 +80,12 @@ export namespace BasicVal {
     self: string;
 
     /**
-     * The endpoint to retrieve this val’s versions
+     * The endpoint to retrieve this val's versions
      */
     versions: string;
 
     /**
-     * This val’s web endpoint, where it serves a website or API
+     * This val's web endpoint, where it serves a website or API
      */
     endpoint?: string;
   }
@@ -96,7 +96,7 @@ export namespace BasicVal {
  */
 export interface ExtendedVal {
   /**
-   * This val’s id
+   * This val's id
    */
   id: string;
 
@@ -136,7 +136,7 @@ export interface ExtendedVal {
   public: boolean;
 
   /**
-   * This val’s readme, as Markdown
+   * This val's readme, as Markdown
    */
   readme: string | null;
 
@@ -173,7 +173,7 @@ export namespace ExtendedVal {
 
   export interface Links {
     /**
-     * The URL of this Val’s source code as a module
+     * The URL of this Val's source code as a module
      */
     module: string;
 
@@ -183,12 +183,12 @@ export namespace ExtendedVal {
     self: string;
 
     /**
-     * The endpoint to retrieve this val’s versions
+     * The endpoint to retrieve this val's versions
      */
     versions: string;
 
     /**
-     * This val’s web endpoint, where it serves a website or API
+     * This val's web endpoint, where it serves a website or API
      */
     endpoint?: string;
   }
