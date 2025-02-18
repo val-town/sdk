@@ -21,7 +21,7 @@ export class ValName extends APIResource {
  */
 export interface ValNameRetrieveResponse {
   /**
-   * This val’s id
+   * This val's id
    */
   id: string;
 
@@ -61,7 +61,7 @@ export interface ValNameRetrieveResponse {
   public: boolean;
 
   /**
-   * This val’s readme, as Markdown
+   * This val's readme, as Markdown
    */
   readme: string | null;
 
@@ -98,7 +98,7 @@ export namespace ValNameRetrieveResponse {
 
   export interface Links {
     /**
-     * The URL of this Val’s source code as a module
+     * The URL of this Val's source code as a module
      */
     module: string;
 
@@ -108,12 +108,12 @@ export namespace ValNameRetrieveResponse {
     self: string;
 
     /**
-     * The endpoint to retrieve this val’s versions
+     * The endpoint to retrieve this val's versions
      */
     versions: string;
 
     /**
-     * This val’s web endpoint, where it serves a website or API
+     * This val's web endpoint, where it serves a website or API
      */
     endpoint?: string;
   }
