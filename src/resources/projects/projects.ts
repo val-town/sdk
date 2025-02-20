@@ -10,6 +10,8 @@ import {
   BranchRetrieveResponse,
   Branches,
 } from './branches';
+import * as FilesAPI from './files';
+import { FileListParams, FileListResponse, FileListResponsesPageCursorURL, Files } from './files';
 import { PageCursorURL, type PageCursorURLParams } from '../../pagination';
 
 /**
@@ -17,6 +19,7 @@ import { PageCursorURL, type PageCursorURLParams } from '../../pagination';
  */
 export class Projects extends APIResource {
   branches: BranchesAPI.Branches = new BranchesAPI.Branches(this._client);
+  files: FilesAPI.Files = new FilesAPI.Files(this._client);
 
   /**
    * [BETA] Get a project by id
@@ -26,7 +29,7 @@ export class Projects extends APIResource {
   }
 
   /**
-   * [BETA] List all of a user's projects for authenticated users
+   * [BETA] Lists all public projects
    */
   list(
     query: ProjectListParams,
@@ -127,6 +130,8 @@ export interface ProjectListParams extends PageCursorURLParams {}
 Projects.ProjectListResponsesPageCursorURL = ProjectListResponsesPageCursorURL;
 Projects.Branches = Branches;
 Projects.BranchListResponsesPageCursorURL = BranchListResponsesPageCursorURL;
+Projects.Files = Files;
+Projects.FileListResponsesPageCursorURL = FileListResponsesPageCursorURL;
 
 export declare namespace Projects {
   export {
@@ -142,5 +147,12 @@ export declare namespace Projects {
     type BranchListResponse as BranchListResponse,
     BranchListResponsesPageCursorURL as BranchListResponsesPageCursorURL,
     type BranchListParams as BranchListParams,
+  };
+
+  export {
+    Files as Files,
+    type FileListResponse as FileListResponse,
+    FileListResponsesPageCursorURL as FileListResponsesPageCursorURL,
+    type FileListParams as FileListParams,
   };
 }

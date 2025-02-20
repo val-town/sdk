@@ -7,6 +7,7 @@ export {
   type BranchListResponse,
   type BranchListParams,
 } from './branches';
+export { FileListResponsesPageCursorURL, Files, type FileListResponse, type FileListParams } from './files';
 export {
   ProjectListResponsesPageCursorURL,
   Projects,

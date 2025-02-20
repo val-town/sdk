@@ -72,6 +72,16 @@ Methods:
 
 - <code title="get /v1/me/references">client.me.references.<a href="./src/resources/me/references.ts">list</a>({ ...params }) -> ReferenceListResponsesPageCursorURL</code>
 
+## Projects
+
+Types:
+
+- <code><a href="./src/resources/me/projects.ts">ProjectListResponse</a></code>
+
+Methods:
+
+- <code title="get /v1/me/projects">client.me.projects.<a href="./src/resources/me/projects.ts">list</a>({ ...params }) -> ProjectListResponsesPageCursorURL</code>
+
 # Blobs
 
 Types:
@@ -169,3 +179,13 @@ Methods:
 
 - <code title="get /v1/projects/{project_id}/branches/{branch_id}">client.projects.branches.<a href="./src/resources/projects/branches.ts">retrieve</a>(projectId, branchId) -> BranchRetrieveResponse</code>
 - <code title="get /v1/projects/{project_id}/branches">client.projects.branches.<a href="./src/resources/projects/branches.ts">list</a>(projectId, { ...params }) -> BranchListResponsesPageCursorURL</code>
+
+## Files
+
+Types:
+
+- <code><a href="./src/resources/projects/files.ts">FileListResponse</a></code>
+
+Methods:
+
+- <code title="get /v1/projects/{project_id}/files">client.projects.files.<a href="./src/resources/projects/files.ts">list</a>(projectId, { ...params }) -> FileListResponsesPageCursorURL</code>
