@@ -48,7 +48,16 @@ export class Blobs extends APIResource {
   /**
    * Store data in blob storage
    */
-  store(key: string, body: BlobStoreParams, options?: Core.RequestOptions): Core.APIPromise<void> {
+  store(key: string, body?: BlobStoreParams, options?: Core.RequestOptions): Core.APIPromise<void>;
+  store(key: string, options?: Core.RequestOptions): Core.APIPromise<void>;
+  store(
+    key: string,
+    body?: BlobStoreParams | Core.RequestOptions,
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<void> {
+    if (isRequestOptions(body)) {
+      return this.store(key, undefined, body);
+    }
     return this._client.post(`/v1/blob/${key}`, {
       body,
       ...options,
