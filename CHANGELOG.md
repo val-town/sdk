@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.29.1 (2025-02-21)
+
+Full Changelog: [v0.29.0...v0.29.1](https://github.com/val-town/sdk/compare/v0.29.0...v0.29.1)
+
+### Bug Fixes
+
+* **client:** mark some request bodies as optional ([#502](https://github.com/val-town/sdk/issues/502)) ([fddd33a](https://github.com/val-town/sdk/commit/fddd33a1d3663e5e42313d8992fbf73263ccb835))
+
 ## 0.29.0 (2025-02-20)
 
 Full Changelog: [v0.28.0...v0.29.0](https://github.com/val-town/sdk/compare/v0.28.0...v0.29.0)
