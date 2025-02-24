@@ -46,13 +46,25 @@ export interface FileListResponse {
 
 export namespace FileListResponse {
   export interface Links {
-    endpoint: string | null;
-
+    /**
+     * The URL of this resource on Val Town
+     */
     html: string;
 
+    /**
+     * The URL of this resource's source code as a module
+     */
     module: string;
 
-    self: string | null;
+    /**
+     * The URL of this resource on this API
+     */
+    self: string;
+
+    /**
+     * This resource's web endpoint, where it serves a website or API
+     */
+    endpoint?: string;
   }
 }
 

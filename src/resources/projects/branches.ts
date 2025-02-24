@@ -49,16 +49,27 @@ export interface BranchRetrieveResponse {
    */
   forkedBranchId: string | null;
 
+  links: BranchRetrieveResponse.Links;
+
   name: string;
 
   updatedAt: string;
 
-  /**
-   * The URL of this resource on the Val Town website
-   */
-  valTownUrl: string;
-
   version: number;
+}
+
+export namespace BranchRetrieveResponse {
+  export interface Links {
+    /**
+     * The URL of this resource on Val Town
+     */
+    html: string;
+
+    /**
+     * The URL of this resource on this API
+     */
+    self: string;
+  }
 }
 
 /**
@@ -77,16 +88,27 @@ export interface BranchListResponse {
    */
   forkedBranchId: string | null;
 
+  links: BranchListResponse.Links;
+
   name: string;
 
   updatedAt: string;
 
-  /**
-   * The URL of this resource on the Val Town website
-   */
-  valTownUrl: string;
-
   version: number;
+}
+
+export namespace BranchListResponse {
+  export interface Links {
+    /**
+     * The URL of this resource on Val Town
+     */
+    html: string;
+
+    /**
+     * The URL of this resource on this API
+     */
+    self: string;
+  }
 }
 
 export interface BranchListParams extends PageCursorURLParams {}

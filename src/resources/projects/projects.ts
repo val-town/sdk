@@ -61,6 +61,8 @@ export interface ProjectRetrieveResponse {
    */
   imageUrl: string | null;
 
+  links: ProjectRetrieveResponse.Links;
+
   name: string;
 
   /**
@@ -68,11 +70,6 @@ export interface ProjectRetrieveResponse {
    * pages or elsewhere, but you can link to them.
    */
   privacy: 'public' | 'unlisted' | 'private';
-
-  /**
-   * The URL of this resource on the Val Town website
-   */
-  valTownUrl: string;
 }
 
 export namespace ProjectRetrieveResponse {
@@ -80,6 +77,18 @@ export namespace ProjectRetrieveResponse {
     id: string;
 
     username: string | null;
+  }
+
+  export interface Links {
+    /**
+     * The URL of this resource on Val Town
+     */
+    html: string;
+
+    /**
+     * The URL of this resource on this API
+     */
+    self: string;
   }
 }
 
@@ -103,6 +112,8 @@ export interface ProjectListResponse {
    */
   imageUrl: string | null;
 
+  links: ProjectListResponse.Links;
+
   name: string;
 
   /**
@@ -110,11 +121,6 @@ export interface ProjectListResponse {
    * pages or elsewhere, but you can link to them.
    */
   privacy: 'public' | 'unlisted' | 'private';
-
-  /**
-   * The URL of this resource on the Val Town website
-   */
-  valTownUrl: string;
 }
 
 export namespace ProjectListResponse {
@@ -122,6 +128,18 @@ export namespace ProjectListResponse {
     id: string;
 
     username: string | null;
+  }
+
+  export interface Links {
+    /**
+     * The URL of this resource on Val Town
+     */
+    html: string;
+
+    /**
+     * The URL of this resource on this API
+     */
+    self: string;
   }
 }
 
