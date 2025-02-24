@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.30.0 (2025-02-24)
+
+Full Changelog: [v0.29.1...v0.30.0](https://github.com/val-town/sdk/compare/v0.29.1...v0.30.0)
+
+### Features
+
+* **api:** api update ([#505](https://github.com/val-town/sdk/issues/505)) ([f79b39f](https://github.com/val-town/sdk/commit/f79b39f18f873f225ec3f3d511029b817f6284b0))
+
+
+### Chores
+
+* **internal:** fix devcontainers setup ([#507](https://github.com/val-town/sdk/issues/507)) ([00e517d](https://github.com/val-town/sdk/commit/00e517d99340cbc9613e7f847e2233de33880f9b))
+
 ## 0.29.1 (2025-02-21)
 
 Full Changelog: [v0.29.0...v0.29.1](https://github.com/val-town/sdk/compare/v0.29.0...v0.29.1)
