@@ -34,6 +34,16 @@ Methods:
 
 - <code title="get /v1/alias/{username}/{val_name}">client.alias.username.valName.<a href="./src/resources/alias/username/val-name.ts">retrieve</a>(username, valName) -> ValNameRetrieveResponse</code>
 
+### ProjectName
+
+Types:
+
+- <code><a href="./src/resources/alias/username/project-name.ts">ProjectNameRetrieveResponse</a></code>
+
+Methods:
+
+- <code title="get /v1/alias/projects/{username}/{project_name}">client.alias.username.projectName.<a href="./src/resources/alias/username/project-name.ts">retrieve</a>(username, projectName) -> ProjectNameRetrieveResponse</code>
+
 # Me
 
 ## Profile
@@ -184,8 +194,12 @@ Methods:
 
 Types:
 
+- <code><a href="./src/resources/projects/files.ts">FileRetrieveResponse</a></code>
 - <code><a href="./src/resources/projects/files.ts">FileListResponse</a></code>
+- <code><a href="./src/resources/projects/files.ts">FileContentResponse</a></code>
 
 Methods:
 
+- <code title="get /v1/projects/{project_id}/files/{path}">client.projects.files.<a href="./src/resources/projects/files.ts">retrieve</a>(projectId, path, { ...params }) -> FileRetrieveResponse</code>
 - <code title="get /v1/projects/{project_id}/files">client.projects.files.<a href="./src/resources/projects/files.ts">list</a>(projectId, { ...params }) -> FileListResponsesPageCursorURL</code>
+- <code title="get /v1/projects/{project_id}/files/{path}/content">client.projects.files.<a href="./src/resources/projects/files.ts">content</a>(projectId, path, { ...params }) -> unknown</code>
