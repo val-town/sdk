@@ -13,6 +13,8 @@ import { Sqlite, SqliteBatchParams, SqliteBatchResponse, SqliteExecuteParams } f
 import { Alias } from './resources/alias/alias';
 import { Me } from './resources/me/me';
 import {
+  ProjectCreateParams,
+  ProjectCreateResponse,
   ProjectListParams,
   ProjectListResponse,
   ProjectListResponsesPageCursorURL,
@@ -272,9 +274,11 @@ export declare namespace ValTown {
 
   export {
     Projects as Projects,
+    type ProjectCreateResponse as ProjectCreateResponse,
     type ProjectRetrieveResponse as ProjectRetrieveResponse,
     type ProjectListResponse as ProjectListResponse,
     ProjectListResponsesPageCursorURL as ProjectListResponsesPageCursorURL,
+    type ProjectCreateParams as ProjectCreateParams,
     type ProjectListParams as ProjectListParams,
   };
 

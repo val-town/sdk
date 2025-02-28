@@ -6,6 +6,17 @@ import { PageCursorURL, type PageCursorURLParams } from '../../pagination';
 
 export class Branches extends APIResource {
   /**
+   * [BETA] Create a new branch
+   */
+  create(
+    projectId: string,
+    body: BranchCreateParams,
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<BranchCreateResponse> {
+    return this._client.post(`/v1/projects/${projectId}/branches`, { body, ...options });
+  }
+
+  /**
    * [BETA] Get a branch by id
    */
   retrieve(
@@ -32,6 +43,45 @@ export class Branches extends APIResource {
 }
 
 export class BranchListResponsesPageCursorURL extends PageCursorURL<BranchListResponse> {}
+
+/**
+ * A Branch
+ */
+export interface BranchCreateResponse {
+  /**
+   * The id of the branch
+   */
+  id: string;
+
+  createdAt: string;
+
+  /**
+   * The id of the branch this branch was forked from
+   */
+  forkedBranchId: string | null;
+
+  links: BranchCreateResponse.Links;
+
+  name: string;
+
+  updatedAt: string;
+
+  version: number;
+}
+
+export namespace BranchCreateResponse {
+  export interface Links {
+    /**
+     * The URL of this resource on Val Town
+     */
+    html: string;
+
+    /**
+     * The URL of this resource on this API
+     */
+    self: string;
+  }
+}
 
 /**
  * A Branch
@@ -111,15 +161,27 @@ export namespace BranchListResponse {
   }
 }
 
+export interface BranchCreateParams {
+  name: string;
+
+  /**
+   * The branch ID to fork from. If this is not specified, the new branch will be
+   * forked from main.
+   */
+  branchId?: string;
+}
+
 export interface BranchListParams extends PageCursorURLParams {}
 
 Branches.BranchListResponsesPageCursorURL = BranchListResponsesPageCursorURL;
 
 export declare namespace Branches {
   export {
+    type BranchCreateResponse as BranchCreateResponse,
     type BranchRetrieveResponse as BranchRetrieveResponse,
     type BranchListResponse as BranchListResponse,
     BranchListResponsesPageCursorURL as BranchListResponsesPageCursorURL,
+    type BranchCreateParams as BranchCreateParams,
     type BranchListParams as BranchListParams,
   };
 }

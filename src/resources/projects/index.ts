@@ -3,8 +3,10 @@
 export {
   BranchListResponsesPageCursorURL,
   Branches,
+  type BranchCreateResponse,
   type BranchRetrieveResponse,
   type BranchListResponse,
+  type BranchCreateParams,
   type BranchListParams,
 } from './branches';
 export {
@@ -12,7 +14,6 @@ export {
   Files,
   type FileRetrieveResponse,
   type FileListResponse,
-  type FileContentResponse,
   type FileRetrieveParams,
   type FileListParams,
   type FileContentParams,
@@ -20,7 +21,9 @@ export {
 export {
   ProjectListResponsesPageCursorURL,
   Projects,
+  type ProjectCreateResponse,
   type ProjectRetrieveResponse,
   type ProjectListResponse,
+  type ProjectCreateParams,
   type ProjectListParams,
 } from './projects';
