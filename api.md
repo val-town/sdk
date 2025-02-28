@@ -170,11 +170,13 @@ Methods:
 
 Types:
 
+- <code><a href="./src/resources/projects/projects.ts">ProjectCreateResponse</a></code>
 - <code><a href="./src/resources/projects/projects.ts">ProjectRetrieveResponse</a></code>
 - <code><a href="./src/resources/projects/projects.ts">ProjectListResponse</a></code>
 
 Methods:
 
+- <code title="post /v1/projects">client.projects.<a href="./src/resources/projects/projects.ts">create</a>({ ...params }) -> ProjectCreateResponse</code>
 - <code title="get /v1/projects/{project_id}">client.projects.<a href="./src/resources/projects/projects.ts">retrieve</a>(projectId) -> ProjectRetrieveResponse</code>
 - <code title="get /v1/projects">client.projects.<a href="./src/resources/projects/projects.ts">list</a>({ ...params }) -> ProjectListResponsesPageCursorURL</code>
 
@@ -182,11 +184,13 @@ Methods:
 
 Types:
 
+- <code><a href="./src/resources/projects/branches.ts">BranchCreateResponse</a></code>
 - <code><a href="./src/resources/projects/branches.ts">BranchRetrieveResponse</a></code>
 - <code><a href="./src/resources/projects/branches.ts">BranchListResponse</a></code>
 
 Methods:
 
+- <code title="post /v1/projects/{project_id}/branches">client.projects.branches.<a href="./src/resources/projects/branches.ts">create</a>(projectId, { ...params }) -> BranchCreateResponse</code>
 - <code title="get /v1/projects/{project_id}/branches/{branch_id}">client.projects.branches.<a href="./src/resources/projects/branches.ts">retrieve</a>(projectId, branchId) -> BranchRetrieveResponse</code>
 - <code title="get /v1/projects/{project_id}/branches">client.projects.branches.<a href="./src/resources/projects/branches.ts">list</a>(projectId, { ...params }) -> BranchListResponsesPageCursorURL</code>
 
@@ -196,10 +200,9 @@ Types:
 
 - <code><a href="./src/resources/projects/files.ts">FileRetrieveResponse</a></code>
 - <code><a href="./src/resources/projects/files.ts">FileListResponse</a></code>
-- <code><a href="./src/resources/projects/files.ts">FileContentResponse</a></code>
 
 Methods:
 
 - <code title="get /v1/projects/{project_id}/files/{path}">client.projects.files.<a href="./src/resources/projects/files.ts">retrieve</a>(projectId, path, { ...params }) -> FileRetrieveResponse</code>
 - <code title="get /v1/projects/{project_id}/files">client.projects.files.<a href="./src/resources/projects/files.ts">list</a>(projectId, { ...params }) -> FileListResponsesPageCursorURL</code>
-- <code title="get /v1/projects/{project_id}/files/{path}/content">client.projects.files.<a href="./src/resources/projects/files.ts">content</a>(projectId, path, { ...params }) -> unknown</code>
+- <code title="get /v1/projects/{project_id}/files/{path}/content">client.projects.files.<a href="./src/resources/projects/files.ts">content</a>(projectId, path, { ...params }) -> Response</code>

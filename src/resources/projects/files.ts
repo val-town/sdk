@@ -5,6 +5,7 @@ import { isRequestOptions } from '../../core';
 import * as Core from '../../core';
 import * as Shared from '../shared';
 import { PageCursorURL, type PageCursorURLParams } from '../../pagination';
+import { type Response } from '../../_shims/index';
 
 export class Files extends APIResource {
   /**
@@ -41,14 +42,14 @@ export class Files extends APIResource {
     path: string,
     params?: FileContentParams,
     options?: Core.RequestOptions,
-  ): Core.APIPromise<unknown>;
-  content(projectId: string, path: string, options?: Core.RequestOptions): Core.APIPromise<unknown>;
+  ): Core.APIPromise<Response>;
+  content(projectId: string, path: string, options?: Core.RequestOptions): Core.APIPromise<Response>;
   content(
     projectId: string,
     path: string,
     params: FileContentParams | Core.RequestOptions = {},
     options?: Core.RequestOptions,
-  ): Core.APIPromise<unknown> {
+  ): Core.APIPromise<Response> {
     if (isRequestOptions(params)) {
       return this.content(projectId, path, {}, params);
     }
@@ -64,6 +65,7 @@ export class Files extends APIResource {
       query,
       ...options,
       headers: {
+        Accept: 'application/octet-stream',
         ...(cacheControl != null ? { 'Cache-Control': cacheControl } : undefined),
         ...(ifMatch != null ? { 'If-Match': ifMatch } : undefined),
         ...(ifModifiedSince != null ? { 'If-Modified-Since': ifModifiedSince } : undefined),
@@ -71,6 +73,7 @@ export class Files extends APIResource {
         ...(ifUnmodifiedSince != null ? { 'If-Unmodified-Since': ifUnmodifiedSince } : undefined),
         ...options?.headers,
       },
+      __binaryResponse: true,
     });
   }
 }
@@ -183,8 +186,6 @@ export namespace FileListResponse {
   }
 }
 
-export type FileContentResponse = unknown;
-
 export interface FileRetrieveParams {
   /**
    * Maximum items to return in each paginated response
@@ -267,7 +268,6 @@ export declare namespace Files {
   export {
     type FileRetrieveResponse as FileRetrieveResponse,
     type FileListResponse as FileListResponse,
-    type FileContentResponse as FileContentResponse,
     FileListResponsesPageCursorURL as FileListResponsesPageCursorURL,
     type FileRetrieveParams as FileRetrieveParams,
     type FileListParams as FileListParams,
