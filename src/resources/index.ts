@@ -8,8 +8,10 @@ export { Me } from './me/me';
 export {
   ProjectListResponsesPageCursorURL,
   Projects,
+  type ProjectCreateResponse,
   type ProjectRetrieveResponse,
   type ProjectListResponse,
+  type ProjectCreateParams,
   type ProjectListParams,
 } from './projects/projects';
 export { Search } from './search/search';
