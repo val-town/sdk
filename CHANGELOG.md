@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.32.0 (2025-03-03)
+
+Full Changelog: [v0.31.0...v0.32.0](https://github.com/val-town/sdk/compare/v0.31.0...v0.32.0)
+
+### Features
+
+* **api:** api update ([#514](https://github.com/val-town/sdk/issues/514)) ([6c7c72e](https://github.com/val-town/sdk/commit/6c7c72e497dc8aa97a063d184e13fe231fbe5f37))
+
+
+### Documentation
+
+* update URLs from stainlessapi.com to stainless.com ([#512](https://github.com/val-town/sdk/issues/512)) ([11d8163](https://github.com/val-town/sdk/commit/11d8163ca8152102368f97e6c6d13fca98ca44b7))
+
 ## 0.31.0 (2025-02-25)
 
 Full Changelog: [v0.30.0...v0.31.0](https://github.com/val-town/sdk/compare/v0.30.0...v0.31.0)
