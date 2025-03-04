@@ -4,6 +4,8 @@ import { APIResource } from '../../resource';
 import * as Core from '../../core';
 import * as BranchesAPI from './branches';
 import {
+  BranchCreateParams,
+  BranchCreateResponse,
   BranchListParams,
   BranchListResponse,
   BranchListResponsesPageCursorURL,
@@ -13,7 +15,6 @@ import {
 import * as FilesAPI from './files';
 import {
   FileContentParams,
-  FileContentResponse,
   FileListParams,
   FileListResponse,
   FileListResponsesPageCursorURL,
@@ -29,6 +30,13 @@ import { PageCursorURL, type PageCursorURLParams } from '../../pagination';
 export class Projects extends APIResource {
   branches: BranchesAPI.Branches = new BranchesAPI.Branches(this._client);
   files: FilesAPI.Files = new FilesAPI.Files(this._client);
+
+  /**
+   * [BETA] Create a new project
+   */
+  create(body: ProjectCreateParams, options?: Core.RequestOptions): Core.APIPromise<ProjectCreateResponse> {
+    return this._client.post('/v1/projects', { body, ...options });
+  }
 
   /**
    * [BETA] Get a project by id
@@ -49,6 +57,57 @@ export class Projects extends APIResource {
 }
 
 export class ProjectListResponsesPageCursorURL extends PageCursorURL<ProjectListResponse> {}
+
+/**
+ * A Project
+ */
+export interface ProjectCreateResponse {
+  /**
+   * The id of the project
+   */
+  id: string;
+
+  author: ProjectCreateResponse.Author;
+
+  createdAt: string;
+
+  description: string | null;
+
+  /**
+   * The URL of this project's image
+   */
+  imageUrl: string | null;
+
+  links: ProjectCreateResponse.Links;
+
+  name: string;
+
+  /**
+   * This resource's privacy setting. Unlisted resources do not appear on profile
+   * pages or elsewhere, but you can link to them.
+   */
+  privacy: 'public' | 'unlisted' | 'private';
+}
+
+export namespace ProjectCreateResponse {
+  export interface Author {
+    id: string;
+
+    username: string | null;
+  }
+
+  export interface Links {
+    /**
+     * The URL of this resource on Val Town
+     */
+    html: string;
+
+    /**
+     * The URL of this resource on this API
+     */
+    self: string;
+  }
+}
 
 /**
  * A Project
@@ -152,6 +211,16 @@ export namespace ProjectListResponse {
   }
 }
 
+export interface ProjectCreateParams {
+  name: string;
+
+  privacy: 'public' | 'unlisted' | 'private';
+
+  description?: string;
+
+  imageUrl?: string;
+}
+
 export interface ProjectListParams extends PageCursorURLParams {}
 
 Projects.ProjectListResponsesPageCursorURL = ProjectListResponsesPageCursorURL;
@@ -162,17 +231,21 @@ Projects.FileListResponsesPageCursorURL = FileListResponsesPageCursorURL;
 
 export declare namespace Projects {
   export {
+    type ProjectCreateResponse as ProjectCreateResponse,
     type ProjectRetrieveResponse as ProjectRetrieveResponse,
     type ProjectListResponse as ProjectListResponse,
     ProjectListResponsesPageCursorURL as ProjectListResponsesPageCursorURL,
+    type ProjectCreateParams as ProjectCreateParams,
     type ProjectListParams as ProjectListParams,
   };
 
   export {
     Branches as Branches,
+    type BranchCreateResponse as BranchCreateResponse,
     type BranchRetrieveResponse as BranchRetrieveResponse,
     type BranchListResponse as BranchListResponse,
     BranchListResponsesPageCursorURL as BranchListResponsesPageCursorURL,
+    type BranchCreateParams as BranchCreateParams,
     type BranchListParams as BranchListParams,
   };
 
@@ -180,7 +253,6 @@ export declare namespace Projects {
     Files as Files,
     type FileRetrieveResponse as FileRetrieveResponse,
     type FileListResponse as FileListResponse,
-    type FileContentResponse as FileContentResponse,
     FileListResponsesPageCursorURL as FileListResponsesPageCursorURL,
     type FileRetrieveParams as FileRetrieveParams,
     type FileListParams as FileListParams,
