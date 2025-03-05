@@ -12,8 +12,10 @@ export {
 export {
   FileListResponsesPageCursorURL,
   Files,
+  type FileCreateResponse,
   type FileRetrieveResponse,
   type FileListResponse,
+  type FileCreateParams,
   type FileRetrieveParams,
   type FileListParams,
   type FileContentParams,

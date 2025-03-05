@@ -9,6 +9,23 @@ import { type Response } from '../../_shims/index';
 
 export class Files extends APIResource {
   /**
+   * [BETA] Create a new file, project val or directory
+   */
+  create(
+    projectId: string,
+    path: string,
+    params: FileCreateParams,
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<FileCreateResponse> {
+    const { branch_id, ...body } = params;
+    return this._client.post(`/v1/projects/${projectId}/files/${path}`, {
+      query: { branch_id },
+      body,
+      ...options,
+    });
+  }
+
+  /**
    * Get metadata for files and directories in a project at the specified path
    */
   retrieve(
@@ -79,6 +96,52 @@ export class Files extends APIResource {
 }
 
 export class FileListResponsesPageCursorURL extends PageCursorURL<FileListResponse> {}
+
+/**
+ * A File or Directory's Metadata
+ */
+export interface FileCreateResponse {
+  /**
+   * The id of the resource
+   */
+  id: string;
+
+  links: FileCreateResponse.Links;
+
+  name: string;
+
+  path: string;
+
+  type: 'directory' | 'file' | 'interval' | 'http' | 'email' | 'script';
+
+  updatedAt: string;
+
+  version: number;
+}
+
+export namespace FileCreateResponse {
+  export interface Links {
+    /**
+     * The URL of this resource on Val Town
+     */
+    html: string;
+
+    /**
+     * The URL of this resource's source code as a module
+     */
+    module: string;
+
+    /**
+     * The URL of this resource on this API
+     */
+    self: string;
+
+    /**
+     * This resource's web endpoint, where it serves a website or API
+     */
+    endpoint?: string;
+  }
+}
 
 /**
  * A paginated result set
@@ -186,6 +249,48 @@ export namespace FileListResponse {
   }
 }
 
+export type FileCreateParams = FileCreateParams.Variant0 | FileCreateParams.Variant1;
+
+export declare namespace FileCreateParams {
+  export interface Variant0 {
+    /**
+     * Body param:
+     */
+    type: 'directory';
+
+    /**
+     * Query param: Id of the branch to create the file on. Defaults to main if not
+     * provided.
+     */
+    branch_id?: string;
+
+    /**
+     * Body param:
+     */
+    content?: null;
+  }
+
+  export interface Variant1 {
+    /**
+     * Body param: Project file and val content. Null or an empty string will create an
+     * empty file. When creating a directory, you can send null, an empty string, or
+     * omit the content field entirely.
+     */
+    content: string;
+
+    /**
+     * Body param:
+     */
+    type: 'file' | 'interval' | 'http' | 'email' | 'script';
+
+    /**
+     * Query param: Id of the branch to create the file on. Defaults to main if not
+     * provided.
+     */
+    branch_id?: string;
+  }
+}
+
 export interface FileRetrieveParams {
   /**
    * Maximum items to return in each paginated response
@@ -266,9 +371,11 @@ Files.FileListResponsesPageCursorURL = FileListResponsesPageCursorURL;
 
 export declare namespace Files {
   export {
+    type FileCreateResponse as FileCreateResponse,
     type FileRetrieveResponse as FileRetrieveResponse,
     type FileListResponse as FileListResponse,
     FileListResponsesPageCursorURL as FileListResponsesPageCursorURL,
+    type FileCreateParams as FileCreateParams,
     type FileRetrieveParams as FileRetrieveParams,
     type FileListParams as FileListParams,
     type FileContentParams as FileContentParams,

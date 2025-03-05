@@ -198,11 +198,13 @@ Methods:
 
 Types:
 
+- <code><a href="./src/resources/projects/files.ts">FileCreateResponse</a></code>
 - <code><a href="./src/resources/projects/files.ts">FileRetrieveResponse</a></code>
 - <code><a href="./src/resources/projects/files.ts">FileListResponse</a></code>
 
 Methods:
 
+- <code title="post /v1/projects/{project_id}/files/{path}">client.projects.files.<a href="./src/resources/projects/files.ts">create</a>(projectId, path, { ...params }) -> FileCreateResponse</code>
 - <code title="get /v1/projects/{project_id}/files/{path}">client.projects.files.<a href="./src/resources/projects/files.ts">retrieve</a>(projectId, path, { ...params }) -> FileRetrieveResponse</code>
 - <code title="get /v1/projects/{project_id}/files">client.projects.files.<a href="./src/resources/projects/files.ts">list</a>(projectId, { ...params }) -> FileListResponsesPageCursorURL</code>
 - <code title="get /v1/projects/{project_id}/files/{path}/content">client.projects.files.<a href="./src/resources/projects/files.ts">content</a>(projectId, path, { ...params }) -> Response</code>
