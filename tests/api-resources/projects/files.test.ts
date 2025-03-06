@@ -9,6 +9,27 @@ const client = new ValTown({
 });
 
 describe('resource files', () => {
+  test('create: only required params', async () => {
+    const responsePromise = client.projects.files.create('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', 'path', {
+      type: 'directory',
+    });
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
+  test('create: required and optional params', async () => {
+    const response = await client.projects.files.create('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', 'path', {
+      type: 'directory',
+      branch_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
+      content: null,
+    });
+  });
+
   test('retrieve: only required params', async () => {
     const responsePromise = client.projects.files.retrieve('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', 'path', {
       limit: 1,
@@ -27,7 +48,7 @@ describe('resource files', () => {
     const response = await client.projects.files.retrieve('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', 'path', {
       limit: 1,
       offset: 0,
-      branch_id: 'branch_id',
+      branch_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
       version: 0,
     });
   });
@@ -50,7 +71,7 @@ describe('resource files', () => {
     const response = await client.projects.files.list('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       limit: 1,
       offset: 0,
-      branch_id: 'branch_id',
+      branch_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
       recursive: true,
       version: 0,
     });
@@ -72,7 +93,7 @@ describe('resource files', () => {
         '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
         'path',
         {
-          branch_id: 'branch_id',
+          branch_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
           version: 0,
           'Cache-Control': 'Cache-Control',
           'If-Match': 'If-Match',

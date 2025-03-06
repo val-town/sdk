@@ -15,6 +15,8 @@ import {
 import * as FilesAPI from './files';
 import {
   FileContentParams,
+  FileCreateParams,
+  FileCreateResponse,
   FileListParams,
   FileListResponse,
   FileListResponsesPageCursorURL,
@@ -251,9 +253,11 @@ export declare namespace Projects {
 
   export {
     Files as Files,
+    type FileCreateResponse as FileCreateResponse,
     type FileRetrieveResponse as FileRetrieveResponse,
     type FileListResponse as FileListResponse,
     FileListResponsesPageCursorURL as FileListResponsesPageCursorURL,
+    type FileCreateParams as FileCreateParams,
     type FileRetrieveParams as FileRetrieveParams,
     type FileListParams as FileListParams,
     type FileContentParams as FileContentParams,
