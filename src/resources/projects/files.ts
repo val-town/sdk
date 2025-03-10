@@ -38,6 +38,33 @@ export class Files extends APIResource {
   }
 
   /**
+   * [BETA] Update a file's content
+   */
+  update(
+    projectId: string,
+    path: string,
+    params?: FileUpdateParams,
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<FileUpdateResponse>;
+  update(projectId: string, path: string, options?: Core.RequestOptions): Core.APIPromise<FileUpdateResponse>;
+  update(
+    projectId: string,
+    path: string,
+    params: FileUpdateParams | Core.RequestOptions = {},
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<FileUpdateResponse> {
+    if (isRequestOptions(params)) {
+      return this.update(projectId, path, {}, params);
+    }
+    const { branch_id, ...body } = params;
+    return this._client.put(`/v1/projects/${projectId}/files/${path}`, {
+      query: { branch_id },
+      body,
+      ...options,
+    });
+  }
+
+  /**
    * Get metadata for files and directories in a project at the root directory
    */
   list(
@@ -54,21 +81,21 @@ export class Files extends APIResource {
   /**
    * Download file content
    */
-  content(
+  getContent(
     projectId: string,
     path: string,
-    params?: FileContentParams,
+    params?: FileGetContentParams,
     options?: Core.RequestOptions,
   ): Core.APIPromise<Response>;
-  content(projectId: string, path: string, options?: Core.RequestOptions): Core.APIPromise<Response>;
-  content(
+  getContent(projectId: string, path: string, options?: Core.RequestOptions): Core.APIPromise<Response>;
+  getContent(
     projectId: string,
     path: string,
-    params: FileContentParams | Core.RequestOptions = {},
+    params: FileGetContentParams | Core.RequestOptions = {},
     options?: Core.RequestOptions,
   ): Core.APIPromise<Response> {
     if (isRequestOptions(params)) {
-      return this.content(projectId, path, {}, params);
+      return this.getContent(projectId, path, {}, params);
     }
     const {
       'Cache-Control': cacheControl,
@@ -109,6 +136,11 @@ export interface FileCreateResponse {
   links: FileCreateResponse.Links;
 
   name: string;
+
+  /**
+   * The id of the parent resource
+   */
+  parentId: string | null;
 
   path: string;
 
@@ -169,6 +201,11 @@ export namespace FileRetrieveResponse {
 
     name: string;
 
+    /**
+     * The id of the parent resource
+     */
+    parentId: string | null;
+
     path: string;
 
     type: 'directory' | 'file' | 'interval' | 'http' | 'email' | 'script';
@@ -206,6 +243,57 @@ export namespace FileRetrieveResponse {
 /**
  * A File or Directory's Metadata
  */
+export interface FileUpdateResponse {
+  /**
+   * The id of the resource
+   */
+  id: string;
+
+  links: FileUpdateResponse.Links;
+
+  name: string;
+
+  /**
+   * The id of the parent resource
+   */
+  parentId: string | null;
+
+  path: string;
+
+  type: 'directory' | 'file' | 'interval' | 'http' | 'email' | 'script';
+
+  updatedAt: string;
+
+  version: number;
+}
+
+export namespace FileUpdateResponse {
+  export interface Links {
+    /**
+     * The URL of this resource on Val Town
+     */
+    html: string;
+
+    /**
+     * The URL of this resource's source code as a module
+     */
+    module: string;
+
+    /**
+     * The URL of this resource on this API
+     */
+    self: string;
+
+    /**
+     * This resource's web endpoint, where it serves a website or API
+     */
+    endpoint?: string;
+  }
+}
+
+/**
+ * A File or Directory's Metadata
+ */
 export interface FileListResponse {
   /**
    * The id of the resource
@@ -215,6 +303,11 @@ export interface FileListResponse {
   links: FileListResponse.Links;
 
   name: string;
+
+  /**
+   * The id of the parent resource
+   */
+  parentId: string | null;
 
   path: string;
 
@@ -259,7 +352,7 @@ export declare namespace FileCreateParams {
     type: 'directory';
 
     /**
-     * Query param: Id of the branch to create the file on. Defaults to main if not
+     * Query param: The specified branch of the resource. Defaults to main if not
      * provided.
      */
     branch_id?: string;
@@ -284,7 +377,7 @@ export declare namespace FileCreateParams {
     type: 'file' | 'interval' | 'http' | 'email' | 'script';
 
     /**
-     * Query param: Id of the branch to create the file on. Defaults to main if not
+     * Query param: The specified branch of the resource. Defaults to main if not
      * provided.
      */
     branch_id?: string;
@@ -313,6 +406,36 @@ export interface FileRetrieveParams {
   version?: number;
 }
 
+export interface FileUpdateParams {
+  /**
+   * Query param: The specified branch of the resource. Defaults to main if not
+   * provided.
+   */
+  branch_id?: string;
+
+  /**
+   * Body param: Project file and val content. Null or an empty string will create an
+   * empty file. When creating a directory, you can send null, an empty string, or
+   * omit the content field entirely.
+   */
+  content?: string;
+
+  /**
+   * Body param:
+   */
+  name?: string;
+
+  /**
+   * Body param: Id of the parent directory
+   */
+  parent_id?: string | null;
+
+  /**
+   * Body param:
+   */
+  type?: 'file' | 'interval' | 'http' | 'email' | 'script';
+}
+
 export interface FileListParams extends PageCursorURLParams {
   /**
    * Id to query
@@ -330,7 +453,7 @@ export interface FileListParams extends PageCursorURLParams {
   version?: number;
 }
 
-export interface FileContentParams {
+export interface FileGetContentParams {
   /**
    * Query param: Id to query
    */
@@ -373,11 +496,13 @@ export declare namespace Files {
   export {
     type FileCreateResponse as FileCreateResponse,
     type FileRetrieveResponse as FileRetrieveResponse,
+    type FileUpdateResponse as FileUpdateResponse,
     type FileListResponse as FileListResponse,
     FileListResponsesPageCursorURL as FileListResponsesPageCursorURL,
     type FileCreateParams as FileCreateParams,
     type FileRetrieveParams as FileRetrieveParams,
+    type FileUpdateParams as FileUpdateParams,
     type FileListParams as FileListParams,
-    type FileContentParams as FileContentParams,
+    type FileGetContentParams as FileGetContentParams,
   };
 }

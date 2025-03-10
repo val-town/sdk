@@ -14,14 +14,16 @@ import {
 } from './branches';
 import * as FilesAPI from './files';
 import {
-  FileContentParams,
   FileCreateParams,
   FileCreateResponse,
+  FileGetContentParams,
   FileListParams,
   FileListResponse,
   FileListResponsesPageCursorURL,
   FileRetrieveParams,
   FileRetrieveResponse,
+  FileUpdateParams,
+  FileUpdateResponse,
   Files,
 } from './files';
 import { PageCursorURL, type PageCursorURLParams } from '../../pagination';
@@ -255,11 +257,13 @@ export declare namespace Projects {
     Files as Files,
     type FileCreateResponse as FileCreateResponse,
     type FileRetrieveResponse as FileRetrieveResponse,
+    type FileUpdateResponse as FileUpdateResponse,
     type FileListResponse as FileListResponse,
     FileListResponsesPageCursorURL as FileListResponsesPageCursorURL,
     type FileCreateParams as FileCreateParams,
     type FileRetrieveParams as FileRetrieveParams,
+    type FileUpdateParams as FileUpdateParams,
     type FileListParams as FileListParams,
-    type FileContentParams as FileContentParams,
+    type FileGetContentParams as FileGetContentParams,
   };
 }
