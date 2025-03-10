@@ -14,11 +14,13 @@ export {
   Files,
   type FileCreateResponse,
   type FileRetrieveResponse,
+  type FileUpdateResponse,
   type FileListResponse,
   type FileCreateParams,
   type FileRetrieveParams,
+  type FileUpdateParams,
   type FileListParams,
-  type FileContentParams,
+  type FileGetContentParams,
 } from './files';
 export {
   ProjectListResponsesPageCursorURL,
