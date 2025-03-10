@@ -365,9 +365,8 @@ export declare namespace FileCreateParams {
 
   export interface Variant1 {
     /**
-     * Body param: Project file and val content. Null or an empty string will create an
-     * empty file. When creating a directory, you can send null, an empty string, or
-     * omit the content field entirely.
+     * Body param: Project file and val content. An empty string will create an empty
+     * file. When creating a directory, the content should be null or undefined.
      */
     content: string;
 
@@ -414,9 +413,8 @@ export interface FileUpdateParams {
   branch_id?: string;
 
   /**
-   * Body param: Project file and val content. Null or an empty string will create an
-   * empty file. When creating a directory, you can send null, an empty string, or
-   * omit the content field entirely.
+   * Body param: Project file and val content. An empty string will create an empty
+   * file. When creating a directory, the content should be null or undefined.
    */
   content?: string;
 
