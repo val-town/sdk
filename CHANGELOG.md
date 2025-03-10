@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.34.0 (2025-03-10)
+
+Full Changelog: [v0.33.0...v0.34.0](https://github.com/val-town/sdk/compare/v0.33.0...v0.34.0)
+
+### Features
+
+* **api:** api update ([#520](https://github.com/val-town/sdk/issues/520)) ([05738af](https://github.com/val-town/sdk/commit/05738affbfabccffbc852437ac022acf001cd60c))
+* **api:** api update ([#522](https://github.com/val-town/sdk/issues/522)) ([ddc863b](https://github.com/val-town/sdk/commit/ddc863b7eef9cea5e3d321fcfb7bb589c1ead86d))
+
 ## 0.33.0 (2025-03-05)
 
 Full Changelog: [v0.32.0...v0.33.0](https://github.com/val-town/sdk/compare/v0.32.0...v0.33.0)
