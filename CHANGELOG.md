@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.35.0 (2025-03-12)
+
+Full Changelog: [v0.34.0...v0.35.0](https://github.com/val-town/sdk/compare/v0.34.0...v0.35.0)
+
+### Features
+
+* add SKIP_BREW env var to ./scripts/bootstrap ([#524](https://github.com/val-town/sdk/issues/524)) ([83fd960](https://github.com/val-town/sdk/commit/83fd960a85bada07d13fc5f2eec65e205d5181c2))
+* **api:** api update ([#527](https://github.com/val-town/sdk/issues/527)) ([ca6668c](https://github.com/val-town/sdk/commit/ca6668c07661fc1ca09c697959445ed3e8da55db))
+* **api:** api update ([#528](https://github.com/val-town/sdk/issues/528)) ([4c0018e](https://github.com/val-town/sdk/commit/4c0018ee34ad46c8572a58f5e31aa2a0b48f2d2a))
+* **client:** accept RFC6838 JSON content types ([#526](https://github.com/val-town/sdk/issues/526)) ([f737a3a](https://github.com/val-town/sdk/commit/f737a3a191bd8f9b80fa26a2834bc4a98e77d993))
+
 ## 0.34.0 (2025-03-10)
 
 Full Changelog: [v0.33.0...v0.34.0](https://github.com/val-town/sdk/compare/v0.33.0...v0.34.0)
