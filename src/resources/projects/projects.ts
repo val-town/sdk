@@ -16,6 +16,7 @@ import * as FilesAPI from './files';
 import {
   FileCreateParams,
   FileCreateResponse,
+  FileDeleteParams,
   FileGetContentParams,
   FileListParams,
   FileListResponse,
@@ -57,6 +58,16 @@ export class Projects extends APIResource {
     options?: Core.RequestOptions,
   ): Core.PagePromise<ProjectListResponsesPageCursorURL, ProjectListResponse> {
     return this._client.getAPIList('/v1/projects', ProjectListResponsesPageCursorURL, { query, ...options });
+  }
+
+  /**
+   * [BETA] Delete a project
+   */
+  delete(projectId: string, options?: Core.RequestOptions): Core.APIPromise<void> {
+    return this._client.delete(`/v1/projects/${projectId}`, {
+      ...options,
+      headers: { Accept: '*/*', ...options?.headers },
+    });
   }
 }
 
@@ -264,6 +275,7 @@ export declare namespace Projects {
     type FileRetrieveParams as FileRetrieveParams,
     type FileUpdateParams as FileUpdateParams,
     type FileListParams as FileListParams,
+    type FileDeleteParams as FileDeleteParams,
     type FileGetContentParams as FileGetContentParams,
   };
 }
