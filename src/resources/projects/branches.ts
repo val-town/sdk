@@ -40,16 +40,6 @@ export class Branches extends APIResource {
       ...options,
     });
   }
-
-  /**
-   * [BETA] Delete a branch
-   */
-  delete(projectId: string, branchId: string, options?: Core.RequestOptions): Core.APIPromise<void> {
-    return this._client.delete(`/v1/projects/${projectId}/branches/${branchId}`, {
-      ...options,
-      headers: { Accept: '*/*', ...options?.headers },
-    });
-  }
 }
 
 export class BranchListResponsesPageCursorURL extends PageCursorURL<BranchListResponse> {}

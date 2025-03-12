@@ -179,7 +179,6 @@ Methods:
 - <code title="post /v1/projects">client.projects.<a href="./src/resources/projects/projects.ts">create</a>({ ...params }) -> ProjectCreateResponse</code>
 - <code title="get /v1/projects/{project_id}">client.projects.<a href="./src/resources/projects/projects.ts">retrieve</a>(projectId) -> ProjectRetrieveResponse</code>
 - <code title="get /v1/projects">client.projects.<a href="./src/resources/projects/projects.ts">list</a>({ ...params }) -> ProjectListResponsesPageCursorURL</code>
-- <code title="delete /v1/projects/{project_id}">client.projects.<a href="./src/resources/projects/projects.ts">delete</a>(projectId) -> void</code>
 
 ## Branches
 
@@ -194,7 +193,6 @@ Methods:
 - <code title="post /v1/projects/{project_id}/branches">client.projects.branches.<a href="./src/resources/projects/branches.ts">create</a>(projectId, { ...params }) -> BranchCreateResponse</code>
 - <code title="get /v1/projects/{project_id}/branches/{branch_id}">client.projects.branches.<a href="./src/resources/projects/branches.ts">retrieve</a>(projectId, branchId) -> BranchRetrieveResponse</code>
 - <code title="get /v1/projects/{project_id}/branches">client.projects.branches.<a href="./src/resources/projects/branches.ts">list</a>(projectId, { ...params }) -> BranchListResponsesPageCursorURL</code>
-- <code title="delete /v1/projects/{project_id}/branches/{branch_id}">client.projects.branches.<a href="./src/resources/projects/branches.ts">delete</a>(projectId, branchId) -> void</code>
 
 ## Files
 
@@ -211,5 +209,4 @@ Methods:
 - <code title="get /v1/projects/{project_id}/files/{path}">client.projects.files.<a href="./src/resources/projects/files.ts">retrieve</a>(projectId, path, { ...params }) -> FileRetrieveResponse</code>
 - <code title="put /v1/projects/{project_id}/files/{path}">client.projects.files.<a href="./src/resources/projects/files.ts">update</a>(projectId, path, { ...params }) -> FileUpdateResponse</code>
 - <code title="get /v1/projects/{project_id}/files">client.projects.files.<a href="./src/resources/projects/files.ts">list</a>(projectId, { ...params }) -> FileListResponsesPageCursorURL</code>
-- <code title="delete /v1/projects/{project_id}/files/{path}">client.projects.files.<a href="./src/resources/projects/files.ts">delete</a>(projectId, path, { ...params }) -> void</code>
 - <code title="get /v1/projects/{project_id}/files/{path}/content">client.projects.files.<a href="./src/resources/projects/files.ts">getContent</a>(projectId, path, { ...params }) -> Response</code>
