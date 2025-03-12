@@ -20,7 +20,6 @@ export {
   type FileRetrieveParams,
   type FileUpdateParams,
   type FileListParams,
-  type FileDeleteParams,
   type FileGetContentParams,
 } from './files';
 export {
