@@ -79,6 +79,34 @@ export class Files extends APIResource {
   }
 
   /**
+   * [BETA] Deletes a file or all files in a directory. Deleting a directory will
+   * also delete all of its children.
+   */
+  delete(
+    projectId: string,
+    path: string,
+    params?: FileDeleteParams,
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<void>;
+  delete(projectId: string, path: string, options?: Core.RequestOptions): Core.APIPromise<void>;
+  delete(
+    projectId: string,
+    path: string,
+    params: FileDeleteParams | Core.RequestOptions = {},
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<void> {
+    if (isRequestOptions(params)) {
+      return this.delete(projectId, path, {}, params);
+    }
+    const { branch_id, version } = params;
+    return this._client.delete(`/v1/projects/${projectId}/files/${path}`, {
+      query: { branch_id, version },
+      ...options,
+      headers: { Accept: '*/*', ...options?.headers },
+    });
+  }
+
+  /**
    * Download file content
    */
   getContent(
@@ -451,6 +479,18 @@ export interface FileListParams extends PageCursorURLParams {
   version?: number;
 }
 
+export interface FileDeleteParams {
+  /**
+   * Id to query
+   */
+  branch_id?: string;
+
+  /**
+   * Specific branch version to query
+   */
+  version?: number;
+}
+
 export interface FileGetContentParams {
   /**
    * Query param: Id to query
@@ -501,6 +541,7 @@ export declare namespace Files {
     type FileRetrieveParams as FileRetrieveParams,
     type FileUpdateParams as FileUpdateParams,
     type FileListParams as FileListParams,
+    type FileDeleteParams as FileDeleteParams,
     type FileGetContentParams as FileGetContentParams,
   };
 }
