@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.36.1 (2025-03-15)
+
+Full Changelog: [v0.36.0...v0.36.1](https://github.com/val-town/sdk/compare/v0.36.0...v0.36.1)
+
+### Bug Fixes
+
+* **exports:** ensure resource imports don't require /index ([#536](https://github.com/val-town/sdk/issues/536)) ([3979ed9](https://github.com/val-town/sdk/commit/3979ed95c2e41f6491123928171a12edc06178ef))
+
+
+### Chores
+
+* **internal:** codegen related update ([#537](https://github.com/val-town/sdk/issues/537)) ([4883f1c](https://github.com/val-town/sdk/commit/4883f1c26463b8c38f357028baab28cc563155a4))
+* **internal:** remove extra empty newlines ([#534](https://github.com/val-town/sdk/issues/534)) ([55c1e1d](https://github.com/val-town/sdk/commit/55c1e1d6a950852d57411378b785939aeeffad61))
+
 ## 0.36.0 (2025-03-12)
 
 Full Changelog: [v0.35.0...v0.36.0](https://github.com/val-town/sdk/compare/v0.35.0...v0.36.0)

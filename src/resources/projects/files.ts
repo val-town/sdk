@@ -13,12 +13,12 @@ export class Files extends APIResource {
    */
   create(
     projectId: string,
-    path: string,
+    path_: string,
     params: FileCreateParams,
     options?: Core.RequestOptions,
   ): Core.APIPromise<FileCreateResponse> {
     const { branch_id, ...body } = params;
-    return this._client.post(`/v1/projects/${projectId}/files/${path}`, {
+    return this._client.post(`/v1/projects/${projectId}/files/${path_}`, {
       query: { branch_id },
       body,
       ...options,
@@ -30,11 +30,11 @@ export class Files extends APIResource {
    */
   retrieve(
     projectId: string,
-    path: string,
+    path_: string,
     query: FileRetrieveParams,
     options?: Core.RequestOptions,
   ): Core.APIPromise<FileRetrieveResponse> {
-    return this._client.get(`/v1/projects/${projectId}/files/${path}`, { query, ...options });
+    return this._client.get(`/v1/projects/${projectId}/files/${path_}`, { query, ...options });
   }
 
   /**
@@ -42,22 +42,26 @@ export class Files extends APIResource {
    */
   update(
     projectId: string,
-    path: string,
+    path_: string,
     params?: FileUpdateParams,
     options?: Core.RequestOptions,
   ): Core.APIPromise<FileUpdateResponse>;
-  update(projectId: string, path: string, options?: Core.RequestOptions): Core.APIPromise<FileUpdateResponse>;
   update(
     projectId: string,
-    path: string,
+    path_: string,
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<FileUpdateResponse>;
+  update(
+    projectId: string,
+    path_: string,
     params: FileUpdateParams | Core.RequestOptions = {},
     options?: Core.RequestOptions,
   ): Core.APIPromise<FileUpdateResponse> {
     if (isRequestOptions(params)) {
-      return this.update(projectId, path, {}, params);
+      return this.update(projectId, path_, {}, params);
     }
     const { branch_id, ...body } = params;
-    return this._client.put(`/v1/projects/${projectId}/files/${path}`, {
+    return this._client.put(`/v1/projects/${projectId}/files/${path_}`, {
       query: { branch_id },
       body,
       ...options,
@@ -84,22 +88,22 @@ export class Files extends APIResource {
    */
   delete(
     projectId: string,
-    path: string,
+    path_: string,
     params?: FileDeleteParams,
     options?: Core.RequestOptions,
   ): Core.APIPromise<void>;
-  delete(projectId: string, path: string, options?: Core.RequestOptions): Core.APIPromise<void>;
+  delete(projectId: string, path_: string, options?: Core.RequestOptions): Core.APIPromise<void>;
   delete(
     projectId: string,
-    path: string,
+    path_: string,
     params: FileDeleteParams | Core.RequestOptions = {},
     options?: Core.RequestOptions,
   ): Core.APIPromise<void> {
     if (isRequestOptions(params)) {
-      return this.delete(projectId, path, {}, params);
+      return this.delete(projectId, path_, {}, params);
     }
     const { branch_id, version } = params;
-    return this._client.delete(`/v1/projects/${projectId}/files/${path}`, {
+    return this._client.delete(`/v1/projects/${projectId}/files/${path_}`, {
       query: { branch_id, version },
       ...options,
       headers: { Accept: '*/*', ...options?.headers },
@@ -111,19 +115,19 @@ export class Files extends APIResource {
    */
   getContent(
     projectId: string,
-    path: string,
+    path_: string,
     params?: FileGetContentParams,
     options?: Core.RequestOptions,
   ): Core.APIPromise<Response>;
-  getContent(projectId: string, path: string, options?: Core.RequestOptions): Core.APIPromise<Response>;
+  getContent(projectId: string, path_: string, options?: Core.RequestOptions): Core.APIPromise<Response>;
   getContent(
     projectId: string,
-    path: string,
+    path_: string,
     params: FileGetContentParams | Core.RequestOptions = {},
     options?: Core.RequestOptions,
   ): Core.APIPromise<Response> {
     if (isRequestOptions(params)) {
-      return this.getContent(projectId, path, {}, params);
+      return this.getContent(projectId, path_, {}, params);
     }
     const {
       'Cache-Control': cacheControl,
@@ -133,7 +137,7 @@ export class Files extends APIResource {
       'If-Unmodified-Since': ifUnmodifiedSince,
       ...query
     } = params;
-    return this._client.get(`/v1/projects/${projectId}/files/${path}/content`, {
+    return this._client.get(`/v1/projects/${projectId}/files/${path_}/content`, {
       query,
       ...options,
       headers: {
