@@ -102,9 +102,9 @@ export class Files extends APIResource {
     if (isRequestOptions(params)) {
       return this.delete(projectId, path_, {}, params);
     }
-    const { branch_id, version } = params;
+    const { branch_id } = params;
     return this._client.delete(`/v1/projects/${projectId}/files/${path_}`, {
-      query: { branch_id, version },
+      query: { branch_id },
       ...options,
       headers: { Accept: '*/*', ...options?.headers },
     });
@@ -485,14 +485,9 @@ export interface FileListParams extends PageCursorURLParams {
 
 export interface FileDeleteParams {
   /**
-   * Id to query
+   * The specified branch of the resource. Defaults to main if not provided.
    */
   branch_id?: string;
-
-  /**
-   * Specific branch version to query
-   */
-  version?: number;
 }
 
 export interface FileGetContentParams {
