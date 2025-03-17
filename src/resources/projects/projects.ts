@@ -232,8 +232,6 @@ export interface ProjectCreateParams {
   privacy: 'public' | 'unlisted' | 'private';
 
   description?: string;
-
-  imageUrl?: string;
 }
 
 export interface ProjectListParams extends PageCursorURLParams {}
