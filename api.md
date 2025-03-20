@@ -132,6 +132,7 @@ Methods:
 
 Types:
 
+- <code><a href="./src/resources/vals/vals.ts">ValListResponse</a></code>
 - <code><a href="./src/resources/vals/vals.ts">ValCancelEvaluationResponse</a></code>
 
 Methods:
@@ -139,6 +140,7 @@ Methods:
 - <code title="post /v1/vals">client.vals.<a href="./src/resources/vals/vals.ts">create</a>({ ...params }) -> ExtendedVal</code>
 - <code title="get /v1/vals/{val_id}">client.vals.<a href="./src/resources/vals/vals.ts">retrieve</a>(valId) -> ExtendedVal</code>
 - <code title="put /v1/vals/{val_id}">client.vals.<a href="./src/resources/vals/vals.ts">update</a>(valId, { ...params }) -> void</code>
+- <code title="get /v1/vals">client.vals.<a href="./src/resources/vals/vals.ts">list</a>({ ...params }) -> ValListResponse</code>
 - <code title="delete /v1/vals/{val_id}">client.vals.<a href="./src/resources/vals/vals.ts">delete</a>(valId) -> void</code>
 - <code title="post /v1/vals/{val_id}/evaluations/{evaluation_id}/cancel">client.vals.<a href="./src/resources/vals/vals.ts">cancelEvaluation</a>(valId, evaluationId) -> ValCancelEvaluationResponse</code>
 - <code title="put /v1/vals">client.vals.<a href="./src/resources/vals/vals.ts">createOrUpdate</a>({ ...params }) -> void</code>

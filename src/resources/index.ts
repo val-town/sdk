@@ -19,8 +19,10 @@ export { Sqlite, type SqliteBatchResponse, type SqliteBatchParams, type SqliteEx
 export { Users } from './users/users';
 export {
   Vals,
+  type ValListResponse,
   type ValCancelEvaluationResponse,
   type ValCreateParams,
   type ValUpdateParams,
+  type ValListParams,
   type ValCreateOrUpdateParams,
 } from './vals/vals';
