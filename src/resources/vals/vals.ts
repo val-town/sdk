@@ -55,6 +55,13 @@ export class Vals extends APIResource {
   }
 
   /**
+   * List all vals including all public vals and your unlisted and private vals
+   */
+  list(query: ValListParams, options?: Core.RequestOptions): Core.APIPromise<ValListResponse> {
+    return this._client.get('/v1/vals', { query, ...options });
+  }
+
+  /**
    * Delete a val
    */
   delete(valId: string, options?: Core.RequestOptions): Core.APIPromise<void> {
@@ -85,6 +92,18 @@ export class Vals extends APIResource {
       headers: { Accept: '*/*', ...options?.headers },
     });
   }
+}
+
+/**
+ * A paginated result set
+ */
+export interface ValListResponse {
+  data: Array<Shared.ExtendedVal>;
+
+  /**
+   * Links to use for pagination
+   */
+  links: Shared.PaginationLinks;
 }
 
 /**
@@ -151,6 +170,29 @@ export interface ValUpdateParams {
   type?: 'httpnext' | 'http' | 'script' | 'email';
 }
 
+export interface ValListParams {
+  /**
+   * Maximum items to return in each paginated response
+   */
+  limit: number;
+
+  /**
+   * Cursor to start the pagination from
+   */
+  cursor?: string;
+
+  /**
+   * This resource's privacy setting. Unlisted resources do not appear on profile
+   * pages or elsewhere, but you can link to them.
+   */
+  privacy?: 'public' | 'unlisted' | 'private';
+
+  /**
+   * User ID to filter by
+   */
+  userId?: string;
+}
+
 export interface ValCreateOrUpdateParams {
   /**
    * Val source code as TypeScript
@@ -168,9 +210,11 @@ Vals.VersionListResponsesPageCursorURL = VersionListResponsesPageCursorURL;
 
 export declare namespace Vals {
   export {
+    type ValListResponse as ValListResponse,
     type ValCancelEvaluationResponse as ValCancelEvaluationResponse,
     type ValCreateParams as ValCreateParams,
     type ValUpdateParams as ValUpdateParams,
+    type ValListParams as ValListParams,
     type ValCreateOrUpdateParams as ValCreateOrUpdateParams,
   };
 
