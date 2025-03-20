@@ -1,5 +1,29 @@
 # Changelog
 
+## 0.37.0 (2025-03-20)
+
+Full Changelog: [v0.36.0...v0.37.0](https://github.com/val-town/sdk/compare/v0.36.0...v0.37.0)
+
+### Features
+
+* **api:** api update ([#538](https://github.com/val-town/sdk/issues/538)) ([5cc9485](https://github.com/val-town/sdk/commit/5cc9485b1d5c98def0e51828463e54cc6a88dbac))
+* **api:** api update ([#539](https://github.com/val-town/sdk/issues/539)) ([9c99c8c](https://github.com/val-town/sdk/commit/9c99c8cb7eb6fb8f57e3ad1297623382e96a8c7b))
+* **api:** api update ([#542](https://github.com/val-town/sdk/issues/542)) ([50d06d4](https://github.com/val-town/sdk/commit/50d06d48af1dd3c724dda5cb9a3aa9dbea9660a9))
+* **api:** api update ([#543](https://github.com/val-town/sdk/issues/543)) ([99ffa24](https://github.com/val-town/sdk/commit/99ffa24aca38f158a7778f2b70dc5180de6917c4))
+
+
+### Bug Fixes
+
+* **exports:** ensure resource imports don't require /index ([#536](https://github.com/val-town/sdk/issues/536)) ([3979ed9](https://github.com/val-town/sdk/commit/3979ed95c2e41f6491123928171a12edc06178ef))
+
+
+### Chores
+
+* **exports:** cleaner resource index imports ([#540](https://github.com/val-town/sdk/issues/540)) ([7436aec](https://github.com/val-town/sdk/commit/7436aecc6e16f7900f9959b020bbae22aa17af41))
+* **exports:** stop using path fallbacks ([#541](https://github.com/val-town/sdk/issues/541)) ([e40a65d](https://github.com/val-town/sdk/commit/e40a65da18ef9acff15ecbfa43c4c6a2c8cded20))
+* **internal:** codegen related update ([#537](https://github.com/val-town/sdk/issues/537)) ([4883f1c](https://github.com/val-town/sdk/commit/4883f1c26463b8c38f357028baab28cc563155a4))
+* **internal:** remove extra empty newlines ([#534](https://github.com/val-town/sdk/issues/534)) ([55c1e1d](https://github.com/val-town/sdk/commit/55c1e1d6a950852d57411378b785939aeeffad61))
+
 ## 0.36.0 (2025-03-12)
 
 Full Changelog: [v0.35.0...v0.36.0](https://github.com/val-town/sdk/compare/v0.35.0...v0.36.0)
