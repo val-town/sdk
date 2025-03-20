@@ -47,6 +47,8 @@ export interface BasicVal {
    */
   type: 'interval' | 'http' | 'express' | 'email' | 'script' | 'rpc' | 'httpnext';
 
+  updatedAt: string;
+
   /**
    * The URL of this resource on the Val Town website
    */
@@ -147,6 +149,8 @@ export interface ExtendedVal {
    * runs periodically, and Script can be used for libraries or one-off calculations
    */
   type: 'interval' | 'http' | 'express' | 'email' | 'script' | 'rpc' | 'httpnext';
+
+  updatedAt: string;
 
   /**
    * The URL of this resource on the Val Town website
