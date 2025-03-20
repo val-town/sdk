@@ -2,9 +2,11 @@
 
 export {
   Vals,
+  type ValListResponse,
   type ValCancelEvaluationResponse,
   type ValCreateParams,
   type ValUpdateParams,
+  type ValListParams,
   type ValCreateOrUpdateParams,
 } from './vals';
 export {

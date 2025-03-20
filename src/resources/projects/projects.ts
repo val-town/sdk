@@ -18,9 +18,6 @@ import {
   FileCreateResponse,
   FileDeleteParams,
   FileGetContentParams,
-  FileListParams,
-  FileListResponse,
-  FileListResponsesPageCursorURL,
   FileRetrieveParams,
   FileRetrieveResponse,
   FileUpdateParams,
@@ -232,8 +229,6 @@ export interface ProjectCreateParams {
   privacy: 'public' | 'unlisted' | 'private';
 
   description?: string;
-
-  imageUrl?: string;
 }
 
 export interface ProjectListParams extends PageCursorURLParams {}
@@ -242,7 +237,6 @@ Projects.ProjectListResponsesPageCursorURL = ProjectListResponsesPageCursorURL;
 Projects.Branches = Branches;
 Projects.BranchListResponsesPageCursorURL = BranchListResponsesPageCursorURL;
 Projects.Files = Files;
-Projects.FileListResponsesPageCursorURL = FileListResponsesPageCursorURL;
 
 export declare namespace Projects {
   export {
@@ -269,12 +263,9 @@ export declare namespace Projects {
     type FileCreateResponse as FileCreateResponse,
     type FileRetrieveResponse as FileRetrieveResponse,
     type FileUpdateResponse as FileUpdateResponse,
-    type FileListResponse as FileListResponse,
-    FileListResponsesPageCursorURL as FileListResponsesPageCursorURL,
     type FileCreateParams as FileCreateParams,
     type FileRetrieveParams as FileRetrieveParams,
     type FileUpdateParams as FileUpdateParams,
-    type FileListParams as FileListParams,
     type FileDeleteParams as FileDeleteParams,
     type FileGetContentParams as FileGetContentParams,
   };

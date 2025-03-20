@@ -132,6 +132,7 @@ Methods:
 
 Types:
 
+- <code><a href="./src/resources/vals/vals.ts">ValListResponse</a></code>
 - <code><a href="./src/resources/vals/vals.ts">ValCancelEvaluationResponse</a></code>
 
 Methods:
@@ -139,6 +140,7 @@ Methods:
 - <code title="post /v1/vals">client.vals.<a href="./src/resources/vals/vals.ts">create</a>({ ...params }) -> ExtendedVal</code>
 - <code title="get /v1/vals/{val_id}">client.vals.<a href="./src/resources/vals/vals.ts">retrieve</a>(valId) -> ExtendedVal</code>
 - <code title="put /v1/vals/{val_id}">client.vals.<a href="./src/resources/vals/vals.ts">update</a>(valId, { ...params }) -> void</code>
+- <code title="get /v1/vals">client.vals.<a href="./src/resources/vals/vals.ts">list</a>({ ...params }) -> ValListResponse</code>
 - <code title="delete /v1/vals/{val_id}">client.vals.<a href="./src/resources/vals/vals.ts">delete</a>(valId) -> void</code>
 - <code title="post /v1/vals/{val_id}/evaluations/{evaluation_id}/cancel">client.vals.<a href="./src/resources/vals/vals.ts">cancelEvaluation</a>(valId, evaluationId) -> ValCancelEvaluationResponse</code>
 - <code title="put /v1/vals">client.vals.<a href="./src/resources/vals/vals.ts">createOrUpdate</a>({ ...params }) -> void</code>
@@ -203,13 +205,11 @@ Types:
 - <code><a href="./src/resources/projects/files.ts">FileCreateResponse</a></code>
 - <code><a href="./src/resources/projects/files.ts">FileRetrieveResponse</a></code>
 - <code><a href="./src/resources/projects/files.ts">FileUpdateResponse</a></code>
-- <code><a href="./src/resources/projects/files.ts">FileListResponse</a></code>
 
 Methods:
 
-- <code title="post /v1/projects/{project_id}/files/{path}">client.projects.files.<a href="./src/resources/projects/files.ts">create</a>(projectId, path, { ...params }) -> FileCreateResponse</code>
-- <code title="get /v1/projects/{project_id}/files/{path}">client.projects.files.<a href="./src/resources/projects/files.ts">retrieve</a>(projectId, path, { ...params }) -> FileRetrieveResponse</code>
-- <code title="put /v1/projects/{project_id}/files/{path}">client.projects.files.<a href="./src/resources/projects/files.ts">update</a>(projectId, path, { ...params }) -> FileUpdateResponse</code>
-- <code title="get /v1/projects/{project_id}/files">client.projects.files.<a href="./src/resources/projects/files.ts">list</a>(projectId, { ...params }) -> FileListResponsesPageCursorURL</code>
-- <code title="delete /v1/projects/{project_id}/files/{path}">client.projects.files.<a href="./src/resources/projects/files.ts">delete</a>(projectId, path, { ...params }) -> void</code>
-- <code title="get /v1/projects/{project_id}/files/{path}/content">client.projects.files.<a href="./src/resources/projects/files.ts">getContent</a>(projectId, path, { ...params }) -> Response</code>
+- <code title="post /v1/projects/{project_id}/files">client.projects.files.<a href="./src/resources/projects/files.ts">create</a>(projectId, { ...params }) -> FileCreateResponse</code>
+- <code title="get /v1/projects/{project_id}/files">client.projects.files.<a href="./src/resources/projects/files.ts">retrieve</a>(projectId, { ...params }) -> FileRetrieveResponse</code>
+- <code title="put /v1/projects/{project_id}/files">client.projects.files.<a href="./src/resources/projects/files.ts">update</a>(projectId, { ...params }) -> FileUpdateResponse</code>
+- <code title="delete /v1/projects/{project_id}/files">client.projects.files.<a href="./src/resources/projects/files.ts">delete</a>(projectId, { ...params }) -> void</code>
+- <code title="get /v1/projects/{project_id}/files/content">client.projects.files.<a href="./src/resources/projects/files.ts">getContent</a>(projectId, { ...params }) -> Response</code>

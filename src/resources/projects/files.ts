@@ -1,10 +1,8 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
 import { APIResource } from '../../resource';
-import { isRequestOptions } from '../../core';
 import * as Core from '../../core';
 import * as Shared from '../shared';
-import { PageCursorURL, type PageCursorURLParams } from '../../pagination';
 import { type Response } from '../../_shims/index';
 
 export class Files extends APIResource {
@@ -13,28 +11,27 @@ export class Files extends APIResource {
    */
   create(
     projectId: string,
-    path: string,
     params: FileCreateParams,
     options?: Core.RequestOptions,
   ): Core.APIPromise<FileCreateResponse> {
-    const { branch_id, ...body } = params;
-    return this._client.post(`/v1/projects/${projectId}/files/${path}`, {
-      query: { branch_id },
+    const { path, branch_id, ...body } = params;
+    return this._client.post(`/v1/projects/${projectId}/files`, {
+      query: { path, branch_id },
       body,
       ...options,
     });
   }
 
   /**
-   * Get metadata for files and directories in a project at the specified path
+   * Get metadata for files and directories in a project. If path is an empty string,
+   * returns files at the root directory.
    */
   retrieve(
     projectId: string,
-    path: string,
     query: FileRetrieveParams,
     options?: Core.RequestOptions,
   ): Core.APIPromise<FileRetrieveResponse> {
-    return this._client.get(`/v1/projects/${projectId}/files/${path}`, { query, ...options });
+    return this._client.get(`/v1/projects/${projectId}/files`, { query, ...options });
   }
 
   /**
@@ -42,65 +39,26 @@ export class Files extends APIResource {
    */
   update(
     projectId: string,
-    path: string,
-    params?: FileUpdateParams,
-    options?: Core.RequestOptions,
-  ): Core.APIPromise<FileUpdateResponse>;
-  update(projectId: string, path: string, options?: Core.RequestOptions): Core.APIPromise<FileUpdateResponse>;
-  update(
-    projectId: string,
-    path: string,
-    params: FileUpdateParams | Core.RequestOptions = {},
+    params: FileUpdateParams,
     options?: Core.RequestOptions,
   ): Core.APIPromise<FileUpdateResponse> {
-    if (isRequestOptions(params)) {
-      return this.update(projectId, path, {}, params);
-    }
-    const { branch_id, ...body } = params;
-    return this._client.put(`/v1/projects/${projectId}/files/${path}`, {
-      query: { branch_id },
+    const { path, branch_id, ...body } = params;
+    return this._client.put(`/v1/projects/${projectId}/files`, {
+      query: { path, branch_id },
       body,
       ...options,
     });
   }
 
   /**
-   * Get metadata for files and directories in a project at the root directory
+   * [BETA] Deletes a file or a directory. To delete a directory and all of its
+   * children, use the recursive flag. To delete all files, pass in an empty path and
+   * the recursive flag.
    */
-  list(
-    projectId: string,
-    query: FileListParams,
-    options?: Core.RequestOptions,
-  ): Core.PagePromise<FileListResponsesPageCursorURL, FileListResponse> {
-    return this._client.getAPIList(`/v1/projects/${projectId}/files`, FileListResponsesPageCursorURL, {
-      query,
-      ...options,
-    });
-  }
-
-  /**
-   * [BETA] Deletes a file or all files in a directory. Deleting a directory will
-   * also delete all of its children.
-   */
-  delete(
-    projectId: string,
-    path: string,
-    params?: FileDeleteParams,
-    options?: Core.RequestOptions,
-  ): Core.APIPromise<void>;
-  delete(projectId: string, path: string, options?: Core.RequestOptions): Core.APIPromise<void>;
-  delete(
-    projectId: string,
-    path: string,
-    params: FileDeleteParams | Core.RequestOptions = {},
-    options?: Core.RequestOptions,
-  ): Core.APIPromise<void> {
-    if (isRequestOptions(params)) {
-      return this.delete(projectId, path, {}, params);
-    }
-    const { branch_id, version } = params;
-    return this._client.delete(`/v1/projects/${projectId}/files/${path}`, {
-      query: { branch_id, version },
+  delete(projectId: string, params: FileDeleteParams, options?: Core.RequestOptions): Core.APIPromise<void> {
+    const { path, branch_id, recursive } = params;
+    return this._client.delete(`/v1/projects/${projectId}/files`, {
+      query: { path, branch_id, recursive },
       ...options,
       headers: { Accept: '*/*', ...options?.headers },
     });
@@ -111,20 +69,9 @@ export class Files extends APIResource {
    */
   getContent(
     projectId: string,
-    path: string,
-    params?: FileGetContentParams,
-    options?: Core.RequestOptions,
-  ): Core.APIPromise<Response>;
-  getContent(projectId: string, path: string, options?: Core.RequestOptions): Core.APIPromise<Response>;
-  getContent(
-    projectId: string,
-    path: string,
-    params: FileGetContentParams | Core.RequestOptions = {},
+    params: FileGetContentParams,
     options?: Core.RequestOptions,
   ): Core.APIPromise<Response> {
-    if (isRequestOptions(params)) {
-      return this.getContent(projectId, path, {}, params);
-    }
     const {
       'Cache-Control': cacheControl,
       'If-Match': ifMatch,
@@ -133,7 +80,7 @@ export class Files extends APIResource {
       'If-Unmodified-Since': ifUnmodifiedSince,
       ...query
     } = params;
-    return this._client.get(`/v1/projects/${projectId}/files/${path}/content`, {
+    return this._client.get(`/v1/projects/${projectId}/files/content`, {
       query,
       ...options,
       headers: {
@@ -149,8 +96,6 @@ export class Files extends APIResource {
     });
   }
 }
-
-export class FileListResponsesPageCursorURL extends PageCursorURL<FileListResponse> {}
 
 /**
  * A File or Directory's Metadata
@@ -319,61 +264,16 @@ export namespace FileUpdateResponse {
   }
 }
 
-/**
- * A File or Directory's Metadata
- */
-export interface FileListResponse {
-  /**
-   * The id of the resource
-   */
-  id: string;
-
-  links: FileListResponse.Links;
-
-  name: string;
-
-  /**
-   * The id of the parent resource
-   */
-  parentId: string | null;
-
-  path: string;
-
-  type: 'directory' | 'file' | 'interval' | 'http' | 'email' | 'script';
-
-  updatedAt: string;
-
-  version: number;
-}
-
-export namespace FileListResponse {
-  export interface Links {
-    /**
-     * The URL of this resource on Val Town
-     */
-    html: string;
-
-    /**
-     * The URL of this resource's source code as a module
-     */
-    module: string;
-
-    /**
-     * The URL of this resource on this API
-     */
-    self: string;
-
-    /**
-     * This resource's web endpoint, where it serves a website or API
-     */
-    endpoint?: string;
-  }
-}
-
 export type FileCreateParams = FileCreateParams.Variant0 | FileCreateParams.Variant1;
 
 export declare namespace FileCreateParams {
   export interface Variant0 {
+    /**
+     * Query param: Path to a file or directory (e.g. 'dir/subdir/file.ts'). Pass in an
+     * empty string to represent the root directory.
+     */
+    path: string;
+
     /**
      * Body param:
      */
@@ -392,6 +292,12 @@ export declare namespace FileCreateParams {
   }
 
   export interface Variant1 {
+    /**
+     * Query param: Path to a file or directory (e.g. 'dir/subdir/file.ts'). Pass in an
+     * empty string to represent the root directory.
+     */
+    path: string;
+
     /**
      * Body param: Project file and val content. An empty string will create an empty
      * file. When creating a directory, the content should be null or undefined.
@@ -423,9 +329,20 @@ export interface FileRetrieveParams {
   offset: number;
 
   /**
+   * Path to a file or directory (e.g. 'dir/subdir/file.ts'). Pass in an empty string
+   * to represent the root directory.
+   */
+  path: string;
+
+  /**
    * Id to query
    */
   branch_id?: string;
+
+  /**
+   * Whether to recursively act on all files in the project
+   */
+  recursive?: boolean;
 
   /**
    * Specific branch version to query
@@ -434,6 +351,12 @@ export interface FileRetrieveParams {
 }
 
 export interface FileUpdateParams {
+  /**
+   * Query param: Path to a file or directory (e.g. 'dir/subdir/file.ts'). Pass in an
+   * empty string to represent the root directory.
+   */
+  path: string;
+
   /**
    * Query param: The specified branch of the resource. Defaults to main if not
    * provided.
@@ -462,36 +385,31 @@ export interface FileUpdateParams {
   type?: 'file' | 'interval' | 'http' | 'email' | 'script';
 }
 
-export interface FileListParams extends PageCursorURLParams {
-  /**
-   * Id to query
-   */
-  branch_id?: string;
-
-  /**
-   * Whether to recursively list all files in the project
-   */
-  recursive?: boolean;
-
-  /**
-   * Specific branch version to query
-   */
-  version?: number;
-}
-
 export interface FileDeleteParams {
   /**
-   * Id to query
+   * Path to a file or directory (e.g. 'dir/subdir/file.ts'). Pass in an empty string
+   * to represent the root directory.
+   */
+  path: string;
+
+  /**
+   * The specified branch of the resource. Defaults to main if not provided.
    */
   branch_id?: string;
 
   /**
-   * Specific branch version to query
+   * Whether to recursively act on all files in the project
    */
-  version?: number;
+  recursive?: boolean;
 }
 
 export interface FileGetContentParams {
+  /**
+   * Query param: Path to a file or directory (e.g. 'dir/subdir/file.ts'). Pass in an
+   * empty string to represent the root directory.
+   */
+  path: string;
+
   /**
    * Query param: Id to query
    */
@@ -528,19 +446,14 @@ export interface FileGetContentParams {
   'If-Unmodified-Since'?: string;
 }
 
-Files.FileListResponsesPageCursorURL = FileListResponsesPageCursorURL;
-
 export declare namespace Files {
   export {
     type FileCreateResponse as FileCreateResponse,
     type FileRetrieveResponse as FileRetrieveResponse,
     type FileUpdateResponse as FileUpdateResponse,
-    type FileListResponse as FileListResponse,
-    FileListResponsesPageCursorURL as FileListResponsesPageCursorURL,
     type FileCreateParams as FileCreateParams,
     type FileRetrieveParams as FileRetrieveParams,
     type FileUpdateParams as FileUpdateParams,
-    type FileListParams as FileListParams,
     type FileDeleteParams as FileDeleteParams,
     type FileGetContentParams as FileGetContentParams,
   };

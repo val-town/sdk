@@ -25,7 +25,6 @@ describe('resource projects', () => {
       name: 'myProject',
       privacy: 'public',
       description: 'My project',
-      imageUrl: 'https://example.com/image.png',
     });
   });
 

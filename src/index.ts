@@ -27,6 +27,8 @@ import {
   ValCancelEvaluationResponse,
   ValCreateOrUpdateParams,
   ValCreateParams,
+  ValListParams,
+  ValListResponse,
   ValUpdateParams,
   Vals,
 } from './resources/vals/vals';
@@ -260,9 +262,11 @@ export declare namespace ValTown {
 
   export {
     Vals as Vals,
+    type ValListResponse as ValListResponse,
     type ValCancelEvaluationResponse as ValCancelEvaluationResponse,
     type ValCreateParams as ValCreateParams,
     type ValUpdateParams as ValUpdateParams,
+    type ValListParams as ValListParams,
     type ValCreateOrUpdateParams as ValCreateOrUpdateParams,
   };
 
