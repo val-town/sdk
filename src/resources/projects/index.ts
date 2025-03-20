@@ -10,16 +10,13 @@ export {
   type BranchListParams,
 } from './branches';
 export {
-  FileListResponsesPageCursorURL,
   Files,
   type FileCreateResponse,
   type FileRetrieveResponse,
   type FileUpdateResponse,
-  type FileListResponse,
   type FileCreateParams,
   type FileRetrieveParams,
   type FileUpdateParams,
-  type FileListParams,
   type FileDeleteParams,
   type FileGetContentParams,
 } from './files';
