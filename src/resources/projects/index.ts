@@ -10,6 +10,7 @@ export {
   type BranchListParams,
 } from './branches';
 export {
+  FileRetrieveResponsesPageCursorURL,
   Files,
   type FileCreateResponse,
   type FileRetrieveResponse,
