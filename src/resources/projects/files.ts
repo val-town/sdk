@@ -2,7 +2,7 @@
 
 import { APIResource } from '../../resource';
 import * as Core from '../../core';
-import * as Shared from '../shared';
+import { PageCursorURL, type PageCursorURLParams } from '../../pagination';
 import { type Response } from '../../_shims/index';
 
 export class Files extends APIResource {
@@ -30,8 +30,11 @@ export class Files extends APIResource {
     projectId: string,
     query: FileRetrieveParams,
     options?: Core.RequestOptions,
-  ): Core.APIPromise<FileRetrieveResponse> {
-    return this._client.get(`/v1/projects/${projectId}/files`, { query, ...options });
+  ): Core.PagePromise<FileRetrieveResponsesPageCursorURL, FileRetrieveResponse> {
+    return this._client.getAPIList(`/v1/projects/${projectId}/files`, FileRetrieveResponsesPageCursorURL, {
+      query,
+      ...options,
+    });
   }
 
   /**
@@ -97,6 +100,8 @@ export class Files extends APIResource {
   }
 }
 
+export class FileRetrieveResponsesPageCursorURL extends PageCursorURL<FileRetrieveResponse> {}
+
 /**
  * A File or Directory's Metadata
  */
@@ -149,67 +154,53 @@ export namespace FileCreateResponse {
 }
 
 /**
- * A paginated result set
+ * A File or Directory's Metadata
  */
 export interface FileRetrieveResponse {
-  data: Array<FileRetrieveResponse.Data>;
+  /**
+   * The id of the resource
+   */
+  id: string;
+
+  links: FileRetrieveResponse.Links;
+
+  name: string;
 
   /**
-   * Links to use for pagination
+   * The id of the parent resource
    */
-  links: Shared.PaginationLinks;
+  parentId: string | null;
+
+  path: string;
+
+  type: 'directory' | 'file' | 'interval' | 'http' | 'email' | 'script';
+
+  updatedAt: string;
+
+  version: number;
 }
 
 export namespace FileRetrieveResponse {
-  /**
-   * A File or Directory's Metadata
-   */
-  export interface Data {
+  export interface Links {
     /**
-     * The id of the resource
+     * The URL of this resource on Val Town
      */
-    id: string;
-
-    links: Data.Links;
-
-    name: string;
+    html: string;
 
     /**
-     * The id of the parent resource
+     * The URL of this resource's source code as a module
      */
-    parentId: string | null;
+    module: string;
 
-    path: string;
+    /**
+     * The URL of this resource on this API
+     */
+    self: string;
 
-    type: 'directory' | 'file' | 'interval' | 'http' | 'email' | 'script';
-
-    updatedAt: string;
-
-    version: number;
-  }
-
-  export namespace Data {
-    export interface Links {
-      /**
-       * The URL of this resource on Val Town
-       */
-      html: string;
-
-      /**
-       * The URL of this resource's source code as a module
-       */
-      module: string;
-
-      /**
-       * The URL of this resource on this API
-       */
-      self: string;
-
-      /**
-       * This resource's web endpoint, where it serves a website or API
-       */
-      endpoint?: string;
-    }
+    /**
+     * This resource's web endpoint, where it serves a website or API
+     */
+    endpoint?: string;
   }
 }
 
@@ -317,17 +308,7 @@ export declare namespace FileCreateParams {
   }
 }
 
-export interface FileRetrieveParams {
-  /**
-   * Maximum items to return in each paginated response
-   */
-  limit: number;
-
-  /**
-   * Number of items to skip in order to deliver paginated results
-   */
-  offset: number;
-
+export interface FileRetrieveParams extends PageCursorURLParams {
   /**
    * Path to a file or directory (e.g. 'dir/subdir/file.ts'). Pass in an empty string
    * to represent the root directory.
@@ -446,11 +427,14 @@ export interface FileGetContentParams {
   'If-Unmodified-Since'?: string;
 }
 
+Files.FileRetrieveResponsesPageCursorURL = FileRetrieveResponsesPageCursorURL;
+
 export declare namespace Files {
   export {
     type FileCreateResponse as FileCreateResponse,
     type FileRetrieveResponse as FileRetrieveResponse,
     type FileUpdateResponse as FileUpdateResponse,
+    FileRetrieveResponsesPageCursorURL as FileRetrieveResponsesPageCursorURL,
     type FileCreateParams as FileCreateParams,
     type FileRetrieveParams as FileRetrieveParams,
     type FileUpdateParams as FileUpdateParams,
