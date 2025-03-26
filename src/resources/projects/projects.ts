@@ -20,6 +20,7 @@ import {
   FileGetContentParams,
   FileRetrieveParams,
   FileRetrieveResponse,
+  FileRetrieveResponsesPageCursorURL,
   FileUpdateParams,
   FileUpdateResponse,
   Files,
@@ -237,6 +238,7 @@ Projects.ProjectListResponsesPageCursorURL = ProjectListResponsesPageCursorURL;
 Projects.Branches = Branches;
 Projects.BranchListResponsesPageCursorURL = BranchListResponsesPageCursorURL;
 Projects.Files = Files;
+Projects.FileRetrieveResponsesPageCursorURL = FileRetrieveResponsesPageCursorURL;
 
 export declare namespace Projects {
   export {
@@ -263,6 +265,7 @@ export declare namespace Projects {
     type FileCreateResponse as FileCreateResponse,
     type FileRetrieveResponse as FileRetrieveResponse,
     type FileUpdateResponse as FileUpdateResponse,
+    FileRetrieveResponsesPageCursorURL as FileRetrieveResponsesPageCursorURL,
     type FileCreateParams as FileCreateParams,
     type FileRetrieveParams as FileRetrieveParams,
     type FileUpdateParams as FileUpdateParams,

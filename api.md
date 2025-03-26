@@ -209,7 +209,7 @@ Types:
 Methods:
 
 - <code title="post /v1/projects/{project_id}/files">client.projects.files.<a href="./src/resources/projects/files.ts">create</a>(projectId, { ...params }) -> FileCreateResponse</code>
-- <code title="get /v1/projects/{project_id}/files">client.projects.files.<a href="./src/resources/projects/files.ts">retrieve</a>(projectId, { ...params }) -> FileRetrieveResponse</code>
+- <code title="get /v1/projects/{project_id}/files">client.projects.files.<a href="./src/resources/projects/files.ts">retrieve</a>(projectId, { ...params }) -> FileRetrieveResponsesPageCursorURL</code>
 - <code title="put /v1/projects/{project_id}/files">client.projects.files.<a href="./src/resources/projects/files.ts">update</a>(projectId, { ...params }) -> FileUpdateResponse</code>
 - <code title="delete /v1/projects/{project_id}/files">client.projects.files.<a href="./src/resources/projects/files.ts">delete</a>(projectId, { ...params }) -> void</code>
 - <code title="get /v1/projects/{project_id}/files/content">client.projects.files.<a href="./src/resources/projects/files.ts">getContent</a>(projectId, { ...params }) -> Response</code>

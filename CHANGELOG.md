@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.38.0 (2025-03-26)
+
+Full Changelog: [v0.37.0...v0.38.0](https://github.com/val-town/sdk/compare/v0.37.0...v0.38.0)
+
+### Features
+
+* Add DEV.md readme ([b7d8858](https://github.com/val-town/sdk/commit/b7d885892d31ccc86c6330629b46f927a22de189))
+* **api:** api update ([#547](https://github.com/val-town/sdk/issues/547)) ([1860313](https://github.com/val-town/sdk/commit/1860313fbd6a1fddfac2e1380b829dc1f7f23b74))
+
+
+### Bug Fixes
+
+* avoid type error in certain environments ([#545](https://github.com/val-town/sdk/issues/545)) ([f699faa](https://github.com/val-town/sdk/commit/f699faad31a7e38308978298bef7fa046f0ba691))
+
 ## 0.37.0 (2025-03-20)
 
 Full Changelog: [v0.36.0...v0.37.0](https://github.com/val-town/sdk/compare/v0.36.0...v0.37.0)
