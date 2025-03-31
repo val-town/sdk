@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.38.1 (2025-03-28)
+
+Full Changelog: [v0.38.0...v0.38.1](https://github.com/val-town/sdk/compare/v0.38.0...v0.38.1)
+
+### Bug Fixes
+
+* **internal:** work around https://github.com/vercel/next.js/issues/76881 ([#550](https://github.com/val-town/sdk/issues/550)) ([1a5c02d](https://github.com/val-town/sdk/commit/1a5c02d232f97ba6315e0e047f346f33bc2f2486))
+
 ## 0.38.0 (2025-03-26)
 
 Full Changelog: [v0.37.0...v0.38.0](https://github.com/val-town/sdk/compare/v0.37.0...v0.38.0)
