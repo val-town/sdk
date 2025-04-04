@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.38.2 (2025-04-04)
+
+Full Changelog: [v0.38.1...v0.38.2](https://github.com/val-town/sdk/compare/v0.38.1...v0.38.2)
+
+### Bug Fixes
+
+* **client:** send `X-Stainless-Timeout` in seconds ([#553](https://github.com/val-town/sdk/issues/553)) ([1027da0](https://github.com/val-town/sdk/commit/1027da0ddb0e348bb7c3013256afda71b07829e3))
+
+
+### Chores
+
+* **internal:** add aliases for Record and Array ([#555](https://github.com/val-town/sdk/issues/555)) ([099c7a0](https://github.com/val-town/sdk/commit/099c7a02c16ac128d3683ccb8f61dc12f780e68a))
+
 ## 0.38.1 (2025-03-28)
 
 Full Changelog: [v0.38.0...v0.38.1](https://github.com/val-town/sdk/compare/v0.38.0...v0.38.1)
