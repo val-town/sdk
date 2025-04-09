@@ -26,7 +26,7 @@ describe('resource vals', () => {
       name: 'myVal',
       privacy: 'public',
       readme: '# My Val',
-      type: 'httpnext',
+      type: 'script',
     });
   });
 
