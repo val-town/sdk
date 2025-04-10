@@ -1,5 +1,26 @@
 # Changelog
 
+## 0.38.3 (2025-04-10)
+
+Full Changelog: [v0.38.2...v0.38.3](https://github.com/val-town/sdk/compare/v0.38.2...v0.38.3)
+
+### Bug Fixes
+
+* **api:** improve type resolution when importing as a package ([#557](https://github.com/val-town/sdk/issues/557)) ([69bd63d](https://github.com/val-town/sdk/commit/69bd63dea354433f61eb4d4b0ec98a72255e7238))
+* **mcp:** remove unused tools.ts ([#559](https://github.com/val-town/sdk/issues/559)) ([09521c3](https://github.com/val-town/sdk/commit/09521c31762e847b48fc39846deb3936b3a94da2))
+
+
+### Chores
+
+* **internal:** reduce CI branch coverage ([f97da1a](https://github.com/val-town/sdk/commit/f97da1a1ebcb9f5a68bf5923642abe3b0ea2e13c))
+* **internal:** upload builds and expand CI branch coverage ([26ec651](https://github.com/val-town/sdk/commit/26ec6517a2cfe1fd35a0bed35380947f73c1c4ea))
+* **tests:** improve enum examples ([#561](https://github.com/val-town/sdk/issues/561)) ([4972039](https://github.com/val-town/sdk/commit/497203989c6bc519e90aefb694c0faa30b245d47))
+
+
+### Documentation
+
+* swap examples used in readme ([#560](https://github.com/val-town/sdk/issues/560)) ([cffff95](https://github.com/val-town/sdk/commit/cffff95e104c38c4d751f703663b7e80a36e522f))
+
 ## 0.38.2 (2025-04-04)
 
 Full Changelog: [v0.38.1...v0.38.2](https://github.com/val-town/sdk/compare/v0.38.1...v0.38.2)
