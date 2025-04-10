@@ -83,7 +83,7 @@ export class Vals extends APIResource {
   }
 
   /**
-   * Run an existing val or create a new one
+   * Update an existing val or create a new one
    */
   createOrUpdate(body: ValCreateOrUpdateParams, options?: Core.RequestOptions): Core.APIPromise<void> {
     return this._client.put('/v1/vals', {
