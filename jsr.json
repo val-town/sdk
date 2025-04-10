@@ -1,6 +1,6 @@
 {
   "name": "@valtown/sdk",
-  "version": "0.38.2",
+  "version": "0.38.3",
   "exports": "./index.ts",
   "publish": {
     "exclude": [
