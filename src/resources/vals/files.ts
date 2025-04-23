@@ -7,61 +7,53 @@ import { type Response } from '../../_shims/index';
 
 export class Files extends APIResource {
   /**
-   * [BETA] Create a new file, project val or directory
+   * Create a new file, project val or directory
    */
   create(
-    projectId: string,
+    valId: string,
     params: FileCreateParams,
     options?: Core.RequestOptions,
   ): Core.APIPromise<FileCreateResponse> {
     const { path, branch_id, ...body } = params;
-    return this._client.post(`/v1/projects/${projectId}/files`, {
-      query: { path, branch_id },
-      body,
-      ...options,
-    });
+    return this._client.post(`/v2/vals/${valId}/files`, { query: { path, branch_id }, body, ...options });
   }
 
   /**
-   * Get metadata for files and directories in a project. If path is an empty string,
+   * Get metadata for files and directories in a val. If path is an empty string,
    * returns files at the root directory.
    */
   retrieve(
-    projectId: string,
+    valId: string,
     query: FileRetrieveParams,
     options?: Core.RequestOptions,
   ): Core.PagePromise<FileRetrieveResponsesPageCursorURL, FileRetrieveResponse> {
-    return this._client.getAPIList(`/v1/projects/${projectId}/files`, FileRetrieveResponsesPageCursorURL, {
+    return this._client.getAPIList(`/v2/vals/${valId}/files`, FileRetrieveResponsesPageCursorURL, {
       query,
       ...options,
     });
   }
 
   /**
-   * [BETA] Update a file's content
+   * Update a file's content
    */
   update(
-    projectId: string,
+    valId: string,
     params: FileUpdateParams,
     options?: Core.RequestOptions,
   ): Core.APIPromise<FileUpdateResponse> {
     const { path, branch_id, ...body } = params;
-    return this._client.put(`/v1/projects/${projectId}/files`, {
-      query: { path, branch_id },
-      body,
-      ...options,
-    });
+    return this._client.put(`/v2/vals/${valId}/files`, { query: { path, branch_id }, body, ...options });
   }
 
   /**
-   * [BETA] Deletes a file or a directory. To delete a directory and all of its
-   * children, use the recursive flag. To delete all files, pass in an empty path and
-   * the recursive flag.
+   * Deletes a file or a directory. To delete a directory and all of its children,
+   * use the recursive flag. To delete all files, pass in an empty path and the
+   * recursive flag.
    */
-  delete(projectId: string, params: FileDeleteParams, options?: Core.RequestOptions): Core.APIPromise<void> {
-    const { path, branch_id, recursive } = params;
-    return this._client.delete(`/v1/projects/${projectId}/files`, {
-      query: { path, branch_id, recursive },
+  delete(valId: string, params: FileDeleteParams, options?: Core.RequestOptions): Core.APIPromise<void> {
+    const { path, recursive, branch_id } = params;
+    return this._client.delete(`/v2/vals/${valId}/files`, {
+      query: { path, recursive, branch_id },
       ...options,
       headers: { Accept: '*/*', ...options?.headers },
     });
@@ -71,7 +63,7 @@ export class Files extends APIResource {
    * Download file content
    */
   getContent(
-    projectId: string,
+    valId: string,
     params: FileGetContentParams,
     options?: Core.RequestOptions,
   ): Core.APIPromise<Response> {
@@ -83,7 +75,7 @@ export class Files extends APIResource {
       'If-Unmodified-Since': ifUnmodifiedSince,
       ...query
     } = params;
-    return this._client.get(`/v1/projects/${projectId}/files/content`, {
+    return this._client.get(`/v2/vals/${valId}/files/content`, {
       query,
       ...options,
       headers: {
@@ -114,11 +106,6 @@ export interface FileCreateResponse {
   links: FileCreateResponse.Links;
 
   name: string;
-
-  /**
-   * The id of the parent resource
-   */
-  parentId: string | null;
 
   path: string;
 
@@ -166,11 +153,6 @@ export interface FileRetrieveResponse {
 
   name: string;
 
-  /**
-   * The id of the parent resource
-   */
-  parentId: string | null;
-
   path: string;
 
   type: 'directory' | 'file' | 'interval' | 'http' | 'email' | 'script';
@@ -216,11 +198,6 @@ export interface FileUpdateResponse {
   links: FileUpdateResponse.Links;
 
   name: string;
-
-  /**
-   * The id of the parent resource
-   */
-  parentId: string | null;
 
   path: string;
 
@@ -290,8 +267,8 @@ export declare namespace FileCreateParams {
     path: string;
 
     /**
-     * Body param: Project file and val content. An empty string will create an empty
-     * file. When creating a directory, the content should be null or undefined.
+     * Body param: File and val content. An empty string will create an empty file.
+     * When creating a directory, the content should be null or undefined.
      */
     content: string;
 
@@ -316,14 +293,14 @@ export interface FileRetrieveParams extends PageCursorURLParams {
   path: string;
 
   /**
+   * Whether to recursively act on all files in the project
+   */
+  recursive: boolean;
+
+  /**
    * Id to query
    */
   branch_id?: string;
-
-  /**
-   * Whether to recursively act on all files in the project
-   */
-  recursive?: boolean;
 
   /**
    * Specific branch version to query
@@ -345,8 +322,8 @@ export interface FileUpdateParams {
   branch_id?: string;
 
   /**
-   * Body param: Project file and val content. An empty string will create an empty
-   * file. When creating a directory, the content should be null or undefined.
+   * Body param: File and val content. An empty string will create an empty file.
+   * When creating a directory, the content should be null or undefined.
    */
   content?: string;
 
@@ -356,9 +333,10 @@ export interface FileUpdateParams {
   name?: string;
 
   /**
-   * Body param: Id of the parent directory
+   * Body param: Path to the directory you'd like to move this file to (e.g.
+   * 'folder1/folder2')
    */
-  parent_id?: string | null;
+  parent_path?: string | null;
 
   /**
    * Body param:
@@ -374,14 +352,14 @@ export interface FileDeleteParams {
   path: string;
 
   /**
+   * Whether to recursively act on all files in the project
+   */
+  recursive: boolean;
+
+  /**
    * The specified branch of the resource. Defaults to main if not provided.
    */
   branch_id?: string;
-
-  /**
-   * Whether to recursively act on all files in the project
-   */
-  recursive?: boolean;
 }
 
 export interface FileGetContentParams {

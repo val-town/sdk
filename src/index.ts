@@ -10,28 +10,11 @@ import * as API from './resources/index';
 import { BlobListParams, BlobListResponse, BlobStoreParams, Blobs } from './resources/blobs';
 import { EmailSendParams, EmailSendResponse, Emails } from './resources/emails';
 import { Sqlite, SqliteBatchParams, SqliteBatchResponse, SqliteExecuteParams } from './resources/sqlite';
+import { Users } from './resources/users';
 import { Alias } from './resources/alias/alias';
 import { Me } from './resources/me/me';
-import {
-  ProjectCreateParams,
-  ProjectCreateResponse,
-  ProjectListParams,
-  ProjectListResponse,
-  ProjectListResponsesPageCursorURL,
-  ProjectRetrieveResponse,
-  Projects,
-} from './resources/projects/projects';
 import { Search } from './resources/search/search';
-import { Users } from './resources/users/users';
-import {
-  ValCancelEvaluationResponse,
-  ValCreateOrUpdateParams,
-  ValCreateParams,
-  ValListParams,
-  ValListResponse,
-  ValUpdateParams,
-  Vals,
-} from './resources/vals/vals';
+import { ValCreateParams, ValListParams, Vals } from './resources/vals/vals';
 
 export interface ClientOptions {
   /**
@@ -171,17 +154,13 @@ export class ValTown extends Core.APIClient {
    */
   sqlite: API.Sqlite = new API.Sqlite(this);
   /**
-   * Vals are runnable JavaScript, TypeScript, and JSX modules
+   * Vals are a collaborative folder of runnable JavaScript, TypeScript, and JSX modules
    */
   vals: API.Vals = new API.Vals(this);
   /**
    * Val Town supports sending emails from vals
    */
   emails: API.Emails = new API.Emails(this);
-  /**
-   * Projects let you organize multiple files and collaborate with pull requests
-   */
-  projects: API.Projects = new API.Projects(this);
 
   protected override defaultQuery(): Core.DefaultQuery | undefined {
     return this._options.defaultQuery;
@@ -227,8 +206,6 @@ ValTown.Users = Users;
 ValTown.Sqlite = Sqlite;
 ValTown.Vals = Vals;
 ValTown.Emails = Emails;
-ValTown.Projects = Projects;
-ValTown.ProjectListResponsesPageCursorURL = ProjectListResponsesPageCursorURL;
 export declare namespace ValTown {
   export type RequestOptions = Core.RequestOptions;
 
@@ -260,15 +237,7 @@ export declare namespace ValTown {
     type SqliteExecuteParams as SqliteExecuteParams,
   };
 
-  export {
-    Vals as Vals,
-    type ValListResponse as ValListResponse,
-    type ValCancelEvaluationResponse as ValCancelEvaluationResponse,
-    type ValCreateParams as ValCreateParams,
-    type ValUpdateParams as ValUpdateParams,
-    type ValListParams as ValListParams,
-    type ValCreateOrUpdateParams as ValCreateOrUpdateParams,
-  };
+  export { Vals as Vals, type ValCreateParams as ValCreateParams, type ValListParams as ValListParams };
 
   export {
     Emails as Emails,
@@ -276,21 +245,10 @@ export declare namespace ValTown {
     type EmailSendParams as EmailSendParams,
   };
 
-  export {
-    Projects as Projects,
-    type ProjectCreateResponse as ProjectCreateResponse,
-    type ProjectRetrieveResponse as ProjectRetrieveResponse,
-    type ProjectListResponse as ProjectListResponse,
-    ProjectListResponsesPageCursorURL as ProjectListResponsesPageCursorURL,
-    type ProjectCreateParams as ProjectCreateParams,
-    type ProjectListParams as ProjectListParams,
-  };
-
-  export type BasicVal = API.BasicVal;
-  export type ExtendedVal = API.ExtendedVal;
   export type PaginationLinks = API.PaginationLinks;
   export type ResultSet = API.ResultSet;
   export type User = API.User;
+  export type Val = API.Val;
 }
 
 export { toFile, fileFromPath } from './uploads';

@@ -2,7 +2,7 @@
 
 import { APIResource } from '../../resource';
 import * as ValsAPI from './vals';
-import { ValListParams, Vals } from './vals';
+import { ValListParams, ValListResponse, ValListResponsesPageCursorURL, Vals } from './vals';
 
 /**
  * Search endpoint for vals
@@ -12,7 +12,13 @@ export class Search extends APIResource {
 }
 
 Search.Vals = Vals;
+Search.ValListResponsesPageCursorURL = ValListResponsesPageCursorURL;
 
 export declare namespace Search {
-  export { Vals as Vals, type ValListParams as ValListParams };
+  export {
+    Vals as Vals,
+    type ValListResponse as ValListResponse,
+    ValListResponsesPageCursorURL as ValListResponsesPageCursorURL,
+    type ValListParams as ValListParams,
+  };
 }

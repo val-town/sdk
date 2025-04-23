@@ -1,229 +1,113 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
 import { APIResource } from '../../resource';
-import { isRequestOptions } from '../../core';
 import * as Core from '../../core';
 import * as Shared from '../shared';
-import * as VersionsAPI from './versions';
+import { ValsPageCursorURL } from '../shared';
+import * as BranchesAPI from './branches';
 import {
-  VersionCreateParams,
-  VersionListParams,
-  VersionListResponse,
-  VersionListResponsesPageCursorURL,
-  VersionRetrieveParams,
-  Versions,
-} from './versions';
+  BranchCreateParams,
+  BranchCreateResponse,
+  BranchListParams,
+  BranchListResponse,
+  BranchListResponsesPageCursorURL,
+  BranchRetrieveResponse,
+  Branches,
+} from './branches';
+import * as FilesAPI from './files';
+import {
+  FileCreateParams,
+  FileCreateResponse,
+  FileDeleteParams,
+  FileGetContentParams,
+  FileRetrieveParams,
+  FileRetrieveResponse,
+  FileRetrieveResponsesPageCursorURL,
+  FileUpdateParams,
+  FileUpdateResponse,
+  Files,
+} from './files';
+import { type PageCursorURLParams } from '../../pagination';
 
 /**
- * Vals are runnable JavaScript, TypeScript, and JSX modules
+ * Vals are a collaborative folder of runnable JavaScript, TypeScript, and JSX modules
  */
 export class Vals extends APIResource {
-  versions: VersionsAPI.Versions = new VersionsAPI.Versions(this._client);
+  branches: BranchesAPI.Branches = new BranchesAPI.Branches(this._client);
+  files: FilesAPI.Files = new FilesAPI.Files(this._client);
 
   /**
    * Create a new val
    */
-  create(body: ValCreateParams, options?: Core.RequestOptions): Core.APIPromise<Shared.ExtendedVal> {
-    return this._client.post('/v1/vals', { body, ...options });
+  create(body: ValCreateParams, options?: Core.RequestOptions): Core.APIPromise<Shared.Val> {
+    return this._client.post('/v2/vals', { body, ...options });
   }
 
   /**
    * Get a val by id
    */
-  retrieve(valId: string, options?: Core.RequestOptions): Core.APIPromise<Shared.ExtendedVal> {
-    return this._client.get(`/v1/vals/${valId}`, options);
+  retrieve(valId: string, options?: Core.RequestOptions): Core.APIPromise<Shared.Val> {
+    return this._client.get(`/v2/vals/${valId}`, options);
   }
 
   /**
-   * Update an existing val
+   * Lists all public vals
    */
-  update(valId: string, body?: ValUpdateParams, options?: Core.RequestOptions): Core.APIPromise<void>;
-  update(valId: string, options?: Core.RequestOptions): Core.APIPromise<void>;
-  update(
-    valId: string,
-    body: ValUpdateParams | Core.RequestOptions = {},
-    options?: Core.RequestOptions,
-  ): Core.APIPromise<void> {
-    if (isRequestOptions(body)) {
-      return this.update(valId, {}, body);
-    }
-    return this._client.put(`/v1/vals/${valId}`, {
-      body,
-      ...options,
-      headers: { Accept: '*/*', ...options?.headers },
-    });
+  list(query: ValListParams, options?: Core.RequestOptions): Core.PagePromise<ValsPageCursorURL, Shared.Val> {
+    return this._client.getAPIList('/v2/vals', ValsPageCursorURL, { query, ...options });
   }
 
   /**
-   * List all vals including all public vals and your unlisted and private vals
-   */
-  list(query: ValListParams, options?: Core.RequestOptions): Core.APIPromise<ValListResponse> {
-    return this._client.get('/v1/vals', { query, ...options });
-  }
-
-  /**
-   * Delete a val
+   * Delete a project
    */
   delete(valId: string, options?: Core.RequestOptions): Core.APIPromise<void> {
-    return this._client.delete(`/v1/vals/${valId}`, {
+    return this._client.delete(`/v2/vals/${valId}`, {
       ...options,
       headers: { Accept: '*/*', ...options?.headers },
     });
   }
-
-  /**
-   * Cancel a running val
-   */
-  cancelEvaluation(
-    valId: string,
-    evaluationId: string,
-    options?: Core.RequestOptions,
-  ): Core.APIPromise<ValCancelEvaluationResponse> {
-    return this._client.post(`/v1/vals/${valId}/evaluations/${evaluationId}/cancel`, options);
-  }
-
-  /**
-   * Update an existing val or create a new one
-   */
-  createOrUpdate(body: ValCreateOrUpdateParams, options?: Core.RequestOptions): Core.APIPromise<void> {
-    return this._client.put('/v1/vals', {
-      body,
-      ...options,
-      headers: { Accept: '*/*', ...options?.headers },
-    });
-  }
-}
-
-/**
- * A paginated result set
- */
-export interface ValListResponse {
-  data: Array<Shared.ExtendedVal>;
-
-  /**
-   * Links to use for pagination
-   */
-  links: Shared.PaginationLinks;
-}
-
-/**
- * The evaluation_id was successfully searched for and the evaluation was either
- * already done or now has been cancelled
- */
-export interface ValCancelEvaluationResponse {
-  /**
-   * True if the evaluation was found and cancelled
-   */
-  found: boolean;
 }
 
 export interface ValCreateParams {
-  /**
-   * Val source code as TypeScript
-   */
-  code: string;
-
-  /**
-   * This val’s name
-   */
-  name?: string;
-
-  /**
-   * This resource's privacy setting. Unlisted resources do not appear on profile
-   * pages or elsewhere, but you can link to them.
-   */
-  privacy?: 'public' | 'unlisted' | 'private';
-
-  /**
-   * Readme contents, as Markdown
-   */
-  readme?: string;
-
-  /**
-   * The type of the val you want to create. Note that this does not include interval
-   * vals, because they cannot be created through the API yet.
-   */
-  type?: 'httpnext' | 'http' | 'script' | 'email';
-}
-
-export interface ValUpdateParams {
-  /**
-   * This val’s name
-   */
-  name?: string;
-
-  /**
-   * This resource's privacy setting. Unlisted resources do not appear on profile
-   * pages or elsewhere, but you can link to them.
-   */
-  privacy?: 'public' | 'unlisted' | 'private';
-
-  /**
-   * Readme contents, as Markdown
-   */
-  readme?: string;
-
-  /**
-   * The type of the val you want to update. Note that this does not include interval
-   * vals, because they cannot be created through the API yet.
-   */
-  type?: 'httpnext' | 'http' | 'script' | 'email';
-}
-
-export interface ValListParams {
-  /**
-   * Maximum items to return in each paginated response
-   */
-  limit: number;
-
-  /**
-   * Cursor to start the pagination from
-   */
-  cursor?: string;
-
-  /**
-   * This resource's privacy setting. Unlisted resources do not appear on profile
-   * pages or elsewhere, but you can link to them.
-   */
-  privacy?: 'public' | 'unlisted' | 'private';
-
-  /**
-   * User ID to filter by
-   */
-  userId?: string;
-}
-
-export interface ValCreateOrUpdateParams {
-  /**
-   * Val source code as TypeScript
-   */
-  code: string;
-
-  /**
-   * This val’s name
-   */
   name: string;
+
+  privacy: 'public' | 'unlisted' | 'private';
+
+  description?: string;
 }
 
-Vals.Versions = Versions;
-Vals.VersionListResponsesPageCursorURL = VersionListResponsesPageCursorURL;
+export interface ValListParams extends PageCursorURLParams {}
+
+Vals.Branches = Branches;
+Vals.BranchListResponsesPageCursorURL = BranchListResponsesPageCursorURL;
+Vals.Files = Files;
+Vals.FileRetrieveResponsesPageCursorURL = FileRetrieveResponsesPageCursorURL;
 
 export declare namespace Vals {
+  export { type ValCreateParams as ValCreateParams, type ValListParams as ValListParams };
+
   export {
-    type ValListResponse as ValListResponse,
-    type ValCancelEvaluationResponse as ValCancelEvaluationResponse,
-    type ValCreateParams as ValCreateParams,
-    type ValUpdateParams as ValUpdateParams,
-    type ValListParams as ValListParams,
-    type ValCreateOrUpdateParams as ValCreateOrUpdateParams,
+    Branches as Branches,
+    type BranchCreateResponse as BranchCreateResponse,
+    type BranchRetrieveResponse as BranchRetrieveResponse,
+    type BranchListResponse as BranchListResponse,
+    BranchListResponsesPageCursorURL as BranchListResponsesPageCursorURL,
+    type BranchCreateParams as BranchCreateParams,
+    type BranchListParams as BranchListParams,
   };
 
   export {
-    Versions as Versions,
-    type VersionListResponse as VersionListResponse,
-    VersionListResponsesPageCursorURL as VersionListResponsesPageCursorURL,
-    type VersionCreateParams as VersionCreateParams,
-    type VersionRetrieveParams as VersionRetrieveParams,
-    type VersionListParams as VersionListParams,
+    Files as Files,
+    type FileCreateResponse as FileCreateResponse,
+    type FileRetrieveResponse as FileRetrieveResponse,
+    type FileUpdateResponse as FileUpdateResponse,
+    FileRetrieveResponsesPageCursorURL as FileRetrieveResponsesPageCursorURL,
+    type FileCreateParams as FileCreateParams,
+    type FileRetrieveParams as FileRetrieveParams,
+    type FileUpdateParams as FileUpdateParams,
+    type FileDeleteParams as FileDeleteParams,
+    type FileGetContentParams as FileGetContentParams,
   };
 }
+
+export { ValsPageCursorURL };
