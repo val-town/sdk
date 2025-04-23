@@ -6,46 +6,46 @@ import { PageCursorURL, type PageCursorURLParams } from '../../pagination';
 
 export class Branches extends APIResource {
   /**
-   * [BETA] Create a new branch
+   * Create a new branch
    */
   create(
-    projectId: string,
+    valId: string,
     body: BranchCreateParams,
     options?: Core.RequestOptions,
   ): Core.APIPromise<BranchCreateResponse> {
-    return this._client.post(`/v1/projects/${projectId}/branches`, { body, ...options });
+    return this._client.post(`/v2/vals/${valId}/branches`, { body, ...options });
   }
 
   /**
-   * [BETA] Get a branch by id
+   * Get a branch by id
    */
   retrieve(
-    projectId: string,
+    valId: string,
     branchId: string,
     options?: Core.RequestOptions,
   ): Core.APIPromise<BranchRetrieveResponse> {
-    return this._client.get(`/v1/projects/${projectId}/branches/${branchId}`, options);
+    return this._client.get(`/v2/vals/${valId}/branches/${branchId}`, options);
   }
 
   /**
-   * [BETA] List all branches for a project
+   * List all branches for a val
    */
   list(
-    projectId: string,
+    valId: string,
     query: BranchListParams,
     options?: Core.RequestOptions,
   ): Core.PagePromise<BranchListResponsesPageCursorURL, BranchListResponse> {
-    return this._client.getAPIList(`/v1/projects/${projectId}/branches`, BranchListResponsesPageCursorURL, {
+    return this._client.getAPIList(`/v2/vals/${valId}/branches`, BranchListResponsesPageCursorURL, {
       query,
       ...options,
     });
   }
 
   /**
-   * [BETA] Delete a branch
+   * Delete a branch
    */
-  delete(projectId: string, branchId: string, options?: Core.RequestOptions): Core.APIPromise<void> {
-    return this._client.delete(`/v1/projects/${projectId}/branches/${branchId}`, {
+  delete(valId: string, branchId: string, options?: Core.RequestOptions): Core.APIPromise<void> {
+    return this._client.delete(`/v2/vals/${valId}/branches/${branchId}`, {
       ...options,
       headers: { Accept: '*/*', ...options?.headers },
     });

@@ -3,19 +3,15 @@
 import { APIResource } from '../../resource';
 import * as Core from '../../core';
 import * as Shared from '../shared';
-import { BasicValsPageCursorURL } from '../shared';
+import { ValsPageCursorURL } from '../shared';
 import { type PageCursorURLParams } from '../../pagination';
 
 export class Vals extends APIResource {
   /**
-   * List a user's vals
+   * [BETA] List all of a user's vals for authenticated users
    */
-  list(
-    userId: string,
-    query: ValListParams,
-    options?: Core.RequestOptions,
-  ): Core.PagePromise<BasicValsPageCursorURL, Shared.BasicVal> {
-    return this._client.getAPIList(`/v1/users/${userId}/vals`, BasicValsPageCursorURL, { query, ...options });
+  list(query: ValListParams, options?: Core.RequestOptions): Core.PagePromise<ValsPageCursorURL, Shared.Val> {
+    return this._client.getAPIList('/v2/me/vals', ValsPageCursorURL, { query, ...options });
   }
 }
 
@@ -25,4 +21,4 @@ export declare namespace Vals {
   export { type ValListParams as ValListParams };
 }
 
-export { BasicValsPageCursorURL };
+export { ValsPageCursorURL };
