@@ -2,19 +2,22 @@
 
 Types:
 
-- <code><a href="./src/resources/shared.ts">BasicVal</a></code>
-- <code><a href="./src/resources/shared.ts">ExtendedVal</a></code>
 - <code><a href="./src/resources/shared.ts">PaginationLinks</a></code>
 - <code><a href="./src/resources/shared.ts">ResultSet</a></code>
 - <code><a href="./src/resources/shared.ts">User</a></code>
+- <code><a href="./src/resources/shared.ts">Val</a></code>
 
 # Search
 
 ## Vals
 
+Types:
+
+- <code><a href="./src/resources/search/vals.ts">ValListResponse</a></code>
+
 Methods:
 
-- <code title="get /v1/search/vals">client.search.vals.<a href="./src/resources/search/vals.ts">list</a>({ ...params }) -> BasicValsPageCursorURL</code>
+- <code title="get /v1/search/vals">client.search.vals.<a href="./src/resources/search/vals.ts">list</a>({ ...params }) -> ValListResponsesPageCursorURL</code>
 
 # Alias
 
@@ -26,23 +29,9 @@ Methods:
 
 ### ValName
 
-Types:
-
-- <code><a href="./src/resources/alias/username/val-name.ts">ValNameRetrieveResponse</a></code>
-
 Methods:
 
-- <code title="get /v1/alias/{username}/{val_name}">client.alias.username.valName.<a href="./src/resources/alias/username/val-name.ts">retrieve</a>(username, valName) -> ValNameRetrieveResponse</code>
-
-### ProjectName
-
-Types:
-
-- <code><a href="./src/resources/alias/username/project-name.ts">ProjectNameRetrieveResponse</a></code>
-
-Methods:
-
-- <code title="get /v1/alias/projects/{username}/{project_name}">client.alias.username.projectName.<a href="./src/resources/alias/username/project-name.ts">retrieve</a>(username, projectName) -> ProjectNameRetrieveResponse</code>
+- <code title="get /v2/alias/vals/{username}/{val_name}">client.alias.username.valName.<a href="./src/resources/alias/username/val-name.ts">retrieve</a>(username, valName) -> Val</code>
 
 # Me
 
@@ -56,41 +45,11 @@ Methods:
 
 - <code title="get /v1/me">client.me.profile.<a href="./src/resources/me/profile.ts">retrieve</a>() -> ProfileRetrieveResponse</code>
 
-## Likes
+## Vals
 
 Methods:
 
-- <code title="get /v1/me/likes">client.me.likes.<a href="./src/resources/me/likes.ts">list</a>({ ...params }) -> BasicValsPageCursorURL</code>
-
-## Comments
-
-Types:
-
-- <code><a href="./src/resources/me/comments.ts">CommentListResponse</a></code>
-
-Methods:
-
-- <code title="get /v1/me/comments">client.me.comments.<a href="./src/resources/me/comments.ts">list</a>({ ...params }) -> CommentListResponsesPageCursorURL</code>
-
-## References
-
-Types:
-
-- <code><a href="./src/resources/me/references.ts">ReferenceListResponse</a></code>
-
-Methods:
-
-- <code title="get /v1/me/references">client.me.references.<a href="./src/resources/me/references.ts">list</a>({ ...params }) -> ReferenceListResponsesPageCursorURL</code>
-
-## Projects
-
-Types:
-
-- <code><a href="./src/resources/me/projects.ts">ProjectListResponse</a></code>
-
-Methods:
-
-- <code title="get /v1/me/projects">client.me.projects.<a href="./src/resources/me/projects.ts">list</a>({ ...params }) -> ProjectListResponsesPageCursorURL</code>
+- <code title="get /v2/me/vals">client.me.vals.<a href="./src/resources/me/vals.ts">list</a>({ ...params }) -> ValsPageCursorURL</code>
 
 # Blobs
 
@@ -109,13 +68,7 @@ Methods:
 
 Methods:
 
-- <code title="get /v1/users/{user_id}">client.users.<a href="./src/resources/users/users.ts">retrieve</a>(userId) -> User</code>
-
-## Vals
-
-Methods:
-
-- <code title="get /v1/users/{user_id}/vals">client.users.vals.<a href="./src/resources/users/vals.ts">list</a>(userId, { ...params }) -> BasicValsPageCursorURL</code>
+- <code title="get /v1/users/{user_id}">client.users.<a href="./src/resources/users.ts">retrieve</a>(userId) -> User</code>
 
 # Sqlite
 
@@ -130,33 +83,43 @@ Methods:
 
 # Vals
 
-Types:
-
-- <code><a href="./src/resources/vals/vals.ts">ValListResponse</a></code>
-- <code><a href="./src/resources/vals/vals.ts">ValCancelEvaluationResponse</a></code>
-
 Methods:
 
-- <code title="post /v1/vals">client.vals.<a href="./src/resources/vals/vals.ts">create</a>({ ...params }) -> ExtendedVal</code>
-- <code title="get /v1/vals/{val_id}">client.vals.<a href="./src/resources/vals/vals.ts">retrieve</a>(valId) -> ExtendedVal</code>
-- <code title="put /v1/vals/{val_id}">client.vals.<a href="./src/resources/vals/vals.ts">update</a>(valId, { ...params }) -> void</code>
-- <code title="get /v1/vals">client.vals.<a href="./src/resources/vals/vals.ts">list</a>({ ...params }) -> ValListResponse</code>
-- <code title="delete /v1/vals/{val_id}">client.vals.<a href="./src/resources/vals/vals.ts">delete</a>(valId) -> void</code>
-- <code title="post /v1/vals/{val_id}/evaluations/{evaluation_id}/cancel">client.vals.<a href="./src/resources/vals/vals.ts">cancelEvaluation</a>(valId, evaluationId) -> ValCancelEvaluationResponse</code>
-- <code title="put /v1/vals">client.vals.<a href="./src/resources/vals/vals.ts">createOrUpdate</a>({ ...params }) -> void</code>
+- <code title="post /v2/vals">client.vals.<a href="./src/resources/vals/vals.ts">create</a>({ ...params }) -> Val</code>
+- <code title="get /v2/vals/{val_id}">client.vals.<a href="./src/resources/vals/vals.ts">retrieve</a>(valId) -> Val</code>
+- <code title="get /v2/vals">client.vals.<a href="./src/resources/vals/vals.ts">list</a>({ ...params }) -> ValsPageCursorURL</code>
+- <code title="delete /v2/vals/{val_id}">client.vals.<a href="./src/resources/vals/vals.ts">delete</a>(valId) -> void</code>
 
-## Versions
+## Branches
 
 Types:
 
-- <code><a href="./src/resources/vals/versions.ts">VersionListResponse</a></code>
+- <code><a href="./src/resources/vals/branches.ts">BranchCreateResponse</a></code>
+- <code><a href="./src/resources/vals/branches.ts">BranchRetrieveResponse</a></code>
+- <code><a href="./src/resources/vals/branches.ts">BranchListResponse</a></code>
 
 Methods:
 
-- <code title="post /v1/vals/{val_id}/versions">client.vals.versions.<a href="./src/resources/vals/versions.ts">create</a>(valId, { ...params }) -> ExtendedVal</code>
-- <code title="get /v1/vals/{val_id}/versions/{version}">client.vals.versions.<a href="./src/resources/vals/versions.ts">retrieve</a>(valId, version, { ...params }) -> ExtendedVal</code>
-- <code title="get /v1/vals/{val_id}/versions">client.vals.versions.<a href="./src/resources/vals/versions.ts">list</a>(valId, { ...params }) -> VersionListResponsesPageCursorURL</code>
-- <code title="delete /v1/vals/{val_id}/versions/{version}">client.vals.versions.<a href="./src/resources/vals/versions.ts">delete</a>(valId, version) -> void</code>
+- <code title="post /v2/vals/{val_id}/branches">client.vals.branches.<a href="./src/resources/vals/branches.ts">create</a>(valId, { ...params }) -> BranchCreateResponse</code>
+- <code title="get /v2/vals/{val_id}/branches/{branch_id}">client.vals.branches.<a href="./src/resources/vals/branches.ts">retrieve</a>(valId, branchId) -> BranchRetrieveResponse</code>
+- <code title="get /v2/vals/{val_id}/branches">client.vals.branches.<a href="./src/resources/vals/branches.ts">list</a>(valId, { ...params }) -> BranchListResponsesPageCursorURL</code>
+- <code title="delete /v2/vals/{val_id}/branches/{branch_id}">client.vals.branches.<a href="./src/resources/vals/branches.ts">delete</a>(valId, branchId) -> void</code>
+
+## Files
+
+Types:
+
+- <code><a href="./src/resources/vals/files.ts">FileCreateResponse</a></code>
+- <code><a href="./src/resources/vals/files.ts">FileRetrieveResponse</a></code>
+- <code><a href="./src/resources/vals/files.ts">FileUpdateResponse</a></code>
+
+Methods:
+
+- <code title="post /v2/vals/{val_id}/files">client.vals.files.<a href="./src/resources/vals/files.ts">create</a>(valId, { ...params }) -> FileCreateResponse</code>
+- <code title="get /v2/vals/{val_id}/files">client.vals.files.<a href="./src/resources/vals/files.ts">retrieve</a>(valId, { ...params }) -> FileRetrieveResponsesPageCursorURL</code>
+- <code title="put /v2/vals/{val_id}/files">client.vals.files.<a href="./src/resources/vals/files.ts">update</a>(valId, { ...params }) -> FileUpdateResponse</code>
+- <code title="delete /v2/vals/{val_id}/files">client.vals.files.<a href="./src/resources/vals/files.ts">delete</a>(valId, { ...params }) -> void</code>
+- <code title="get /v2/vals/{val_id}/files/content">client.vals.files.<a href="./src/resources/vals/files.ts">getContent</a>(valId, { ...params }) -> Response</code>
 
 # Emails
 
@@ -167,49 +130,3 @@ Types:
 Methods:
 
 - <code title="post /v1/email">client.emails.<a href="./src/resources/emails.ts">send</a>({ ...params }) -> EmailSendResponse</code>
-
-# Projects
-
-Types:
-
-- <code><a href="./src/resources/projects/projects.ts">ProjectCreateResponse</a></code>
-- <code><a href="./src/resources/projects/projects.ts">ProjectRetrieveResponse</a></code>
-- <code><a href="./src/resources/projects/projects.ts">ProjectListResponse</a></code>
-
-Methods:
-
-- <code title="post /v1/projects">client.projects.<a href="./src/resources/projects/projects.ts">create</a>({ ...params }) -> ProjectCreateResponse</code>
-- <code title="get /v1/projects/{project_id}">client.projects.<a href="./src/resources/projects/projects.ts">retrieve</a>(projectId) -> ProjectRetrieveResponse</code>
-- <code title="get /v1/projects">client.projects.<a href="./src/resources/projects/projects.ts">list</a>({ ...params }) -> ProjectListResponsesPageCursorURL</code>
-- <code title="delete /v1/projects/{project_id}">client.projects.<a href="./src/resources/projects/projects.ts">delete</a>(projectId) -> void</code>
-
-## Branches
-
-Types:
-
-- <code><a href="./src/resources/projects/branches.ts">BranchCreateResponse</a></code>
-- <code><a href="./src/resources/projects/branches.ts">BranchRetrieveResponse</a></code>
-- <code><a href="./src/resources/projects/branches.ts">BranchListResponse</a></code>
-
-Methods:
-
-- <code title="post /v1/projects/{project_id}/branches">client.projects.branches.<a href="./src/resources/projects/branches.ts">create</a>(projectId, { ...params }) -> BranchCreateResponse</code>
-- <code title="get /v1/projects/{project_id}/branches/{branch_id}">client.projects.branches.<a href="./src/resources/projects/branches.ts">retrieve</a>(projectId, branchId) -> BranchRetrieveResponse</code>
-- <code title="get /v1/projects/{project_id}/branches">client.projects.branches.<a href="./src/resources/projects/branches.ts">list</a>(projectId, { ...params }) -> BranchListResponsesPageCursorURL</code>
-- <code title="delete /v1/projects/{project_id}/branches/{branch_id}">client.projects.branches.<a href="./src/resources/projects/branches.ts">delete</a>(projectId, branchId) -> void</code>
-
-## Files
-
-Types:
-
-- <code><a href="./src/resources/projects/files.ts">FileCreateResponse</a></code>
-- <code><a href="./src/resources/projects/files.ts">FileRetrieveResponse</a></code>
-- <code><a href="./src/resources/projects/files.ts">FileUpdateResponse</a></code>
-
-Methods:
-
-- <code title="post /v1/projects/{project_id}/files">client.projects.files.<a href="./src/resources/projects/files.ts">create</a>(projectId, { ...params }) -> FileCreateResponse</code>
-- <code title="get /v1/projects/{project_id}/files">client.projects.files.<a href="./src/resources/projects/files.ts">retrieve</a>(projectId, { ...params }) -> FileRetrieveResponsesPageCursorURL</code>
-- <code title="put /v1/projects/{project_id}/files">client.projects.files.<a href="./src/resources/projects/files.ts">update</a>(projectId, { ...params }) -> FileUpdateResponse</code>
-- <code title="delete /v1/projects/{project_id}/files">client.projects.files.<a href="./src/resources/projects/files.ts">delete</a>(projectId, { ...params }) -> void</code>
-- <code title="get /v1/projects/{project_id}/files/content">client.projects.files.<a href="./src/resources/projects/files.ts">getContent</a>(projectId, { ...params }) -> Response</code>

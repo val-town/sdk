@@ -1,5 +1,20 @@
 # Changelog
 
+## 1.0.0 (2025-04-23)
+
+Full Changelog: [v0.38.3...v1.0.0](https://github.com/val-town/sdk/compare/v0.38.3...v1.0.0)
+
+### Features
+
+* **api:** api update ([f94a288](https://github.com/val-town/sdk/commit/f94a2886731646f01586feaef328fb5839b33226))
+* **api:** api update ([70bace4](https://github.com/val-town/sdk/commit/70bace4a0f8031ca3063bc4d170e78109cd6ed41))
+
+
+### Chores
+
+* **ci:** add timeout thresholds for CI jobs ([67274a1](https://github.com/val-town/sdk/commit/67274a1c1adb29deab425d9ccf3e975592baab95))
+* **client:** minor internal fixes ([e13e4ec](https://github.com/val-town/sdk/commit/e13e4ecc9c63d618ff975a22bb0f6e5c9862c806))
+
 ## 0.38.3 (2025-04-10)
 
 Full Changelog: [v0.38.2...v0.38.3](https://github.com/val-town/sdk/compare/v0.38.2...v0.38.3)

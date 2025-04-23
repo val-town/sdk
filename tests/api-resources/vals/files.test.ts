@@ -10,7 +10,7 @@ const client = new ValTown({
 
 describe('resource files', () => {
   test('create: only required params', async () => {
-    const responsePromise = client.projects.files.create('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
+    const responsePromise = client.vals.files.create('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       path: 'path',
       type: 'directory',
     });
@@ -24,7 +24,7 @@ describe('resource files', () => {
   });
 
   test('create: required and optional params', async () => {
-    const response = await client.projects.files.create('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
+    const response = await client.vals.files.create('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       path: 'path',
       type: 'directory',
       branch_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
@@ -33,10 +33,11 @@ describe('resource files', () => {
   });
 
   test('retrieve: only required params', async () => {
-    const responsePromise = client.projects.files.retrieve('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
+    const responsePromise = client.vals.files.retrieve('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       limit: 1,
       offset: 0,
       path: 'path',
+      recursive: true,
     });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
@@ -48,18 +49,18 @@ describe('resource files', () => {
   });
 
   test('retrieve: required and optional params', async () => {
-    const response = await client.projects.files.retrieve('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
+    const response = await client.vals.files.retrieve('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       limit: 1,
       offset: 0,
       path: 'path',
-      branch_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
       recursive: true,
+      branch_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
       version: 0,
     });
   });
 
   test('update: only required params', async () => {
-    const responsePromise = client.projects.files.update('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
+    const responsePromise = client.vals.files.update('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       path: 'path',
     });
     const rawResponse = await responsePromise.asResponse();
@@ -72,19 +73,20 @@ describe('resource files', () => {
   });
 
   test('update: required and optional params', async () => {
-    const response = await client.projects.files.update('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
+    const response = await client.vals.files.update('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       path: 'path',
       branch_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
       content: 'content',
       name: 'name',
-      parent_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
+      parent_path: 'parent_path',
       type: 'file',
     });
   });
 
   test('delete: only required params', async () => {
-    const responsePromise = client.projects.files.delete('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
+    const responsePromise = client.vals.files.delete('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       path: 'path',
+      recursive: true,
     });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
@@ -96,15 +98,15 @@ describe('resource files', () => {
   });
 
   test('delete: required and optional params', async () => {
-    const response = await client.projects.files.delete('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
+    const response = await client.vals.files.delete('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       path: 'path',
-      branch_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
       recursive: true,
+      branch_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
     });
   });
 
   test('getContent: required and optional params', async () => {
-    const response = await client.projects.files.getContent('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
+    const response = await client.vals.files.getContent('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       path: 'path',
       branch_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
       version: 0,

@@ -10,7 +10,7 @@ const client = new ValTown({
 
 describe('resource branches', () => {
   test('create: only required params', async () => {
-    const responsePromise = client.projects.branches.create('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
+    const responsePromise = client.vals.branches.create('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       name: 'my-branch',
     });
     const rawResponse = await responsePromise.asResponse();
@@ -23,14 +23,14 @@ describe('resource branches', () => {
   });
 
   test('create: required and optional params', async () => {
-    const response = await client.projects.branches.create('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
+    const response = await client.vals.branches.create('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       name: 'my-branch',
       branchId: '00000000-0000-0000-0000-000000000000',
     });
   });
 
   test('retrieve', async () => {
-    const responsePromise = client.projects.branches.retrieve(
+    const responsePromise = client.vals.branches.retrieve(
       '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
       '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
     );
@@ -46,7 +46,7 @@ describe('resource branches', () => {
   test('retrieve: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
-      client.projects.branches.retrieve(
+      client.vals.branches.retrieve(
         '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
         '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
         { path: '/_stainless_unknown_path' },
@@ -55,7 +55,7 @@ describe('resource branches', () => {
   });
 
   test('list: only required params', async () => {
-    const responsePromise = client.projects.branches.list('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
+    const responsePromise = client.vals.branches.list('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       limit: 1,
       offset: 0,
     });
@@ -69,14 +69,14 @@ describe('resource branches', () => {
   });
 
   test('list: required and optional params', async () => {
-    const response = await client.projects.branches.list('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
+    const response = await client.vals.branches.list('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       limit: 1,
       offset: 0,
     });
   });
 
   test('delete', async () => {
-    const responsePromise = client.projects.branches.delete(
+    const responsePromise = client.vals.branches.delete(
       '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
       '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
     );
@@ -92,7 +92,7 @@ describe('resource branches', () => {
   test('delete: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
-      client.projects.branches.delete(
+      client.vals.branches.delete(
         '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
         '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
         { path: '/_stainless_unknown_path' },
