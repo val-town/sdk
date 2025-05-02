@@ -1,5 +1,24 @@
 # Changelog
 
+## 1.1.0 (2025-05-02)
+
+Full Changelog: [v1.0.0...v1.1.0](https://github.com/val-town/sdk/compare/v1.0.0...v1.1.0)
+
+### Features
+
+* **api:** api update ([2cef48c](https://github.com/val-town/sdk/commit/2cef48cfbf431fc5591319dea55b95b66d62e90e))
+
+
+### Chores
+
+* **ci:** only use depot for staging repos ([a782def](https://github.com/val-town/sdk/commit/a782defd65bbe2adcb013421fbb0a02f5214f706))
+* **internal:** codegen related update ([d1530b9](https://github.com/val-town/sdk/commit/d1530b93f5de5b99b4340f7abf30724e8f4c46e3))
+
+
+### Documentation
+
+* **readme:** fix typo ([b34a94a](https://github.com/val-town/sdk/commit/b34a94a779a9398bb9d0f69704f1de5599d5f93d))
+
 ## 1.0.0 (2025-04-23)
 
 Full Changelog: [v0.38.3...v1.0.0](https://github.com/val-town/sdk/compare/v0.38.3...v1.0.0)

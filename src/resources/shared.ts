@@ -122,6 +122,11 @@ export interface Val {
 
   description: string | null;
 
+  /**
+   * The URL of this val's image
+   */
+  imageUrl: string | null;
+
   links: Val.Links;
 
   name: string;
