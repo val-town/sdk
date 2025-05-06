@@ -7,6 +7,14 @@ import * as Shared from '../../shared';
 export class ValName extends APIResource {
   /**
    * Get a val
+   *
+   * @example
+   * ```ts
+   * const val = await client.alias.username.valName.retrieve(
+   *   'username',
+   *   'val_name',
+   * );
+   * ```
    */
   retrieve(username: string, valName: string, options?: Core.RequestOptions): Core.APIPromise<Shared.Val> {
     return this._client.get(`/v2/alias/vals/${username}/${valName}`, options);

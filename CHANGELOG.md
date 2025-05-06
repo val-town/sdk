@@ -1,5 +1,18 @@
 # Changelog
 
+## 1.1.1 (2025-05-06)
+
+Full Changelog: [v1.1.0...v1.1.1](https://github.com/val-town/sdk/compare/v1.1.0...v1.1.1)
+
+### Chores
+
+* **ci:** bump node version for release workflows ([e703306](https://github.com/val-town/sdk/commit/e70330608ee71503b276cda7ce37b1c86c4b3f7d))
+
+
+### Documentation
+
+* add examples to tsdocs ([c6436f1](https://github.com/val-town/sdk/commit/c6436f1921045d153ff269ee48336be403c76a1e))
+
 ## 1.1.0 (2025-05-02)
 
 Full Changelog: [v1.0.0...v1.1.0](https://github.com/val-town/sdk/compare/v1.0.0...v1.1.0)
