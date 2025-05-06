@@ -8,6 +8,14 @@ import { type Response } from '../../_shims/index';
 export class Files extends APIResource {
   /**
    * Create a new file, project val or directory
+   *
+   * @example
+   * ```ts
+   * const file = await client.vals.files.create(
+   *   '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
+   *   { path: 'path', type: 'directory' },
+   * );
+   * ```
    */
   create(
     valId: string,
@@ -21,6 +29,17 @@ export class Files extends APIResource {
   /**
    * Get metadata for files and directories in a val. If path is an empty string,
    * returns files at the root directory.
+   *
+   * @example
+   * ```ts
+   * // Automatically fetches more pages as needed.
+   * for await (const fileRetrieveResponse of client.vals.files.retrieve(
+   *   '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
+   *   { limit: 1, offset: 0, path: 'path', recursive: true },
+   * )) {
+   *   // ...
+   * }
+   * ```
    */
   retrieve(
     valId: string,
@@ -35,6 +54,14 @@ export class Files extends APIResource {
 
   /**
    * Update a file's content
+   *
+   * @example
+   * ```ts
+   * const file = await client.vals.files.update(
+   *   '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
+   *   { path: 'path' },
+   * );
+   * ```
    */
   update(
     valId: string,
@@ -49,6 +76,14 @@ export class Files extends APIResource {
    * Deletes a file or a directory. To delete a directory and all of its children,
    * use the recursive flag. To delete all files, pass in an empty path and the
    * recursive flag.
+   *
+   * @example
+   * ```ts
+   * await client.vals.files.delete(
+   *   '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
+   *   { path: 'path', recursive: true },
+   * );
+   * ```
    */
   delete(valId: string, params: FileDeleteParams, options?: Core.RequestOptions): Core.APIPromise<void> {
     const { path, recursive, branch_id } = params;
@@ -61,6 +96,17 @@ export class Files extends APIResource {
 
   /**
    * Download file content
+   *
+   * @example
+   * ```ts
+   * const response = await client.vals.files.getContent(
+   *   '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
+   *   { path: 'path' },
+   * );
+   *
+   * const content = await response.blob();
+   * console.log(content);
+   * ```
    */
   getContent(
     valId: string,
