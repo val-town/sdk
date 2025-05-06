@@ -11,6 +11,13 @@ export class Username extends APIResource {
 
   /**
    * Get basic details about a user, given their username
+   *
+   * @example
+   * ```ts
+   * const user = await client.alias.username.retrieve(
+   *   'username',
+   * );
+   * ```
    */
   retrieve(username: string, options?: Core.RequestOptions): Core.APIPromise<Shared.User> {
     return this._client.get(`/v1/alias/${username}`, options);

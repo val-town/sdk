@@ -38,6 +38,15 @@ export class Vals extends APIResource {
 
   /**
    * Create a new val
+   *
+   * @example
+   * ```ts
+   * const val = await client.vals.create({
+   *   name: 'myVal',
+   *   privacy: 'public',
+   *   description: 'My val',
+   * });
+   * ```
    */
   create(body: ValCreateParams, options?: Core.RequestOptions): Core.APIPromise<Shared.Val> {
     return this._client.post('/v2/vals', { body, ...options });
@@ -45,6 +54,13 @@ export class Vals extends APIResource {
 
   /**
    * Get a val by id
+   *
+   * @example
+   * ```ts
+   * const val = await client.vals.retrieve(
+   *   '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
+   * );
+   * ```
    */
   retrieve(valId: string, options?: Core.RequestOptions): Core.APIPromise<Shared.Val> {
     return this._client.get(`/v2/vals/${valId}`, options);
@@ -52,6 +68,17 @@ export class Vals extends APIResource {
 
   /**
    * Lists all public vals
+   *
+   * @example
+   * ```ts
+   * // Automatically fetches more pages as needed.
+   * for await (const val of client.vals.list({
+   *   limit: 1,
+   *   offset: 0,
+   * })) {
+   *   // ...
+   * }
+   * ```
    */
   list(query: ValListParams, options?: Core.RequestOptions): Core.PagePromise<ValsPageCursorURL, Shared.Val> {
     return this._client.getAPIList('/v2/vals', ValsPageCursorURL, { query, ...options });
@@ -59,6 +86,13 @@ export class Vals extends APIResource {
 
   /**
    * Delete a project
+   *
+   * @example
+   * ```ts
+   * await client.vals.delete(
+   *   '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
+   * );
+   * ```
    */
   delete(valId: string, options?: Core.RequestOptions): Core.APIPromise<void> {
     return this._client.delete(`/v2/vals/${valId}`, {
