@@ -10,6 +10,14 @@ import * as Shared from './shared';
 export class Sqlite extends APIResource {
   /**
    * Execute a batch of SQLite statements and return results for all of them
+   *
+   * @example
+   * ```ts
+   * const resultSets = await client.sqlite.batch({
+   *   statements: ['SELECT 1;'],
+   *   mode: 'read',
+   * });
+   * ```
    */
   batch(body: SqliteBatchParams, options?: Core.RequestOptions): Core.APIPromise<SqliteBatchResponse> {
     return this._client.post('/v1/sqlite/batch', { body, ...options });
@@ -17,6 +25,13 @@ export class Sqlite extends APIResource {
 
   /**
    * Execute a single SQLite statement and return results
+   *
+   * @example
+   * ```ts
+   * const resultSet = await client.sqlite.execute({
+   *   statement: 'SELECT 1;',
+   * });
+   * ```
    */
   execute(body: SqliteExecuteParams, options?: Core.RequestOptions): Core.APIPromise<Shared.ResultSet> {
     return this._client.post('/v1/sqlite/execute', { body, ...options });

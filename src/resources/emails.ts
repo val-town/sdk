@@ -10,6 +10,15 @@ import * as Core from '../core';
 export class Emails extends APIResource {
   /**
    * Send emails
+   *
+   * @example
+   * ```ts
+   * const response = await client.emails.send({
+   *   html: 'Hello <strong>world</strong>',
+   *   subject: 'An important message',
+   *   text: 'Hello world',
+   * });
+   * ```
    */
   send(body?: EmailSendParams, options?: Core.RequestOptions): Core.APIPromise<EmailSendResponse>;
   send(options?: Core.RequestOptions): Core.APIPromise<EmailSendResponse>;

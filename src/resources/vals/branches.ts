@@ -7,6 +7,17 @@ import { PageCursorURL, type PageCursorURLParams } from '../../pagination';
 export class Branches extends APIResource {
   /**
    * Create a new branch
+   *
+   * @example
+   * ```ts
+   * const branch = await client.vals.branches.create(
+   *   '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
+   *   {
+   *     name: 'my-branch',
+   *     branchId: '00000000-0000-0000-0000-000000000000',
+   *   },
+   * );
+   * ```
    */
   create(
     valId: string,
@@ -18,6 +29,14 @@ export class Branches extends APIResource {
 
   /**
    * Get a branch by id
+   *
+   * @example
+   * ```ts
+   * const branch = await client.vals.branches.retrieve(
+   *   '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
+   *   '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
+   * );
+   * ```
    */
   retrieve(
     valId: string,
@@ -29,6 +48,17 @@ export class Branches extends APIResource {
 
   /**
    * List all branches for a val
+   *
+   * @example
+   * ```ts
+   * // Automatically fetches more pages as needed.
+   * for await (const branchListResponse of client.vals.branches.list(
+   *   '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
+   *   { limit: 1, offset: 0 },
+   * )) {
+   *   // ...
+   * }
+   * ```
    */
   list(
     valId: string,
@@ -43,6 +73,14 @@ export class Branches extends APIResource {
 
   /**
    * Delete a branch
+   *
+   * @example
+   * ```ts
+   * await client.vals.branches.delete(
+   *   '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
+   *   '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
+   * );
+   * ```
    */
   delete(valId: string, branchId: string, options?: Core.RequestOptions): Core.APIPromise<void> {
     return this._client.delete(`/v2/vals/${valId}/branches/${branchId}`, {

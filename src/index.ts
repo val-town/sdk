@@ -14,7 +14,7 @@ import { Users } from './resources/users';
 import { Alias } from './resources/alias/alias';
 import { Me } from './resources/me/me';
 import { Search } from './resources/search/search';
-import { ValCreateParams, ValListParams, Vals } from './resources/vals/vals';
+import { ValCreateParams, ValListParams, ValListResponse, Vals } from './resources/vals/vals';
 
 export interface ClientOptions {
   /**
@@ -237,7 +237,12 @@ export declare namespace ValTown {
     type SqliteExecuteParams as SqliteExecuteParams,
   };
 
-  export { Vals as Vals, type ValCreateParams as ValCreateParams, type ValListParams as ValListParams };
+  export {
+    Vals as Vals,
+    type ValListResponse as ValListResponse,
+    type ValCreateParams as ValCreateParams,
+    type ValListParams as ValListParams,
+  };
 
   export {
     Emails as Emails,
