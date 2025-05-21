@@ -8,4 +8,4 @@ export { Me } from './me/me';
 export { Search } from './search/search';
 export { Sqlite, type SqliteBatchResponse, type SqliteBatchParams, type SqliteExecuteParams } from './sqlite';
 export { Users } from './users';
-export { Vals, type ValCreateParams, type ValListParams } from './vals/vals';
+export { Vals, type ValListResponse, type ValCreateParams, type ValListParams } from './vals/vals';
