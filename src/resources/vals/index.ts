@@ -21,4 +21,4 @@ export {
   type FileDeleteParams,
   type FileGetContentParams,
 } from './files';
-export { Vals, type ValCreateParams, type ValListParams } from './vals';
+export { Vals, type ValListResponse, type ValCreateParams, type ValListParams } from './vals';

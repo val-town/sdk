@@ -43,7 +43,7 @@ describe('resource vals', () => {
   });
 
   test('list: only required params', async () => {
-    const responsePromise = client.vals.list({ limit: 1, offset: 0 });
+    const responsePromise = client.vals.list({ limit: 1 });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -54,7 +54,12 @@ describe('resource vals', () => {
   });
 
   test('list: required and optional params', async () => {
-    const response = await client.vals.list({ limit: 1, offset: 0 });
+    const response = await client.vals.list({
+      limit: 1,
+      cursor: '2019-12-27T18:11:19.117Z',
+      privacy: 'public',
+      user_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
+    });
   });
 
   test('delete', async () => {
