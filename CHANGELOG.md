@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.2.1 (2025-05-28)
+
+Full Changelog: [v1.2.0...v1.2.1](https://github.com/val-town/sdk/compare/v1.2.0...v1.2.1)
+
+### Chores
+
+* **docs:** grammar improvements ([8de6a9e](https://github.com/val-town/sdk/commit/8de6a9eed546904596618a17fc9e37524c9641da))
+* improve publish-npm script --latest tag logic ([0fdc664](https://github.com/val-town/sdk/commit/0fdc6642712c131ed1b2ce6172d5804082ada70d))
+
 ## 1.2.0 (2025-05-21)
 
 Full Changelog: [v1.1.0...v1.2.0](https://github.com/val-town/sdk/compare/v1.1.0...v1.2.0)
