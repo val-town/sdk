@@ -1,6 +1,7 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
 import { type Agent } from './_shims/index';
+import * as qs from './internal/qs';
 import * as Core from './core';
 import * as Errors from './error';
 import * as Pagination from './pagination';
@@ -10,6 +11,12 @@ import * as API from './resources/index';
 import { BlobListParams, BlobListResponse, BlobStoreParams, Blobs } from './resources/blobs';
 import { EmailSendParams, EmailSendResponse, Emails } from './resources/emails';
 import { Sqlite, SqliteBatchParams, SqliteBatchResponse, SqliteExecuteParams } from './resources/sqlite';
+import {
+  Telemetry,
+  TelemetryListParams,
+  TelemetryListResponse,
+  TelemetryListResponsesPageCursorURL,
+} from './resources/telemetry';
 import { Users } from './resources/users';
 import { Alias } from './resources/alias/alias';
 import { Me } from './resources/me/me';
@@ -154,6 +161,10 @@ export class ValTown extends Core.APIClient {
    */
   sqlite: API.Sqlite = new API.Sqlite(this);
   /**
+   * OpenTelemetry traces for your val executions
+   */
+  telemetry: API.Telemetry = new API.Telemetry(this);
+  /**
    * Vals are a collaborative folder of runnable JavaScript, TypeScript, and JSX modules
    */
   vals: API.Vals = new API.Vals(this);
@@ -175,6 +186,10 @@ export class ValTown extends Core.APIClient {
 
   protected override authHeaders(opts: Core.FinalRequestOptions): Core.Headers {
     return { Authorization: `Bearer ${this.bearerToken}` };
+  }
+
+  protected override stringifyQuery(query: Record<string, unknown>): string {
+    return qs.stringify(query, { arrayFormat: 'comma' });
   }
 
   static ValTown = this;
@@ -204,6 +219,8 @@ ValTown.Me = Me;
 ValTown.Blobs = Blobs;
 ValTown.Users = Users;
 ValTown.Sqlite = Sqlite;
+ValTown.Telemetry = Telemetry;
+ValTown.TelemetryListResponsesPageCursorURL = TelemetryListResponsesPageCursorURL;
 ValTown.Vals = Vals;
 ValTown.Emails = Emails;
 export declare namespace ValTown {
@@ -235,6 +252,13 @@ export declare namespace ValTown {
     type SqliteBatchResponse as SqliteBatchResponse,
     type SqliteBatchParams as SqliteBatchParams,
     type SqliteExecuteParams as SqliteExecuteParams,
+  };
+
+  export {
+    Telemetry as Telemetry,
+    type TelemetryListResponse as TelemetryListResponse,
+    TelemetryListResponsesPageCursorURL as TelemetryListResponsesPageCursorURL,
+    type TelemetryListParams as TelemetryListParams,
   };
 
   export {

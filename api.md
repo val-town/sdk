@@ -81,6 +81,16 @@ Methods:
 - <code title="post /v1/sqlite/batch">client.sqlite.<a href="./src/resources/sqlite.ts">batch</a>({ ...params }) -> SqliteBatchResponse</code>
 - <code title="post /v1/sqlite/execute">client.sqlite.<a href="./src/resources/sqlite.ts">execute</a>({ ...params }) -> ResultSet</code>
 
+# Telemetry
+
+Types:
+
+- <code><a href="./src/resources/telemetry.ts">TelemetryListResponse</a></code>
+
+Methods:
+
+- <code title="get /v1/telemetry/traces">client.telemetry.<a href="./src/resources/telemetry.ts">list</a>({ ...params }) -> TelemetryListResponsesPageCursorURL</code>
+
 # Vals
 
 Types:
