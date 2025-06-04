@@ -39,13 +39,9 @@ import ValTown from '@valtown/sdk';
 
 const client = new ValTown();
 
-async function main() {
-  const response = await client.emails.send();
+const response = await client.emails.send();
 
-  console.log(response.message);
-}
-
-main();
+console.log(response.message);
 ```
 
 ### Request & Response types
@@ -58,11 +54,7 @@ import ValTown from '@valtown/sdk';
 
 const client = new ValTown();
 
-async function main() {
-  const response: ValTown.EmailSendResponse = await client.emails.send();
-}
-
-main();
+const response: ValTown.EmailSendResponse = await client.emails.send();
 ```
 
 Documentation for each method, request param, and response field are available in docstrings and will appear on hover in most modern editors.
@@ -75,19 +67,15 @@ a subclass of `APIError` will be thrown:
 
 <!-- prettier-ignore -->
 ```ts
-async function main() {
-  const response = await client.emails.send().catch(async (err) => {
-    if (err instanceof ValTown.APIError) {
-      console.log(err.status); // 400
-      console.log(err.name); // BadRequestError
-      console.log(err.headers); // {server: 'nginx', ...}
-    } else {
-      throw err;
-    }
-  });
-}
-
-main();
+const response = await client.emails.send().catch(async (err) => {
+  if (err instanceof ValTown.APIError) {
+    console.log(err.status); // 400
+    console.log(err.name); // BadRequestError
+    console.log(err.headers); // {server: 'nginx', ...}
+  } else {
+    throw err;
+  }
+});
 ```
 
 Error codes are as follows:
