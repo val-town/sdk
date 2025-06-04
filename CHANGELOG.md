@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.3.1 (2025-06-04)
+
+Full Changelog: [v1.3.0...v1.3.1](https://github.com/val-town/sdk/compare/v1.3.0...v1.3.1)
+
+### Chores
+
+* **docs:** use top-level-await in example snippets ([0fb39f3](https://github.com/val-town/sdk/commit/0fb39f382cc90082ea7400ef48bbb8483651192c))
+
 ## 1.3.0 (2025-06-03)
 
 Full Changelog: [v1.2.0...v1.3.0](https://github.com/val-town/sdk/compare/v1.2.0...v1.3.0)
