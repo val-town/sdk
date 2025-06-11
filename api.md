@@ -83,13 +83,25 @@ Methods:
 
 # Telemetry
 
+## Traces
+
 Types:
 
-- <code><a href="./src/resources/telemetry.ts">TelemetryListResponse</a></code>
+- <code><a href="./src/resources/telemetry/traces.ts">TraceListResponse</a></code>
 
 Methods:
 
-- <code title="get /v1/telemetry/traces">client.telemetry.<a href="./src/resources/telemetry.ts">list</a>({ ...params }) -> TelemetryListResponsesPageCursorURL</code>
+- <code title="get /v1/telemetry/traces">client.telemetry.traces.<a href="./src/resources/telemetry/traces.ts">list</a>({ ...params }) -> TraceListResponse</code>
+
+## Logs
+
+Types:
+
+- <code><a href="./src/resources/telemetry/logs.ts">LogListResponse</a></code>
+
+Methods:
+
+- <code title="get /v1/telemetry/logs">client.telemetry.logs.<a href="./src/resources/telemetry/logs.ts">list</a>({ ...params }) -> LogListResponse</code>
 
 # Vals
 
