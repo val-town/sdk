@@ -11,16 +11,11 @@ import * as API from './resources/index';
 import { BlobListParams, BlobListResponse, BlobStoreParams, Blobs } from './resources/blobs';
 import { EmailSendParams, EmailSendResponse, Emails } from './resources/emails';
 import { Sqlite, SqliteBatchParams, SqliteBatchResponse, SqliteExecuteParams } from './resources/sqlite';
-import {
-  Telemetry,
-  TelemetryListParams,
-  TelemetryListResponse,
-  TelemetryListResponsesPageCursorURL,
-} from './resources/telemetry';
 import { Users } from './resources/users';
 import { Alias } from './resources/alias/alias';
 import { Me } from './resources/me/me';
 import { Search } from './resources/search/search';
+import { Telemetry } from './resources/telemetry/telemetry';
 import { ValCreateParams, ValListParams, ValListResponse, Vals } from './resources/vals/vals';
 
 export interface ClientOptions {
@@ -161,7 +156,7 @@ export class ValTown extends Core.APIClient {
    */
   sqlite: API.Sqlite = new API.Sqlite(this);
   /**
-   * OpenTelemetry traces for your val executions
+   * OpenTelemetry traces and logs for your val executions
    */
   telemetry: API.Telemetry = new API.Telemetry(this);
   /**
@@ -220,7 +215,6 @@ ValTown.Blobs = Blobs;
 ValTown.Users = Users;
 ValTown.Sqlite = Sqlite;
 ValTown.Telemetry = Telemetry;
-ValTown.TelemetryListResponsesPageCursorURL = TelemetryListResponsesPageCursorURL;
 ValTown.Vals = Vals;
 ValTown.Emails = Emails;
 export declare namespace ValTown {
@@ -254,12 +248,7 @@ export declare namespace ValTown {
     type SqliteExecuteParams as SqliteExecuteParams,
   };
 
-  export {
-    Telemetry as Telemetry,
-    type TelemetryListResponse as TelemetryListResponse,
-    TelemetryListResponsesPageCursorURL as TelemetryListResponsesPageCursorURL,
-    type TelemetryListParams as TelemetryListParams,
-  };
+  export { Telemetry as Telemetry };
 
   export {
     Vals as Vals,

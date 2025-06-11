@@ -1,5 +1,18 @@
 # Changelog
 
+## 1.4.0 (2025-06-11)
+
+Full Changelog: [v1.3.0...v1.4.0](https://github.com/val-town/sdk/compare/v1.3.0...v1.4.0)
+
+### Features
+
+* **api:** api update ([451c63c](https://github.com/val-town/sdk/commit/451c63cb1d3aba9cc874fd00175158fa9a11a00c))
+
+
+### Chores
+
+* **docs:** use top-level-await in example snippets ([0fb39f3](https://github.com/val-town/sdk/commit/0fb39f382cc90082ea7400ef48bbb8483651192c))
+
 ## 1.3.0 (2025-06-03)
 
 Full Changelog: [v1.2.0...v1.3.0](https://github.com/val-town/sdk/compare/v1.2.0...v1.3.0)

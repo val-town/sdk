@@ -8,14 +8,9 @@ const client = new ValTown({
   baseURL: process.env['TEST_API_BASE_URL'] ?? 'http://127.0.0.1:4010',
 });
 
-describe('resource telemetry', () => {
+describe('resource traces', () => {
   test('list: only required params', async () => {
-    const responsePromise = client.telemetry.list({
-      end_timestamp: '2019-12-27T18:11:19.117Z',
-      limit: 1,
-      offset: 0,
-      start_timestamp: '2019-12-27T18:11:19.117Z',
-    });
+    const responsePromise = client.telemetry.traces.list({ limit: 1 });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -26,13 +21,12 @@ describe('resource telemetry', () => {
   });
 
   test('list: required and optional params', async () => {
-    const response = await client.telemetry.list({
-      end_timestamp: '2019-12-27T18:11:19.117Z',
+    const response = await client.telemetry.traces.list({
       limit: 1,
-      offset: 0,
-      start_timestamp: '2019-12-27T18:11:19.117Z',
       branch_ids: ['182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e'],
+      end: '2019-12-27T18:11:19.117Z',
       file_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
+      start: '2019-12-27T18:11:19.117Z',
     });
   });
 });
