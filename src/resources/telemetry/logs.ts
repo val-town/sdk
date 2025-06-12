@@ -91,8 +91,6 @@ export interface LogListParams {
    */
   limit: number;
 
-  trace_ids: Array<string>;
-
   /**
    * Branch IDs to filter by
    */
@@ -112,6 +110,8 @@ export interface LogListParams {
    * Start date of the time window (earliest time)
    */
   start?: string;
+
+  trace_ids?: Array<string>;
 }
 
 export declare namespace Logs {
