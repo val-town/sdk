@@ -1,5 +1,18 @@
 # Changelog
 
+## 1.5.1 (2025-06-14)
+
+Full Changelog: [v1.5.0...v1.5.1](https://github.com/val-town/sdk/compare/v1.5.0...v1.5.1)
+
+### Bug Fixes
+
+* publish script — handle NPM errors correctly ([41cba77](https://github.com/val-town/sdk/commit/41cba7710c77399849231d2a412fd80c2e7dca2b))
+
+
+### Chores
+
+* **internal:** make base APIResource abstract ([77694c3](https://github.com/val-town/sdk/commit/77694c399dc44f41871fa41f5e09d6b833e658af))
+
 ## 1.5.0 (2025-06-12)
 
 Full Changelog: [v1.4.0...v1.5.0](https://github.com/val-town/sdk/compare/v1.4.0...v1.5.0)
