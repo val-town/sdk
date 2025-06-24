@@ -58,7 +58,7 @@ export namespace SqliteBatchParams {
     /**
      * List of arguments to be used in the given statement
      */
-    args: Array<unknown> | Record<string, unknown>;
+    args: Array<unknown> | { [key: string]: unknown };
 
     /**
      * SQL statement, with ? placeholders for arguments
@@ -83,7 +83,7 @@ export namespace SqliteExecuteParams {
     /**
      * List of arguments to be used in the given statement
      */
-    args: Array<unknown> | Record<string, unknown>;
+    args: Array<unknown> | { [key: string]: unknown };
 
     /**
      * SQL statement, with ? placeholders for arguments
