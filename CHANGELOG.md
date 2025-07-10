@@ -1,5 +1,34 @@
 # Changelog
 
+## 1.6.0 (2025-07-10)
+
+Full Changelog: [v1.5.0...v1.6.0](https://github.com/val-town/sdk/compare/v1.5.0...v1.6.0)
+
+### Features
+
+* **client:** add support for endpoint-specific base URLs ([9d2620f](https://github.com/val-town/sdk/commit/9d2620f71aef8cd04fcfccef5c7a4fb31bdd4533))
+
+
+### Bug Fixes
+
+* **ci:** release-doctor — report correct token name ([50869b0](https://github.com/val-town/sdk/commit/50869b0628c00f74a212da0ff7bad0fd7fbcb58f))
+* **client:** don't send `Content-Type` for bodyless methods ([4a94697](https://github.com/val-town/sdk/commit/4a94697ab89f022d7114ec6c26df889496fb37bf))
+* publish script — handle NPM errors correctly ([41cba77](https://github.com/val-town/sdk/commit/41cba7710c77399849231d2a412fd80c2e7dca2b))
+
+
+### Chores
+
+* **ci:** enable for pull requests ([87de51c](https://github.com/val-town/sdk/commit/87de51cccef46b61e03bfa12a854c0e1f0204c42))
+* **ci:** only run for pushes and fork pull requests ([8efb0c4](https://github.com/val-town/sdk/commit/8efb0c48858c03dc6aacf2c540f898fe66db2fad))
+* **internal:** make base APIResource abstract ([77694c3](https://github.com/val-town/sdk/commit/77694c399dc44f41871fa41f5e09d6b833e658af))
+* make some internal functions async ([a9160c4](https://github.com/val-town/sdk/commit/a9160c48e25a6c44c59c638ee25461465093c14e))
+* mention unit type in timeout docs ([2758fb1](https://github.com/val-town/sdk/commit/2758fb1414b310023be8a923b9ef5be9b767800f))
+
+
+### Refactors
+
+* **types:** replace Record with mapped types ([e234386](https://github.com/val-town/sdk/commit/e234386d3a8296968bfab22230b5cf462b6b18c9))
+
 ## 1.5.0 (2025-06-12)
 
 Full Changelog: [v1.4.0...v1.5.0](https://github.com/val-town/sdk/compare/v1.4.0...v1.5.0)
