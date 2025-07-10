@@ -64,7 +64,7 @@ export interface EmailSendParams {
   /**
    * A set of headers to include the email that you send
    */
-  headers?: Record<string, string>;
+  headers?: { [key: string]: string };
 
   /**
    * HTML content of the email. Can be specified alongside text
