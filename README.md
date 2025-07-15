@@ -37,7 +37,9 @@ The full API of this library can be found in [api.md](api.md).
 ```js
 import ValTown from '@valtown/sdk';
 
-const client = new ValTown();
+const client = new ValTown({
+  bearerToken: process.env['VAL_TOWN_API_KEY'], // This is the default and can be omitted
+});
 
 const response = await client.emails.send();
 
@@ -52,7 +54,9 @@ This library includes TypeScript definitions for all request params and response
 ```ts
 import ValTown from '@valtown/sdk';
 
-const client = new ValTown();
+const client = new ValTown({
+  bearerToken: process.env['VAL_TOWN_API_KEY'], // This is the default and can be omitted
+});
 
 const response: ValTown.EmailSendResponse = await client.emails.send();
 ```
