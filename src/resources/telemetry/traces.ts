@@ -1,8 +1,10 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
 import { APIResource } from '../../resource';
-import * as Core from '../../core';
-import * as Shared from '../shared';
+import type * as Core from '../../core';
+import type * as Shared from '../shared';
+import type { StreamParams, Telemetry } from '../telemetry';
+import { streamTelemetryData } from './';
 
 export class Traces extends APIResource {
   /**
@@ -14,6 +16,27 @@ export class Traces extends APIResource {
    */
   list(query: TraceListParams, options?: Core.RequestOptions): Core.APIPromise<TraceListResponse> {
     return this._client.get('/v1/telemetry/traces', { query, ...options });
+  }
+
+  /**
+   * Stream OpenTelemetry traces, accessing new ones live as they come in.
+   *
+   * @example
+   * ```ts
+   * const traces = await client.telemetry.traces.stream({
+   *   frequency: 1000,
+   * });
+   *
+   * for await (const trace of traces) {
+   *   console.log(trace);
+   * }
+   * ```
+   */
+  async *stream(
+    query: Omit<TraceListParams, 'limit'> & StreamParams,
+    options?: Core.RequestOptions,
+  ): AsyncGenerator<Telemetry.Traces.TraceListResponse.Data> {
+    yield* streamTelemetryData(this, query, options);
   }
 }
 
@@ -105,5 +128,5 @@ export interface TraceListParams {
 }
 
 export declare namespace Traces {
-  export { type TraceListResponse as TraceListResponse, type TraceListParams as TraceListParams };
+  export type { TraceListResponse, TraceListParams };
 }
