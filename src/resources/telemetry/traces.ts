@@ -9,8 +9,9 @@ export class Traces extends APIResource {
    * Get OpenTelemetry traces within a specified time window with flexible pagination
    * options: Pass in only the end time to paginate backwards from there. Pass in a
    * start time to paginate backwards from now until the start time. Pass in both to
-   * get resources within the time window. Filter additionally by branch_ids or
-   * file_id.
+   * get resources within the time window. Choose to return in end_time order instead
+   * to view traces that completed in a window or since a time. Filter additionally
+   * by branch_ids or file_id.
    */
   list(query: TraceListParams, options?: Core.RequestOptions): Core.APIPromise<TraceListResponse> {
     return this._client.get('/v1/telemetry/traces', { query, ...options });
@@ -33,6 +34,9 @@ export namespace TraceListResponse {
   export interface Data {
     attributes: Array<Data.Attribute>;
 
+    /**
+     * 0 if trace is unfinished
+     */
     endTimeUnixNano: string;
 
     name: string;
@@ -82,6 +86,13 @@ export interface TraceListParams {
    * Maximum items to return in each paginated response
    */
   limit: number;
+
+  /**
+   * When set to end_time, traces are sorted by their end time, and pending traces
+   * are omitted. When set to start_time, all traces are included, with pending
+   * traces given "0" for their end time.
+   */
+  order_by: 'start_time' | 'end_time';
 
   /**
    * Branch IDs to filter by
