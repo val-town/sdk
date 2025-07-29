@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.8.0 (2025-07-29)
+
+Full Changelog: [v1.7.0...v1.8.0](https://github.com/val-town/sdk/compare/v1.7.0...v1.8.0)
+
+### Features
+
+* **api:** api update ([5609e4e](https://github.com/val-town/sdk/commit/5609e4ef225866ddb65d054955178ccbf089d583))
+
 ## 1.7.0 (2025-07-29)
 
 Full Changelog: [v1.6.0...v1.7.0](https://github.com/val-town/sdk/compare/v1.6.0...v1.7.0)
