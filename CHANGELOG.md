@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.7.0 (2025-07-29)
+
+Full Changelog: [v1.6.0...v1.7.0](https://github.com/val-town/sdk/compare/v1.6.0...v1.7.0)
+
+### Features
+
+* clean up environment call outs ([72f87ab](https://github.com/val-town/sdk/commit/72f87abf6c665e92298ca593712057c7a4dea9f6))
+
 ## 1.6.0 (2025-07-10)
 
 Full Changelog: [v1.5.0...v1.6.0](https://github.com/val-town/sdk/compare/v1.5.0...v1.6.0)
