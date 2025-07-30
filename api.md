@@ -147,6 +147,16 @@ Methods:
 - <code title="delete /v2/vals/{val_id}/files">client.vals.files.<a href="./src/resources/vals/files.ts">delete</a>(valId, { ...params }) -> void</code>
 - <code title="get /v2/vals/{val_id}/files/content">client.vals.files.<a href="./src/resources/vals/files.ts">getContent</a>(valId, { ...params }) -> Response</code>
 
+# Files
+
+Types:
+
+- <code><a href="./src/resources/files.ts">FileRetrieveResponse</a></code>
+
+Methods:
+
+- <code title="get /v2/files/{file_id}">client.files.<a href="./src/resources/files.ts">retrieve</a>(fileId) -> FileRetrieveResponse</code>
+
 # Emails
 
 Types:

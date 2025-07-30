@@ -4,6 +4,7 @@ export * from './shared';
 export { Alias } from './alias/alias';
 export { Blobs, type BlobListResponse, type BlobListParams, type BlobStoreParams } from './blobs';
 export { Emails, type EmailSendResponse, type EmailSendParams } from './emails';
+export { Files, type FileRetrieveResponse } from './files';
 export { Me } from './me/me';
 export { Search } from './search/search';
 export { Sqlite, type SqliteBatchResponse, type SqliteBatchParams, type SqliteExecuteParams } from './sqlite';
