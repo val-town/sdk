@@ -1,5 +1,19 @@
 # Changelog
 
+## 1.9.0 (2025-07-30)
+
+Full Changelog: [v1.8.0...v1.9.0](https://github.com/val-town/sdk/compare/v1.8.0...v1.9.0)
+
+### Features
+
+* **api:** api update ([d415a5c](https://github.com/val-town/sdk/commit/d415a5cbc4628bdd366224090a0f5368ee7d0b67))
+* **api:** api update ([30db934](https://github.com/val-town/sdk/commit/30db9343eba9d8a4ec1711f2106373b2e5e23330))
+
+
+### Chores
+
+* **internal:** remove redundant imports config ([7ed1e1f](https://github.com/val-town/sdk/commit/7ed1e1fc9f3bb374b5234e5c0fb2d94845ea5666))
+
 ## 1.8.0 (2025-07-29)
 
 Full Changelog: [v1.7.0...v1.8.0](https://github.com/val-town/sdk/compare/v1.7.0...v1.8.0)
