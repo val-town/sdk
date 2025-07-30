@@ -10,6 +10,7 @@ import * as Uploads from './uploads';
 import * as API from './resources/index';
 import { BlobListParams, BlobListResponse, BlobStoreParams, Blobs } from './resources/blobs';
 import { EmailSendParams, EmailSendResponse, Emails } from './resources/emails';
+import { FileRetrieveResponse, Files } from './resources/files';
 import { Sqlite, SqliteBatchParams, SqliteBatchResponse, SqliteExecuteParams } from './resources/sqlite';
 import { Users } from './resources/users';
 import { Alias } from './resources/alias/alias';
@@ -167,6 +168,10 @@ export class ValTown extends Core.APIClient {
    */
   vals: API.Vals = new API.Vals(this);
   /**
+   * Access files, which are the items within Vals
+   */
+  files: API.Files = new API.Files(this);
+  /**
    * Val Town supports sending emails from vals
    */
   emails: API.Emails = new API.Emails(this);
@@ -226,6 +231,7 @@ ValTown.Users = Users;
 ValTown.Sqlite = Sqlite;
 ValTown.Telemetry = Telemetry;
 ValTown.Vals = Vals;
+ValTown.Files = Files;
 ValTown.Emails = Emails;
 export declare namespace ValTown {
   export type RequestOptions = Core.RequestOptions;
@@ -266,6 +272,8 @@ export declare namespace ValTown {
     type ValCreateParams as ValCreateParams,
     type ValListParams as ValListParams,
   };
+
+  export { Files as Files, type FileRetrieveResponse as FileRetrieveResponse };
 
   export {
     Emails as Emails,
