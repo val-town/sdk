@@ -88,13 +88,6 @@ export interface TraceListParams {
   limit: number;
 
   /**
-   * When set to end_time, traces are sorted by their end time, and pending traces
-   * are omitted. When set to start_time, all traces are included, with pending
-   * traces given "0" for their end time.
-   */
-  order_by: 'start_time' | 'end_time';
-
-  /**
    * Branch IDs to filter by
    */
   branch_ids?: Array<string>;
@@ -108,6 +101,13 @@ export interface TraceListParams {
    * Include only resources from a given file identified by its ID
    */
   file_id?: string;
+
+  /**
+   * When set to end_time, traces are sorted by their end time, and pending traces
+   * are omitted. When set to start_time, all traces are included, with pending
+   * traces given "0" for their end time.
+   */
+  order_by?: 'start_time' | 'end_time';
 
   /**
    * Start date of the time window (earliest time)
