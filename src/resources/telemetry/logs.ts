@@ -87,6 +87,11 @@ export namespace LogListResponse {
 
 export interface LogListParams {
   /**
+   * Sort direction for the traces. Defaults to descending order of timestamp.
+   */
+  direction: 'asc' | 'desc';
+
+  /**
    * Maximum items to return in each paginated response
    */
   limit: number;
