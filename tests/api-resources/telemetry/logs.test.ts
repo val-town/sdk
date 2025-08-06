@@ -10,7 +10,7 @@ const client = new ValTown({
 
 describe('resource logs', () => {
   test('list: only required params', async () => {
-    const responsePromise = client.telemetry.logs.list({ limit: 1 });
+    const responsePromise = client.telemetry.logs.list({ direction: 'asc', limit: 1 });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -22,6 +22,7 @@ describe('resource logs', () => {
 
   test('list: required and optional params', async () => {
     const response = await client.telemetry.logs.list({
+      direction: 'asc',
       limit: 1,
       branch_ids: ['182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e'],
       end: '2019-12-27T18:11:19.117Z',
