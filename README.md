@@ -13,7 +13,7 @@ This SDK is generated with [Stainless](https://www.stainless.com/).
 ### Getting started in Val Town
 
 The quickest way to get started with the SDK is to use it in
-Val Town, for example by [remixing this val](https://www.val.town/v/stevekrouse/demoSDK).
+Val Town, for example by [remixing this val](https://www.val.town/x/stevekrouse/demoSDK/code/main.tsx).
 
 ```ts
 import ValTown from "npm:@valtown/sdk";
