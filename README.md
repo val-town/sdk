@@ -1,14 +1,50 @@
-# Val Town Node API Library
+# Val Town API JavaScript SDK
 
 [![NPM version](https://img.shields.io/npm/v/@valtown/sdk.svg)](https://npmjs.org/package/@valtown/sdk) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/@valtown/sdk) [![JSR Version](https://jsr.io/badges/@valtown/sdk)](https://jsr.io/@valtown/sdk)
 
-This library provides convenient access to the Val Town REST API from server-side TypeScript or JavaScript.
+This SDK provides convenient access to the Val Town REST API from server-side TypeScript or JavaScript.
 
-The REST API documentation can be found on [docs.val.town](https://docs.val.town). The full API of this library can be found in [api.md](api.md).
+The full API of this SDK can be found at [sdk.val.town](https://sdk.val.town).
 
-It is generated with [Stainless](https://www.stainless.com/).
+Val Town REST API documentation can be found on [docs.val.town/api][https://docs.val.town](https://docs.val.town/api). 
 
-## Installation
+This SDK is generated with [Stainless](https://www.stainless.com/).
+
+### Getting started in Val Town
+
+The quickest way to get started with the SDK is to use it in
+Val Town, for example by [remixing this val](https://www.val.town/v/stevekrouse/demoSDK).
+
+```ts
+import ValTown from "npm:@valtown/sdk";
+
+const vt = new ValTown();
+
+// print your email
+const me = await vt.me.profile.retrieve();
+console.log(me.email);
+
+// list some of your vals
+const vals = await vt.me.vals.list({});
+console.log(vals);
+```
+
+### Authentication
+
+Authentication is set by the `VAL_TOWN_API_KEY` environment
+variable, which is automatically injected in Val Town.
+
+You can also set the token manually:
+
+```ts
+import ValTown from "npm:@valtown/sdk";
+
+const vt = new ValTown({
+   bearerToken: Deno.env.get("VT_TOKEN")
+});
+```
+
+### Getting started in Node.js
 
 ```sh
 npm install @valtown/sdk
@@ -19,31 +55,6 @@ npm install @valtown/sdk
 ```sh
 deno add jsr:@valtown/sdk
 npx jsr add @valtown/sdk
-```
-
-These commands will make the module importable from the `@valtown/sdk` scope:
-
-You can also [import directly from JSR](https://jsr.io/docs/using-packages#importing-with-jsr-specifiers) without an install step if you're using the Deno JavaScript runtime:
-
-```ts
-import ValTown from 'jsr:@valtown/sdk';
-```
-
-## Usage
-
-The full API of this library can be found in [api.md](api.md).
-
-<!-- prettier-ignore -->
-```js
-import ValTown from '@valtown/sdk';
-
-const client = new ValTown({
-  bearerToken: process.env['VAL_TOWN_API_KEY'], // This is the default and can be omitted
-});
-
-const response = await client.emails.send();
-
-console.log(response.message);
 ```
 
 ### Request & Response types
