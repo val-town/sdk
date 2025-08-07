@@ -4,9 +4,9 @@
 
 This SDK provides convenient access to the Val Town REST API from server-side TypeScript or JavaScript.
 
-The full API of this SDK can be found at [sdk.val.town](https://sdk.val.town).
-
-Val Town REST API documentation can be found on [docs.val.town/api](https://docs.val.town/api). 
+- [SDK docs](https://sdk.val.town)
+- [REST API docs](https://docs.val.town/api)
+- [SDK source on GitHub](https://github.com/val-town/sdk)
 
 This SDK is generated with [Stainless](https://www.stainless.com/).
 
