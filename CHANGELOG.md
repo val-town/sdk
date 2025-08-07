@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.10.1 (2025-08-07)
+
+Full Changelog: [v1.10.0...v1.10.1](https://github.com/val-town/sdk/compare/v1.10.0...v1.10.1)
+
+### Chores
+
+* **internal:** move publish config ([633d249](https://github.com/val-town/sdk/commit/633d2496c197403b3e55f6e9f098defe8adbdadd))
+
 ## 1.10.0 (2025-08-06)
 
 Full Changelog: [v1.9.0...v1.10.0](https://github.com/val-town/sdk/compare/v1.9.0...v1.10.0)
