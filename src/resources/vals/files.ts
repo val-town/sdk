@@ -22,8 +22,12 @@ export class Files extends APIResource {
     params: FileCreateParams,
     options?: Core.RequestOptions,
   ): Core.APIPromise<FileCreateResponse> {
-    const { path, branch_id, ...body } = params;
-    return this._client.post(`/v2/vals/${valId}/files`, { query: { path, branch_id }, body, ...options });
+    const { path: path_, branch_id, ...body } = params;
+    return this._client.post(`/v2/vals/${valId}/files`, {
+      query: { path: path_, branch_id },
+      body,
+      ...options,
+    });
   }
 
   /**
@@ -68,8 +72,12 @@ export class Files extends APIResource {
     params: FileUpdateParams,
     options?: Core.RequestOptions,
   ): Core.APIPromise<FileUpdateResponse> {
-    const { path, branch_id, ...body } = params;
-    return this._client.put(`/v2/vals/${valId}/files`, { query: { path, branch_id }, body, ...options });
+    const { path: path_, branch_id, ...body } = params;
+    return this._client.put(`/v2/vals/${valId}/files`, {
+      query: { path: path_, branch_id },
+      body,
+      ...options,
+    });
   }
 
   /**
@@ -86,9 +94,9 @@ export class Files extends APIResource {
    * ```
    */
   delete(valId: string, params: FileDeleteParams, options?: Core.RequestOptions): Core.APIPromise<void> {
-    const { path, recursive, branch_id } = params;
+    const { path: path_, recursive, branch_id } = params;
     return this._client.delete(`/v2/vals/${valId}/files`, {
-      query: { path, recursive, branch_id },
+      query: { path: path_, recursive, branch_id },
       ...options,
       headers: { Accept: '*/*', ...options?.headers },
     });
