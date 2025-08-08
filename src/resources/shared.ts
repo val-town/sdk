@@ -88,6 +88,11 @@ export interface User {
   profileImageUrl: string | null;
 
   /**
+   * Whether this is a user or an organization
+   */
+  type: 'user' | 'org';
+
+  /**
    * URL of this user’s profile on Val Town’s website
    */
   url: string;

@@ -29,7 +29,7 @@ export interface ProfileRetrieveResponse {
   /**
    * Your email address
    */
-  email: string;
+  email: string | null;
 
   links: ProfileRetrieveResponse.Links;
 
@@ -42,6 +42,11 @@ export interface ProfileRetrieveResponse {
    * Your account tier
    */
   tier: 'free' | 'pro' | null;
+
+  /**
+   * Whether this is a user or an organization
+   */
+  type: 'user' | 'org';
 
   /**
    * URL of this user’s profile on Val Town’s website
