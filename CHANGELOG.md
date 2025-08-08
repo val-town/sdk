@@ -1,5 +1,18 @@
 # Changelog
 
+## 1.10.2 (2025-08-08)
+
+Full Changelog: [v1.10.1...v1.10.2](https://github.com/val-town/sdk/compare/v1.10.1...v1.10.2)
+
+### Features
+
+* **api:** api update ([a261c36](https://github.com/val-town/sdk/commit/a261c3601e9dde5fdfdd92ad53fcea0214d41af2))
+
+
+### Bug Fixes
+
+* **methods:** define methods with parameters and binary body correctly ([d76ed20](https://github.com/val-town/sdk/commit/d76ed209c7e232755c977dbebc78c612471e1462))
+
 ## 1.10.1 (2025-08-07)
 
 Full Changelog: [v1.10.0...v1.10.1](https://github.com/val-town/sdk/compare/v1.10.0...v1.10.1)
