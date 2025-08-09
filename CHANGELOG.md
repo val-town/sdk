@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.10.3 (2025-08-09)
+
+Full Changelog: [v1.10.2...v1.10.3](https://github.com/val-town/sdk/compare/v1.10.2...v1.10.3)
+
+### Chores
+
+* update @stainless-api/prism-cli to v5.15.0 ([f98fe22](https://github.com/val-town/sdk/commit/f98fe228adc761dd12d9c93c72f19b9a95136be0))
+
 ## 1.10.2 (2025-08-08)
 
 Full Changelog: [v1.10.1...v1.10.2](https://github.com/val-town/sdk/compare/v1.10.1...v1.10.2)
