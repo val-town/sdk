@@ -147,6 +147,8 @@ export namespace Val {
   export interface Author {
     id: string;
 
+    type: 'user' | 'org';
+
     username: string | null;
   }
 
