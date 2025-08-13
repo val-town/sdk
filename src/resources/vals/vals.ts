@@ -112,6 +112,11 @@ export interface ValCreateParams {
   privacy: 'public' | 'unlisted' | 'private';
 
   description?: string;
+
+  /**
+   * ID of the org to create the val in
+   */
+  orgId?: string;
 }
 
 export interface ValListParams {
