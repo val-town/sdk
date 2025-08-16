@@ -233,6 +233,7 @@ ValTown.Telemetry = Telemetry;
 ValTown.Vals = Vals;
 ValTown.Files = Files;
 ValTown.Emails = Emails;
+
 export declare namespace ValTown {
   export type RequestOptions = Core.RequestOptions;
 
