@@ -1,5 +1,19 @@
 # Changelog
 
+## 1.13.0 (2025-08-21)
+
+Full Changelog: [v1.12.0...v1.13.0](https://github.com/val-town/sdk/compare/v1.12.0...v1.13.0)
+
+### Features
+
+* **api:** api update ([1fec878](https://github.com/val-town/sdk/commit/1fec878fac280cf003d9f8ccb29cc27f35ce6ab4))
+
+
+### Chores
+
+* **deps:** update dependency node-fetch to v2.6.13 ([426869c](https://github.com/val-town/sdk/commit/426869c234a6c4b41e686130a6def2cb0547e976))
+* **internal:** formatting change ([dd4752f](https://github.com/val-town/sdk/commit/dd4752f8711bd4930ee10b154b88761b0b9953d6))
+
 ## 1.12.0 (2025-08-13)
 
 Full Changelog: [v1.11.0...v1.12.0](https://github.com/val-town/sdk/compare/v1.11.0...v1.12.0)
