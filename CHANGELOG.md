@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.13.1 (2025-08-23)
+
+Full Changelog: [v1.13.0...v1.13.1](https://github.com/val-town/sdk/compare/v1.13.0...v1.13.1)
+
+### Chores
+
+* update CI script ([3e96b0b](https://github.com/val-town/sdk/commit/3e96b0ba874cf6c7661bd66b41ad0ed1c41827f4))
+
 ## 1.13.0 (2025-08-21)
 
 Full Changelog: [v1.12.0...v1.13.0](https://github.com/val-town/sdk/compare/v1.12.0...v1.13.0)
