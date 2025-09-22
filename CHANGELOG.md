@@ -1,5 +1,16 @@
 # Changelog
 
+## 1.13.1 (2025-09-20)
+
+Full Changelog: [v1.13.0...v1.13.1](https://github.com/val-town/sdk/compare/v1.13.0...v1.13.1)
+
+### Chores
+
+* ci build action ([148619a](https://github.com/val-town/sdk/commit/148619abc38872180984d30e1d44391c1cf9679c))
+* do not install brew dependencies in ./scripts/bootstrap by default ([8bf25b4](https://github.com/val-town/sdk/commit/8bf25b46d9a9e8ac853b6dddc1a241b4002eebd1))
+* **internal:** codegen related update ([f4ff44b](https://github.com/val-town/sdk/commit/f4ff44b1ed4952e7598c29d22aa75fbe096778bf))
+* update CI script ([3e96b0b](https://github.com/val-town/sdk/commit/3e96b0ba874cf6c7661bd66b41ad0ed1c41827f4))
+
 ## 1.13.0 (2025-08-21)
 
 Full Changelog: [v1.12.0...v1.13.0](https://github.com/val-town/sdk/compare/v1.12.0...v1.13.0)
