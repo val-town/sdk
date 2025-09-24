@@ -11,6 +11,7 @@ import * as API from './resources/index';
 import { BlobListParams, BlobListResponse, BlobStoreParams, Blobs } from './resources/blobs';
 import { EmailSendParams, EmailSendResponse, Emails } from './resources/emails';
 import { FileRetrieveResponse, Files } from './resources/files';
+import { OrgRetrieveParams, OrgRetrieveResponse, Orgs } from './resources/orgs';
 import { Sqlite, SqliteBatchParams, SqliteBatchResponse, SqliteExecuteParams } from './resources/sqlite';
 import { Users } from './resources/users';
 import { Alias } from './resources/alias/alias';
@@ -148,6 +149,10 @@ export class ValTown extends Core.APIClient {
    */
   me: API.Me = new API.Me(this);
   /**
+   * Get information about organizations you belong to
+   */
+  orgs: API.Orgs = new API.Orgs(this);
+  /**
    * Blob storage lets you store larger objects, including binary data
    */
   blobs: API.Blobs = new API.Blobs(this);
@@ -226,6 +231,7 @@ export class ValTown extends Core.APIClient {
 ValTown.Search = Search;
 ValTown.Alias = Alias;
 ValTown.Me = Me;
+ValTown.Orgs = Orgs;
 ValTown.Blobs = Blobs;
 ValTown.Users = Users;
 ValTown.Sqlite = Sqlite;
@@ -248,6 +254,12 @@ export declare namespace ValTown {
   export { Alias as Alias };
 
   export { Me as Me };
+
+  export {
+    Orgs as Orgs,
+    type OrgRetrieveResponse as OrgRetrieveResponse,
+    type OrgRetrieveParams as OrgRetrieveParams,
+  };
 
   export {
     Blobs as Blobs,
