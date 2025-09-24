@@ -51,6 +51,16 @@ Methods:
 
 - <code title="get /v2/me/vals">client.me.vals.<a href="./src/resources/me/vals.ts">list</a>({ ...params }) -> ValsPageCursorURL</code>
 
+# Orgs
+
+Types:
+
+- <code><a href="./src/resources/orgs.ts">OrgRetrieveResponse</a></code>
+
+Methods:
+
+- <code title="get /v2/orgs">client.orgs.<a href="./src/resources/orgs.ts">retrieve</a>({ ...params }) -> OrgRetrieveResponse</code>
+
 # Blobs
 
 Types:
