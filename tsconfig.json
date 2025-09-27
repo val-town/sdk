@@ -7,11 +7,10 @@
     "module": "commonjs",
     "moduleResolution": "node",
     "esModuleInterop": true,
-    "baseUrl": "./",
     "paths": {
-      "@valtown/sdk/_shims/auto/*": ["src/_shims/auto/*-node"],
-      "@valtown/sdk/*": ["src/*"],
-      "@valtown/sdk": ["src/index.ts"]
+      "@valtown/sdk/_shims/auto/*": ["./src/_shims/auto/*-node"],
+      "@valtown/sdk/*": ["./src/*"],
+      "@valtown/sdk": ["./src/index.ts"]
     },
     "noEmit": true,
 
@@ -32,7 +31,7 @@
     "noUncheckedIndexedAccess": true,
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
-		"isolatedModules": true,
+    "isolatedModules": true,
 
     "skipLibCheck": true
   }

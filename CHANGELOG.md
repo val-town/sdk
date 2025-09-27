@@ -1,5 +1,21 @@
 # Changelog
 
+## 1.14.1 (2025-09-27)
+
+Full Changelog: [v1.14.0...v1.14.1](https://github.com/val-town/sdk/compare/v1.14.0...v1.14.1)
+
+### Performance Improvements
+
+* faster formatting ([74193d1](https://github.com/val-town/sdk/commit/74193d1057119f0f700a1e4f62fbe93dacb28067))
+
+
+### Chores
+
+* **internal:** codegen related update ([9e58e74](https://github.com/val-town/sdk/commit/9e58e74cc28a63e147e03dba259623014f9b0653))
+* **internal:** fix incremental formatting in some cases ([1528c4b](https://github.com/val-town/sdk/commit/1528c4b6108d96b6a39151c0ff1462ac66b8550f))
+* **internal:** ignore .eslintcache ([8761230](https://github.com/val-town/sdk/commit/8761230d9e12a611860ed9c37753b4b2c8d995d4))
+* **internal:** remove deprecated `compilerOptions.baseUrl` from tsconfig.json ([1c179e5](https://github.com/val-town/sdk/commit/1c179e5217f20915cd3653dae17f0ff8c8014314))
+
 ## 1.14.0 (2025-09-24)
 
 Full Changelog: [v1.13.1...v1.14.0](https://github.com/val-town/sdk/compare/v1.13.1...v1.14.0)
