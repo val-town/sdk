@@ -11,7 +11,7 @@ import * as API from './resources/index';
 import { BlobListParams, BlobListResponse, BlobStoreParams, Blobs } from './resources/blobs';
 import { EmailSendParams, EmailSendResponse, Emails } from './resources/emails';
 import { FileRetrieveResponse, Files } from './resources/files';
-import { OrgRetrieveParams, OrgRetrieveResponse, Orgs } from './resources/orgs';
+import { Orgs } from './resources/orgs';
 import { Sqlite, SqliteBatchParams, SqliteBatchResponse, SqliteExecuteParams } from './resources/sqlite';
 import { Users } from './resources/users';
 import { Alias } from './resources/alias/alias';
@@ -255,11 +255,7 @@ export declare namespace ValTown {
 
   export { Me as Me };
 
-  export {
-    Orgs as Orgs,
-    type OrgRetrieveResponse as OrgRetrieveResponse,
-    type OrgRetrieveParams as OrgRetrieveParams,
-  };
+  export { Orgs as Orgs };
 
   export {
     Blobs as Blobs,
