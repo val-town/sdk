@@ -9,8 +9,8 @@ const client = new ValTown({
 });
 
 describe('resource orgs', () => {
-  test('retrieve: only required params', async () => {
-    const responsePromise = client.orgs.retrieve({ limit: 1, offset: 0 });
+  test('list: only required params', async () => {
+    const responsePromise = client.orgs.list({ limit: 1, offset: 0 });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -20,7 +20,7 @@ describe('resource orgs', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  test('retrieve: required and optional params', async () => {
-    const response = await client.orgs.retrieve({ limit: 1, offset: 0 });
+  test('list: required and optional params', async () => {
+    const response = await client.orgs.list({ limit: 1, offset: 0 });
   });
 });

@@ -55,11 +55,11 @@ Methods:
 
 Types:
 
-- <code><a href="./src/resources/orgs.ts">OrgRetrieveResponse</a></code>
+- <code><a href="./src/resources/orgs.ts">OrgListResponse</a></code>
 
 Methods:
 
-- <code title="get /v2/orgs">client.orgs.<a href="./src/resources/orgs.ts">retrieve</a>({ ...params }) -> OrgRetrieveResponse</code>
+- <code title="get /v2/orgs">client.orgs.<a href="./src/resources/orgs.ts">list</a>({ ...params }) -> OrgListResponsesPageCursorURL</code>
 
 # Blobs
 

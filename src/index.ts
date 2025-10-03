@@ -11,7 +11,7 @@ import * as API from './resources/index';
 import { BlobListParams, BlobListResponse, BlobStoreParams, Blobs } from './resources/blobs';
 import { EmailSendParams, EmailSendResponse, Emails } from './resources/emails';
 import { FileRetrieveResponse, Files } from './resources/files';
-import { OrgRetrieveParams, OrgRetrieveResponse, Orgs } from './resources/orgs';
+import { OrgListParams, OrgListResponse, OrgListResponsesPageCursorURL, Orgs } from './resources/orgs';
 import { Sqlite, SqliteBatchParams, SqliteBatchResponse, SqliteExecuteParams } from './resources/sqlite';
 import { Users } from './resources/users';
 import { Alias } from './resources/alias/alias';
@@ -232,6 +232,7 @@ ValTown.Search = Search;
 ValTown.Alias = Alias;
 ValTown.Me = Me;
 ValTown.Orgs = Orgs;
+ValTown.OrgListResponsesPageCursorURL = OrgListResponsesPageCursorURL;
 ValTown.Blobs = Blobs;
 ValTown.Users = Users;
 ValTown.Sqlite = Sqlite;
@@ -257,8 +258,9 @@ export declare namespace ValTown {
 
   export {
     Orgs as Orgs,
-    type OrgRetrieveResponse as OrgRetrieveResponse,
-    type OrgRetrieveParams as OrgRetrieveParams,
+    type OrgListResponse as OrgListResponse,
+    OrgListResponsesPageCursorURL as OrgListResponsesPageCursorURL,
+    type OrgListParams as OrgListParams,
   };
 
   export {

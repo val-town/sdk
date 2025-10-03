@@ -2,7 +2,7 @@
 
 import { APIResource } from '../resource';
 import * as Core from '../core';
-import * as Shared from './shared';
+import { PageCursorURL, type PageCursorURLParams } from '../pagination';
 
 /**
  * Get information about organizations you belong to
@@ -11,49 +11,36 @@ export class Orgs extends APIResource {
   /**
    * Get all orgs you are a member of
    */
-  retrieve(query: OrgRetrieveParams, options?: Core.RequestOptions): Core.APIPromise<OrgRetrieveResponse> {
-    return this._client.get('/v2/orgs', { query, ...options });
+  list(
+    query: OrgListParams,
+    options?: Core.RequestOptions,
+  ): Core.PagePromise<OrgListResponsesPageCursorURL, OrgListResponse> {
+    return this._client.getAPIList('/v2/orgs', OrgListResponsesPageCursorURL, { query, ...options });
   }
 }
+
+export class OrgListResponsesPageCursorURL extends PageCursorURL<OrgListResponse> {}
 
 /**
- * A paginated result set
+ * An Org
  */
-export interface OrgRetrieveResponse {
-  data: Array<OrgRetrieveResponse.Data>;
-
+export interface OrgListResponse {
   /**
-   * Links to use for pagination
+   * The id of the org
    */
-  links: Shared.PaginationLinks;
+  id: string;
+
+  username: string;
 }
 
-export namespace OrgRetrieveResponse {
-  /**
-   * An Org
-   */
-  export interface Data {
-    /**
-     * The id of the org
-     */
-    id: string;
+export interface OrgListParams extends PageCursorURLParams {}
 
-    username: string;
-  }
-}
-
-export interface OrgRetrieveParams {
-  /**
-   * Maximum items to return in each paginated response
-   */
-  limit: number;
-
-  /**
-   * Number of items to skip in order to deliver paginated results
-   */
-  offset: number;
-}
+Orgs.OrgListResponsesPageCursorURL = OrgListResponsesPageCursorURL;
 
 export declare namespace Orgs {
-  export { type OrgRetrieveResponse as OrgRetrieveResponse, type OrgRetrieveParams as OrgRetrieveParams };
+  export {
+    type OrgListResponse as OrgListResponse,
+    OrgListResponsesPageCursorURL as OrgListResponsesPageCursorURL,
+    type OrgListParams as OrgListParams,
+  };
 }

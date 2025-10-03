@@ -1,5 +1,28 @@
 # Changelog
 
+## 2.0.0 (2025-10-03)
+
+Full Changelog: [v1.14.0...v2.0.0](https://github.com/val-town/sdk/compare/v1.14.0...v2.0.0)
+
+### Features
+
+* **api:** api update ([f75dd1d](https://github.com/val-town/sdk/commit/f75dd1d4779219525072395bdf489ef92f369789))
+* **api:** api update ([f6abb17](https://github.com/val-town/sdk/commit/f6abb177637e15d00560d2813c4df6141e72e8f6))
+
+
+### Performance Improvements
+
+* faster formatting ([74193d1](https://github.com/val-town/sdk/commit/74193d1057119f0f700a1e4f62fbe93dacb28067))
+
+
+### Chores
+
+* **internal:** codegen related update ([9e58e74](https://github.com/val-town/sdk/commit/9e58e74cc28a63e147e03dba259623014f9b0653))
+* **internal:** fix incremental formatting in some cases ([1528c4b](https://github.com/val-town/sdk/commit/1528c4b6108d96b6a39151c0ff1462ac66b8550f))
+* **internal:** ignore .eslintcache ([8761230](https://github.com/val-town/sdk/commit/8761230d9e12a611860ed9c37753b4b2c8d995d4))
+* **internal:** remove .eslintcache ([dde1cfe](https://github.com/val-town/sdk/commit/dde1cfed230e9ee026ee9e6a36d0a9e25fd39a8a))
+* **internal:** remove deprecated `compilerOptions.baseUrl` from tsconfig.json ([1c179e5](https://github.com/val-town/sdk/commit/1c179e5217f20915cd3653dae17f0ff8c8014314))
+
 ## 1.14.0 (2025-09-24)
 
 Full Changelog: [v1.13.1...v1.14.0](https://github.com/val-town/sdk/compare/v1.13.1...v1.14.0)
