@@ -5,7 +5,12 @@ import * as qs from './internal/qs';
 import * as Core from './core';
 import * as Errors from './error';
 import * as Pagination from './pagination';
-import { type PageCursorURLParams, PageCursorURLResponse } from './pagination';
+import {
+  type CursorParams,
+  CursorResponse,
+  type PageCursorURLParams,
+  PageCursorURLResponse,
+} from './pagination';
 import * as Uploads from './uploads';
 import * as API from './resources/index';
 import { BlobListParams, BlobListResponse, BlobStoreParams, Blobs } from './resources/blobs';
@@ -18,7 +23,7 @@ import { Alias } from './resources/alias/alias';
 import { Me } from './resources/me/me';
 import { Search } from './resources/search/search';
 import { Telemetry } from './resources/telemetry/telemetry';
-import { ValCreateParams, ValListParams, ValListResponse, Vals } from './resources/vals/vals';
+import { ValCreateParams, ValListParams, Vals } from './resources/vals/vals';
 
 export interface ClientOptions {
   /**
@@ -250,6 +255,9 @@ export declare namespace ValTown {
     type PageCursorURLResponse as PageCursorURLResponse,
   };
 
+  export import Cursor = Pagination.Cursor;
+  export { type CursorParams as CursorParams, type CursorResponse as CursorResponse };
+
   export { Search as Search };
 
   export { Alias as Alias };
@@ -281,12 +289,7 @@ export declare namespace ValTown {
 
   export { Telemetry as Telemetry };
 
-  export {
-    Vals as Vals,
-    type ValListResponse as ValListResponse,
-    type ValCreateParams as ValCreateParams,
-    type ValListParams as ValListParams,
-  };
+  export { Vals as Vals, type ValCreateParams as ValCreateParams, type ValListParams as ValListParams };
 
   export { Files as Files, type FileRetrieveResponse as FileRetrieveResponse };
 

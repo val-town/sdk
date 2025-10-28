@@ -113,15 +113,11 @@ Methods:
 
 # Vals
 
-Types:
-
-- <code><a href="./src/resources/vals/vals.ts">ValListResponse</a></code>
-
 Methods:
 
 - <code title="post /v2/vals">client.vals.<a href="./src/resources/vals/vals.ts">create</a>({ ...params }) -> Val</code>
 - <code title="get /v2/vals/{val_id}">client.vals.<a href="./src/resources/vals/vals.ts">retrieve</a>(valId) -> Val</code>
-- <code title="get /v2/vals">client.vals.<a href="./src/resources/vals/vals.ts">list</a>({ ...params }) -> ValListResponse</code>
+- <code title="get /v2/vals">client.vals.<a href="./src/resources/vals/vals.ts">list</a>({ ...params }) -> ValsCursor</code>
 - <code title="delete /v2/vals/{val_id}">client.vals.<a href="./src/resources/vals/vals.ts">delete</a>(valId) -> void</code>
 
 ## Branches

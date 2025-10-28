@@ -11,4 +11,4 @@ export { Search } from './search/search';
 export { Sqlite, type SqliteBatchResponse, type SqliteBatchParams, type SqliteExecuteParams } from './sqlite';
 export { Telemetry } from './telemetry/telemetry';
 export { Users } from './users';
-export { Vals, type ValListResponse, type ValCreateParams, type ValListParams } from './vals/vals';
+export { Vals, type ValCreateParams, type ValListParams } from './vals/vals';

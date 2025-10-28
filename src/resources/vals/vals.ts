@@ -3,6 +3,7 @@
 import { APIResource } from '../../resource';
 import * as Core from '../../core';
 import * as Shared from '../shared';
+import { ValsCursor } from '../shared';
 import * as BranchesAPI from './branches';
 import {
   BranchCreateParams,
@@ -26,6 +27,7 @@ import {
   FileUpdateResponse,
   Files,
 } from './files';
+import { type CursorParams } from '../../pagination';
 
 /**
  * Vals are a collaborative folder of runnable JavaScript, TypeScript, and JSX modules
@@ -69,11 +71,14 @@ export class Vals extends APIResource {
    *
    * @example
    * ```ts
-   * const vals = await client.vals.list({ limit: 1 });
+   * // Automatically fetches more pages as needed.
+   * for await (const val of client.vals.list({ limit: 1 })) {
+   *   // ...
+   * }
    * ```
    */
-  list(query: ValListParams, options?: Core.RequestOptions): Core.APIPromise<ValListResponse> {
-    return this._client.get('/v2/vals', { query, ...options });
+  list(query: ValListParams, options?: Core.RequestOptions): Core.PagePromise<ValsCursor, Shared.Val> {
+    return this._client.getAPIList('/v2/vals', ValsCursor, { query, ...options });
   }
 
   /**
@@ -94,18 +99,6 @@ export class Vals extends APIResource {
   }
 }
 
-/**
- * A paginated result set
- */
-export interface ValListResponse {
-  data: Array<Shared.Val>;
-
-  /**
-   * Links to use for pagination
-   */
-  links: Shared.PaginationLinks;
-}
-
 export interface ValCreateParams {
   name: string;
 
@@ -119,16 +112,11 @@ export interface ValCreateParams {
   orgId?: string;
 }
 
-export interface ValListParams {
+export interface ValListParams extends CursorParams {
   /**
    * Maximum items to return in each paginated response
    */
   limit: number;
-
-  /**
-   * Cursor to start the pagination from
-   */
-  cursor?: string;
 
   /**
    * This resource's privacy setting. Unlisted resources do not appear on profile
@@ -148,11 +136,7 @@ Vals.Files = Files;
 Vals.FileRetrieveResponsesPageCursorURL = FileRetrieveResponsesPageCursorURL;
 
 export declare namespace Vals {
-  export {
-    type ValListResponse as ValListResponse,
-    type ValCreateParams as ValCreateParams,
-    type ValListParams as ValListParams,
-  };
+  export { type ValCreateParams as ValCreateParams, type ValListParams as ValListParams };
 
   export {
     Branches as Branches,
@@ -177,3 +161,5 @@ export declare namespace Vals {
     type FileGetContentParams as FileGetContentParams,
   };
 }
+
+export { ValsCursor };

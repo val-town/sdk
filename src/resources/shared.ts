@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { PageCursorURL } from '../pagination';
+import { Cursor, PageCursorURL } from '../pagination';
 
 /**
  * A Val
@@ -364,3 +364,5 @@ export namespace Val {
 export class BasicValsPageCursorURL extends PageCursorURL<BasicVal> {}
 
 export class ValsPageCursorURL extends PageCursorURL<Val> {}
+
+export class ValsCursor extends Cursor<Val> {}
