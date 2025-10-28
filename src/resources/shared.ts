@@ -3,6 +3,202 @@
 import { PageCursorURL } from '../pagination';
 
 /**
+ * A Val
+ */
+export interface BasicVal {
+  /**
+   * This val's id
+   */
+  id: string;
+
+  /**
+   * The user who created this val
+   */
+  author: BasicVal.Author | null;
+
+  /**
+   * TypeScript code associated with this val
+   */
+  code: string | null;
+
+  createdAt: string;
+
+  links: BasicVal.Links;
+
+  /**
+   * The name of this val
+   */
+  name: string;
+
+  /**
+   * This resource's privacy setting. Unlisted resources do not appear on profile
+   * pages or elsewhere, but you can link to them.
+   */
+  privacy: 'public' | 'unlisted' | 'private';
+
+  /**
+   * Whether this val is available publicly on Val Town
+   */
+  public: boolean;
+
+  /**
+   * The type of a val. HTTP can receive web requests, Email can receive emails, Cron
+   * runs periodically, and Script can be used for libraries or one-off calculations
+   */
+  type: 'interval' | 'http' | 'express' | 'email' | 'script' | 'rpc' | 'httpnext';
+
+  updatedAt: string;
+
+  /**
+   * The URL of this resource on the Val Town website
+   */
+  url: string;
+
+  /**
+   * The version of this val, starting at zero
+   */
+  version: number;
+}
+
+export namespace BasicVal {
+  /**
+   * The user who created this val
+   */
+  export interface Author {
+    id: string;
+
+    username: string | null;
+  }
+
+  export interface Links {
+    /**
+     * The URL of this Val's source code as a module
+     */
+    module: string;
+
+    /**
+     * The URL of this val on this API
+     */
+    self: string;
+
+    /**
+     * The endpoint to retrieve this val's versions
+     */
+    versions: string;
+
+    /**
+     * This val's web endpoint, where it serves a website or API
+     */
+    endpoint?: string;
+  }
+}
+
+/**
+ * A Legacy Val
+ */
+export interface ExtendedVal {
+  /**
+   * This val's id
+   */
+  id: string;
+
+  /**
+   * The user who created this val
+   */
+  author: ExtendedVal.Author | null;
+
+  /**
+   * TypeScript code associated with this val
+   */
+  code: string | null;
+
+  createdAt: string;
+
+  /**
+   * How many likes this val has received
+   */
+  likeCount: number;
+
+  links: ExtendedVal.Links;
+
+  /**
+   * The name of this val
+   */
+  name: string;
+
+  /**
+   * This resource's privacy setting. Unlisted resources do not appear on profile
+   * pages or elsewhere, but you can link to them.
+   */
+  privacy: 'public' | 'unlisted' | 'private';
+
+  /**
+   * Whether this val is available publicly on Val Town
+   */
+  public: boolean;
+
+  /**
+   * This val's readme, as Markdown
+   */
+  readme: string | null;
+
+  referenceCount: number;
+
+  /**
+   * The type of a val. HTTP can receive web requests, Email can receive emails, Cron
+   * runs periodically, and Script can be used for libraries or one-off calculations
+   */
+  type: 'interval' | 'http' | 'express' | 'email' | 'script' | 'rpc' | 'httpnext';
+
+  updatedAt: string;
+
+  /**
+   * The URL of this resource on the Val Town website
+   */
+  url: string;
+
+  /**
+   * The version of this val, starting at zero
+   */
+  version: number;
+
+  versionCreatedAt?: string;
+}
+
+export namespace ExtendedVal {
+  /**
+   * The user who created this val
+   */
+  export interface Author {
+    id: string;
+
+    username: string | null;
+  }
+
+  export interface Links {
+    /**
+     * The URL of this Val's source code as a module
+     */
+    module: string;
+
+    /**
+     * The URL of this val on this API
+     */
+    self: string;
+
+    /**
+     * The endpoint to retrieve this val's versions
+     */
+    versions: string;
+
+    /**
+     * This val's web endpoint, where it serves a website or API
+     */
+    endpoint?: string;
+  }
+}
+
+/**
  * Links to use for pagination
  */
 export interface PaginationLinks {
@@ -164,5 +360,7 @@ export namespace Val {
     self: string;
   }
 }
+
+export class BasicValsPageCursorURL extends PageCursorURL<BasicVal> {}
 
 export class ValsPageCursorURL extends PageCursorURL<Val> {}

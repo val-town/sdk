@@ -2,6 +2,8 @@
 
 Types:
 
+- <code><a href="./src/resources/shared.ts">BasicVal</a></code>
+- <code><a href="./src/resources/shared.ts">ExtendedVal</a></code>
 - <code><a href="./src/resources/shared.ts">PaginationLinks</a></code>
 - <code><a href="./src/resources/shared.ts">ResultSet</a></code>
 - <code><a href="./src/resources/shared.ts">User</a></code>
@@ -11,13 +13,9 @@ Types:
 
 ## Vals
 
-Types:
-
-- <code><a href="./src/resources/search/vals.ts">ValListResponse</a></code>
-
 Methods:
 
-- <code title="get /v1/search/vals">client.search.vals.<a href="./src/resources/search/vals.ts">list</a>({ ...params }) -> ValListResponsesPageCursorURL</code>
+- <code title="get /v1/search/vals">client.search.vals.<a href="./src/resources/search/vals.ts">list</a>({ ...params }) -> BasicValsPageCursorURL</code>
 
 # Alias
 

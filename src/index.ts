@@ -296,6 +296,8 @@ export declare namespace ValTown {
     type EmailSendParams as EmailSendParams,
   };
 
+  export type BasicVal = API.BasicVal;
+  export type ExtendedVal = API.ExtendedVal;
   export type PaginationLinks = API.PaginationLinks;
   export type ResultSet = API.ResultSet;
   export type User = API.User;
