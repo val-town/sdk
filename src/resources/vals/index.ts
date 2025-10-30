@@ -12,7 +12,11 @@ export {
 export {
   EnvironmentVariableListResponsesPageCursorURL,
   EnvironmentVariables,
+  type EnvironmentVariableCreateResponse,
+  type EnvironmentVariableUpdateResponse,
   type EnvironmentVariableListResponse,
+  type EnvironmentVariableCreateParams,
+  type EnvironmentVariableUpdateParams,
   type EnvironmentVariableListParams,
 } from './environment-variables';
 export {
