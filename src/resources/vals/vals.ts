@@ -17,9 +17,14 @@ import {
 } from './branches';
 import * as EnvironmentVariablesAPI from './environment-variables';
 import {
+  EnvironmentVariableCreateParams,
+  EnvironmentVariableCreateResponse,
+  EnvironmentVariableDeleteParams,
   EnvironmentVariableListParams,
   EnvironmentVariableListResponse,
   EnvironmentVariableListResponsesPageCursorURL,
+  EnvironmentVariableUpdateParams,
+  EnvironmentVariableUpdateResponse,
   EnvironmentVariables,
 } from './environment-variables';
 import * as FilesAPI from './files';
@@ -178,9 +183,14 @@ export declare namespace Vals {
 
   export {
     EnvironmentVariables as EnvironmentVariables,
+    type EnvironmentVariableCreateResponse as EnvironmentVariableCreateResponse,
+    type EnvironmentVariableUpdateResponse as EnvironmentVariableUpdateResponse,
     type EnvironmentVariableListResponse as EnvironmentVariableListResponse,
     type EnvironmentVariableListResponsesPageCursorURL as EnvironmentVariableListResponsesPageCursorURL,
+    type EnvironmentVariableCreateParams as EnvironmentVariableCreateParams,
+    type EnvironmentVariableUpdateParams as EnvironmentVariableUpdateParams,
     type EnvironmentVariableListParams as EnvironmentVariableListParams,
+    type EnvironmentVariableDeleteParams as EnvironmentVariableDeleteParams,
   };
 }
 

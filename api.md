@@ -155,11 +155,16 @@ Methods:
 
 Types:
 
+- <code><a href="./src/resources/vals/environment-variables.ts">EnvironmentVariableCreateResponse</a></code>
+- <code><a href="./src/resources/vals/environment-variables.ts">EnvironmentVariableUpdateResponse</a></code>
 - <code><a href="./src/resources/vals/environment-variables.ts">EnvironmentVariableListResponse</a></code>
 
 Methods:
 
+- <code title="post /v2/vals/{val_id}/environment_variables">client.vals.environmentVariables.<a href="./src/resources/vals/environment-variables.ts">create</a>(valID, { ...params }) -> EnvironmentVariableCreateResponse</code>
+- <code title="put /v2/vals/{val_id}/environment_variables/{key}">client.vals.environmentVariables.<a href="./src/resources/vals/environment-variables.ts">update</a>(key, { ...params }) -> EnvironmentVariableUpdateResponse</code>
 - <code title="get /v2/vals/{val_id}/environment_variables">client.vals.environmentVariables.<a href="./src/resources/vals/environment-variables.ts">list</a>(valID, { ...params }) -> EnvironmentVariableListResponsesPageCursorURL</code>
+- <code title="delete /v2/vals/{val_id}/environment_variables/{key}">client.vals.environmentVariables.<a href="./src/resources/vals/environment-variables.ts">delete</a>(key, { ...params }) -> void</code>
 
 # Files
 

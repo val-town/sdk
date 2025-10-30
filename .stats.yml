@@ -1,4 +1,4 @@
-configured_endpoints: 31
-openapi_spec_url: https://storage.googleapis.com/stainless-sdk-openapi-specs/val-town%2Fval-town-38a705e02e6cf219497b2eb3911847e01ae42d398e2686a2ef11adb09ee02afd.yml
-openapi_spec_hash: e6b09dea13b6bba67e427e73f119e985
-config_hash: 4098436795cd43823ece8d1b36372f8d
+configured_endpoints: 34
+openapi_spec_url: https://storage.googleapis.com/stainless-sdk-openapi-specs/val-town%2Fval-town-41996c5844501f484547b121d31d2a39df508a40f70364546436e7510c2e48f2.yml
+openapi_spec_hash: 6d0b11329858240a5156ead3aaab814f
+config_hash: 59532656a00c38929d49b1c1bff2f2dd

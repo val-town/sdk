@@ -57,6 +57,8 @@ This affects the following methods:
 - `client.alias.username.valName.retrieve()`
 - `client.vals.branches.retrieve()`
 - `client.vals.branches.delete()`
+- `client.vals.environmentVariables.update()`
+- `client.vals.environmentVariables.delete()`
 
 ### URI encoded path parameters
 

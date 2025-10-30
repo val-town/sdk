@@ -13,8 +13,13 @@ export {
 } from './branches';
 export {
   EnvironmentVariables,
+  type EnvironmentVariableCreateResponse,
+  type EnvironmentVariableUpdateResponse,
   type EnvironmentVariableListResponse,
+  type EnvironmentVariableCreateParams,
+  type EnvironmentVariableUpdateParams,
   type EnvironmentVariableListParams,
+  type EnvironmentVariableDeleteParams,
   type EnvironmentVariableListResponsesPageCursorURL,
 } from './environment-variables';
 export {
