@@ -1,6 +1,6 @@
 {
   "pkg": "@valtown/sdk",
-  "githubRepo": "https://github.com/stainless-sdks/val-town-typescript",
+  "githubRepo": "https://github.com/val-town/sdk",
   "clientClass": "ValTown",
   "methods": [
     {
