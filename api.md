@@ -151,6 +151,16 @@ Methods:
 - <code title="delete /v2/vals/{val_id}/files">client.vals.files.<a href="./src/resources/vals/files.ts">delete</a>(valId, { ...params }) -> void</code>
 - <code title="get /v2/vals/{val_id}/files/content">client.vals.files.<a href="./src/resources/vals/files.ts">getContent</a>(valId, { ...params }) -> Response</code>
 
+## EnvironmentVariables
+
+Types:
+
+- <code><a href="./src/resources/vals/environment-variables.ts">EnvironmentVariableListResponse</a></code>
+
+Methods:
+
+- <code title="get /v2/vals/{val_id}/environment_variables">client.vals.environmentVariables.<a href="./src/resources/vals/environment-variables.ts">list</a>(valId, { ...params }) -> EnvironmentVariableListResponsesPageCursorURL</code>
+
 # Files
 
 Types:
