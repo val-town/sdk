@@ -10,6 +10,16 @@ export {
   type BranchListParams,
 } from './branches';
 export {
+  EnvironmentVariableListResponsesPageCursorURL,
+  EnvironmentVariables,
+  type EnvironmentVariableCreateResponse,
+  type EnvironmentVariableUpdateResponse,
+  type EnvironmentVariableListResponse,
+  type EnvironmentVariableCreateParams,
+  type EnvironmentVariableUpdateParams,
+  type EnvironmentVariableListParams,
+} from './environment-variables';
+export {
   FileRetrieveResponsesPageCursorURL,
   Files,
   type FileCreateResponse,
@@ -21,4 +31,4 @@ export {
   type FileDeleteParams,
   type FileGetContentParams,
 } from './files';
-export { Vals, type ValListResponse, type ValCreateParams, type ValListParams } from './vals';
+export { Vals, type ValCreateParams, type ValListParams } from './vals';

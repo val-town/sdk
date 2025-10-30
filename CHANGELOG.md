@@ -1,5 +1,21 @@
 # Changelog
 
+## 2.1.0 (2025-10-30)
+
+Full Changelog: [v2.0.0...v2.1.0](https://github.com/val-town/sdk/compare/v2.0.0...v2.1.0)
+
+### Features
+
+* **api:** api update ([f079884](https://github.com/val-town/sdk/commit/f079884b94a003f407cff080d4f02f25c8c618a1))
+* **api:** api update ([6c96ecd](https://github.com/val-town/sdk/commit/6c96ecd2b29c10df8f048486bf9616b770be7910))
+* **api:** api update ([aeedc75](https://github.com/val-town/sdk/commit/aeedc7549d474b5e84afdc766d4c91dae8129383))
+* **api:** api update ([788e547](https://github.com/val-town/sdk/commit/788e5471960f200759a3087a98d113f2bcbba7d5))
+
+
+### Chores
+
+* **internal:** use npm pack for build uploads ([29c671a](https://github.com/val-town/sdk/commit/29c671ad159b04e1ab752a3a1495b5d47cd13625))
+
 ## 2.0.0 (2025-10-03)
 
 Full Changelog: [v1.14.0...v2.0.0](https://github.com/val-town/sdk/compare/v1.14.0...v2.0.0)

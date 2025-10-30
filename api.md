@@ -2,6 +2,8 @@
 
 Types:
 
+- <code><a href="./src/resources/shared.ts">BasicVal</a></code>
+- <code><a href="./src/resources/shared.ts">ExtendedVal</a></code>
 - <code><a href="./src/resources/shared.ts">PaginationLinks</a></code>
 - <code><a href="./src/resources/shared.ts">ResultSet</a></code>
 - <code><a href="./src/resources/shared.ts">User</a></code>
@@ -11,13 +13,9 @@ Types:
 
 ## Vals
 
-Types:
-
-- <code><a href="./src/resources/search/vals.ts">ValListResponse</a></code>
-
 Methods:
 
-- <code title="get /v1/search/vals">client.search.vals.<a href="./src/resources/search/vals.ts">list</a>({ ...params }) -> ValListResponsesPageCursorURL</code>
+- <code title="get /v1/search/vals">client.search.vals.<a href="./src/resources/search/vals.ts">list</a>({ ...params }) -> BasicValsPageCursorURL</code>
 
 # Alias
 
@@ -115,15 +113,11 @@ Methods:
 
 # Vals
 
-Types:
-
-- <code><a href="./src/resources/vals/vals.ts">ValListResponse</a></code>
-
 Methods:
 
 - <code title="post /v2/vals">client.vals.<a href="./src/resources/vals/vals.ts">create</a>({ ...params }) -> Val</code>
 - <code title="get /v2/vals/{val_id}">client.vals.<a href="./src/resources/vals/vals.ts">retrieve</a>(valId) -> Val</code>
-- <code title="get /v2/vals">client.vals.<a href="./src/resources/vals/vals.ts">list</a>({ ...params }) -> ValListResponse</code>
+- <code title="get /v2/vals">client.vals.<a href="./src/resources/vals/vals.ts">list</a>({ ...params }) -> ValsCursor</code>
 - <code title="delete /v2/vals/{val_id}">client.vals.<a href="./src/resources/vals/vals.ts">delete</a>(valId) -> void</code>
 
 ## Branches
@@ -156,6 +150,21 @@ Methods:
 - <code title="put /v2/vals/{val_id}/files">client.vals.files.<a href="./src/resources/vals/files.ts">update</a>(valId, { ...params }) -> FileUpdateResponse</code>
 - <code title="delete /v2/vals/{val_id}/files">client.vals.files.<a href="./src/resources/vals/files.ts">delete</a>(valId, { ...params }) -> void</code>
 - <code title="get /v2/vals/{val_id}/files/content">client.vals.files.<a href="./src/resources/vals/files.ts">getContent</a>(valId, { ...params }) -> Response</code>
+
+## EnvironmentVariables
+
+Types:
+
+- <code><a href="./src/resources/vals/environment-variables.ts">EnvironmentVariableCreateResponse</a></code>
+- <code><a href="./src/resources/vals/environment-variables.ts">EnvironmentVariableUpdateResponse</a></code>
+- <code><a href="./src/resources/vals/environment-variables.ts">EnvironmentVariableListResponse</a></code>
+
+Methods:
+
+- <code title="post /v2/vals/{val_id}/environment_variables">client.vals.environmentVariables.<a href="./src/resources/vals/environment-variables.ts">create</a>(valId, { ...params }) -> EnvironmentVariableCreateResponse</code>
+- <code title="put /v2/vals/{val_id}/environment_variables/{key}">client.vals.environmentVariables.<a href="./src/resources/vals/environment-variables.ts">update</a>(valId, key, { ...params }) -> EnvironmentVariableUpdateResponse</code>
+- <code title="get /v2/vals/{val_id}/environment_variables">client.vals.environmentVariables.<a href="./src/resources/vals/environment-variables.ts">list</a>(valId, { ...params }) -> EnvironmentVariableListResponsesPageCursorURL</code>
+- <code title="delete /v2/vals/{val_id}/environment_variables/{key}">client.vals.environmentVariables.<a href="./src/resources/vals/environment-variables.ts">delete</a>(valId, key) -> void</code>
 
 # Files
 

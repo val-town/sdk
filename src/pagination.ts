@@ -60,3 +60,64 @@ export class PageCursorURL<Item> extends AbstractPage<Item> implements PageCurso
     return { url: new URL(url) };
   }
 }
+
+export interface CursorResponse<Item> {
+  data: Array<Item>;
+
+  links: CursorResponse.Links;
+}
+
+export namespace CursorResponse {
+  export interface Links {
+    next?: string;
+  }
+}
+
+export interface CursorParams {
+  cursor?: string;
+}
+
+export class Cursor<Item> extends AbstractPage<Item> implements CursorResponse<Item> {
+  data: Array<Item>;
+
+  links: CursorResponse.Links;
+
+  constructor(
+    client: APIClient,
+    response: Response,
+    body: CursorResponse<Item>,
+    options: FinalRequestOptions,
+  ) {
+    super(client, response, body, options);
+
+    this.data = body.data || [];
+    this.links = body.links || {};
+  }
+
+  getPaginatedItems(): Item[] {
+    return this.data ?? [];
+  }
+
+  // @deprecated Please use `nextPageInfo()` instead
+  nextPageParams(): Partial<CursorParams> | null {
+    const info = this.nextPageInfo();
+    if (!info) return null;
+    if ('params' in info) return info.params;
+    const params = Object.fromEntries(info.url.searchParams);
+    if (!Object.keys(params).length) return null;
+    return params;
+  }
+
+  nextPageInfo(): PageInfo | null {
+    const cursor = this.links?.next;
+    if (!cursor) {
+      return null;
+    }
+
+    return {
+      params: {
+        cursor,
+      },
+    };
+  }
+}
