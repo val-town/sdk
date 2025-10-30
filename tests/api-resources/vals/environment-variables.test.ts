@@ -1,7 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
 import ValTown from '@valtown/sdk';
-import { Response } from 'node-fetch';
 
 const client = new ValTown({
   bearerToken: 'My Bearer Token',
@@ -32,11 +31,10 @@ describe('resource environmentVariables', () => {
   });
 
   test('update: only required params', async () => {
-    const responsePromise = client.vals.environmentVariables.update(
-      '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
-      'key',
-      { value: 'value' },
-    );
+    const responsePromise = client.vals.environmentVariables.update('key', {
+      val_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
+      value: 'value',
+    });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -47,11 +45,11 @@ describe('resource environmentVariables', () => {
   });
 
   test('update: required and optional params', async () => {
-    const response = await client.vals.environmentVariables.update(
-      '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
-      'key',
-      { value: 'value', description: 'description' },
-    );
+    const response = await client.vals.environmentVariables.update('key', {
+      val_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
+      value: 'value',
+      description: 'description',
+    });
   });
 
   test('list: only required params', async () => {
@@ -75,11 +73,10 @@ describe('resource environmentVariables', () => {
     });
   });
 
-  test('delete', async () => {
-    const responsePromise = client.vals.environmentVariables.delete(
-      '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
-      'key',
-    );
+  test('delete: only required params', async () => {
+    const responsePromise = client.vals.environmentVariables.delete('key', {
+      val_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
+    });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -89,12 +86,9 @@ describe('resource environmentVariables', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  test('delete: request options instead of params are passed correctly', async () => {
-    // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(
-      client.vals.environmentVariables.delete('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', 'key', {
-        path: '/_stainless_unknown_path',
-      }),
-    ).rejects.toThrow(ValTown.NotFoundError);
+  test('delete: required and optional params', async () => {
+    const response = await client.vals.environmentVariables.delete('key', {
+      val_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
+    });
   });
 });

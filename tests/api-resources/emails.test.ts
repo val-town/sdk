@@ -1,7 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
 import ValTown from '@valtown/sdk';
-import { Response } from 'node-fetch';
 
 const client = new ValTown({
   bearerToken: 'My Bearer Token',
@@ -18,13 +17,6 @@ describe('resource emails', () => {
     const dataAndResponse = await responsePromise.withResponse();
     expect(dataAndResponse.data).toBe(response);
     expect(dataAndResponse.response).toBe(rawResponse);
-  });
-
-  test('send: request options instead of params are passed correctly', async () => {
-    // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(client.emails.send({ path: '/_stainless_unknown_path' })).rejects.toThrow(
-      ValTown.NotFoundError,
-    );
   });
 
   test('send: request options and params are passed correctly', async () => {

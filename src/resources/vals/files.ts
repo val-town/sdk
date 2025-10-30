@@ -1,9 +1,11 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { APIResource } from '../../resource';
-import * as Core from '../../core';
-import { PageCursorURL, type PageCursorURLParams } from '../../pagination';
-import { type Response } from '../../_shims/index';
+import { APIResource } from '../../core/resource';
+import { APIPromise } from '../../core/api-promise';
+import { PageCursorURL, type PageCursorURLParams, PagePromise } from '../../core/pagination';
+import { buildHeaders } from '../../internal/headers';
+import { RequestOptions } from '../../internal/request-options';
+import { path } from '../../internal/utils/path';
 
 export class Files extends APIResource {
   /**
@@ -17,13 +19,9 @@ export class Files extends APIResource {
    * );
    * ```
    */
-  create(
-    valId: string,
-    params: FileCreateParams,
-    options?: Core.RequestOptions,
-  ): Core.APIPromise<FileCreateResponse> {
+  create(valID: string, params: FileCreateParams, options?: RequestOptions): APIPromise<FileCreateResponse> {
     const { path: path_, branch_id, ...body } = params;
-    return this._client.post(`/v2/vals/${valId}/files`, {
+    return this._client.post(path`/v2/vals/${valID}/files`, {
       query: { path: path_, branch_id },
       body,
       ...options,
@@ -46,11 +44,11 @@ export class Files extends APIResource {
    * ```
    */
   retrieve(
-    valId: string,
+    valID: string,
     query: FileRetrieveParams,
-    options?: Core.RequestOptions,
-  ): Core.PagePromise<FileRetrieveResponsesPageCursorURL, FileRetrieveResponse> {
-    return this._client.getAPIList(`/v2/vals/${valId}/files`, FileRetrieveResponsesPageCursorURL, {
+    options?: RequestOptions,
+  ): PagePromise<FileRetrieveResponsesPageCursorURL, FileRetrieveResponse> {
+    return this._client.getAPIList(path`/v2/vals/${valID}/files`, PageCursorURL<FileRetrieveResponse>, {
       query,
       ...options,
     });
@@ -67,13 +65,9 @@ export class Files extends APIResource {
    * );
    * ```
    */
-  update(
-    valId: string,
-    params: FileUpdateParams,
-    options?: Core.RequestOptions,
-  ): Core.APIPromise<FileUpdateResponse> {
+  update(valID: string, params: FileUpdateParams, options?: RequestOptions): APIPromise<FileUpdateResponse> {
     const { path: path_, branch_id, ...body } = params;
-    return this._client.put(`/v2/vals/${valId}/files`, {
+    return this._client.put(path`/v2/vals/${valID}/files`, {
       query: { path: path_, branch_id },
       body,
       ...options,
@@ -93,12 +87,12 @@ export class Files extends APIResource {
    * );
    * ```
    */
-  delete(valId: string, params: FileDeleteParams, options?: Core.RequestOptions): Core.APIPromise<void> {
+  delete(valID: string, params: FileDeleteParams, options?: RequestOptions): APIPromise<void> {
     const { path: path_, recursive, branch_id } = params;
-    return this._client.delete(`/v2/vals/${valId}/files`, {
+    return this._client.delete(path`/v2/vals/${valID}/files`, {
       query: { path: path_, recursive, branch_id },
       ...options,
-      headers: { Accept: '*/*', ...options?.headers },
+      headers: buildHeaders([{ Accept: '*/*' }, options?.headers]),
     });
   }
 
@@ -116,11 +110,7 @@ export class Files extends APIResource {
    * console.log(content);
    * ```
    */
-  getContent(
-    valId: string,
-    params: FileGetContentParams,
-    options?: Core.RequestOptions,
-  ): Core.APIPromise<Response> {
+  getContent(valID: string, params: FileGetContentParams, options?: RequestOptions): APIPromise<Response> {
     const {
       'Cache-Control': cacheControl,
       'If-Match': ifMatch,
@@ -129,24 +119,26 @@ export class Files extends APIResource {
       'If-Unmodified-Since': ifUnmodifiedSince,
       ...query
     } = params;
-    return this._client.get(`/v2/vals/${valId}/files/content`, {
+    return this._client.get(path`/v2/vals/${valID}/files/content`, {
       query,
       ...options,
-      headers: {
-        Accept: 'application/octet-stream',
-        ...(cacheControl != null ? { 'Cache-Control': cacheControl } : undefined),
-        ...(ifMatch != null ? { 'If-Match': ifMatch } : undefined),
-        ...(ifModifiedSince != null ? { 'If-Modified-Since': ifModifiedSince } : undefined),
-        ...(ifNoneMatch != null ? { 'If-None-Match': ifNoneMatch } : undefined),
-        ...(ifUnmodifiedSince != null ? { 'If-Unmodified-Since': ifUnmodifiedSince } : undefined),
-        ...options?.headers,
-      },
+      headers: buildHeaders([
+        {
+          Accept: 'application/octet-stream',
+          ...(cacheControl != null ? { 'Cache-Control': cacheControl } : undefined),
+          ...(ifMatch != null ? { 'If-Match': ifMatch } : undefined),
+          ...(ifModifiedSince != null ? { 'If-Modified-Since': ifModifiedSince } : undefined),
+          ...(ifNoneMatch != null ? { 'If-None-Match': ifNoneMatch } : undefined),
+          ...(ifUnmodifiedSince != null ? { 'If-Unmodified-Since': ifUnmodifiedSince } : undefined),
+        },
+        options?.headers,
+      ]),
       __binaryResponse: true,
     });
   }
 }
 
-export class FileRetrieveResponsesPageCursorURL extends PageCursorURL<FileRetrieveResponse> {}
+export type FileRetrieveResponsesPageCursorURL = PageCursorURL<FileRetrieveResponse>;
 
 /**
  * A File or Directory's Metadata
@@ -459,14 +451,12 @@ export interface FileGetContentParams {
   'If-Unmodified-Since'?: string;
 }
 
-Files.FileRetrieveResponsesPageCursorURL = FileRetrieveResponsesPageCursorURL;
-
 export declare namespace Files {
   export {
     type FileCreateResponse as FileCreateResponse,
     type FileRetrieveResponse as FileRetrieveResponse,
     type FileUpdateResponse as FileUpdateResponse,
-    FileRetrieveResponsesPageCursorURL as FileRetrieveResponsesPageCursorURL,
+    type FileRetrieveResponsesPageCursorURL as FileRetrieveResponsesPageCursorURL,
     type FileCreateParams as FileCreateParams,
     type FileRetrieveParams as FileRetrieveParams,
     type FileUpdateParams as FileUpdateParams,

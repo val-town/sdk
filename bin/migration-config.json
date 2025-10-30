@@ -1,0 +1,176 @@
+{
+  "pkg": "@valtown/sdk",
+  "githubRepo": "https://github.com/val-town/sdk",
+  "clientClass": "ValTown",
+  "methods": [
+    {
+      "base": "alias.username.valName",
+      "name": "retrieve",
+      "params": [
+        {
+          "type": "param",
+          "key": "val_name",
+          "location": "path"
+        },
+        {
+          "type": "params",
+          "maybeOverload": false
+        },
+        {
+          "type": "options"
+        }
+      ],
+      "oldParams": [
+        {
+          "type": "param",
+          "key": "username",
+          "location": "path"
+        },
+        {
+          "type": "param",
+          "key": "val_name",
+          "location": "path"
+        },
+        {
+          "type": "options"
+        }
+      ]
+    },
+    {
+      "base": "vals.branches",
+      "name": "retrieve",
+      "params": [
+        {
+          "type": "param",
+          "key": "branch_id",
+          "location": "path"
+        },
+        {
+          "type": "params",
+          "maybeOverload": false
+        },
+        {
+          "type": "options"
+        }
+      ],
+      "oldParams": [
+        {
+          "type": "param",
+          "key": "val_id",
+          "location": "path"
+        },
+        {
+          "type": "param",
+          "key": "branch_id",
+          "location": "path"
+        },
+        {
+          "type": "options"
+        }
+      ]
+    },
+    {
+      "base": "vals.branches",
+      "name": "delete",
+      "params": [
+        {
+          "type": "param",
+          "key": "branch_id",
+          "location": "path"
+        },
+        {
+          "type": "params",
+          "maybeOverload": false
+        },
+        {
+          "type": "options"
+        }
+      ],
+      "oldParams": [
+        {
+          "type": "param",
+          "key": "val_id",
+          "location": "path"
+        },
+        {
+          "type": "param",
+          "key": "branch_id",
+          "location": "path"
+        },
+        {
+          "type": "options"
+        }
+      ]
+    },
+    {
+      "base": "vals.environmentVariables",
+      "name": "update",
+      "params": [
+        {
+          "type": "param",
+          "key": "key",
+          "location": "path"
+        },
+        {
+          "type": "params",
+          "maybeOverload": false
+        },
+        {
+          "type": "options"
+        }
+      ],
+      "oldParams": [
+        {
+          "type": "param",
+          "key": "val_id",
+          "location": "path"
+        },
+        {
+          "type": "param",
+          "key": "key",
+          "location": "path"
+        },
+        {
+          "type": "params",
+          "maybeOverload": false
+        },
+        {
+          "type": "options"
+        }
+      ]
+    },
+    {
+      "base": "vals.environmentVariables",
+      "name": "delete",
+      "params": [
+        {
+          "type": "param",
+          "key": "key",
+          "location": "path"
+        },
+        {
+          "type": "params",
+          "maybeOverload": false
+        },
+        {
+          "type": "options"
+        }
+      ],
+      "oldParams": [
+        {
+          "type": "param",
+          "key": "val_id",
+          "location": "path"
+        },
+        {
+          "type": "param",
+          "key": "key",
+          "location": "path"
+        },
+        {
+          "type": "options"
+        }
+      ]
+    }
+  ]
+}

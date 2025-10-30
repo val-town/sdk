@@ -1,8 +1,9 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { APIResource } from '../resource';
-import * as Core from '../core';
+import { APIResource } from '../core/resource';
 import * as Shared from './shared';
+import { APIPromise } from '../core/api-promise';
+import { RequestOptions } from '../internal/request-options';
 
 /**
  * Vals access a shared SQLite database
@@ -19,7 +20,7 @@ export class Sqlite extends APIResource {
    * });
    * ```
    */
-  batch(body: SqliteBatchParams, options?: Core.RequestOptions): Core.APIPromise<SqliteBatchResponse> {
+  batch(body: SqliteBatchParams, options?: RequestOptions): APIPromise<SqliteBatchResponse> {
     return this._client.post('/v1/sqlite/batch', { body, ...options });
   }
 
@@ -33,7 +34,7 @@ export class Sqlite extends APIResource {
    * });
    * ```
    */
-  execute(body: SqliteExecuteParams, options?: Core.RequestOptions): Core.APIPromise<Shared.ResultSet> {
+  execute(body: SqliteExecuteParams, options?: RequestOptions): APIPromise<Shared.ResultSet> {
     return this._client.post('/v1/sqlite/execute', { body, ...options });
   }
 }

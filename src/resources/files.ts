@@ -1,7 +1,9 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { APIResource } from '../resource';
-import * as Core from '../core';
+import { APIResource } from '../core/resource';
+import { APIPromise } from '../core/api-promise';
+import { RequestOptions } from '../internal/request-options';
+import { path } from '../internal/utils/path';
 
 /**
  * Access files, which are the items within Vals
@@ -10,8 +12,8 @@ export class Files extends APIResource {
   /**
    * Get file metadata by file ID
    */
-  retrieve(fileId: string, options?: Core.RequestOptions): Core.APIPromise<FileRetrieveResponse> {
-    return this._client.get(`/v2/files/${fileId}`, options);
+  retrieve(fileID: string, options?: RequestOptions): APIPromise<FileRetrieveResponse> {
+    return this._client.get(path`/v2/files/${fileID}`, options);
   }
 }
 

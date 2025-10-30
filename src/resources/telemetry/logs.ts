@@ -1,8 +1,9 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { APIResource } from '../../resource';
-import * as Core from '../../core';
+import { APIResource } from '../../core/resource';
 import * as Shared from '../shared';
+import { APIPromise } from '../../core/api-promise';
+import { RequestOptions } from '../../internal/request-options';
 
 export class Logs extends APIResource {
   /**
@@ -12,7 +13,7 @@ export class Logs extends APIResource {
    * get resources within the time window. Filter additionally by branch_ids or
    * file_id.
    */
-  list(query: LogListParams, options?: Core.RequestOptions): Core.APIPromise<LogListResponse> {
+  list(query: LogListParams, options?: RequestOptions): APIPromise<LogListResponse> {
     return this._client.get('/v1/telemetry/logs', { query, ...options });
   }
 }

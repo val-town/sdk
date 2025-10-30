@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { APIResource } from '../../resource';
+import { APIResource } from '../../core/resource';
 import * as ProfileAPI from './profile';
 import { Profile, ProfileRetrieveResponse } from './profile';
 import * as ValsAPI from './vals';

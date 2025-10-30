@@ -1,8 +1,11 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { APIResource } from '../../resource';
-import * as Core from '../../core';
-import { PageCursorURL, type PageCursorURLParams } from '../../pagination';
+import { APIResource } from '../../core/resource';
+import { APIPromise } from '../../core/api-promise';
+import { PageCursorURL, type PageCursorURLParams, PagePromise } from '../../core/pagination';
+import { buildHeaders } from '../../internal/headers';
+import { RequestOptions } from '../../internal/request-options';
+import { path } from '../../internal/utils/path';
 
 export class Branches extends APIResource {
   /**
@@ -20,11 +23,11 @@ export class Branches extends APIResource {
    * ```
    */
   create(
-    valId: string,
+    valID: string,
     body: BranchCreateParams,
-    options?: Core.RequestOptions,
-  ): Core.APIPromise<BranchCreateResponse> {
-    return this._client.post(`/v2/vals/${valId}/branches`, { body, ...options });
+    options?: RequestOptions,
+  ): APIPromise<BranchCreateResponse> {
+    return this._client.post(path`/v2/vals/${valID}/branches`, { body, ...options });
   }
 
   /**
@@ -34,16 +37,17 @@ export class Branches extends APIResource {
    * ```ts
    * const branch = await client.vals.branches.retrieve(
    *   '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
-   *   '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
+   *   { val_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e' },
    * );
    * ```
    */
   retrieve(
-    valId: string,
-    branchId: string,
-    options?: Core.RequestOptions,
-  ): Core.APIPromise<BranchRetrieveResponse> {
-    return this._client.get(`/v2/vals/${valId}/branches/${branchId}`, options);
+    branchID: string,
+    params: BranchRetrieveParams,
+    options?: RequestOptions,
+  ): APIPromise<BranchRetrieveResponse> {
+    const { val_id } = params;
+    return this._client.get(path`/v2/vals/${val_id}/branches/${branchID}`, options);
   }
 
   /**
@@ -61,11 +65,11 @@ export class Branches extends APIResource {
    * ```
    */
   list(
-    valId: string,
+    valID: string,
     query: BranchListParams,
-    options?: Core.RequestOptions,
-  ): Core.PagePromise<BranchListResponsesPageCursorURL, BranchListResponse> {
-    return this._client.getAPIList(`/v2/vals/${valId}/branches`, BranchListResponsesPageCursorURL, {
+    options?: RequestOptions,
+  ): PagePromise<BranchListResponsesPageCursorURL, BranchListResponse> {
+    return this._client.getAPIList(path`/v2/vals/${valID}/branches`, PageCursorURL<BranchListResponse>, {
       query,
       ...options,
     });
@@ -78,19 +82,20 @@ export class Branches extends APIResource {
    * ```ts
    * await client.vals.branches.delete(
    *   '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
-   *   '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
+   *   { val_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e' },
    * );
    * ```
    */
-  delete(valId: string, branchId: string, options?: Core.RequestOptions): Core.APIPromise<void> {
-    return this._client.delete(`/v2/vals/${valId}/branches/${branchId}`, {
+  delete(branchID: string, params: BranchDeleteParams, options?: RequestOptions): APIPromise<void> {
+    const { val_id } = params;
+    return this._client.delete(path`/v2/vals/${val_id}/branches/${branchID}`, {
       ...options,
-      headers: { Accept: '*/*', ...options?.headers },
+      headers: buildHeaders([{ Accept: '*/*' }, options?.headers]),
     });
   }
 }
 
-export class BranchListResponsesPageCursorURL extends PageCursorURL<BranchListResponse> {}
+export type BranchListResponsesPageCursorURL = PageCursorURL<BranchListResponse>;
 
 /**
  * A Branch
@@ -219,17 +224,31 @@ export interface BranchCreateParams {
   branchId?: string;
 }
 
+export interface BranchRetrieveParams {
+  /**
+   * Id of a val
+   */
+  val_id: string;
+}
+
 export interface BranchListParams extends PageCursorURLParams {}
 
-Branches.BranchListResponsesPageCursorURL = BranchListResponsesPageCursorURL;
+export interface BranchDeleteParams {
+  /**
+   * Id of a val
+   */
+  val_id: string;
+}
 
 export declare namespace Branches {
   export {
     type BranchCreateResponse as BranchCreateResponse,
     type BranchRetrieveResponse as BranchRetrieveResponse,
     type BranchListResponse as BranchListResponse,
-    BranchListResponsesPageCursorURL as BranchListResponsesPageCursorURL,
+    type BranchListResponsesPageCursorURL as BranchListResponsesPageCursorURL,
     type BranchCreateParams as BranchCreateParams,
+    type BranchRetrieveParams as BranchRetrieveParams,
     type BranchListParams as BranchListParams,
+    type BranchDeleteParams as BranchDeleteParams,
   };
 }
