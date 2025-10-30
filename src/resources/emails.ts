@@ -1,8 +1,8 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { APIResource } from '../resource';
-import { isRequestOptions } from '../core';
-import * as Core from '../core';
+import { APIResource } from '../core/resource';
+import { APIPromise } from '../core/api-promise';
+import { RequestOptions } from '../internal/request-options';
 
 /**
  * Val Town supports sending emails from vals
@@ -20,15 +20,10 @@ export class Emails extends APIResource {
    * });
    * ```
    */
-  send(body?: EmailSendParams, options?: Core.RequestOptions): Core.APIPromise<EmailSendResponse>;
-  send(options?: Core.RequestOptions): Core.APIPromise<EmailSendResponse>;
   send(
-    body: EmailSendParams | Core.RequestOptions = {},
-    options?: Core.RequestOptions,
-  ): Core.APIPromise<EmailSendResponse> {
-    if (isRequestOptions(body)) {
-      return this.send({}, body);
-    }
+    body: EmailSendParams | null | undefined = {},
+    options?: RequestOptions,
+  ): APIPromise<EmailSendResponse> {
     return this._client.post('/v1/email', { body, ...options });
   }
 }

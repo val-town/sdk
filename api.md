@@ -29,7 +29,7 @@ Methods:
 
 Methods:
 
-- <code title="get /v2/alias/vals/{username}/{val_name}">client.alias.username.valName.<a href="./src/resources/alias/username/val-name.ts">retrieve</a>(username, valName) -> Val</code>
+- <code title="get /v2/alias/vals/{username}/{val_name}">client.alias.username.valName.<a href="./src/resources/alias/username/val-name.ts">retrieve</a>(valName, { ...params }) -> Val</code>
 
 # Me
 
@@ -76,7 +76,7 @@ Methods:
 
 Methods:
 
-- <code title="get /v1/users/{user_id}">client.users.<a href="./src/resources/users.ts">retrieve</a>(userId) -> User</code>
+- <code title="get /v1/users/{user_id}">client.users.<a href="./src/resources/users.ts">retrieve</a>(userID) -> User</code>
 
 # Sqlite
 
@@ -116,9 +116,9 @@ Methods:
 Methods:
 
 - <code title="post /v2/vals">client.vals.<a href="./src/resources/vals/vals.ts">create</a>({ ...params }) -> Val</code>
-- <code title="get /v2/vals/{val_id}">client.vals.<a href="./src/resources/vals/vals.ts">retrieve</a>(valId) -> Val</code>
+- <code title="get /v2/vals/{val_id}">client.vals.<a href="./src/resources/vals/vals.ts">retrieve</a>(valID) -> Val</code>
 - <code title="get /v2/vals">client.vals.<a href="./src/resources/vals/vals.ts">list</a>({ ...params }) -> ValsCursor</code>
-- <code title="delete /v2/vals/{val_id}">client.vals.<a href="./src/resources/vals/vals.ts">delete</a>(valId) -> void</code>
+- <code title="delete /v2/vals/{val_id}">client.vals.<a href="./src/resources/vals/vals.ts">delete</a>(valID) -> void</code>
 
 ## Branches
 
@@ -130,10 +130,10 @@ Types:
 
 Methods:
 
-- <code title="post /v2/vals/{val_id}/branches">client.vals.branches.<a href="./src/resources/vals/branches.ts">create</a>(valId, { ...params }) -> BranchCreateResponse</code>
-- <code title="get /v2/vals/{val_id}/branches/{branch_id}">client.vals.branches.<a href="./src/resources/vals/branches.ts">retrieve</a>(valId, branchId) -> BranchRetrieveResponse</code>
-- <code title="get /v2/vals/{val_id}/branches">client.vals.branches.<a href="./src/resources/vals/branches.ts">list</a>(valId, { ...params }) -> BranchListResponsesPageCursorURL</code>
-- <code title="delete /v2/vals/{val_id}/branches/{branch_id}">client.vals.branches.<a href="./src/resources/vals/branches.ts">delete</a>(valId, branchId) -> void</code>
+- <code title="post /v2/vals/{val_id}/branches">client.vals.branches.<a href="./src/resources/vals/branches.ts">create</a>(valID, { ...params }) -> BranchCreateResponse</code>
+- <code title="get /v2/vals/{val_id}/branches/{branch_id}">client.vals.branches.<a href="./src/resources/vals/branches.ts">retrieve</a>(branchID, { ...params }) -> BranchRetrieveResponse</code>
+- <code title="get /v2/vals/{val_id}/branches">client.vals.branches.<a href="./src/resources/vals/branches.ts">list</a>(valID, { ...params }) -> BranchListResponsesPageCursorURL</code>
+- <code title="delete /v2/vals/{val_id}/branches/{branch_id}">client.vals.branches.<a href="./src/resources/vals/branches.ts">delete</a>(branchID, { ...params }) -> void</code>
 
 ## Files
 
@@ -145,11 +145,11 @@ Types:
 
 Methods:
 
-- <code title="post /v2/vals/{val_id}/files">client.vals.files.<a href="./src/resources/vals/files.ts">create</a>(valId, { ...params }) -> FileCreateResponse</code>
-- <code title="get /v2/vals/{val_id}/files">client.vals.files.<a href="./src/resources/vals/files.ts">retrieve</a>(valId, { ...params }) -> FileRetrieveResponsesPageCursorURL</code>
-- <code title="put /v2/vals/{val_id}/files">client.vals.files.<a href="./src/resources/vals/files.ts">update</a>(valId, { ...params }) -> FileUpdateResponse</code>
-- <code title="delete /v2/vals/{val_id}/files">client.vals.files.<a href="./src/resources/vals/files.ts">delete</a>(valId, { ...params }) -> void</code>
-- <code title="get /v2/vals/{val_id}/files/content">client.vals.files.<a href="./src/resources/vals/files.ts">getContent</a>(valId, { ...params }) -> Response</code>
+- <code title="post /v2/vals/{val_id}/files">client.vals.files.<a href="./src/resources/vals/files.ts">create</a>(valID, { ...params }) -> FileCreateResponse</code>
+- <code title="get /v2/vals/{val_id}/files">client.vals.files.<a href="./src/resources/vals/files.ts">retrieve</a>(valID, { ...params }) -> FileRetrieveResponsesPageCursorURL</code>
+- <code title="put /v2/vals/{val_id}/files">client.vals.files.<a href="./src/resources/vals/files.ts">update</a>(valID, { ...params }) -> FileUpdateResponse</code>
+- <code title="delete /v2/vals/{val_id}/files">client.vals.files.<a href="./src/resources/vals/files.ts">delete</a>(valID, { ...params }) -> void</code>
+- <code title="get /v2/vals/{val_id}/files/content">client.vals.files.<a href="./src/resources/vals/files.ts">getContent</a>(valID, { ...params }) -> Response</code>
 
 ## EnvironmentVariables
 
@@ -161,10 +161,10 @@ Types:
 
 Methods:
 
-- <code title="post /v2/vals/{val_id}/environment_variables">client.vals.environmentVariables.<a href="./src/resources/vals/environment-variables.ts">create</a>(valId, { ...params }) -> EnvironmentVariableCreateResponse</code>
-- <code title="put /v2/vals/{val_id}/environment_variables/{key}">client.vals.environmentVariables.<a href="./src/resources/vals/environment-variables.ts">update</a>(valId, key, { ...params }) -> EnvironmentVariableUpdateResponse</code>
-- <code title="get /v2/vals/{val_id}/environment_variables">client.vals.environmentVariables.<a href="./src/resources/vals/environment-variables.ts">list</a>(valId, { ...params }) -> EnvironmentVariableListResponsesPageCursorURL</code>
-- <code title="delete /v2/vals/{val_id}/environment_variables/{key}">client.vals.environmentVariables.<a href="./src/resources/vals/environment-variables.ts">delete</a>(valId, key) -> void</code>
+- <code title="post /v2/vals/{val_id}/environment_variables">client.vals.environmentVariables.<a href="./src/resources/vals/environment-variables.ts">create</a>(valID, { ...params }) -> EnvironmentVariableCreateResponse</code>
+- <code title="put /v2/vals/{val_id}/environment_variables/{key}">client.vals.environmentVariables.<a href="./src/resources/vals/environment-variables.ts">update</a>(key, { ...params }) -> EnvironmentVariableUpdateResponse</code>
+- <code title="get /v2/vals/{val_id}/environment_variables">client.vals.environmentVariables.<a href="./src/resources/vals/environment-variables.ts">list</a>(valID, { ...params }) -> EnvironmentVariableListResponsesPageCursorURL</code>
+- <code title="delete /v2/vals/{val_id}/environment_variables/{key}">client.vals.environmentVariables.<a href="./src/resources/vals/environment-variables.ts">delete</a>(key, { ...params }) -> void</code>
 
 # Files
 
@@ -174,7 +174,7 @@ Types:
 
 Methods:
 
-- <code title="get /v2/files/{file_id}">client.files.<a href="./src/resources/files.ts">retrieve</a>(fileId) -> FileRetrieveResponse</code>
+- <code title="get /v2/files/{file_id}">client.files.<a href="./src/resources/files.ts">retrieve</a>(fileID) -> FileRetrieveResponse</code>
 
 # Emails
 

@@ -1,8 +1,9 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { APIResource } from '../../resource';
-import * as Core from '../../core';
+import { APIResource } from '../../core/resource';
 import * as Shared from '../shared';
+import { APIPromise } from '../../core/api-promise';
+import { RequestOptions } from '../../internal/request-options';
 
 export class Traces extends APIResource {
   /**
@@ -13,7 +14,7 @@ export class Traces extends APIResource {
    * to view traces that completed in a window or since a time. Filter additionally
    * by branch_ids or file_id.
    */
-  list(query: TraceListParams, options?: Core.RequestOptions): Core.APIPromise<TraceListResponse> {
+  list(query: TraceListParams, options?: RequestOptions): APIPromise<TraceListResponse> {
     return this._client.get('/v1/telemetry/traces', { query, ...options });
   }
 }

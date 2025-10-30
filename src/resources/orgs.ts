@@ -1,8 +1,8 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { APIResource } from '../resource';
-import * as Core from '../core';
-import { PageCursorURL, type PageCursorURLParams } from '../pagination';
+import { APIResource } from '../core/resource';
+import { PageCursorURL, type PageCursorURLParams, PagePromise } from '../core/pagination';
+import { RequestOptions } from '../internal/request-options';
 
 /**
  * Get information about organizations you belong to
@@ -13,13 +13,13 @@ export class Orgs extends APIResource {
    */
   list(
     query: OrgListParams,
-    options?: Core.RequestOptions,
-  ): Core.PagePromise<OrgListResponsesPageCursorURL, OrgListResponse> {
-    return this._client.getAPIList('/v2/orgs', OrgListResponsesPageCursorURL, { query, ...options });
+    options?: RequestOptions,
+  ): PagePromise<OrgListResponsesPageCursorURL, OrgListResponse> {
+    return this._client.getAPIList('/v2/orgs', PageCursorURL<OrgListResponse>, { query, ...options });
   }
 }
 
-export class OrgListResponsesPageCursorURL extends PageCursorURL<OrgListResponse> {}
+export type OrgListResponsesPageCursorURL = PageCursorURL<OrgListResponse>;
 
 /**
  * An Org
@@ -35,12 +35,10 @@ export interface OrgListResponse {
 
 export interface OrgListParams extends PageCursorURLParams {}
 
-Orgs.OrgListResponsesPageCursorURL = OrgListResponsesPageCursorURL;
-
 export declare namespace Orgs {
   export {
     type OrgListResponse as OrgListResponse,
-    OrgListResponsesPageCursorURL as OrgListResponsesPageCursorURL,
+    type OrgListResponsesPageCursorURL as OrgListResponsesPageCursorURL,
     type OrgListParams as OrgListParams,
   };
 }

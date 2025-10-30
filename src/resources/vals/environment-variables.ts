@@ -1,8 +1,11 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { APIResource } from '../../resource';
-import * as Core from '../../core';
-import { PageCursorURL, type PageCursorURLParams } from '../../pagination';
+import { APIResource } from '../../core/resource';
+import { APIPromise } from '../../core/api-promise';
+import { PageCursorURL, type PageCursorURLParams, PagePromise } from '../../core/pagination';
+import { buildHeaders } from '../../internal/headers';
+import { RequestOptions } from '../../internal/request-options';
+import { path } from '../../internal/utils/path';
 
 export class EnvironmentVariables extends APIResource {
   /**
@@ -18,11 +21,11 @@ export class EnvironmentVariables extends APIResource {
    * ```
    */
   create(
-    valId: string,
+    valID: string,
     body: EnvironmentVariableCreateParams,
-    options?: Core.RequestOptions,
-  ): Core.APIPromise<EnvironmentVariableCreateResponse> {
-    return this._client.post(`/v2/vals/${valId}/environment_variables`, { body, ...options });
+    options?: RequestOptions,
+  ): APIPromise<EnvironmentVariableCreateResponse> {
+    return this._client.post(path`/v2/vals/${valID}/environment_variables`, { body, ...options });
   }
 
   /**
@@ -31,20 +34,19 @@ export class EnvironmentVariables extends APIResource {
    * @example
    * ```ts
    * const environmentVariable =
-   *   await client.vals.environmentVariables.update(
-   *     '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
-   *     'key',
-   *     { value: 'value' },
-   *   );
+   *   await client.vals.environmentVariables.update('key', {
+   *     val_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
+   *     value: 'value',
+   *   });
    * ```
    */
   update(
-    valId: string,
     key: string,
-    body: EnvironmentVariableUpdateParams,
-    options?: Core.RequestOptions,
-  ): Core.APIPromise<EnvironmentVariableUpdateResponse> {
-    return this._client.put(`/v2/vals/${valId}/environment_variables/${key}`, { body, ...options });
+    params: EnvironmentVariableUpdateParams,
+    options?: RequestOptions,
+  ): APIPromise<EnvironmentVariableUpdateResponse> {
+    const { val_id, ...body } = params;
+    return this._client.put(path`/v2/vals/${val_id}/environment_variables/${key}`, { body, ...options });
   }
 
   /**
@@ -63,13 +65,13 @@ export class EnvironmentVariables extends APIResource {
    * ```
    */
   list(
-    valId: string,
+    valID: string,
     query: EnvironmentVariableListParams,
-    options?: Core.RequestOptions,
-  ): Core.PagePromise<EnvironmentVariableListResponsesPageCursorURL, EnvironmentVariableListResponse> {
+    options?: RequestOptions,
+  ): PagePromise<EnvironmentVariableListResponsesPageCursorURL, EnvironmentVariableListResponse> {
     return this._client.getAPIList(
-      `/v2/vals/${valId}/environment_variables`,
-      EnvironmentVariableListResponsesPageCursorURL,
+      path`/v2/vals/${valID}/environment_variables`,
+      PageCursorURL<EnvironmentVariableListResponse>,
       { query, ...options },
     );
   }
@@ -79,21 +81,21 @@ export class EnvironmentVariables extends APIResource {
    *
    * @example
    * ```ts
-   * await client.vals.environmentVariables.delete(
-   *   '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
-   *   'key',
-   * );
+   * await client.vals.environmentVariables.delete('key', {
+   *   val_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
+   * });
    * ```
    */
-  delete(valId: string, key: string, options?: Core.RequestOptions): Core.APIPromise<void> {
-    return this._client.delete(`/v2/vals/${valId}/environment_variables/${key}`, {
+  delete(key: string, params: EnvironmentVariableDeleteParams, options?: RequestOptions): APIPromise<void> {
+    const { val_id } = params;
+    return this._client.delete(path`/v2/vals/${val_id}/environment_variables/${key}`, {
       ...options,
-      headers: { Accept: '*/*', ...options?.headers },
+      headers: buildHeaders([{ Accept: '*/*' }, options?.headers]),
     });
   }
 }
 
-export class EnvironmentVariableListResponsesPageCursorURL extends PageCursorURL<EnvironmentVariableListResponse> {}
+export type EnvironmentVariableListResponsesPageCursorURL = PageCursorURL<EnvironmentVariableListResponse>;
 
 /**
  * An environment variable
@@ -171,29 +173,39 @@ export interface EnvironmentVariableCreateParams {
 
 export interface EnvironmentVariableUpdateParams {
   /**
-   * Value of the environment variable.
+   * Path param: Id of a val
+   */
+  val_id: string;
+
+  /**
+   * Body param: Value of the environment variable.
    */
   value: string;
 
   /**
-   * Optional description of the environment variable
+   * Body param: Optional description of the environment variable
    */
   description?: string;
 }
 
 export interface EnvironmentVariableListParams extends PageCursorURLParams {}
 
-EnvironmentVariables.EnvironmentVariableListResponsesPageCursorURL =
-  EnvironmentVariableListResponsesPageCursorURL;
+export interface EnvironmentVariableDeleteParams {
+  /**
+   * Id of a val
+   */
+  val_id: string;
+}
 
 export declare namespace EnvironmentVariables {
   export {
     type EnvironmentVariableCreateResponse as EnvironmentVariableCreateResponse,
     type EnvironmentVariableUpdateResponse as EnvironmentVariableUpdateResponse,
     type EnvironmentVariableListResponse as EnvironmentVariableListResponse,
-    EnvironmentVariableListResponsesPageCursorURL as EnvironmentVariableListResponsesPageCursorURL,
+    type EnvironmentVariableListResponsesPageCursorURL as EnvironmentVariableListResponsesPageCursorURL,
     type EnvironmentVariableCreateParams as EnvironmentVariableCreateParams,
     type EnvironmentVariableUpdateParams as EnvironmentVariableUpdateParams,
     type EnvironmentVariableListParams as EnvironmentVariableListParams,
+    type EnvironmentVariableDeleteParams as EnvironmentVariableDeleteParams,
   };
 }

@@ -1,9 +1,11 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { APIResource } from '../resource';
-import { isRequestOptions } from '../core';
-import * as Core from '../core';
-import { type Response } from '../_shims/index';
+import { APIResource } from '../core/resource';
+import { APIPromise } from '../core/api-promise';
+import { type Uploadable } from '../core/uploads';
+import { buildHeaders } from '../internal/headers';
+import { RequestOptions } from '../internal/request-options';
+import { path } from '../internal/utils/path';
 
 /**
  * Blob storage lets you store larger objects, including binary data
@@ -12,35 +14,30 @@ export class Blobs extends APIResource {
   /**
    * List blobs in your account
    */
-  list(query?: BlobListParams, options?: Core.RequestOptions): Core.APIPromise<BlobListResponse>;
-  list(options?: Core.RequestOptions): Core.APIPromise<BlobListResponse>;
   list(
-    query: BlobListParams | Core.RequestOptions = {},
-    options?: Core.RequestOptions,
-  ): Core.APIPromise<BlobListResponse> {
-    if (isRequestOptions(query)) {
-      return this.list({}, query);
-    }
+    query: BlobListParams | null | undefined = {},
+    options?: RequestOptions,
+  ): APIPromise<BlobListResponse> {
     return this._client.get('/v1/blob', { query, ...options });
   }
 
   /**
    * Delete a blob
    */
-  delete(key: string, options?: Core.RequestOptions): Core.APIPromise<void> {
-    return this._client.delete(`/v1/blob/${key}`, {
+  delete(key: string, options?: RequestOptions): APIPromise<void> {
+    return this._client.delete(path`/v1/blob/${key}`, {
       ...options,
-      headers: { Accept: '*/*', ...options?.headers },
+      headers: buildHeaders([{ Accept: '*/*' }, options?.headers]),
     });
   }
 
   /**
    * Get a blob’s contents.
    */
-  get(key: string, options?: Core.RequestOptions): Core.APIPromise<Response> {
-    return this._client.get(`/v1/blob/${key}`, {
+  get(key: string, options?: RequestOptions): APIPromise<Response> {
+    return this._client.get(path`/v1/blob/${key}`, {
       ...options,
-      headers: { Accept: 'application/octet-stream', ...options?.headers },
+      headers: buildHeaders([{ Accept: 'application/octet-stream' }, options?.headers]),
       __binaryResponse: true,
     });
   }
@@ -48,21 +45,16 @@ export class Blobs extends APIResource {
   /**
    * Store data in blob storage
    */
-  store(key: string, body?: BlobStoreParams, options?: Core.RequestOptions): Core.APIPromise<void>;
-  store(key: string, options?: Core.RequestOptions): Core.APIPromise<void>;
   store(
     key: string,
-    body?: BlobStoreParams | Core.RequestOptions,
-    options?: Core.RequestOptions,
-  ): Core.APIPromise<void> {
-    if (isRequestOptions(body)) {
-      return this.store(key, undefined, body);
-    }
-    return this._client.post(`/v1/blob/${key}`, {
-      body,
+    params: BlobStoreParams | null | undefined = undefined,
+    options?: RequestOptions,
+  ): APIPromise<void> {
+    const { blob } = params ?? {};
+    return this._client.post(path`/v1/blob/${key}`, {
+      body: blob,
       ...options,
-      headers: { Accept: '*/*', ...options?.headers },
-      __binaryRequest: true,
+      headers: buildHeaders([{ Accept: '*/*' }, options?.headers]),
     });
   }
 }
@@ -95,7 +87,12 @@ export interface BlobListParams {
   prefix?: string;
 }
 
-export type BlobStoreParams = Core.Uploadable;
+export interface BlobStoreParams {
+  /**
+   * Binary input data
+   */
+  blob?: Uploadable;
+}
 
 export declare namespace Blobs {
   export {

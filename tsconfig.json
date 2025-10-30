@@ -1,6 +1,6 @@
 {
   "include": ["src", "tests", "examples"],
-  "exclude": ["src/_shims/**/*-deno.ts"],
+  "exclude": [],
   "compilerOptions": {
     "target": "es2020",
     "lib": ["es2020"],
@@ -8,7 +8,6 @@
     "moduleResolution": "node",
     "esModuleInterop": true,
     "paths": {
-      "@valtown/sdk/_shims/auto/*": ["./src/_shims/auto/*-node"],
       "@valtown/sdk/*": ["./src/*"],
       "@valtown/sdk": ["./src/index.ts"]
     },
@@ -31,7 +30,7 @@
     "noUncheckedIndexedAccess": true,
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
-    "isolatedModules": true,
+    "isolatedModules": false,
 
     "skipLibCheck": true
   }

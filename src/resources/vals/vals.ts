@@ -1,16 +1,17 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { APIResource } from '../../resource';
-import * as Core from '../../core';
+import { APIResource } from '../../core/resource';
 import * as Shared from '../shared';
 import { ValsCursor } from '../shared';
 import * as BranchesAPI from './branches';
 import {
   BranchCreateParams,
   BranchCreateResponse,
+  BranchDeleteParams,
   BranchListParams,
   BranchListResponse,
   BranchListResponsesPageCursorURL,
+  BranchRetrieveParams,
   BranchRetrieveResponse,
   Branches,
 } from './branches';
@@ -18,6 +19,7 @@ import * as EnvironmentVariablesAPI from './environment-variables';
 import {
   EnvironmentVariableCreateParams,
   EnvironmentVariableCreateResponse,
+  EnvironmentVariableDeleteParams,
   EnvironmentVariableListParams,
   EnvironmentVariableListResponse,
   EnvironmentVariableListResponsesPageCursorURL,
@@ -38,7 +40,11 @@ import {
   FileUpdateResponse,
   Files,
 } from './files';
-import { type CursorParams } from '../../pagination';
+import { APIPromise } from '../../core/api-promise';
+import { Cursor, type CursorParams, PagePromise } from '../../core/pagination';
+import { buildHeaders } from '../../internal/headers';
+import { RequestOptions } from '../../internal/request-options';
+import { path } from '../../internal/utils/path';
 
 /**
  * Vals are a collaborative folder of runnable JavaScript, TypeScript, and JSX modules
@@ -61,7 +67,7 @@ export class Vals extends APIResource {
    * });
    * ```
    */
-  create(body: ValCreateParams, options?: Core.RequestOptions): Core.APIPromise<Shared.Val> {
+  create(body: ValCreateParams, options?: RequestOptions): APIPromise<Shared.Val> {
     return this._client.post('/v2/vals', { body, ...options });
   }
 
@@ -75,8 +81,8 @@ export class Vals extends APIResource {
    * );
    * ```
    */
-  retrieve(valId: string, options?: Core.RequestOptions): Core.APIPromise<Shared.Val> {
-    return this._client.get(`/v2/vals/${valId}`, options);
+  retrieve(valID: string, options?: RequestOptions): APIPromise<Shared.Val> {
+    return this._client.get(path`/v2/vals/${valID}`, options);
   }
 
   /**
@@ -90,8 +96,8 @@ export class Vals extends APIResource {
    * }
    * ```
    */
-  list(query: ValListParams, options?: Core.RequestOptions): Core.PagePromise<ValsCursor, Shared.Val> {
-    return this._client.getAPIList('/v2/vals', ValsCursor, { query, ...options });
+  list(query: ValListParams, options?: RequestOptions): PagePromise<ValsCursor, Shared.Val> {
+    return this._client.getAPIList('/v2/vals', Cursor<Shared.Val>, { query, ...options });
   }
 
   /**
@@ -104,10 +110,10 @@ export class Vals extends APIResource {
    * );
    * ```
    */
-  delete(valId: string, options?: Core.RequestOptions): Core.APIPromise<void> {
-    return this._client.delete(`/v2/vals/${valId}`, {
+  delete(valID: string, options?: RequestOptions): APIPromise<void> {
+    return this._client.delete(path`/v2/vals/${valID}`, {
       ...options,
-      headers: { Accept: '*/*', ...options?.headers },
+      headers: buildHeaders([{ Accept: '*/*' }, options?.headers]),
     });
   }
 }
@@ -144,11 +150,8 @@ export interface ValListParams extends CursorParams {
 }
 
 Vals.Branches = Branches;
-Vals.BranchListResponsesPageCursorURL = BranchListResponsesPageCursorURL;
 Vals.Files = Files;
-Vals.FileRetrieveResponsesPageCursorURL = FileRetrieveResponsesPageCursorURL;
 Vals.EnvironmentVariables = EnvironmentVariables;
-Vals.EnvironmentVariableListResponsesPageCursorURL = EnvironmentVariableListResponsesPageCursorURL;
 
 export declare namespace Vals {
   export { type ValCreateParams as ValCreateParams, type ValListParams as ValListParams };
@@ -158,9 +161,11 @@ export declare namespace Vals {
     type BranchCreateResponse as BranchCreateResponse,
     type BranchRetrieveResponse as BranchRetrieveResponse,
     type BranchListResponse as BranchListResponse,
-    BranchListResponsesPageCursorURL as BranchListResponsesPageCursorURL,
+    type BranchListResponsesPageCursorURL as BranchListResponsesPageCursorURL,
     type BranchCreateParams as BranchCreateParams,
+    type BranchRetrieveParams as BranchRetrieveParams,
     type BranchListParams as BranchListParams,
+    type BranchDeleteParams as BranchDeleteParams,
   };
 
   export {
@@ -168,7 +173,7 @@ export declare namespace Vals {
     type FileCreateResponse as FileCreateResponse,
     type FileRetrieveResponse as FileRetrieveResponse,
     type FileUpdateResponse as FileUpdateResponse,
-    FileRetrieveResponsesPageCursorURL as FileRetrieveResponsesPageCursorURL,
+    type FileRetrieveResponsesPageCursorURL as FileRetrieveResponsesPageCursorURL,
     type FileCreateParams as FileCreateParams,
     type FileRetrieveParams as FileRetrieveParams,
     type FileUpdateParams as FileUpdateParams,
@@ -181,11 +186,12 @@ export declare namespace Vals {
     type EnvironmentVariableCreateResponse as EnvironmentVariableCreateResponse,
     type EnvironmentVariableUpdateResponse as EnvironmentVariableUpdateResponse,
     type EnvironmentVariableListResponse as EnvironmentVariableListResponse,
-    EnvironmentVariableListResponsesPageCursorURL as EnvironmentVariableListResponsesPageCursorURL,
+    type EnvironmentVariableListResponsesPageCursorURL as EnvironmentVariableListResponsesPageCursorURL,
     type EnvironmentVariableCreateParams as EnvironmentVariableCreateParams,
     type EnvironmentVariableUpdateParams as EnvironmentVariableUpdateParams,
     type EnvironmentVariableListParams as EnvironmentVariableListParams,
+    type EnvironmentVariableDeleteParams as EnvironmentVariableDeleteParams,
   };
 }
 
-export { ValsCursor };
+export { type ValsCursor };
