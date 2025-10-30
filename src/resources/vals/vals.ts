@@ -15,6 +15,13 @@ import {
   BranchRetrieveResponse,
   Branches,
 } from './branches';
+import * as EnvironmentVariablesAPI from './environment-variables';
+import {
+  EnvironmentVariableListParams,
+  EnvironmentVariableListResponse,
+  EnvironmentVariableListResponsesPageCursorURL,
+  EnvironmentVariables,
+} from './environment-variables';
 import * as FilesAPI from './files';
 import {
   FileCreateParams,
@@ -40,6 +47,8 @@ import { path } from '../../internal/utils/path';
 export class Vals extends APIResource {
   branches: BranchesAPI.Branches = new BranchesAPI.Branches(this._client);
   files: FilesAPI.Files = new FilesAPI.Files(this._client);
+  environmentVariables: EnvironmentVariablesAPI.EnvironmentVariables =
+    new EnvironmentVariablesAPI.EnvironmentVariables(this._client);
 
   /**
    * Create a new val
@@ -137,6 +146,7 @@ export interface ValListParams extends CursorParams {
 
 Vals.Branches = Branches;
 Vals.Files = Files;
+Vals.EnvironmentVariables = EnvironmentVariables;
 
 export declare namespace Vals {
   export { type ValCreateParams as ValCreateParams, type ValListParams as ValListParams };
@@ -164,6 +174,13 @@ export declare namespace Vals {
     type FileUpdateParams as FileUpdateParams,
     type FileDeleteParams as FileDeleteParams,
     type FileGetContentParams as FileGetContentParams,
+  };
+
+  export {
+    EnvironmentVariables as EnvironmentVariables,
+    type EnvironmentVariableListResponse as EnvironmentVariableListResponse,
+    type EnvironmentVariableListResponsesPageCursorURL as EnvironmentVariableListResponsesPageCursorURL,
+    type EnvironmentVariableListParams as EnvironmentVariableListParams,
   };
 }
 
