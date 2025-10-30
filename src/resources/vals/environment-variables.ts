@@ -7,6 +7,9 @@ import { buildHeaders } from '../../internal/headers';
 import { RequestOptions } from '../../internal/request-options';
 import { path } from '../../internal/utils/path';
 
+/**
+ * Settings and secrets for Vals
+ */
 export class EnvironmentVariables extends APIResource {
   /**
    * Create a new environment variable scoped to this project.
