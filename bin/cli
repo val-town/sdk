@@ -5,7 +5,7 @@ const { spawnSync } = require('child_process');
 const commands = {
   migrate: {
     description:
-      'Run migrations to update your code using @valtown/sdk@2.0.0 to be compatible with @valtown/sdk@3.0.0',
+      'Run migrations to update your code using @valtown/sdk@2.1.0 to be compatible with @valtown/sdk@3.0.0',
     fn: () => {
       const result = spawnSync(
         'npx',
