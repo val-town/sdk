@@ -1,8 +1,9 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
 import { APIResource } from '../../resource';
-import * as Core from '../../core';
-import * as Shared from '../shared';
+import type * as Core from '../../core';
+import type * as Shared from '../shared';
+import { type StreamParams, streamTelemetryData } from './';
 
 export class Logs extends APIResource {
   /**
@@ -14,6 +15,28 @@ export class Logs extends APIResource {
    */
   list(query: LogListParams, options?: Core.RequestOptions): Core.APIPromise<LogListResponse> {
     return this._client.get('/v1/telemetry/logs', { query, ...options });
+  }
+
+  /**
+   * Stream OpenTelemetry logs, accessing new ones live as they come in.
+   *
+   * @example
+   * ```ts
+   * const logs = await client.telemetry.logs.stream({
+   *   frequency: 1000,
+   *   file_id: '530e8400-e29b-41d4-a716-446655440001',
+   * });
+   *
+   * for await (const log of logs) {
+   *   console.log(log);
+   * }
+   * ```
+   */
+  async *stream(
+    query: Omit<LogListParams, 'limit'> & StreamParams,
+    options?: Core.RequestOptions,
+  ): AsyncGenerator<LogListResponse.Data> {
+    yield* streamTelemetryData(this, query, options);
   }
 }
 
@@ -120,5 +143,5 @@ export interface LogListParams {
 }
 
 export declare namespace Logs {
-  export { type LogListResponse as LogListResponse, type LogListParams as LogListParams };
+  export type { LogListResponse, LogListParams };
 }
