@@ -9,10 +9,6 @@ Types:
 - <code><a href="./src/resources/shared.ts">User</a></code>
 - <code><a href="./src/resources/shared.ts">Val</a></code>
 
-# Search
-
-## Vals
-
 # Alias
 
 ## Username
