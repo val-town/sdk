@@ -33,7 +33,6 @@ import { Sqlite, SqliteBatchParams, SqliteBatchResponse, SqliteExecuteParams } f
 import { Users } from './resources/users';
 import { Alias } from './resources/alias/alias';
 import { Me } from './resources/me/me';
-import { Search } from './resources/search/search';
 import { Telemetry } from './resources/telemetry/telemetry';
 import { ValCreateParams, ValListParams, Vals } from './resources/vals/vals';
 import { type Fetch } from './internal/builtin-types';
@@ -737,10 +736,6 @@ export class ValTown {
   static toFile = Uploads.toFile;
 
   /**
-   * Search endpoint for vals
-   */
-  search: API.Search = new API.Search(this);
-  /**
    * Methods to translate between human-readable names and IDs
    */
   alias: API.Alias = new API.Alias(this);
@@ -782,7 +777,6 @@ export class ValTown {
   emails: API.Emails = new API.Emails(this);
 }
 
-ValTown.Search = Search;
 ValTown.Alias = Alias;
 ValTown.Me = Me;
 ValTown.Orgs = Orgs;
@@ -805,8 +799,6 @@ export declare namespace ValTown {
 
   export import Cursor = Pagination.Cursor;
   export { type CursorParams as CursorParams, type CursorResponse as CursorResponse };
-
-  export { Search as Search };
 
   export { Alias as Alias };
 

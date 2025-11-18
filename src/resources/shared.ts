@@ -361,8 +361,6 @@ export namespace Val {
   }
 }
 
-export type BasicValsPageCursorURL = PageCursorURL<BasicVal>;
-
 export type ValsPageCursorURL = PageCursorURL<Val>;
 
 export type ValsCursor = Cursor<Val>;

@@ -172,16 +172,16 @@ If you were relying on anything that was only exported from `@valtown/sdk/core` 
 
 #### Resource classes
 
-Previously under certain circumstances it was possible to import resource classes like `Search` directly from the root of the package. This was never valid at the type level and only worked in CommonJS files.
+Previously under certain circumstances it was possible to import resource classes like `Alias` directly from the root of the package. This was never valid at the type level and only worked in CommonJS files.
 Now you must always either reference them as static class properties or import them directly from the files in which they are defined.
 
 ```typescript
 // Before
-const { Search } = require('@valtown/sdk');
+const { Alias } = require('@valtown/sdk');
 
 // After
 const { ValTown } = require('@valtown/sdk');
-ValTown.Search; // or import directly from @valtown/sdk/resources/search/search
+ValTown.Alias; // or import directly from @valtown/sdk/resources/alias/alias
 ```
 
 #### Cleaned up `uploads` exports
@@ -254,8 +254,8 @@ The `for await` syntax **is not affected**. This still works as-is:
 
 ```ts
 // Automatically fetches more pages as needed.
-for await (const basicVal of client.search.vals.list({ limit: 1, offset: 0, query: 'x' })) {
-  console.log(basicVal);
+for await (const val of client.me.vals.list({ limit: 1, offset: 0 })) {
+  console.log(val);
 }
 ```
 
@@ -277,10 +277,10 @@ Page classes for individual methods are now type aliases:
 
 ```ts
 // Before
-export class BasicValsPageCursorURL extends PageCursorURL<BasicVal> {}
+export class ValsPageCursorURL extends PageCursorURL<Val> {}
 
 // After
-export type BasicValsPageCursorURL = PageCursorURL<BasicVal>;
+export type ValsPageCursorURL = PageCursorURL<Val>;
 ```
 
 If you were importing these classes at runtime, you'll need to switch to importing the base class or only import them at the type-level.
