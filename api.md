@@ -13,10 +13,6 @@ Types:
 
 ## Vals
 
-Methods:
-
-- <code title="get /v1/search/vals">client.search.vals.<a href="./src/resources/search/vals.ts">list</a>({ ...params }) -> BasicValsPageCursorURL</code>
-
 # Alias
 
 ## Username

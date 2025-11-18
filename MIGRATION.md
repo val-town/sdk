@@ -254,8 +254,8 @@ The `for await` syntax **is not affected**. This still works as-is:
 
 ```ts
 // Automatically fetches more pages as needed.
-for await (const basicVal of client.search.vals.list({ limit: 1, offset: 0, query: 'x' })) {
-  console.log(basicVal);
+for await (const val of client.me.vals.list({ limit: 1, offset: 0 })) {
+  console.log(val);
 }
 ```
 
@@ -277,10 +277,10 @@ Page classes for individual methods are now type aliases:
 
 ```ts
 // Before
-export class BasicValsPageCursorURL extends PageCursorURL<BasicVal> {}
+export class ValsPageCursorURL extends PageCursorURL<Val> {}
 
 // After
-export type BasicValsPageCursorURL = PageCursorURL<BasicVal>;
+export type ValsPageCursorURL = PageCursorURL<Val>;
 ```
 
 If you were importing these classes at runtime, you'll need to switch to importing the base class or only import them at the type-level.
