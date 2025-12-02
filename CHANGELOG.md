@@ -1,5 +1,13 @@
 # Changelog
 
+## 3.1.1 (2025-12-02)
+
+Full Changelog: [v3.1.0...v3.1.1](https://github.com/val-town/sdk/compare/v3.1.0...v3.1.1)
+
+### Chores
+
+* **client:** fix logger property type ([0801eaa](https://github.com/val-town/sdk/commit/0801eaa48da4b320d47b9e241b559ac1e3fcd005))
+
 ## 3.1.0 (2025-11-18)
 
 Full Changelog: [v3.0.0...v3.1.0](https://github.com/val-town/sdk/compare/v3.0.0...v3.1.0)
