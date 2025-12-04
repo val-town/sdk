@@ -104,7 +104,7 @@ export type EnvironmentVariableListResponsesPageCursorURL = PageCursorURL<Enviro
  * An environment variable
  */
 export interface EnvironmentVariableCreateResponse {
-  createdAt: unknown;
+  createdAt: string;
 
   /**
    * Optional description of the environment variable
@@ -116,14 +116,14 @@ export interface EnvironmentVariableCreateResponse {
    */
   key: string;
 
-  updatedAt: unknown;
+  updatedAt: string;
 }
 
 /**
  * An environment variable
  */
 export interface EnvironmentVariableUpdateResponse {
-  createdAt: unknown;
+  createdAt: string;
 
   /**
    * Optional description of the environment variable
@@ -135,14 +135,14 @@ export interface EnvironmentVariableUpdateResponse {
    */
   key: string;
 
-  updatedAt: unknown;
+  updatedAt: string;
 }
 
 /**
  * An environment variable
  */
 export interface EnvironmentVariableListResponse {
-  createdAt: unknown;
+  createdAt: string;
 
   /**
    * Optional description of the environment variable
@@ -154,7 +154,7 @@ export interface EnvironmentVariableListResponse {
    */
   key: string;
 
-  updatedAt: unknown;
+  updatedAt: string;
 }
 
 export interface EnvironmentVariableCreateParams {
