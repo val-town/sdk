@@ -34,7 +34,7 @@ export interface FileRetrieveResponse {
 
   type: 'directory' | 'file' | 'interval' | 'http' | 'email' | 'script';
 
-  updatedAt: string;
+  updatedAt: unknown;
 
   version: number;
 }
