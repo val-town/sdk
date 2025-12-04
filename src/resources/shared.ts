@@ -21,7 +21,7 @@ export interface BasicVal {
    */
   code: string | null;
 
-  createdAt: unknown;
+  createdAt: string;
 
   links: BasicVal.Links;
 
@@ -47,7 +47,7 @@ export interface BasicVal {
    */
   type: 'interval' | 'http' | 'express' | 'email' | 'script' | 'rpc' | 'httpnext';
 
-  updatedAt: unknown;
+  updatedAt: string;
 
   /**
    * The URL of this resource on the Val Town website
@@ -112,7 +112,7 @@ export interface ExtendedVal {
    */
   code: string | null;
 
-  createdAt: unknown;
+  createdAt: string;
 
   /**
    * How many likes this val has received
@@ -150,7 +150,7 @@ export interface ExtendedVal {
    */
   type: 'interval' | 'http' | 'express' | 'email' | 'script' | 'rpc' | 'httpnext';
 
-  updatedAt: unknown;
+  updatedAt: string;
 
   /**
    * The URL of this resource on the Val Town website
@@ -162,7 +162,7 @@ export interface ExtendedVal {
    */
   version: number;
 
-  versionCreatedAt?: unknown;
+  versionCreatedAt?: string;
 }
 
 export namespace ExtendedVal {
@@ -319,7 +319,7 @@ export interface Val {
 
   author: Val.Author;
 
-  createdAt: unknown;
+  createdAt: string;
 
   description: string | null;
 
