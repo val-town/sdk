@@ -106,7 +106,7 @@ export interface BranchCreateResponse {
    */
   id: string;
 
-  createdAt: string;
+  createdAt: unknown;
 
   /**
    * The id of the branch this branch was forked from
@@ -117,7 +117,7 @@ export interface BranchCreateResponse {
 
   name: string;
 
-  updatedAt: string;
+  updatedAt: unknown;
 
   version: number;
 }
@@ -145,7 +145,7 @@ export interface BranchRetrieveResponse {
    */
   id: string;
 
-  createdAt: string;
+  createdAt: unknown;
 
   /**
    * The id of the branch this branch was forked from
@@ -156,7 +156,7 @@ export interface BranchRetrieveResponse {
 
   name: string;
 
-  updatedAt: string;
+  updatedAt: unknown;
 
   version: number;
 }
@@ -184,7 +184,7 @@ export interface BranchListResponse {
    */
   id: string;
 
-  createdAt: string;
+  createdAt: unknown;
 
   /**
    * The id of the branch this branch was forked from
@@ -195,7 +195,7 @@ export interface BranchListResponse {
 
   name: string;
 
-  updatedAt: string;
+  updatedAt: unknown;
 
   version: number;
 }
