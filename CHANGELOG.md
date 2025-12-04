@@ -1,5 +1,19 @@
 # Changelog
 
+## 3.2.0 (2025-12-04)
+
+Full Changelog: [v3.1.1...v3.2.0](https://github.com/val-town/sdk/compare/v3.1.1...v3.2.0)
+
+### Features
+
+* **api:** api update ([b487a1a](https://github.com/val-town/sdk/commit/b487a1a96f4faed88308f512c160b66ca6cf6920))
+* **api:** api update ([0d3da99](https://github.com/val-town/sdk/commit/0d3da99a42af6b8f879eff9989d8a647fe115e6e))
+
+
+### Chores
+
+* **internal:** upgrade eslint ([13f0b58](https://github.com/val-town/sdk/commit/13f0b58547cdef066023fe0231b7dfefc62084e6))
+
 ## 3.1.1 (2025-12-02)
 
 Full Changelog: [v3.1.0...v3.1.1](https://github.com/val-town/sdk/compare/v3.1.0...v3.1.1)
