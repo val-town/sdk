@@ -1,5 +1,25 @@
 # Changelog
 
+## 3.2.1 (2025-12-20)
+
+Full Changelog: [v3.2.0...v3.2.1](https://github.com/val-town/sdk/compare/v3.2.0...v3.2.1)
+
+### Bug Fixes
+
+* **mcp:** correct code tool API endpoint ([eb76c11](https://github.com/val-town/sdk/commit/eb76c114982bc9476724007f15038f2f48fbc50d))
+* **mcp:** return correct lines on typescript errors ([8bd2b81](https://github.com/val-town/sdk/commit/8bd2b81310cbbab15e11f1991469d46ed17f9737))
+
+
+### Chores
+
+* **internal:** codegen related update ([9db4719](https://github.com/val-town/sdk/commit/9db471909e0aa5013c7a3d06d53f05cfb809d6a9))
+* **internal:** codegen related update ([10d5ea4](https://github.com/val-town/sdk/commit/10d5ea426eef9e0b1efc3be8a187c1632af2bc6b))
+
+
+### Documentation
+
+* add more examples ([8f42bd2](https://github.com/val-town/sdk/commit/8f42bd298cebfa283a8eb86ccc7bb90175d63302))
+
 ## 3.2.0 (2025-12-04)
 
 Full Changelog: [v3.1.1...v3.2.0](https://github.com/val-town/sdk/compare/v3.1.1...v3.2.0)
