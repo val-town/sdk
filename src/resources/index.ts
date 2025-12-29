@@ -9,5 +9,12 @@ export { Me } from './me/me';
 export { Orgs, type OrgListResponse, type OrgListParams, type OrgListResponsesPageCursorURL } from './orgs';
 export { Sqlite, type SqliteBatchResponse, type SqliteBatchParams, type SqliteExecuteParams } from './sqlite';
 export { Telemetry } from './telemetry/telemetry';
+export {
+  Token,
+  type TokenGoogleResponse,
+  type TokenSlackResponse,
+  type TokenGoogleParams,
+  type TokenSlackParams,
+} from './token';
 export { Users } from './users';
 export { Vals, type ValCreateParams, type ValListParams } from './vals/vals';
