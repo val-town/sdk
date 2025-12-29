@@ -103,6 +103,18 @@ Methods:
 
 - <code title="get /v1/telemetry/logs">client.telemetry.logs.<a href="./src/resources/telemetry/logs.ts">list</a>({ ...params }) -> LogListResponse</code>
 
+# Token
+
+Types:
+
+- <code><a href="./src/resources/token.ts">TokenGoogleResponse</a></code>
+- <code><a href="./src/resources/token.ts">TokenSlackResponse</a></code>
+
+Methods:
+
+- <code title="post /v3/connections/google-docs/token">client.token.<a href="./src/resources/token.ts">google</a>({ ...params }) -> TokenGoogleResponse</code>
+- <code title="post /v3/connections/slack/token">client.token.<a href="./src/resources/token.ts">slack</a>({ ...params }) -> TokenSlackResponse</code>
+
 # Vals
 
 Methods:
