@@ -30,6 +30,13 @@ import { EmailSendParams, EmailSendResponse, Emails } from './resources/emails';
 import { FileRetrieveResponse, Files } from './resources/files';
 import { OrgListParams, OrgListResponse, OrgListResponsesPageCursorURL, Orgs } from './resources/orgs';
 import { Sqlite, SqliteBatchParams, SqliteBatchResponse, SqliteExecuteParams } from './resources/sqlite';
+import {
+  Token,
+  TokenGoogleParams,
+  TokenGoogleResponse,
+  TokenSlackParams,
+  TokenSlackResponse,
+} from './resources/token';
 import { Users } from './resources/users';
 import { Alias } from './resources/alias/alias';
 import { Me } from './resources/me/me';
@@ -764,6 +771,10 @@ export class ValTown {
    */
   telemetry: API.Telemetry = new API.Telemetry(this);
   /**
+   * Connect to other services
+   */
+  token: API.Token = new API.Token(this);
+  /**
    * Vals are a collaborative folder of runnable JavaScript, TypeScript, and JSX modules
    */
   vals: API.Vals = new API.Vals(this);
@@ -784,6 +795,7 @@ ValTown.Blobs = Blobs;
 ValTown.Users = Users;
 ValTown.Sqlite = Sqlite;
 ValTown.Telemetry = Telemetry;
+ValTown.Token = Token;
 ValTown.Vals = Vals;
 ValTown.Files = Files;
 ValTown.Emails = Emails;
@@ -828,6 +840,14 @@ export declare namespace ValTown {
   };
 
   export { Telemetry as Telemetry };
+
+  export {
+    Token as Token,
+    type TokenGoogleResponse as TokenGoogleResponse,
+    type TokenSlackResponse as TokenSlackResponse,
+    type TokenGoogleParams as TokenGoogleParams,
+    type TokenSlackParams as TokenSlackParams,
+  };
 
   export { Vals as Vals, type ValCreateParams as ValCreateParams, type ValListParams as ValListParams };
 
