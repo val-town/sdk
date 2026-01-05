@@ -30,6 +30,12 @@ export interface TokenGoogleResponse {
    * A valid Google access token
    */
   access_token: string;
+
+  /**
+   * The scopes granted by the user during OAuth (may be a subset of requested
+   * scopes)
+   */
+  granted_scopes?: Array<string>;
 }
 
 export interface TokenSlackResponse {
