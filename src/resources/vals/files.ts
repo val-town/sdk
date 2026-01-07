@@ -37,7 +37,12 @@ export class Files extends APIResource {
    * // Automatically fetches more pages as needed.
    * for await (const fileRetrieveResponse of client.vals.files.retrieve(
    *   '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
-   *   { limit: 1, offset: 0, path: 'path', recursive: true },
+   *   {
+   *     limit: 1,
+   *     offset: 0,
+   *     path: 'path',
+   *     recursive: true,
+   *   },
    * )) {
    *   // ...
    * }
