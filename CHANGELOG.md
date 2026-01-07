@@ -1,5 +1,13 @@
 # Changelog
 
+## 3.4.1 (2026-01-07)
+
+Full Changelog: [v3.4.0...v3.4.1](https://github.com/val-town/sdk/compare/v3.4.0...v3.4.1)
+
+### Chores
+
+* break long lines in snippets into multiline ([20b8bf8](https://github.com/val-town/sdk/commit/20b8bf88e55f3b71d8d6a83351a5ffd9c5061530))
+
 ## 3.4.0 (2026-01-05)
 
 Full Changelog: [v3.3.0...v3.4.0](https://github.com/val-town/sdk/compare/v3.3.0...v3.4.0)

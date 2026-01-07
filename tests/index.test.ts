@@ -87,7 +87,11 @@ describe('instantiate client', () => {
         error: jest.fn(),
       };
 
-      const client = new ValTown({ logger: logger, logLevel: 'debug', bearerToken: 'My Bearer Token' });
+      const client = new ValTown({
+        logger: logger,
+        logLevel: 'debug',
+        bearerToken: 'My Bearer Token',
+      });
 
       await forceAPIResponseForClient(client);
       expect(debugMock).toHaveBeenCalled();
@@ -107,7 +111,11 @@ describe('instantiate client', () => {
         error: jest.fn(),
       };
 
-      const client = new ValTown({ logger: logger, logLevel: 'info', bearerToken: 'My Bearer Token' });
+      const client = new ValTown({
+        logger: logger,
+        logLevel: 'info',
+        bearerToken: 'My Bearer Token',
+      });
 
       await forceAPIResponseForClient(client);
       expect(debugMock).not.toHaveBeenCalled();
@@ -157,7 +165,11 @@ describe('instantiate client', () => {
       };
 
       process.env['VAL_TOWN_LOG'] = 'debug';
-      const client = new ValTown({ logger: logger, logLevel: 'off', bearerToken: 'My Bearer Token' });
+      const client = new ValTown({
+        logger: logger,
+        logLevel: 'off',
+        bearerToken: 'My Bearer Token',
+      });
 
       await forceAPIResponseForClient(client);
       expect(debugMock).not.toHaveBeenCalled();
@@ -173,7 +185,11 @@ describe('instantiate client', () => {
       };
 
       process.env['VAL_TOWN_LOG'] = 'not a log level';
-      const client = new ValTown({ logger: logger, logLevel: 'debug', bearerToken: 'My Bearer Token' });
+      const client = new ValTown({
+        logger: logger,
+        logLevel: 'debug',
+        bearerToken: 'My Bearer Token',
+      });
       expect(client.logLevel).toBe('debug');
       expect(warnMock).not.toHaveBeenCalled();
     });
@@ -549,7 +565,11 @@ describe('retries', () => {
       return new Response(JSON.stringify({ a: 1 }), { headers: { 'Content-Type': 'application/json' } });
     };
 
-    const client = new ValTown({ bearerToken: 'My Bearer Token', timeout: 10, fetch: testFetch });
+    const client = new ValTown({
+      bearerToken: 'My Bearer Token',
+      timeout: 10,
+      fetch: testFetch,
+    });
 
     expect(await client.request({ path: '/foo', method: 'get' })).toEqual({ a: 1 });
     expect(count).toEqual(2);
@@ -579,7 +599,11 @@ describe('retries', () => {
       return new Response(JSON.stringify({ a: 1 }), { headers: { 'Content-Type': 'application/json' } });
     };
 
-    const client = new ValTown({ bearerToken: 'My Bearer Token', fetch: testFetch, maxRetries: 4 });
+    const client = new ValTown({
+      bearerToken: 'My Bearer Token',
+      fetch: testFetch,
+      maxRetries: 4,
+    });
 
     expect(await client.request({ path: '/foo', method: 'get' })).toEqual({ a: 1 });
 
@@ -603,7 +627,11 @@ describe('retries', () => {
       capturedRequest = init;
       return new Response(JSON.stringify({ a: 1 }), { headers: { 'Content-Type': 'application/json' } });
     };
-    const client = new ValTown({ bearerToken: 'My Bearer Token', fetch: testFetch, maxRetries: 4 });
+    const client = new ValTown({
+      bearerToken: 'My Bearer Token',
+      fetch: testFetch,
+      maxRetries: 4,
+    });
 
     expect(
       await client.request({
@@ -665,7 +693,11 @@ describe('retries', () => {
       capturedRequest = init;
       return new Response(JSON.stringify({ a: 1 }), { headers: { 'Content-Type': 'application/json' } });
     };
-    const client = new ValTown({ bearerToken: 'My Bearer Token', fetch: testFetch, maxRetries: 4 });
+    const client = new ValTown({
+      bearerToken: 'My Bearer Token',
+      fetch: testFetch,
+      maxRetries: 4,
+    });
 
     expect(
       await client.request({
