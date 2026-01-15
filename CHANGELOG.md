@@ -1,5 +1,20 @@
 # Changelog
 
+## 3.5.0 (2026-01-15)
+
+Full Changelog: [v3.4.0...v3.5.0](https://github.com/val-town/sdk/compare/v3.4.0...v3.5.0)
+
+### Features
+
+* **api:** api update ([05f2ce6](https://github.com/val-town/sdk/commit/05f2ce6c8a5f510c842e533ee1b982dceca9aa03))
+
+
+### Chores
+
+* break long lines in snippets into multiline ([20b8bf8](https://github.com/val-town/sdk/commit/20b8bf88e55f3b71d8d6a83351a5ffd9c5061530))
+* fix typo in descriptions ([d0649ce](https://github.com/val-town/sdk/commit/d0649ce4d985c35efab447c0ef666b2980fc9abc))
+* **internal:** upgrade babel, qs, js-yaml ([ea3a01f](https://github.com/val-town/sdk/commit/ea3a01f83a82db9c2120b8b5e3ac216a5b21af4d))
+
 ## 3.4.0 (2026-01-05)
 
 Full Changelog: [v3.3.0...v3.4.0](https://github.com/val-town/sdk/compare/v3.3.0...v3.4.0)
