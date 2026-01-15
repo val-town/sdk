@@ -2,7 +2,7 @@
 
 import { APIResource } from '../../core/resource';
 import * as MembershipsAPI from './memberships';
-import { Memberships } from './memberships';
+import { MembershipListResponse, Memberships } from './memberships';
 import { PageCursorURL, type PageCursorURLParams, PagePromise } from '../../core/pagination';
 import { RequestOptions } from '../../internal/request-options';
 
@@ -48,5 +48,5 @@ export declare namespace Orgs {
     type OrgListParams as OrgListParams,
   };
 
-  export { Memberships as Memberships };
+  export { Memberships as Memberships, type MembershipListResponse as MembershipListResponse };
 }
