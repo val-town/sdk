@@ -28,7 +28,6 @@ import { APIPromise } from './core/api-promise';
 import { BlobListParams, BlobListResponse, BlobStoreParams, Blobs } from './resources/blobs';
 import { EmailSendParams, EmailSendResponse, Emails } from './resources/emails';
 import { FileRetrieveResponse, Files } from './resources/files';
-import { OrgListParams, OrgListResponse, OrgListResponsesPageCursorURL, Orgs } from './resources/orgs';
 import { Sqlite, SqliteBatchParams, SqliteBatchResponse, SqliteExecuteParams } from './resources/sqlite';
 import {
   Token,
@@ -40,6 +39,7 @@ import {
 import { Users } from './resources/users';
 import { Alias } from './resources/alias/alias';
 import { Me } from './resources/me/me';
+import { OrgListParams, OrgListResponse, OrgListResponsesPageCursorURL, Orgs } from './resources/orgs/orgs';
 import { Telemetry } from './resources/telemetry/telemetry';
 import { ValCreateParams, ValListParams, Vals } from './resources/vals/vals';
 import { type Fetch } from './internal/builtin-types';
