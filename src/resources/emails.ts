@@ -29,7 +29,7 @@ export class Emails extends APIResource {
 }
 
 /**
- * Successfully sent email
+ * Email accepted to be sent
  */
 export interface EmailSendResponse {
   message: string;

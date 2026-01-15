@@ -37,7 +37,12 @@ export class Files extends APIResource {
    * // Automatically fetches more pages as needed.
    * for await (const fileRetrieveResponse of client.vals.files.retrieve(
    *   '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
-   *   { limit: 1, offset: 0, path: 'path', recursive: true },
+   *   {
+   *     limit: 1,
+   *     offset: 0,
+   *     path: 'path',
+   *     recursive: true,
+   *   },
    * )) {
    *   // ...
    * }
@@ -289,7 +294,7 @@ export declare namespace FileCreateParams {
     path: string;
 
     /**
-     * Body param:
+     * Body param
      */
     type: 'directory';
 
@@ -300,7 +305,7 @@ export declare namespace FileCreateParams {
     branch_id?: string;
 
     /**
-     * Body param:
+     * Body param
      */
     content?: null;
   }
@@ -319,7 +324,7 @@ export declare namespace FileCreateParams {
     content: string;
 
     /**
-     * Body param:
+     * Body param
      */
     type: 'file' | 'interval' | 'http' | 'email' | 'script';
 
@@ -374,7 +379,7 @@ export interface FileUpdateParams {
   content?: string;
 
   /**
-   * Body param:
+   * Body param
    */
   name?: string;
 
@@ -385,7 +390,7 @@ export interface FileUpdateParams {
   parent_path?: string | null;
 
   /**
-   * Body param:
+   * Body param
    */
   type?: 'file' | 'interval' | 'http' | 'email' | 'script';
 }
@@ -426,27 +431,27 @@ export interface FileGetContentParams {
   version?: number;
 
   /**
-   * Header param:
+   * Header param
    */
   'Cache-Control'?: string;
 
   /**
-   * Header param:
+   * Header param
    */
   'If-Match'?: string;
 
   /**
-   * Header param:
+   * Header param
    */
   'If-Modified-Since'?: string;
 
   /**
-   * Header param:
+   * Header param
    */
   'If-None-Match'?: string;
 
   /**
-   * Header param:
+   * Header param
    */
   'If-Unmodified-Since'?: string;
 }
