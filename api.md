@@ -53,6 +53,14 @@ Methods:
 
 ## Memberships
 
+Types:
+
+- <code><a href="./src/resources/orgs/memberships.ts">MembershipListResponse</a></code>
+
+Methods:
+
+- <code title="get /v2/orgs/{org_id}/memberships">client.orgs.memberships.<a href="./src/resources/orgs/memberships.ts">list</a>(orgID) -> MembershipListResponse</code>
+
 # Blobs
 
 Types:
