@@ -1,5 +1,14 @@
 # Changelog
 
+## 3.6.0 (2026-01-15)
+
+Full Changelog: [v3.5.0...v3.6.0](https://github.com/val-town/sdk/compare/v3.5.0...v3.6.0)
+
+### Features
+
+* **api:** api update ([d095c91](https://github.com/val-town/sdk/commit/d095c91c0ecfe26bed2a02637a65e5f1e6c36a25))
+* **api:** api update ([8ec3993](https://github.com/val-town/sdk/commit/8ec3993eb701651fc2afc6e79a8bdb2aef757594))
+
 ## 3.5.0 (2026-01-15)
 
 Full Changelog: [v3.4.0...v3.5.0](https://github.com/val-town/sdk/compare/v3.4.0...v3.5.0)

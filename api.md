@@ -45,11 +45,21 @@ Methods:
 
 Types:
 
-- <code><a href="./src/resources/orgs.ts">OrgListResponse</a></code>
+- <code><a href="./src/resources/orgs/orgs.ts">OrgListResponse</a></code>
 
 Methods:
 
-- <code title="get /v2/orgs">client.orgs.<a href="./src/resources/orgs.ts">list</a>({ ...params }) -> OrgListResponsesPageCursorURL</code>
+- <code title="get /v2/orgs">client.orgs.<a href="./src/resources/orgs/orgs.ts">list</a>({ ...params }) -> OrgListResponsesPageCursorURL</code>
+
+## Memberships
+
+Types:
+
+- <code><a href="./src/resources/orgs/memberships.ts">MembershipListResponse</a></code>
+
+Methods:
+
+- <code title="get /v2/orgs/{org_id}/memberships">client.orgs.memberships.<a href="./src/resources/orgs/memberships.ts">list</a>(orgID) -> MembershipListResponse</code>
 
 # Blobs
 
