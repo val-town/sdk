@@ -1,5 +1,13 @@
 # Changelog
 
+## 3.6.1 (2026-01-17)
+
+Full Changelog: [v3.6.0...v3.6.1](https://github.com/val-town/sdk/compare/v3.6.0...v3.6.1)
+
+### Chores
+
+* **internal:** update `actions/checkout` version ([ed97662](https://github.com/val-town/sdk/commit/ed976625c9ddcf67a529abd96ad9d256b36a703d))
+
 ## 3.6.0 (2026-01-15)
 
 Full Changelog: [v3.5.0...v3.6.0](https://github.com/val-town/sdk/compare/v3.5.0...v3.6.0)
