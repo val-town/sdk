@@ -1,5 +1,13 @@
 # Changelog
 
+## 3.6.2 (2026-01-24)
+
+Full Changelog: [v3.6.1...v3.6.2](https://github.com/val-town/sdk/compare/v3.6.1...v3.6.2)
+
+### Chores
+
+* **ci:** upgrade `actions/github-script` ([6b29cd9](https://github.com/val-town/sdk/commit/6b29cd9bb1625355062583ef72f4c93513f50ecc))
+
 ## 3.6.1 (2026-01-17)
 
 Full Changelog: [v3.6.0...v3.6.1](https://github.com/val-town/sdk/compare/v3.6.0...v3.6.1)
