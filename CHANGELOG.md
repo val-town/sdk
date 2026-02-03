@@ -1,5 +1,18 @@
 # Changelog
 
+## 3.6.3 (2026-02-03)
+
+Full Changelog: [v3.6.2...v3.6.3](https://github.com/val-town/sdk/compare/v3.6.2...v3.6.3)
+
+### Bug Fixes
+
+* **client:** avoid memory leak with abort signals ([e6d2431](https://github.com/val-town/sdk/commit/e6d243134eea332ae0f99f65754417a2544f2d30))
+
+
+### Chores
+
+* **client:** do not parse responses with empty content-length ([0c45396](https://github.com/val-town/sdk/commit/0c453969380851d24851eec6d38c433b37572977))
+
 ## 3.6.2 (2026-01-24)
 
 Full Changelog: [v3.6.1...v3.6.2](https://github.com/val-town/sdk/compare/v3.6.1...v3.6.2)
