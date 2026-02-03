@@ -57,6 +57,11 @@ export namespace FileRetrieveResponse {
     self: string;
 
     /**
+     * This resource's email address for receiving emails (for email-type vals)
+     */
+    email?: string;
+
+    /**
      * This resource's web endpoint, where it serves a website or API
      */
     endpoint?: string;

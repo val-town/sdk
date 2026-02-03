@@ -185,6 +185,11 @@ export namespace FileCreateResponse {
     self: string;
 
     /**
+     * This resource's email address for receiving emails (for email-type vals)
+     */
+    email?: string;
+
+    /**
      * This resource's web endpoint, where it serves a website or API
      */
     endpoint?: string;
@@ -231,6 +236,11 @@ export namespace FileRetrieveResponse {
     self: string;
 
     /**
+     * This resource's email address for receiving emails (for email-type vals)
+     */
+    email?: string;
+
+    /**
      * This resource's web endpoint, where it serves a website or API
      */
     endpoint?: string;
@@ -275,6 +285,11 @@ export namespace FileUpdateResponse {
      * The URL of this resource on this API
      */
     self: string;
+
+    /**
+     * This resource's email address for receiving emails (for email-type vals)
+     */
+    email?: string;
 
     /**
      * This resource's web endpoint, where it serves a website or API
