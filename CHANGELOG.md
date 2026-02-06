@@ -1,5 +1,19 @@
 # Changelog
 
+## 3.7.1 (2026-02-06)
+
+Full Changelog: [v3.7.0...v3.7.1](https://github.com/val-town/sdk/compare/v3.7.0...v3.7.1)
+
+### Bug Fixes
+
+* **client:** avoid removing abort listener too early ([6640c2a](https://github.com/val-town/sdk/commit/6640c2ae8aaf33e7460cb864784fb9fc3ca97e9a))
+
+
+### Chores
+
+* **client:** restructure abort controller binding ([1253b9e](https://github.com/val-town/sdk/commit/1253b9e64ec4832f7fb36150830f9014071cf53b))
+* **internal:** fix pagination internals not accepting option promises ([99f9d33](https://github.com/val-town/sdk/commit/99f9d33f716bd24fbf0c8a3995029f19fabf5054))
+
 ## 3.7.0 (2026-02-03)
 
 Full Changelog: [v3.6.3...v3.7.0](https://github.com/val-town/sdk/compare/v3.6.3...v3.7.0)
