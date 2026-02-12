@@ -1,5 +1,13 @@
 # Changelog
 
+## 3.7.2 (2026-02-12)
+
+Full Changelog: [v3.7.1...v3.7.2](https://github.com/val-town/sdk/compare/v3.7.1...v3.7.2)
+
+### Chores
+
+* **internal:** avoid type checking errors with ts-reset ([c7e8977](https://github.com/val-town/sdk/commit/c7e897757bd212ad0d007b2944c28e8cb2e63e66))
+
 ## 3.7.1 (2026-02-06)
 
 Full Changelog: [v3.7.0...v3.7.1](https://github.com/val-town/sdk/compare/v3.7.0...v3.7.1)
