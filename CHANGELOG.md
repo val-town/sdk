@@ -1,5 +1,13 @@
 # Changelog
 
+## 3.7.3 (2026-02-18)
+
+Full Changelog: [v3.7.2...v3.7.3](https://github.com/val-town/sdk/compare/v3.7.2...v3.7.3)
+
+### Chores
+
+* **internal/client:** fix form-urlencoded requests ([a8a5f6b](https://github.com/val-town/sdk/commit/a8a5f6b0fe71bfa22e5b0fbd945c93ad51672195))
+
 ## 3.7.2 (2026-02-12)
 
 Full Changelog: [v3.7.1...v3.7.2](https://github.com/val-town/sdk/compare/v3.7.1...v3.7.2)
