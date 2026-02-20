@@ -1,5 +1,13 @@
 # Changelog
 
+## 3.7.4 (2026-02-20)
+
+Full Changelog: [v3.7.3...v3.7.4](https://github.com/val-town/sdk/compare/v3.7.3...v3.7.4)
+
+### Chores
+
+* update mock server docs ([25eadaa](https://github.com/val-town/sdk/commit/25eadaa1431a08655778002da75ac5cc63aec598))
+
 ## 3.7.3 (2026-02-18)
 
 Full Changelog: [v3.7.2...v3.7.3](https://github.com/val-town/sdk/compare/v3.7.2...v3.7.3)
