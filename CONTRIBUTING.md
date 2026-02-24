@@ -60,7 +60,7 @@ $ yarn link @valtown/sdk
 # With pnpm
 $ pnpm link --global
 $ cd ../my-package
-$ pnpm link -—global @valtown/sdk
+$ pnpm link --global @valtown/sdk
 ```
 
 ## Running tests
