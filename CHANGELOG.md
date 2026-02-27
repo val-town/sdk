@@ -1,5 +1,19 @@
 # Changelog
 
+## 3.7.5 (2026-02-27)
+
+Full Changelog: [v3.7.4...v3.7.5](https://github.com/val-town/sdk/compare/v3.7.4...v3.7.5)
+
+### Bug Fixes
+
+* **docs/contributing:** correct pnpm link command ([c3fdc34](https://github.com/val-town/sdk/commit/c3fdc34158e6af70f40d697a52001f386fc3cd3e))
+* **internal:** skip tests that depend on mock server ([1757c40](https://github.com/val-town/sdk/commit/1757c40dbc8739ad39cd1a6b94d48c9eb3cb8c99))
+
+
+### Chores
+
+* **internal:** move stringifyQuery implementation to internal function ([04a45a7](https://github.com/val-town/sdk/commit/04a45a70a8f110720a562e174e2d286a8e496c5c))
+
 ## 3.7.4 (2026-02-20)
 
 Full Changelog: [v3.7.3...v3.7.4](https://github.com/val-town/sdk/compare/v3.7.3...v3.7.4)

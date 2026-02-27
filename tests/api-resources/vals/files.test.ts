@@ -104,7 +104,8 @@ describe('resource files', () => {
     });
   });
 
-  test('getContent: required and optional params', async () => {
+  // Mock server doesn't support application/octet-stream responses
+  test.skip('getContent: required and optional params', async () => {
     const response = await client.vals.files.getContent('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       path: 'path',
       branch_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
