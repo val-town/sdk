@@ -8,6 +8,13 @@ import { APIPromise } from '../../../core/api-promise';
 import { RequestOptions } from '../../../internal/request-options';
 import { path } from '../../../internal/utils/path';
 
+/**
+ * Many API endpoints
+ * accept IDs instead of user-facing names. The alias
+ * endpoints let you convert between the user-facing name of a
+ * val or another object into an ID that can be used with other
+ * API endpoints
+ */
 export class Username extends APIResource {
   valName: ValNameAPI.ValName = new ValNameAPI.ValName(this._client);
 

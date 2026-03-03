@@ -6,6 +6,10 @@ import { ValsPageCursorURL } from '../shared';
 import { PageCursorURL, type PageCursorURLParams, PagePromise } from '../../core/pagination';
 import { RequestOptions } from '../../internal/request-options';
 
+/**
+ * These endpoints
+ * give access to details and data from the requesting user.
+ */
 export class Vals extends APIResource {
   /**
    * [BETA] List all of a user's vals for authenticated users

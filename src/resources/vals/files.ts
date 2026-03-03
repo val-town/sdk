@@ -7,6 +7,10 @@ import { buildHeaders } from '../../internal/headers';
 import { RequestOptions } from '../../internal/request-options';
 import { path } from '../../internal/utils/path';
 
+/**
+ * These endpoints
+ * let you get, create, and run vals.
+ */
 export class Files extends APIResource {
   /**
    * Create a new file, project val or directory
