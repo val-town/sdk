@@ -55,7 +55,7 @@ describe('resource blobs', () => {
     await expect(
       client.blobs.store(
         'x',
-        { blob: await toFile(Buffer.from('# my file contents'), 'README.md') },
+        { blob: await toFile(Buffer.from('Example data'), 'README.md') },
         { path: '/_stainless_unknown_path' },
       ),
     ).rejects.toThrow(ValTown.NotFoundError);
