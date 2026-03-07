@@ -1,5 +1,22 @@
 # Changelog
 
+## 3.7.6 (2026-03-07)
+
+Full Changelog: [v3.7.5...v3.7.6](https://github.com/val-town/sdk/compare/v3.7.5...v3.7.6)
+
+### Bug Fixes
+
+* **client:** preserve URL params already embedded in path ([d52e8fa](https://github.com/val-town/sdk/commit/d52e8fa1e94cb86bc7326f975f5d600ef2d75f84))
+
+
+### Chores
+
+* **ci:** skip uploading artifacts on stainless-internal branches ([8ee2b8c](https://github.com/val-town/sdk/commit/8ee2b8c000144d5f9b6f66cc7081ec33003da10a))
+* **internal:** codegen related update ([38c1e06](https://github.com/val-town/sdk/commit/38c1e065242968af8aca8980ef471bb1373bbff7))
+* **internal:** codegen related update ([31a5d3f](https://github.com/val-town/sdk/commit/31a5d3f1a569b18d29a899643dcf559c69a917f3))
+* **test:** do not count install time for mock server timeout ([5202bad](https://github.com/val-town/sdk/commit/5202bad8d3b49238538aff8cb9d349330e07b054))
+* update placeholder string ([310940d](https://github.com/val-town/sdk/commit/310940d7432ece1d802198d929c12d61629488c0))
+
 ## 3.7.5 (2026-02-27)
 
 Full Changelog: [v3.7.4...v3.7.5](https://github.com/val-town/sdk/compare/v3.7.4...v3.7.5)
