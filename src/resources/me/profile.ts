@@ -4,6 +4,10 @@ import { APIResource } from '../../core/resource';
 import { APIPromise } from '../../core/api-promise';
 import { RequestOptions } from '../../internal/request-options';
 
+/**
+ * These endpoints
+ * give access to details and data from the requesting user.
+ */
 export class Profile extends APIResource {
   /**
    * Get profile information for the current user
