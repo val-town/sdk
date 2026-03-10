@@ -1,6 +1,6 @@
 {
   "name": "@valtown/sdk",
-  "version": "3.7.6",
+  "version": "3.7.7",
   "description": "The official TypeScript library for the Val Town API",
   "author": "Val Town <support@val.town>",
   "types": "dist/index.d.ts",
@@ -52,6 +52,17 @@
   },
   "bin": {
     "valtown-sdk": "bin/cli"
+  },
+  "overrides": {
+    "minimatch": "^9.0.5"
+  },
+  "pnpm": {
+    "overrides": {
+      "minimatch": "^9.0.5"
+    }
+  },
+  "resolutions": {
+    "minimatch": "^9.0.5"
   },
   "exports": {
     ".": {
