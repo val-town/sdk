@@ -1,5 +1,13 @@
 # Changelog
 
+## 3.7.7 (2026-03-10)
+
+Full Changelog: [v3.7.6...v3.7.7](https://github.com/val-town/sdk/compare/v3.7.6...v3.7.7)
+
+### Chores
+
+* **internal:** update dependencies to address dependabot vulnerabilities ([86b48ac](https://github.com/val-town/sdk/commit/86b48ac965356950a4102b451c61287a15097340))
+
 ## 3.7.6 (2026-03-07)
 
 Full Changelog: [v3.7.5...v3.7.6](https://github.com/val-town/sdk/compare/v3.7.5...v3.7.6)
