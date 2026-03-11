@@ -116,7 +116,7 @@ export interface EnvironmentVariableCreateResponse {
    */
   key: string;
 
-  updatedAt: string;
+  updatedAt: string | null;
 }
 
 /**
@@ -135,7 +135,7 @@ export interface EnvironmentVariableUpdateResponse {
    */
   key: string;
 
-  updatedAt: string;
+  updatedAt: string | null;
 }
 
 /**
@@ -154,7 +154,7 @@ export interface EnvironmentVariableListResponse {
    */
   key: string;
 
-  updatedAt: string;
+  updatedAt: string | null;
 }
 
 export interface EnvironmentVariableCreateParams {
