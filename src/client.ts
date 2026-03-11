@@ -25,7 +25,13 @@ import {
 import * as Uploads from './core/uploads';
 import * as API from './resources/index';
 import { APIPromise } from './core/api-promise';
-import { BlobListParams, BlobListResponse, BlobStoreParams, Blobs } from './resources/blobs';
+import {
+  BlobListParams,
+  BlobListResponse,
+  BlobStoreParams,
+  BlobStoreResponse,
+  Blobs,
+} from './resources/blobs';
 import { EmailSendParams, EmailSendResponse, Emails } from './resources/emails';
 import { FileRetrieveResponse, Files } from './resources/files';
 import { Sqlite, SqliteBatchParams, SqliteBatchResponse, SqliteExecuteParams } from './resources/sqlite';
@@ -847,6 +853,7 @@ export declare namespace ValTown {
   export {
     Blobs as Blobs,
     type BlobListResponse as BlobListResponse,
+    type BlobStoreResponse as BlobStoreResponse,
     type BlobListParams as BlobListParams,
     type BlobStoreParams as BlobStoreParams,
   };

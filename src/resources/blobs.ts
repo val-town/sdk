@@ -49,13 +49,9 @@ export class Blobs extends APIResource {
     key: string,
     params: BlobStoreParams | null | undefined = undefined,
     options?: RequestOptions,
-  ): APIPromise<void> {
+  ): APIPromise<BlobStoreResponse> {
     const { blob } = params ?? {};
-    return this._client.post(path`/v1/blob/${key}`, {
-      body: blob,
-      ...options,
-      headers: buildHeaders([{ Accept: '*/*' }, options?.headers]),
-    });
+    return this._client.post(path`/v1/blob/${key}`, { body: blob, ...options });
   }
 }
 
@@ -80,6 +76,8 @@ export namespace BlobListResponse {
   }
 }
 
+export type BlobStoreResponse = 'ok';
+
 export interface BlobListParams {
   /**
    * If specified, only include blobs that start with this string
@@ -97,6 +95,7 @@ export interface BlobStoreParams {
 export declare namespace Blobs {
   export {
     type BlobListResponse as BlobListResponse,
+    type BlobStoreResponse as BlobStoreResponse,
     type BlobListParams as BlobListParams,
     type BlobStoreParams as BlobStoreParams,
   };
