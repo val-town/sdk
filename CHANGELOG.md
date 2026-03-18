@@ -1,5 +1,18 @@
 # Changelog
 
+## 3.9.0 (2026-03-18)
+
+Full Changelog: [v3.8.0...v3.9.0](https://github.com/val-town/sdk/compare/v3.8.0...v3.9.0)
+
+### Features
+
+* **api:** api update ([2439d77](https://github.com/val-town/sdk/commit/2439d7788dc1610cc631eaf068d40a2e420262d8))
+
+
+### Chores
+
+* **internal:** tweak CI branches ([f56ee23](https://github.com/val-town/sdk/commit/f56ee237e88269ed82bbe1705cd36cda348cba99))
+
 ## 3.8.0 (2026-03-11)
 
 Full Changelog: [v3.7.7...v3.8.0](https://github.com/val-town/sdk/compare/v3.7.7...v3.8.0)
