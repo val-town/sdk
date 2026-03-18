@@ -30,7 +30,7 @@ export interface ProfileRetrieveResponse extends Shared.User {
   /**
    * Your account tier
    */
-  tier: 'free' | 'pro' | null;
+  tier: 'free' | 'pro' | 'business' | null;
 }
 
 export declare namespace Profile {
