@@ -1,5 +1,19 @@
 # Changelog
 
+## 3.9.1 (2026-03-21)
+
+Full Changelog: [v3.9.0...v3.9.1](https://github.com/val-town/sdk/compare/v3.9.0...v3.9.1)
+
+### Chores
+
+* **tests:** bump steady to v0.19.4 ([532aba5](https://github.com/val-town/sdk/commit/532aba57c298c2855a86c56cd5b0f2dd8a87cdfa))
+* **tests:** bump steady to v0.19.5 ([7394f45](https://github.com/val-town/sdk/commit/7394f45f8c44fcc975013a236fb6488acfbeba11))
+
+
+### Refactors
+
+* **tests:** switch from prism to steady ([b1d3a17](https://github.com/val-town/sdk/commit/b1d3a17bf102f7c270684e844361a80637091f34))
+
 ## 3.9.0 (2026-03-18)
 
 Full Changelog: [v3.8.0...v3.9.0](https://github.com/val-town/sdk/compare/v3.8.0...v3.9.0)
