@@ -27,7 +27,7 @@ describe('resource logs', () => {
       end: '2019-12-27T18:11:19.117Z',
       file_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
       start: '2019-12-27T18:11:19.117Z',
-      trace_ids: ['string'],
+      trace_ids: ['xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'],
     });
   });
 });
