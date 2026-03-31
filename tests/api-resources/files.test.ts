@@ -9,7 +9,7 @@ const client = new ValTown({
 
 describe('resource files', () => {
   test('retrieve', async () => {
-    const responsePromise = client.files.retrieve('file_id');
+    const responsePromise = client.files.retrieve('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
