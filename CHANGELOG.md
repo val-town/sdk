@@ -1,5 +1,19 @@
 # Changelog
 
+## 3.11.0 (2026-03-31)
+
+Full Changelog: [v3.10.0...v3.11.0](https://github.com/val-town/sdk/compare/v3.10.0...v3.11.0)
+
+### Features
+
+* **api:** api update ([add69f5](https://github.com/val-town/sdk/commit/add69f5ee4fa183eb3d04e5cb9add985cbca6562))
+* **api:** api update ([d2a0a06](https://github.com/val-town/sdk/commit/d2a0a06dab00f972f2b9572050c84837cf7036eb))
+
+
+### Chores
+
+* **internal:** update multipart form array serialization ([5357709](https://github.com/val-town/sdk/commit/53577091df88780019089213f626cdc24dce323e))
+
 ## 3.10.0 (2026-03-25)
 
 Full Changelog: [v3.9.0...v3.10.0](https://github.com/val-town/sdk/compare/v3.9.0...v3.10.0)
