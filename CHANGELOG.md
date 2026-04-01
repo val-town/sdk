@@ -1,5 +1,14 @@
 # Changelog
 
+## 3.11.1 (2026-04-01)
+
+Full Changelog: [v3.11.0...v3.11.1](https://github.com/val-town/sdk/compare/v3.11.0...v3.11.1)
+
+### Chores
+
+* **tests:** bump steady to v0.20.1 ([8f90d72](https://github.com/val-town/sdk/commit/8f90d723dfc7c95feb23c8471710cf1db74201ef))
+* **tests:** bump steady to v0.20.2 ([ada211b](https://github.com/val-town/sdk/commit/ada211b5a5d1bf0a8b7bbadbae9521b2b3341c31))
+
 ## 3.11.0 (2026-03-31)
 
 Full Changelog: [v3.10.0...v3.11.0](https://github.com/val-town/sdk/compare/v3.10.0...v3.11.0)
