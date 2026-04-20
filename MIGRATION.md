@@ -109,8 +109,6 @@ client.example.list(undefined, { headers: { ... } });
 This affects the following methods:
 
 - `client.blobs.list()`
-- `client.blobs.store()`
-- `client.emails.send()`
 
 ### Removed `httpAgent` in favor of `fetchOptions`
 

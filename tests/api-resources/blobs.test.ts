@@ -38,8 +38,10 @@ describe('resource blobs', () => {
   });
 
   // Prism doesn't support this response type https://docs.stoplight.io/docs/prism/1593d1470e4df-concepts#content-negotiation
-  test.skip('store', async () => {
-    const responsePromise = client.blobs.store('x');
+  test.skip('store: only required params', async () => {
+    const responsePromise = client.blobs.store('x', {
+      blob: await toFile(Buffer.from('Example data'), 'README.md'),
+    });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -50,14 +52,9 @@ describe('resource blobs', () => {
   });
 
   // Prism doesn't support this response type https://docs.stoplight.io/docs/prism/1593d1470e4df-concepts#content-negotiation
-  test.skip('store: request options and params are passed correctly', async () => {
-    // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(
-      client.blobs.store(
-        'x',
-        { blob: await toFile(Buffer.from('Example data'), 'README.md') },
-        { path: '/_stainless_unknown_path' },
-      ),
-    ).rejects.toThrow(ValTown.NotFoundError);
+  test.skip('store: required and optional params', async () => {
+    const response = await client.blobs.store('x', {
+      blob: await toFile(Buffer.from('Example data'), 'README.md'),
+    });
   });
 });
