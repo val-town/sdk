@@ -1,5 +1,22 @@
 # Changelog
 
+## 3.12.0 (2026-04-20)
+
+Full Changelog: [v3.11.0...v3.12.0](https://github.com/val-town/sdk/compare/v3.11.0...v3.12.0)
+
+### Features
+
+* **api:** api update ([1cd444b](https://github.com/val-town/sdk/commit/1cd444b349496b0ddb4d4a9b279ba9a23937550e))
+
+
+### Chores
+
+* **internal:** codegen related update ([9268a83](https://github.com/val-town/sdk/commit/9268a8351b9f93ca60253585dbac4197c7484f2f))
+* **internal:** codegen related update ([26a2f1d](https://github.com/val-town/sdk/commit/26a2f1d699331a8c08736c99af41b2d2c42fa259))
+* **tests:** bump steady to v0.20.1 ([8f90d72](https://github.com/val-town/sdk/commit/8f90d723dfc7c95feb23c8471710cf1db74201ef))
+* **tests:** bump steady to v0.20.2 ([ada211b](https://github.com/val-town/sdk/commit/ada211b5a5d1bf0a8b7bbadbae9521b2b3341c31))
+* **tests:** bump steady to v0.22.1 ([b0c8cd9](https://github.com/val-town/sdk/commit/b0c8cd9ee401a9fe1032841c1ab5d15766589d29))
+
 ## 3.11.0 (2026-03-31)
 
 Full Changelog: [v3.10.0...v3.11.0](https://github.com/val-town/sdk/compare/v3.10.0...v3.11.0)
