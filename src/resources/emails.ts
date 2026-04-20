@@ -20,10 +20,7 @@ export class Emails extends APIResource {
    * });
    * ```
    */
-  send(
-    body: EmailSendParams | null | undefined = {},
-    options?: RequestOptions,
-  ): APIPromise<EmailSendResponse> {
+  send(body: EmailSendParams, options?: RequestOptions): APIPromise<EmailSendResponse> {
     return this._client.post('/v1/email', { body, ...options });
   }
 }
