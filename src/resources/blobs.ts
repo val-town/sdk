@@ -45,12 +45,8 @@ export class Blobs extends APIResource {
   /**
    * Store data in blob storage
    */
-  store(
-    key: string,
-    params: BlobStoreParams | null | undefined = undefined,
-    options?: RequestOptions,
-  ): APIPromise<BlobStoreResponse> {
-    const { blob } = params ?? {};
+  store(key: string, params: BlobStoreParams, options?: RequestOptions): APIPromise<BlobStoreResponse> {
+    const { blob } = params;
     return this._client.post(path`/v1/blob/${key}`, { body: blob, ...options });
   }
 }
@@ -89,7 +85,7 @@ export interface BlobStoreParams {
   /**
    * Binary input data
    */
-  blob?: Uploadable;
+  blob: Uploadable;
 }
 
 export declare namespace Blobs {
