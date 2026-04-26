@@ -2,10 +2,7 @@
 
 import ValTown from '@valtown/sdk';
 
-const client = new ValTown({
-  bearerToken: 'My Bearer Token',
-  baseURL: process.env['TEST_API_BASE_URL'] ?? 'http://127.0.0.1:4010',
-});
+const client = new ValTown({ bearerToken: 'My Bearer Token', baseURL: process.env["TEST_API_BASE_URL"] ?? 'http://127.0.0.1:4010' });
 
 describe('resource logs', () => {
   test('list: only required params', async () => {
@@ -21,13 +18,13 @@ describe('resource logs', () => {
 
   test('list: required and optional params', async () => {
     const response = await client.telemetry.logs.list({
-      direction: 'asc',
-      limit: 1,
-      branch_ids: ['182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e'],
-      end: '2019-12-27T18:11:19.117Z',
-      file_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
-      start: '2019-12-27T18:11:19.117Z',
-      trace_ids: ['xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'],
-    });
+    direction: 'asc',
+    limit: 1,
+    branch_ids: ['182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e'],
+    end: '2019-12-27T18:11:19.117Z',
+    file_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
+    start: '2019-12-27T18:11:19.117Z',
+    trace_ids: ['xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'],
+  });
   });
 });

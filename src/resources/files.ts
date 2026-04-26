@@ -69,5 +69,7 @@ export namespace FileRetrieveResponse {
 }
 
 export declare namespace Files {
-  export { type FileRetrieveResponse as FileRetrieveResponse };
+  export {
+    type FileRetrieveResponse as FileRetrieveResponse
+  };
 }

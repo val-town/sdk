@@ -121,5 +121,8 @@ export interface LogListParams {
 }
 
 export declare namespace Logs {
-  export { type LogListResponse as LogListResponse, type LogListParams as LogListParams };
+  export {
+    type LogListResponse as LogListResponse,
+    type LogListParams as LogListParams
+  };
 }

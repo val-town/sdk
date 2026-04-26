@@ -4,42 +4,11 @@ import { APIResource } from '../../core/resource';
 import * as Shared from '../shared';
 import { ValsCursor } from '../shared';
 import * as BranchesAPI from './branches';
-import {
-  BranchCreateParams,
-  BranchCreateResponse,
-  BranchDeleteParams,
-  BranchListParams,
-  BranchListResponse,
-  BranchListResponsesPageCursorURL,
-  BranchRetrieveParams,
-  BranchRetrieveResponse,
-  Branches,
-} from './branches';
+import { BranchCreateParams, BranchCreateResponse, BranchDeleteParams, BranchListParams, BranchListResponse, BranchListResponsesPageCursorURL, BranchRetrieveParams, BranchRetrieveResponse, Branches } from './branches';
 import * as EnvironmentVariablesAPI from './environment-variables';
-import {
-  EnvironmentVariableCreateParams,
-  EnvironmentVariableCreateResponse,
-  EnvironmentVariableDeleteParams,
-  EnvironmentVariableListParams,
-  EnvironmentVariableListResponse,
-  EnvironmentVariableListResponsesPageCursorURL,
-  EnvironmentVariableUpdateParams,
-  EnvironmentVariableUpdateResponse,
-  EnvironmentVariables,
-} from './environment-variables';
+import { EnvironmentVariableCreateParams, EnvironmentVariableCreateResponse, EnvironmentVariableDeleteParams, EnvironmentVariableListParams, EnvironmentVariableListResponse, EnvironmentVariableListResponsesPageCursorURL, EnvironmentVariableUpdateParams, EnvironmentVariableUpdateResponse, EnvironmentVariables } from './environment-variables';
 import * as FilesAPI from './files';
-import {
-  FileCreateParams,
-  FileCreateResponse,
-  FileDeleteParams,
-  FileGetContentParams,
-  FileRetrieveParams,
-  FileRetrieveResponse,
-  FileRetrieveResponsesPageCursorURL,
-  FileUpdateParams,
-  FileUpdateResponse,
-  Files,
-} from './files';
+import { FileCreateParams, FileCreateResponse, FileDeleteParams, FileGetContentParams, FileRetrieveParams, FileRetrieveResponse, FileRetrieveResponsesPageCursorURL, FileUpdateParams, FileUpdateResponse, Files } from './files';
 import { APIPromise } from '../../core/api-promise';
 import { Cursor, type CursorParams, PagePromise } from '../../core/pagination';
 import { buildHeaders } from '../../internal/headers';
@@ -52,8 +21,7 @@ import { path } from '../../internal/utils/path';
 export class Vals extends APIResource {
   branches: BranchesAPI.Branches = new BranchesAPI.Branches(this._client);
   files: FilesAPI.Files = new FilesAPI.Files(this._client);
-  environmentVariables: EnvironmentVariablesAPI.EnvironmentVariables =
-    new EnvironmentVariablesAPI.EnvironmentVariables(this._client);
+  environmentVariables: EnvironmentVariablesAPI.EnvironmentVariables = new EnvironmentVariablesAPI.EnvironmentVariables(this._client);
 
   /**
    * Create a new val
@@ -111,10 +79,7 @@ export class Vals extends APIResource {
    * ```
    */
   delete(valID: string, options?: RequestOptions): APIPromise<void> {
-    return this._client.delete(path`/v2/vals/${valID}`, {
-      ...options,
-      headers: buildHeaders([{ Accept: '*/*' }, options?.headers]),
-    });
+    return this._client.delete(path`/v2/vals/${valID}`, { ...options, headers: buildHeaders([{Accept: '*/*'}, options?.headers]) });
   }
 }
 
@@ -154,7 +119,10 @@ Vals.Files = Files;
 Vals.EnvironmentVariables = EnvironmentVariables;
 
 export declare namespace Vals {
-  export { type ValCreateParams as ValCreateParams, type ValListParams as ValListParams };
+  export {
+    type ValCreateParams as ValCreateParams,
+    type ValListParams as ValListParams
+  };
 
   export {
     Branches as Branches,
@@ -165,7 +133,7 @@ export declare namespace Vals {
     type BranchCreateParams as BranchCreateParams,
     type BranchRetrieveParams as BranchRetrieveParams,
     type BranchListParams as BranchListParams,
-    type BranchDeleteParams as BranchDeleteParams,
+    type BranchDeleteParams as BranchDeleteParams
   };
 
   export {
@@ -178,7 +146,7 @@ export declare namespace Vals {
     type FileRetrieveParams as FileRetrieveParams,
     type FileUpdateParams as FileUpdateParams,
     type FileDeleteParams as FileDeleteParams,
-    type FileGetContentParams as FileGetContentParams,
+    type FileGetContentParams as FileGetContentParams
   };
 
   export {
@@ -190,8 +158,8 @@ export declare namespace Vals {
     type EnvironmentVariableCreateParams as EnvironmentVariableCreateParams,
     type EnvironmentVariableUpdateParams as EnvironmentVariableUpdateParams,
     type EnvironmentVariableListParams as EnvironmentVariableListParams,
-    type EnvironmentVariableDeleteParams as EnvironmentVariableDeleteParams,
+    type EnvironmentVariableDeleteParams as EnvironmentVariableDeleteParams
   };
 }
 
-export { type ValsCursor };
+export { type ValsCursor }

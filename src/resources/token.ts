@@ -64,6 +64,6 @@ export declare namespace Token {
     type TokenGoogleResponse as TokenGoogleResponse,
     type TokenSlackResponse as TokenSlackResponse,
     type TokenGoogleParams as TokenGoogleParams,
-    type TokenSlackParams as TokenSlackParams,
+    type TokenSlackParams as TokenSlackParams
   };
 }

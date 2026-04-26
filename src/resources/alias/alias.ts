@@ -14,5 +14,7 @@ export class Alias extends APIResource {
 Alias.Username = Username;
 
 export declare namespace Alias {
-  export { Username as Username };
+  export {
+    Username as Username
+  };
 }
