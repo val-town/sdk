@@ -14,7 +14,7 @@ export class Memberships extends APIResource {
   }
 }
 
-export type MembershipListResponse = Array<MembershipListResponse.MembershipListResponseItem>;
+export type MembershipListResponse = Array<MembershipListResponse.MembershipListResponseItem>
 
 export namespace MembershipListResponse {
   /**
@@ -50,5 +50,7 @@ export namespace MembershipListResponse {
 }
 
 export declare namespace Memberships {
-  export { type MembershipListResponse as MembershipListResponse };
+  export {
+    type MembershipListResponse as MembershipListResponse
+  };
 }

@@ -34,5 +34,7 @@ export interface ProfileRetrieveResponse extends Shared.User {
 }
 
 export declare namespace Profile {
-  export { type ProfileRetrieveResponse as ProfileRetrieveResponse };
+  export {
+    type ProfileRetrieveResponse as ProfileRetrieveResponse
+  };
 }

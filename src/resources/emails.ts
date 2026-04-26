@@ -180,5 +180,8 @@ export namespace EmailSendParams {
 }
 
 export declare namespace Emails {
-  export { type EmailSendResponse as EmailSendResponse, type EmailSendParams as EmailSendParams };
+  export {
+    type EmailSendResponse as EmailSendResponse,
+    type EmailSendParams as EmailSendParams
+  };
 }

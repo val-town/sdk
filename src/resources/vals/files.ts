@@ -24,12 +24,8 @@ export class Files extends APIResource {
    * ```
    */
   create(valID: string, params: FileCreateParams, options?: RequestOptions): APIPromise<FileCreateResponse> {
-    const { path: path_, branch_id, ...body } = params;
-    return this._client.post(path`/v2/vals/${valID}/files`, {
-      query: { path: path_, branch_id },
-      body,
-      ...options,
-    });
+    const { path: path_, branch_id, ...body } = params
+    return this._client.post(path`/v2/vals/${valID}/files`, { query: { path: path_, branch_id }, body, ...options });
   }
 
   /**
@@ -52,15 +48,8 @@ export class Files extends APIResource {
    * }
    * ```
    */
-  retrieve(
-    valID: string,
-    query: FileRetrieveParams,
-    options?: RequestOptions,
-  ): PagePromise<FileRetrieveResponsesPageCursorURL, FileRetrieveResponse> {
-    return this._client.getAPIList(path`/v2/vals/${valID}/files`, PageCursorURL<FileRetrieveResponse>, {
-      query,
-      ...options,
-    });
+  retrieve(valID: string, query: FileRetrieveParams, options?: RequestOptions): PagePromise<FileRetrieveResponsesPageCursorURL, FileRetrieveResponse> {
+    return this._client.getAPIList(path`/v2/vals/${valID}/files`, PageCursorURL<FileRetrieveResponse>, { query, ...options });
   }
 
   /**
@@ -75,12 +64,8 @@ export class Files extends APIResource {
    * ```
    */
   update(valID: string, params: FileUpdateParams, options?: RequestOptions): APIPromise<FileUpdateResponse> {
-    const { path: path_, branch_id, ...body } = params;
-    return this._client.put(path`/v2/vals/${valID}/files`, {
-      query: { path: path_, branch_id },
-      body,
-      ...options,
-    });
+    const { path: path_, branch_id, ...body } = params
+    return this._client.put(path`/v2/vals/${valID}/files`, { query: { path: path_, branch_id }, body, ...options });
   }
 
   /**
@@ -97,12 +82,8 @@ export class Files extends APIResource {
    * ```
    */
   delete(valID: string, params: FileDeleteParams, options?: RequestOptions): APIPromise<void> {
-    const { path: path_, recursive, branch_id } = params;
-    return this._client.delete(path`/v2/vals/${valID}/files`, {
-      query: { path: path_, recursive, branch_id },
-      ...options,
-      headers: buildHeaders([{ Accept: '*/*' }, options?.headers]),
-    });
+    const { path: path_, recursive, branch_id } = params
+    return this._client.delete(path`/v2/vals/${valID}/files`, { query: { path: path_, recursive, branch_id }, ...options, headers: buildHeaders([{Accept: '*/*'}, options?.headers]) });
   }
 
   /**
@@ -120,34 +101,12 @@ export class Files extends APIResource {
    * ```
    */
   getContent(valID: string, params: FileGetContentParams, options?: RequestOptions): APIPromise<Response> {
-    const {
-      'Cache-Control': cacheControl,
-      'If-Match': ifMatch,
-      'If-Modified-Since': ifModifiedSince,
-      'If-None-Match': ifNoneMatch,
-      'If-Unmodified-Since': ifUnmodifiedSince,
-      ...query
-    } = params;
-    return this._client.get(path`/v2/vals/${valID}/files/content`, {
-      query,
-      ...options,
-      headers: buildHeaders([
-        {
-          Accept: 'application/octet-stream',
-          ...(cacheControl != null ? { 'Cache-Control': cacheControl } : undefined),
-          ...(ifMatch != null ? { 'If-Match': ifMatch } : undefined),
-          ...(ifModifiedSince != null ? { 'If-Modified-Since': ifModifiedSince } : undefined),
-          ...(ifNoneMatch != null ? { 'If-None-Match': ifNoneMatch } : undefined),
-          ...(ifUnmodifiedSince != null ? { 'If-Unmodified-Since': ifUnmodifiedSince } : undefined),
-        },
-        options?.headers,
-      ]),
-      __binaryResponse: true,
-    });
+    const { 'Cache-Control': cacheControl, 'If-Match': ifMatch, 'If-Modified-Since': ifModifiedSince, 'If-None-Match': ifNoneMatch, 'If-Unmodified-Since': ifUnmodifiedSince, ...query } = params
+    return this._client.get(path`/v2/vals/${valID}/files/content`, { query, ...options, headers: buildHeaders([{Accept: 'application/octet-stream', ...(cacheControl != null ? { 'Cache-Control': cacheControl } : undefined), ...(ifMatch != null ? { 'If-Match': ifMatch } : undefined), ...(ifModifiedSince != null ? { 'If-Modified-Since': ifModifiedSince } : undefined), ...(ifNoneMatch != null ? { 'If-None-Match': ifNoneMatch } : undefined), ...(ifUnmodifiedSince != null ? { 'If-Unmodified-Since': ifUnmodifiedSince } : undefined)}, options?.headers]), __binaryResponse: true });
   }
 }
 
-export type FileRetrieveResponsesPageCursorURL = PageCursorURL<FileRetrieveResponse>;
+export type FileRetrieveResponsesPageCursorURL = PageCursorURL<FileRetrieveResponse>
 
 /**
  * A File or Directory's Metadata
@@ -302,7 +261,7 @@ export namespace FileUpdateResponse {
   }
 }
 
-export type FileCreateParams = FileCreateParams.Variant0 | FileCreateParams.Variant1;
+export type FileCreateParams = FileCreateParams.Variant0 | FileCreateParams.Variant1
 
 export declare namespace FileCreateParams {
   export interface Variant0 {
@@ -485,6 +444,6 @@ export declare namespace Files {
     type FileRetrieveParams as FileRetrieveParams,
     type FileUpdateParams as FileUpdateParams,
     type FileDeleteParams as FileDeleteParams,
-    type FileGetContentParams as FileGetContentParams,
+    type FileGetContentParams as FileGetContentParams
   };
 }

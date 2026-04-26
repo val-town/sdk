@@ -15,15 +15,12 @@ export class Orgs extends APIResource {
   /**
    * Get all orgs you are a member of
    */
-  list(
-    query: OrgListParams,
-    options?: RequestOptions,
-  ): PagePromise<OrgListResponsesPageCursorURL, OrgListResponse> {
+  list(query: OrgListParams, options?: RequestOptions): PagePromise<OrgListResponsesPageCursorURL, OrgListResponse> {
     return this._client.getAPIList('/v2/orgs', PageCursorURL<OrgListResponse>, { query, ...options });
   }
 }
 
-export type OrgListResponsesPageCursorURL = PageCursorURL<OrgListResponse>;
+export type OrgListResponsesPageCursorURL = PageCursorURL<OrgListResponse>
 
 /**
  * An Org
@@ -37,7 +34,8 @@ export interface OrgListResponse {
   username: string;
 }
 
-export interface OrgListParams extends PageCursorURLParams {}
+export interface OrgListParams extends PageCursorURLParams {
+}
 
 Orgs.Memberships = Memberships;
 
@@ -45,8 +43,11 @@ export declare namespace Orgs {
   export {
     type OrgListResponse as OrgListResponse,
     type OrgListResponsesPageCursorURL as OrgListResponsesPageCursorURL,
-    type OrgListParams as OrgListParams,
+    type OrgListParams as OrgListParams
   };
 
-  export { Memberships as Memberships, type MembershipListResponse as MembershipListResponse };
+  export {
+    Memberships as Memberships,
+    type MembershipListResponse as MembershipListResponse
+  };
 }

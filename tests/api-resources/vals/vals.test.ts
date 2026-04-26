@@ -2,10 +2,7 @@
 
 import ValTown from '@valtown/sdk';
 
-const client = new ValTown({
-  bearerToken: 'My Bearer Token',
-  baseURL: process.env['TEST_API_BASE_URL'] ?? 'http://127.0.0.1:4010',
-});
+const client = new ValTown({ bearerToken: 'My Bearer Token', baseURL: process.env["TEST_API_BASE_URL"] ?? 'http://127.0.0.1:4010' });
 
 describe('resource vals', () => {
   test('create: only required params', async () => {
@@ -21,11 +18,11 @@ describe('resource vals', () => {
 
   test('create: required and optional params', async () => {
     const response = await client.vals.create({
-      name: 'myVal',
-      privacy: 'public',
-      description: 'My val',
-      orgId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
-    });
+    name: 'myVal',
+    privacy: 'public',
+    description: 'My val',
+    orgId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
+  });
   });
 
   test('retrieve', async () => {
@@ -52,11 +49,11 @@ describe('resource vals', () => {
 
   test('list: required and optional params', async () => {
     const response = await client.vals.list({
-      limit: 1,
-      cursor: '2019-12-27T18:11:19.117Z',
-      privacy: 'public',
-      user_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
-    });
+    limit: 1,
+    cursor: '2019-12-27T18:11:19.117Z',
+    privacy: 'public',
+    user_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
+  });
   });
 
   test('delete', async () => {

@@ -26,11 +26,7 @@ export class Branches extends APIResource {
    * );
    * ```
    */
-  create(
-    valID: string,
-    body: BranchCreateParams,
-    options?: RequestOptions,
-  ): APIPromise<BranchCreateResponse> {
+  create(valID: string, body: BranchCreateParams, options?: RequestOptions): APIPromise<BranchCreateResponse> {
     return this._client.post(path`/v2/vals/${valID}/branches`, { body, ...options });
   }
 
@@ -45,12 +41,8 @@ export class Branches extends APIResource {
    * );
    * ```
    */
-  retrieve(
-    branchID: string,
-    params: BranchRetrieveParams,
-    options?: RequestOptions,
-  ): APIPromise<BranchRetrieveResponse> {
-    const { val_id } = params;
+  retrieve(branchID: string, params: BranchRetrieveParams, options?: RequestOptions): APIPromise<BranchRetrieveResponse> {
+    const { val_id } = params
     return this._client.get(path`/v2/vals/${val_id}/branches/${branchID}`, options);
   }
 
@@ -68,15 +60,8 @@ export class Branches extends APIResource {
    * }
    * ```
    */
-  list(
-    valID: string,
-    query: BranchListParams,
-    options?: RequestOptions,
-  ): PagePromise<BranchListResponsesPageCursorURL, BranchListResponse> {
-    return this._client.getAPIList(path`/v2/vals/${valID}/branches`, PageCursorURL<BranchListResponse>, {
-      query,
-      ...options,
-    });
+  list(valID: string, query: BranchListParams, options?: RequestOptions): PagePromise<BranchListResponsesPageCursorURL, BranchListResponse> {
+    return this._client.getAPIList(path`/v2/vals/${valID}/branches`, PageCursorURL<BranchListResponse>, { query, ...options });
   }
 
   /**
@@ -91,15 +76,12 @@ export class Branches extends APIResource {
    * ```
    */
   delete(branchID: string, params: BranchDeleteParams, options?: RequestOptions): APIPromise<void> {
-    const { val_id } = params;
-    return this._client.delete(path`/v2/vals/${val_id}/branches/${branchID}`, {
-      ...options,
-      headers: buildHeaders([{ Accept: '*/*' }, options?.headers]),
-    });
+    const { val_id } = params
+    return this._client.delete(path`/v2/vals/${val_id}/branches/${branchID}`, { ...options, headers: buildHeaders([{Accept: '*/*'}, options?.headers]) });
   }
 }
 
-export type BranchListResponsesPageCursorURL = PageCursorURL<BranchListResponse>;
+export type BranchListResponsesPageCursorURL = PageCursorURL<BranchListResponse>
 
 /**
  * A Branch
@@ -235,7 +217,8 @@ export interface BranchRetrieveParams {
   val_id: string;
 }
 
-export interface BranchListParams extends PageCursorURLParams {}
+export interface BranchListParams extends PageCursorURLParams {
+}
 
 export interface BranchDeleteParams {
   /**
@@ -253,6 +236,6 @@ export declare namespace Branches {
     type BranchCreateParams as BranchCreateParams,
     type BranchRetrieveParams as BranchRetrieveParams,
     type BranchListParams as BranchListParams,
-    type BranchDeleteParams as BranchDeleteParams,
+    type BranchDeleteParams as BranchDeleteParams
   };
 }
