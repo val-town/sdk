@@ -122,8 +122,5 @@ export interface TraceListParams {
 }
 
 export declare namespace Traces {
-  export {
-    type TraceListResponse as TraceListResponse,
-    type TraceListParams as TraceListParams
-  };
+  export { type TraceListResponse as TraceListResponse, type TraceListParams as TraceListParams };
 }

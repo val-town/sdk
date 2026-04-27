@@ -42,7 +42,7 @@ export class Sqlite extends APIResource {
 /**
  * Array of results from the statements executed
  */
-export type SqliteBatchResponse = Array<Shared.ResultSet>
+export type SqliteBatchResponse = Array<Shared.ResultSet>;
 
 export interface SqliteBatchParams {
   statements: Array<string | SqliteBatchParams.ParameterizedQuery>;
@@ -97,6 +97,6 @@ export declare namespace Sqlite {
   export {
     type SqliteBatchResponse as SqliteBatchResponse,
     type SqliteBatchParams as SqliteBatchParams,
-    type SqliteExecuteParams as SqliteExecuteParams
+    type SqliteExecuteParams as SqliteExecuteParams,
   };
 }

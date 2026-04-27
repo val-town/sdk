@@ -19,13 +19,10 @@ export class Vals extends APIResource {
   }
 }
 
-export interface ValListParams extends PageCursorURLParams {
-}
+export interface ValListParams extends PageCursorURLParams {}
 
 export declare namespace Vals {
-  export {
-    type ValListParams as ValListParams
-  };
+  export { type ValListParams as ValListParams };
 }
 
-export { type ValsPageCursorURL }
+export { type ValsPageCursorURL };
