@@ -36,8 +36,5 @@ export class Username extends APIResource {
 Username.ValName = ValName;
 
 export declare namespace Username {
-  export {
-    ValName as ValName,
-    type ValNameRetrieveParams as ValNameRetrieveParams
-  };
+  export { ValName as ValName, type ValNameRetrieveParams as ValNameRetrieveParams };
 }

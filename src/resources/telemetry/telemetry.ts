@@ -21,12 +21,8 @@ export declare namespace Telemetry {
   export {
     Traces as Traces,
     type TraceListResponse as TraceListResponse,
-    type TraceListParams as TraceListParams
+    type TraceListParams as TraceListParams,
   };
 
-  export {
-    Logs as Logs,
-    type LogListResponse as LogListResponse,
-    type LogListParams as LogListParams
-  };
+  export { Logs as Logs, type LogListResponse as LogListResponse, type LogListParams as LogListParams };
 }

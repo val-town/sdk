@@ -26,7 +26,7 @@ export class ValName extends APIResource {
    * ```
    */
   retrieve(valName: string, params: ValNameRetrieveParams, options?: RequestOptions): APIPromise<Shared.Val> {
-    const { username } = params
+    const { username } = params;
     return this._client.get(path`/v2/alias/vals/${username}/${valName}`, options);
   }
 }
@@ -39,7 +39,5 @@ export interface ValNameRetrieveParams {
 }
 
 export declare namespace ValName {
-  export {
-    type ValNameRetrieveParams as ValNameRetrieveParams
-  };
+  export { type ValNameRetrieveParams as ValNameRetrieveParams };
 }

@@ -23,7 +23,11 @@ export class EnvironmentVariables extends APIResource {
    *   );
    * ```
    */
-  create(valID: string, body: EnvironmentVariableCreateParams, options?: RequestOptions): APIPromise<EnvironmentVariableCreateResponse> {
+  create(
+    valID: string,
+    body: EnvironmentVariableCreateParams,
+    options?: RequestOptions,
+  ): APIPromise<EnvironmentVariableCreateResponse> {
     return this._client.post(path`/v2/vals/${valID}/environment_variables`, { body, ...options });
   }
 
@@ -39,8 +43,12 @@ export class EnvironmentVariables extends APIResource {
    *   });
    * ```
    */
-  update(key: string, params: EnvironmentVariableUpdateParams, options?: RequestOptions): APIPromise<EnvironmentVariableUpdateResponse> {
-    const { val_id, ...body } = params
+  update(
+    key: string,
+    params: EnvironmentVariableUpdateParams,
+    options?: RequestOptions,
+  ): APIPromise<EnvironmentVariableUpdateResponse> {
+    const { val_id, ...body } = params;
     return this._client.put(path`/v2/vals/${val_id}/environment_variables/${key}`, { body, ...options });
   }
 
@@ -59,8 +67,16 @@ export class EnvironmentVariables extends APIResource {
    * }
    * ```
    */
-  list(valID: string, query: EnvironmentVariableListParams, options?: RequestOptions): PagePromise<EnvironmentVariableListResponsesPageCursorURL, EnvironmentVariableListResponse> {
-    return this._client.getAPIList(path`/v2/vals/${valID}/environment_variables`, PageCursorURL<EnvironmentVariableListResponse>, { query, ...options });
+  list(
+    valID: string,
+    query: EnvironmentVariableListParams,
+    options?: RequestOptions,
+  ): PagePromise<EnvironmentVariableListResponsesPageCursorURL, EnvironmentVariableListResponse> {
+    return this._client.getAPIList(
+      path`/v2/vals/${valID}/environment_variables`,
+      PageCursorURL<EnvironmentVariableListResponse>,
+      { query, ...options },
+    );
   }
 
   /**
@@ -74,12 +90,15 @@ export class EnvironmentVariables extends APIResource {
    * ```
    */
   delete(key: string, params: EnvironmentVariableDeleteParams, options?: RequestOptions): APIPromise<void> {
-    const { val_id } = params
-    return this._client.delete(path`/v2/vals/${val_id}/environment_variables/${key}`, { ...options, headers: buildHeaders([{Accept: '*/*'}, options?.headers]) });
+    const { val_id } = params;
+    return this._client.delete(path`/v2/vals/${val_id}/environment_variables/${key}`, {
+      ...options,
+      headers: buildHeaders([{ Accept: '*/*' }, options?.headers]),
+    });
   }
 }
 
-export type EnvironmentVariableListResponsesPageCursorURL = PageCursorURL<EnvironmentVariableListResponse>
+export type EnvironmentVariableListResponsesPageCursorURL = PageCursorURL<EnvironmentVariableListResponse>;
 
 /**
  * An environment variable
@@ -172,8 +191,7 @@ export interface EnvironmentVariableUpdateParams {
   description?: string;
 }
 
-export interface EnvironmentVariableListParams extends PageCursorURLParams {
-}
+export interface EnvironmentVariableListParams extends PageCursorURLParams {}
 
 export interface EnvironmentVariableDeleteParams {
   /**
@@ -191,6 +209,6 @@ export declare namespace EnvironmentVariables {
     type EnvironmentVariableCreateParams as EnvironmentVariableCreateParams,
     type EnvironmentVariableUpdateParams as EnvironmentVariableUpdateParams,
     type EnvironmentVariableListParams as EnvironmentVariableListParams,
-    type EnvironmentVariableDeleteParams as EnvironmentVariableDeleteParams
+    type EnvironmentVariableDeleteParams as EnvironmentVariableDeleteParams,
   };
 }

@@ -18,13 +18,7 @@ Me.Profile = Profile;
 Me.Vals = Vals;
 
 export declare namespace Me {
-  export {
-    Profile as Profile,
-    type ProfileRetrieveResponse as ProfileRetrieveResponse
-  };
+  export { Profile as Profile, type ProfileRetrieveResponse as ProfileRetrieveResponse };
 
-  export {
-    Vals as Vals,
-    type ValListParams as ValListParams
-  };
+  export { Vals as Vals, type ValListParams as ValListParams };
 }

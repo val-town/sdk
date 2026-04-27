@@ -14,7 +14,10 @@ export class Blobs extends APIResource {
   /**
    * List blobs in your account
    */
-  list(query: BlobListParams | null | undefined = {}, options?: RequestOptions): APIPromise<BlobListResponse> {
+  list(
+    query: BlobListParams | null | undefined = {},
+    options?: RequestOptions,
+  ): APIPromise<BlobListResponse> {
     return this._client.get('/v1/blob', { query, ...options });
   }
 
@@ -22,21 +25,28 @@ export class Blobs extends APIResource {
    * Delete a blob
    */
   delete(key: string, options?: RequestOptions): APIPromise<void> {
-    return this._client.delete(path`/v1/blob/${key}`, { ...options, headers: buildHeaders([{Accept: '*/*'}, options?.headers]) });
+    return this._client.delete(path`/v1/blob/${key}`, {
+      ...options,
+      headers: buildHeaders([{ Accept: '*/*' }, options?.headers]),
+    });
   }
 
   /**
    * Get a blob’s contents.
    */
   get(key: string, options?: RequestOptions): APIPromise<Response> {
-    return this._client.get(path`/v1/blob/${key}`, { ...options, headers: buildHeaders([{Accept: 'application/octet-stream'}, options?.headers]), __binaryResponse: true });
+    return this._client.get(path`/v1/blob/${key}`, {
+      ...options,
+      headers: buildHeaders([{ Accept: 'application/octet-stream' }, options?.headers]),
+      __binaryResponse: true,
+    });
   }
 
   /**
    * Store data in blob storage
    */
   store(key: string, params: BlobStoreParams, options?: RequestOptions): APIPromise<BlobStoreResponse> {
-    const { blob } = params
+    const { blob } = params;
     return this._client.post(path`/v1/blob/${key}`, { body: blob, ...options });
   }
 }
@@ -44,7 +54,7 @@ export class Blobs extends APIResource {
 /**
  * List of blobs that you’ve stored
  */
-export type BlobListResponse = Array<BlobListResponse.BlobListResponseItem>
+export type BlobListResponse = Array<BlobListResponse.BlobListResponseItem>;
 
 export namespace BlobListResponse {
   export interface BlobListResponseItem {
@@ -62,7 +72,7 @@ export namespace BlobListResponse {
   }
 }
 
-export type BlobStoreResponse = 'ok'
+export type BlobStoreResponse = 'ok';
 
 export interface BlobListParams {
   /**
@@ -83,6 +93,6 @@ export declare namespace Blobs {
     type BlobListResponse as BlobListResponse,
     type BlobStoreResponse as BlobStoreResponse,
     type BlobListParams as BlobListParams,
-    type BlobStoreParams as BlobStoreParams
+    type BlobStoreParams as BlobStoreParams,
   };
 }
