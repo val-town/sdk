@@ -1,5 +1,20 @@
 # Changelog
 
+## 3.13.0 (2026-04-28)
+
+Full Changelog: [v3.12.0...v3.13.0](https://github.com/val-town/sdk/compare/v3.12.0...v3.13.0)
+
+### Features
+
+* **api:** api update ([b9ebe0f](https://github.com/val-town/sdk/commit/b9ebe0f4b8e81e8833601d46d8d0cf42757ef53f))
+* support setting headers via env ([18e15a4](https://github.com/val-town/sdk/commit/18e15a499aa2fb5a28beaf1474ba5574c66baae6))
+
+
+### Chores
+
+* **formatter:** run prettier and eslint separately ([d012fc1](https://github.com/val-town/sdk/commit/d012fc16626b517c5af0fdcd884e83bd0c9efd21))
+* **internal:** more robust bootstrap script ([9c17832](https://github.com/val-town/sdk/commit/9c178326edf3970e8120c9f85aac3c2a62babc67))
+
 ## 3.12.0 (2026-04-20)
 
 Full Changelog: [v3.11.0...v3.12.0](https://github.com/val-town/sdk/compare/v3.11.0...v3.12.0)
