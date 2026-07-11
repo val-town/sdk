@@ -1,5 +1,25 @@
 # Changelog
 
+## 3.14.0 (2026-07-11)
+
+Full Changelog: [v3.13.0...v3.14.0](https://github.com/val-town/sdk/compare/v3.13.0...v3.14.0)
+
+### Features
+
+* **api:** api update ([ce7e4e1](https://github.com/val-town/sdk/commit/ce7e4e143b11cfa8ddac2a0b0a82a65ce6e9002f))
+
+
+### Bug Fixes
+
+* **client:** send content-type header for requests with an omitted optional body ([21c03ba](https://github.com/val-town/sdk/commit/21c03bafe96025066a642deb85ec72f779a27d93))
+* **typescript:** upgrade tsc-multi so that it works with Node 26 ([5cdbd73](https://github.com/val-town/sdk/commit/5cdbd732044d06ce55cf76d964fa54cca36b3f52))
+
+
+### Chores
+
+* **internal:** codegen related update ([d72d40c](https://github.com/val-town/sdk/commit/d72d40c566eb0d75639c4b1afa1afb6e8b181c01))
+* **tests:** remove redundant File import ([aa35f4e](https://github.com/val-town/sdk/commit/aa35f4efb56c70f5ac9d2cd4a822ad8f82a72e19))
+
 ## 3.13.0 (2026-05-13)
 
 Full Changelog: [v3.12.0...v3.13.0](https://github.com/val-town/sdk/compare/v3.12.0...v3.13.0)
