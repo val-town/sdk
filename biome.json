@@ -19,7 +19,16 @@
     "bracketSameLine": false,
     "bracketSpacing": true,
     "expand": "auto",
-    "includes": ["**", "!**/CHANGELOG.md", "!./ecosystem-tests/*/**", "!./node_modules", "!./deno", "!./dist"]
+    "includes": [
+      "**",
+      "!**/CHANGELOG.md",
+      "!./ecosystem-tests/*/**",
+      "!./node_modules",
+      "!./deno",
+      "!./dist",
+      "!**/package.json",
+      "!**/package-lock.json"
+    ]
   },
   "linter": {
     "enabled": true,
