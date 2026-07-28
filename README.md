@@ -18,7 +18,7 @@ npm install @valtown/sdk
 
 The full API of this library can be found in [api.md](api.md).
 
-<!-- prettier-ignore -->
+<!-- biome-ignore format: keep table/list as-is -->
 ```js
 import ValTown from '@valtown/sdk';
 
@@ -35,7 +35,7 @@ console.log(response.message);
 
 This library includes TypeScript definitions for all request params and response fields. You may import and use them like so:
 
-<!-- prettier-ignore -->
+<!-- biome-ignore format: keep table/list as-is -->
 ```ts
 import ValTown from '@valtown/sdk';
 
@@ -54,7 +54,7 @@ When the library is unable to connect to the API,
 or if the API returns a non-success status code (i.e., 4xx or 5xx response),
 a subclass of `APIError` will be thrown:
 
-<!-- prettier-ignore -->
+<!-- biome-ignore format: keep table/list as-is -->
 ```ts
 const response = await client.emails.send().catch(async (err) => {
   if (err instanceof ValTown.APIError) {
@@ -88,7 +88,7 @@ Connection errors (for example, due to a network connectivity problem), 408 Requ
 
 You can use the `maxRetries` option to configure or disable this:
 
-<!-- prettier-ignore -->
+<!-- biome-ignore format: keep table/list as-is -->
 ```js
 // Configure the default for all requests:
 const client = new ValTown({
@@ -105,7 +105,7 @@ await client.emails.send({
 
 Requests time out after 1 minute by default. You can configure this with a `timeout` option:
 
-<!-- prettier-ignore -->
+<!-- biome-ignore format: keep table/list as-is -->
 ```ts
 // Configure the default for all requests:
 const client = new ValTown({
@@ -163,7 +163,7 @@ This method returns as soon as the headers for a successful response are receive
 You can also use the `.withResponse()` method to get the raw `Response` along with the parsed data.
 Unlike `.asResponse()` this method consumes the body, returning once it is parsed.
 
-<!-- prettier-ignore -->
+<!-- biome-ignore format: keep table/list as-is -->
 ```ts
 const client = new ValTown();
 
