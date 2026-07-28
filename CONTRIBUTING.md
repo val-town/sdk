@@ -1,13 +1,13 @@
 ## Setting up the environment
 
-This repository uses [`yarn@v1`](https://classic.yarnpkg.com/lang/en/docs/install).
+This repository uses [npm](https://docs.npmjs.com/about-npm).
 Other package managers may work but are not officially supported for development.
 
 To set up the repository, run:
 
 ```sh
-$ yarn
-$ yarn build
+$ npm install
+$ npm run build
 ```
 
 This will install all the required dependencies and build output files to `dist/`.
@@ -32,7 +32,7 @@ All files in the `examples/` directory are not modified by the generator and can
 ```sh
 $ chmod +x examples/<your-example>.ts
 # run the example against your api
-$ yarn tsn -T examples/<your-example>.ts
+$ npm run tsn -- -T examples/<your-example>.ts
 ```
 
 ## Using the repository from source
@@ -52,10 +52,10 @@ Alternatively, to link a local copy of the repo:
 $ git clone https://www.github.com/val-town/sdk
 $ cd sdk
 
-# With yarn
-$ yarn link
+# With npm
+$ npm link
 $ cd ../my-package
-$ yarn link @valtown/sdk
+$ npm link @valtown/sdk
 
 # With pnpm
 $ pnpm link --global
@@ -72,24 +72,23 @@ $ ./scripts/mock
 ```
 
 ```sh
-$ yarn run test
+$ npm run test
 ```
 
 ## Linting and formatting
 
-This repository uses [prettier](https://www.npmjs.com/package/prettier) and
-[eslint](https://www.npmjs.com/package/eslint) to format the code in the repository.
+This repository uses [Biome](https://biomejs.dev/) to lint and format the code in the repository.
 
 To lint:
 
 ```sh
-$ yarn lint
+$ npm run lint
 ```
 
 To format and fix all lint issues automatically:
 
 ```sh
-$ yarn fix
+$ npm run fix
 ```
 
 ## Publishing and releases

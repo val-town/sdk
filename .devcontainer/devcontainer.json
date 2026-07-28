@@ -6,10 +6,10 @@
   "features": {
     "ghcr.io/devcontainers/features/node:1": {}
   },
-  "postCreateCommand": "yarn install",
+  "postCreateCommand": "npm install",
   "customizations": {
     "vscode": {
-      "extensions": ["esbenp.prettier-vscode"]
+      "extensions": ["biomejs.biome"]
     }
   }
 }
