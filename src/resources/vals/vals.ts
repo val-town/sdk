@@ -15,6 +15,15 @@ import {
   BranchRetrieveResponse,
   Branches,
 } from './branches';
+import * as EnvironmentVariableGroupsAPI from './environment-variable-groups';
+import {
+  EnvironmentVariableGroupAttachParams,
+  EnvironmentVariableGroupDetachParams,
+  EnvironmentVariableGroupListParams,
+  EnvironmentVariableGroupListResponse,
+  EnvironmentVariableGroupListResponsesPageCursorURL,
+  EnvironmentVariableGroups,
+} from './environment-variable-groups';
 import * as EnvironmentVariablesAPI from './environment-variables';
 import {
   EnvironmentVariableCreateParams,
@@ -54,6 +63,8 @@ export class Vals extends APIResource {
   files: FilesAPI.Files = new FilesAPI.Files(this._client);
   environmentVariables: EnvironmentVariablesAPI.EnvironmentVariables =
     new EnvironmentVariablesAPI.EnvironmentVariables(this._client);
+  environmentVariableGroups: EnvironmentVariableGroupsAPI.EnvironmentVariableGroups =
+    new EnvironmentVariableGroupsAPI.EnvironmentVariableGroups(this._client);
 
   /**
    * Create a new val
@@ -152,6 +163,7 @@ export interface ValListParams extends CursorParams {
 Vals.Branches = Branches;
 Vals.Files = Files;
 Vals.EnvironmentVariables = EnvironmentVariables;
+Vals.EnvironmentVariableGroups = EnvironmentVariableGroups;
 
 export declare namespace Vals {
   export { type ValCreateParams as ValCreateParams, type ValListParams as ValListParams };
@@ -191,6 +203,15 @@ export declare namespace Vals {
     type EnvironmentVariableUpdateParams as EnvironmentVariableUpdateParams,
     type EnvironmentVariableListParams as EnvironmentVariableListParams,
     type EnvironmentVariableDeleteParams as EnvironmentVariableDeleteParams,
+  };
+
+  export {
+    EnvironmentVariableGroups as EnvironmentVariableGroups,
+    type EnvironmentVariableGroupListResponse as EnvironmentVariableGroupListResponse,
+    type EnvironmentVariableGroupListResponsesPageCursorURL as EnvironmentVariableGroupListResponsesPageCursorURL,
+    type EnvironmentVariableGroupListParams as EnvironmentVariableGroupListParams,
+    type EnvironmentVariableGroupAttachParams as EnvironmentVariableGroupAttachParams,
+    type EnvironmentVariableGroupDetachParams as EnvironmentVariableGroupDetachParams,
   };
 }
 

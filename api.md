@@ -181,6 +181,18 @@ Methods:
 - <code title="get /v2/vals/{val_id}/environment_variables">client.vals.environmentVariables.<a href="./src/resources/vals/environment-variables.ts">list</a>(valID, { ...params }) -> EnvironmentVariableListResponsesPageCursorURL</code>
 - <code title="delete /v2/vals/{val_id}/environment_variables/{key}">client.vals.environmentVariables.<a href="./src/resources/vals/environment-variables.ts">delete</a>(key, { ...params }) -> void</code>
 
+## EnvironmentVariableGroups
+
+Types:
+
+- <code><a href="./src/resources/vals/environment-variable-groups.ts">EnvironmentVariableGroupListResponse</a></code>
+
+Methods:
+
+- <code title="get /v2/vals/{val_id}/environment_variable_groups">client.vals.environmentVariableGroups.<a href="./src/resources/vals/environment-variable-groups.ts">list</a>(valID, { ...params }) -> EnvironmentVariableGroupListResponsesPageCursorURL</code>
+- <code title="put /v2/vals/{val_id}/environment_variable_groups/{group_id}">client.vals.environmentVariableGroups.<a href="./src/resources/vals/environment-variable-groups.ts">attach</a>(groupID, { ...params }) -> void</code>
+- <code title="delete /v2/vals/{val_id}/environment_variable_groups/{group_id}">client.vals.environmentVariableGroups.<a href="./src/resources/vals/environment-variable-groups.ts">detach</a>(groupID, { ...params }) -> void</code>
+
 # Files
 
 Types:
@@ -200,3 +212,32 @@ Types:
 Methods:
 
 - <code title="post /v1/email">client.emails.<a href="./src/resources/emails.ts">send</a>({ ...params }) -> EmailSendResponse</code>
+
+# EnvironmentVariableGroups
+
+Types:
+
+- <code><a href="./src/resources/environment-variable-groups/environment-variable-groups.ts">EnvironmentVariableGroupCreateResponse</a></code>
+- <code><a href="./src/resources/environment-variable-groups/environment-variable-groups.ts">EnvironmentVariableGroupListResponse</a></code>
+
+Methods:
+
+- <code title="post /v3/environment-variable-groups/">client.environmentVariableGroups.<a href="./src/resources/environment-variable-groups/environment-variable-groups.ts">create</a>({ ...params }) -> EnvironmentVariableGroupCreateResponse</code>
+- <code title="put /v3/environment-variable-groups/{id}">client.environmentVariableGroups.<a href="./src/resources/environment-variable-groups/environment-variable-groups.ts">update</a>(id, { ...params }) -> void</code>
+- <code title="get /v3/environment-variable-groups/">client.environmentVariableGroups.<a href="./src/resources/environment-variable-groups/environment-variable-groups.ts">list</a>({ ...params }) -> EnvironmentVariableGroupListResponsesPageCursorURL</code>
+- <code title="delete /v3/environment-variable-groups/{id}">client.environmentVariableGroups.<a href="./src/resources/environment-variable-groups/environment-variable-groups.ts">delete</a>(id) -> void</code>
+
+## EnvironmentVariables
+
+Types:
+
+- <code><a href="./src/resources/environment-variable-groups/environment-variables.ts">EnvironmentVariableCreateResponse</a></code>
+- <code><a href="./src/resources/environment-variable-groups/environment-variables.ts">EnvironmentVariableUpdateResponse</a></code>
+- <code><a href="./src/resources/environment-variable-groups/environment-variables.ts">EnvironmentVariableListResponse</a></code>
+
+Methods:
+
+- <code title="post /v3/environment-variable-groups/{id}/environment-variables">client.environmentVariableGroups.environmentVariables.<a href="./src/resources/environment-variable-groups/environment-variables.ts">create</a>(groupID, { ...params }) -> EnvironmentVariableCreateResponse</code>
+- <code title="post /v3/environment-variable-groups/{id}/environment-variables/{key}">client.environmentVariableGroups.environmentVariables.<a href="./src/resources/environment-variable-groups/environment-variables.ts">update</a>(key, { ...params }) -> EnvironmentVariableUpdateResponse</code>
+- <code title="get /v3/environment-variable-groups/{id}/environment-variables">client.environmentVariableGroups.environmentVariables.<a href="./src/resources/environment-variable-groups/environment-variables.ts">list</a>(groupID) -> EnvironmentVariableListResponse</code>
+- <code title="delete /v3/environment-variable-groups/{id}/environment-variables/{key}">client.environmentVariableGroups.environmentVariables.<a href="./src/resources/environment-variable-groups/environment-variables.ts">delete</a>(key, { ...params }) -> void</code>

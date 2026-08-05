@@ -10,6 +10,15 @@ export {
   type BlobStoreParams,
 } from './blobs';
 export { Emails, type EmailSendResponse, type EmailSendParams } from './emails';
+export {
+  EnvironmentVariableGroups,
+  type EnvironmentVariableGroupCreateResponse,
+  type EnvironmentVariableGroupListResponse,
+  type EnvironmentVariableGroupCreateParams,
+  type EnvironmentVariableGroupUpdateParams,
+  type EnvironmentVariableGroupListParams,
+  type EnvironmentVariableGroupListResponsesPageCursorURL,
+} from './environment-variable-groups/environment-variable-groups';
 export { Files, type FileRetrieveResponse } from './files';
 export { Me } from './me/me';
 export {

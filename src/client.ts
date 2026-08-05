@@ -43,6 +43,15 @@ import {
 } from './resources/token';
 import { Users } from './resources/users';
 import { Alias } from './resources/alias/alias';
+import {
+  EnvironmentVariableGroupCreateParams,
+  EnvironmentVariableGroupCreateResponse,
+  EnvironmentVariableGroupListParams,
+  EnvironmentVariableGroupListResponse,
+  EnvironmentVariableGroupListResponsesPageCursorURL,
+  EnvironmentVariableGroupUpdateParams,
+  EnvironmentVariableGroups,
+} from './resources/environment-variable-groups/environment-variable-groups';
 import { Me } from './resources/me/me';
 import { OrgListParams, OrgListResponse, OrgListResponsesPageCursorURL, Orgs } from './resources/orgs/orgs';
 import { Telemetry } from './resources/telemetry/telemetry';
@@ -823,6 +832,10 @@ export class ValTown {
    * Val Town supports sending emails from vals
    */
   emails: API.Emails = new API.Emails(this);
+  /**
+   * Reusable sets of environment variables that can be attached to many vals
+   */
+  environmentVariableGroups: API.EnvironmentVariableGroups = new API.EnvironmentVariableGroups(this);
 }
 
 ValTown.Alias = Alias;
@@ -836,6 +849,7 @@ ValTown.Token = Token;
 ValTown.Vals = Vals;
 ValTown.Files = Files;
 ValTown.Emails = Emails;
+ValTown.EnvironmentVariableGroups = EnvironmentVariableGroups;
 
 export declare namespace ValTown {
   export type RequestOptions = Opts.RequestOptions;
@@ -895,6 +909,16 @@ export declare namespace ValTown {
     Emails as Emails,
     type EmailSendResponse as EmailSendResponse,
     type EmailSendParams as EmailSendParams,
+  };
+
+  export {
+    EnvironmentVariableGroups as EnvironmentVariableGroups,
+    type EnvironmentVariableGroupCreateResponse as EnvironmentVariableGroupCreateResponse,
+    type EnvironmentVariableGroupListResponse as EnvironmentVariableGroupListResponse,
+    type EnvironmentVariableGroupListResponsesPageCursorURL as EnvironmentVariableGroupListResponsesPageCursorURL,
+    type EnvironmentVariableGroupCreateParams as EnvironmentVariableGroupCreateParams,
+    type EnvironmentVariableGroupUpdateParams as EnvironmentVariableGroupUpdateParams,
+    type EnvironmentVariableGroupListParams as EnvironmentVariableGroupListParams,
   };
 
   export type BasicVal = API.BasicVal;
