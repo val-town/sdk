@@ -12,6 +12,14 @@ export {
   type BranchListResponsesPageCursorURL,
 } from './branches';
 export {
+  EnvironmentVariableGroups,
+  type EnvironmentVariableGroupListResponse,
+  type EnvironmentVariableGroupListParams,
+  type EnvironmentVariableGroupAttachParams,
+  type EnvironmentVariableGroupDetachParams,
+  type EnvironmentVariableGroupListResponsesPageCursorURL,
+} from './environment-variable-groups';
+export {
   EnvironmentVariables,
   type EnvironmentVariableCreateResponse,
   type EnvironmentVariableUpdateResponse,
