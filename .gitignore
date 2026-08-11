@@ -10,3 +10,4 @@ dist-deno
 /*.tgz
 .idea/
 
+.worktrees

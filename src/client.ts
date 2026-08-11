@@ -55,6 +55,8 @@ import {
 import { Me } from './resources/me/me';
 import { OrgListParams, OrgListResponse, OrgListResponsesPageCursorURL, Orgs } from './resources/orgs/orgs';
 import { Telemetry } from './resources/telemetry/telemetry';
+import { type ValViewerParams, type ValViewerResponse } from './resources/val';
+import { Val as SharedVal } from './resources/shared';
 import { ValCreateParams, ValListParams, Vals } from './resources/vals/vals';
 import { type Fetch } from './internal/builtin-types';
 import { HeadersLike, NullableHeaders, buildHeaders } from './internal/headers';
@@ -821,6 +823,10 @@ export class ValTown {
    */
   token: API.Token = new API.Token(this);
   /**
+   * Look up the identity of viewers of app-authenticated vals
+   */
+  val: API.Val = new API.Val(this);
+  /**
    * Vals are a collaborative folder of runnable JavaScript, TypeScript, and JSX modules
    */
   vals: API.Vals = new API.Vals(this);
@@ -901,6 +907,8 @@ export declare namespace ValTown {
     type TokenSlackParams as TokenSlackParams,
   };
 
+  export { type ValViewerResponse as ValViewerResponse, type ValViewerParams as ValViewerParams };
+
   export { Vals as Vals, type ValCreateParams as ValCreateParams, type ValListParams as ValListParams };
 
   export { Files as Files, type FileRetrieveResponse as FileRetrieveResponse };
@@ -926,5 +934,5 @@ export declare namespace ValTown {
   export type PaginationLinks = API.PaginationLinks;
   export type ResultSet = API.ResultSet;
   export type User = API.User;
-  export type Val = API.Val;
+  export type Val = SharedVal;
 }
