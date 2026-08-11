@@ -126,6 +126,16 @@ Methods:
 - <code title="post /v3/connections/google-docs/token">client.token.<a href="./src/resources/token.ts">google</a>({ ...params }) -> TokenGoogleResponse</code>
 - <code title="post /v3/connections/slack/token">client.token.<a href="./src/resources/token.ts">slack</a>({ ...params }) -> TokenSlackResponse</code>
 
+# Val
+
+Types:
+
+- <code><a href="./src/resources/val.ts">ValViewerResponse</a></code>
+
+Methods:
+
+- <code title="get /v3/val/viewer">client.val.<a href="./src/resources/val.ts">viewer</a>({ ...params }) -> ValViewerResponse</code>
+
 # Vals
 
 Methods:

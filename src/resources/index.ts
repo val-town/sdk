@@ -37,4 +37,5 @@ export {
   type TokenSlackParams,
 } from './token';
 export { Users } from './users';
+export { Val, type ValViewerParams, type ValViewerResponse } from './val';
 export { Vals, type ValCreateParams, type ValListParams } from './vals/vals';
